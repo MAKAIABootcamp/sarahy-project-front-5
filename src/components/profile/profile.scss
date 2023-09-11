@@ -1,0 +1,135 @@
+@import '../../assets/variables.scss'; 
+@import '../../assets/reset.scss';
+
+.title__profile{
+    display: flex;
+    flex-direction: column;
+    align-items: center; 
+    font-family: $Letter-titles;
+}
+
+.main__profile{
+    display: flex;
+    gap: 2rem;
+    margin-left: 2rem;
+    margin-top: 1rem;
+    .container__profile{
+        width: 35%;
+        background-color: rgb(255, 255, 255);
+        padding: 2%;
+        border: 1px solid $color-cream;
+        border-radius: 10px;
+       
+        .introduction__profile{
+            width: 100%;
+            display: flex;
+            gap: 0.5rem;
+         
+            .fig__profile{
+                width: 40%;
+                margin: 0;
+                display: flex;
+                align-items: center; 
+                .img{
+                    width: 100%;
+                    border-radius: 50%;
+                }
+            }
+            .data__profile{
+                font-family: $Letter-body; 
+                font-size: 14px;
+                display: flex;
+                flex-direction: column;
+
+                .name{
+                    margin: 2%;
+                    font-size: 18px;
+                }
+            }
+        }
+
+        .items__profile{
+            display: flex;
+            flex-direction: column;
+            margin-top: 1rem;
+            gap: 1rem;
+            font-family: $Letter-body;
+            font-size: 12px;
+
+            .item{
+                display: flex;
+                justify-content: space-between; 
+                align-items: center; 
+                padding: 4%;
+                background-color: $color-white;
+                border-radius: 5px;
+            }
+        }
+
+    } 
+    .container__details{
+        background-color: aquamarine;
+        width: 75%;
+
+        .edit__profile{
+            display: flex;
+            flex-direction: column;
+            margin: 0.5rem;
+            gap: 1rem;
+
+            .title{
+                font-family: $Letter-subtitles;
+            }
+        }
+    }
+}
+
+.footer{
+    width: 100%;
+    background-color: $color-black;
+    display: flex;
+    justify-content: space-between; 
+    color: $color-white; 
+    font-family: $Letter-body;
+    height: max-content;
+    padding-top: 5%;
+    padding-bottom: 4%;
+    margin-top: 4%;
+
+    .footer__information{
+        display: flex;
+        flex-direction: column;
+        margin-left: 2rem;
+        h5{
+            margin-bottom: 0.5rem;
+        }
+    }
+
+    .followme{
+        display: flex;
+        flex-direction: column; 
+        margin-right: 2rem;
+        h5{
+            margin-bottom: 0.5rem;
+        }
+
+        .fig__logo{
+            width: 6rem;
+            margin: 0;
+
+            .img__logo{
+                width: 100%;
+            }
+        }
+        .networks{
+            display: flex;
+            justify-content: space-evenly; 
+            margin-top: 0.5rem;
+            .img__network{
+                height: 1rem;
+            }
+            
+        }
+
+    }
+}
