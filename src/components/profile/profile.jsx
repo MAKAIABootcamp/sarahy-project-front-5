@@ -14,7 +14,7 @@ const Profile = () => {
     <>
     <section className="title__profile">
         <h2 className="title">Perfil</h2>
-        <hr className="line" />
+        <hr className="line__profile" />
       </section>
 
     <section className="main__profile">
@@ -59,36 +59,36 @@ const Profile = () => {
 
                 <span className="title">Datos personales</span>
                 <div className="edit__item">
-                    <span>Nombre</span>
-                    <span>Juanito Pérez</span>
+                    <span className="span">Nombre</span>
+                    <span className="span">Juanito Pérez</span>
                     <img src={iconEdit} alt="" />
                 </div>
                 <hr className="line__profile"/>
 
                 <div className="edit__item">
-                    <span>Contacto</span>
-                    <span>3003652020</span>
+                    <span className="span">Contacto</span>
+                    <span className="span">3003652020</span>
                     <img src={iconEdit} alt="" />
                 </div>
                 <hr className="line__profile"/>
 
                 <div className="edit__item">
-                    <span>Edad</span>
-                    <span>32</span>
+                    <span className="span">Edad</span>
+                    <span className="span">32</span>
                     <img src={iconEdit} alt="" />
                 </div>
                 <hr className="line__profile"/>
 
                 <div className="edit__item">
-                    <span>Cuidad</span>
-                    <span>Medellín</span>
+                    <span className="span">Cuidad</span>
+                    <span className="span">Medellín</span>
                     <img src={iconEdit} alt="" />
                 </div>
                 <hr className="line__profile"/>
 
                 <div className="edit__item">
-                    <span>Dirección</span>
-                    <span>Cra 56 # 30-30</span>
+                    <span className="span">Dirección</span>
+                    <span className="span">Cra 56 # 30-30</span>
                     <img src={iconEdit} alt="" />
                 </div>
                 <hr className="line__profile"/>
@@ -99,7 +99,7 @@ const Profile = () => {
         </section>
     </section>
 
-    <section className="footer">
+    {/* <section className="footer">
         <div className="footer__information">
             <h5>CONTÁCTANOS</h5>
             <span>Celebraciones Sarahy</span>
@@ -128,7 +128,7 @@ const Profile = () => {
         </article>
         </div>
         
-    </section>
+    </section> */}
     </>
   );
 };
