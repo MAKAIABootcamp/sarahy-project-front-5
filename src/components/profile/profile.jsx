@@ -54,38 +54,44 @@ const Profile = () => {
         </section>
 
         <section className="container__details">
+
             <section className="edit__profile">
+
                 <span className="title">Datos personales</span>
                 <div className="edit__item">
                     <span>Nombre</span>
                     <span>Juanito Pérez</span>
                     <img src={iconEdit} alt="" />
                 </div>
-                <hr />
+                <hr className="line__profile"/>
 
                 <div className="edit__item">
                     <span>Contacto</span>
                     <span>3003652020</span>
                     <img src={iconEdit} alt="" />
                 </div>
+                <hr className="line__profile"/>
 
                 <div className="edit__item">
                     <span>Edad</span>
                     <span>32</span>
                     <img src={iconEdit} alt="" />
                 </div>
+                <hr className="line__profile"/>
 
                 <div className="edit__item">
                     <span>Cuidad</span>
                     <span>Medellín</span>
                     <img src={iconEdit} alt="" />
                 </div>
+                <hr className="line__profile"/>
 
                 <div className="edit__item">
                     <span>Dirección</span>
                     <span>Cra 56 # 30-30</span>
                     <img src={iconEdit} alt="" />
                 </div>
+                <hr className="line__profile"/>
 
             </section>
 
