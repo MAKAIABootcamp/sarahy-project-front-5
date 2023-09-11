@@ -21,10 +21,11 @@ const Header = () => {
         <nav className="header__nav">
             <ul className='header__list'>
                 <li className='header__list--item'>Inicio</li>
-                <li className='header__list--item' onClick={() => navigate('/prueba')}>Eventos</li>
+                <li className='header__list--item' onClick={() => navigate('/prueba')}>Eventos sociales</li>
+                <li className='header__list--item' onClick={() => navigate('/prueba')}>Eventos Empresariales</li>
                 <li className='header__list--item'>Servicios</li>
                 <li className='header__list--item'>Ubicaciones</li>
-                <li className='header__list--item'>Trabaja con nosotros</li>
+                <li className='header__list--item'>Quienes somos</li>
             </ul>
         </nav>
     </div>
