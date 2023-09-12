@@ -20,7 +20,7 @@ const Login = () => {
             <img className='loginImg' src="https://i.ibb.co/Jc07Cs4/Rectangle-6.png" alt="Imagen" />
         </figure>
 
-        </div>
+        </div> 
 
         <div className="loginDown">
             <h1 className="loginDown__title"><b>Inicio de sesión</b></h1>
@@ -50,4 +50,4 @@ const Login = () => {
   )
 }
 
-export default Login
+export default Login;
