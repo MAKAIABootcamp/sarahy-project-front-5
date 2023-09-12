@@ -1,15 +1,28 @@
 import React from 'react'
 import { useForm } from 'react-hook-form'
 import './login.scss'
+import { loginWithEmailAndPassword } from '../../redux/store/auth/authAction'
+import { useDispatch } from 'react-redux'
+import { useNavigate } from 'react-router-dom'
+import { userLogged } from '../../redux/store/auth/authReducer'
 
 
 const Login = () => {
+  const navigate = useNavigate()
+  const dispatch = useDispatch()
   const { register, handleSubmit, formState: { errors } } = useForm()
+
   const onSubmit = (data) => {
-    // aquí puedes hacer lo que quieras con los datos del formulario
-    console.log(data)
+    dispatch(loginWithEmailAndPassword(data))
+
+    // console.log(data)
+  }
+  const salir = () => {
+    dispatch(userLogged(false))
+    navigate("/")
   }
 
+  
   return (
     <main className="login">
       <img src='https://res.cloudinary.com/dibw7aluj/image/upload/v1694414835/Vector_v5muay.png' alt="Back" className="login__back" /> 
@@ -43,6 +56,8 @@ const Login = () => {
             </span>
             <a href="#" className="loginDown__register">¿No tienes una cuenta? Regístrate aquí</a>
         </div>
+
+        <button onClick={salir}>Salir</button>
 
 
       </section>
