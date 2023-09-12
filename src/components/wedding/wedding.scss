@@ -1,0 +1,80 @@
+@import "../../assets/reset.scss";
+@import "../../assets/variables.scss";
+
+main {
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    .wedding__section{
+        width: 100%;
+        padding: 0 20px;
+        .wedding__title{
+            padding: 60px 0;
+            text-align: center;
+            font-size: 40px;
+        }
+        .wedding__img{
+            height: 750px;
+            width: 100%;
+            border-radius: 8px;
+        }
+    }
+    .wedding__description{
+        width: 100%;
+        display: flex;
+        flex-direction: column;
+        padding: 80px 20px;
+        background-color: $color-white;
+        align-items: center;
+        .wedding__description-span{
+            font-size: 22px;
+            width: 100%;
+            text-align: center;
+            font-family: $Letter-body;
+        }
+        .wedding__description-title{
+            padding-top: 50px;
+            padding-bottom: 30px;
+            font-size: 35px;
+            font-family: $Letter-titles;
+        }
+        .wedding__description-img{
+            padding-bottom: 60px;
+        }
+        .container__items{
+            display: flex;
+            width: 100%;
+            justify-content: center;
+            gap: 20px;
+            justify-content: space-around;
+            .item1{
+                display: flex;
+                flex-direction: column;
+                gap: 15px;
+                width: 26%;
+                font-size: 24px;
+                font-family: $Letter-subtitles;
+                .span__item{
+                    background-color: white;
+                    border-radius: 10px;
+                    padding: 0 10px;
+                }
+            }
+            .item2{
+                display: flex;
+                flex-direction: column;
+                gap: 15px;
+                text-align: end;
+                width: 26%;
+                font-size: 24px;
+                font-family: $Letter-subtitles;
+                .span__item{
+                    background-color: white;
+                    border-radius: 10px;
+                    padding: 0 10px;
+                }
+            }
+        }
+    }
+}
