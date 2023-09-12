@@ -28,7 +28,7 @@
 
     .header__logo {
         width: 100%;
-        height: 90px;
+        height: 100px;
         padding: 10px 30px;
         display: flex;
         justify-content: space-between;
@@ -54,6 +54,8 @@
                 .header__list--item:hover{
                     cursor: pointer;
                     color: $color-grey;
+                    text-decoration: underline;
+                    
                 }
             }
             

@@ -2,8 +2,8 @@ import { BrowserRouter, Route, Routes } from 'react-router-dom'
 import React from 'react'
 import Home from '../components/home/Home'
 import Header from '../components/header/Header';
-import Prueba from '../components/prueba/Prueba';
 import Footer from '../components/footer/footer';
+import Wedding from '../components/wedding/Wedding';
 
 
 
@@ -14,11 +14,10 @@ function Router() {
       <Header/>
       <Routes>
           <Route path="/" element={<Home />}/>
-          <Route path="prueba" element={<Prueba />}/>
+          <Route path="bodas" element={<Wedding />}/>
       </Routes>
       <Footer/>
     </BrowserRouter>
   )
 } 
-
 export default Router;

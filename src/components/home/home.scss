@@ -5,9 +5,45 @@
     width: 100%;
 
     .slider__home {
-        height: 500px;
+        height: 770px;
         width: 100%;
-        background-color: rgb(164, 174, 174);
+        background-color: $color-cream;
+
+        .swiper {
+            width: 100%;
+            height: 100%;
+            .description__swiper{
+                color: $color-white;
+                position: absolute;
+                bottom: 20%;
+                width: 50%;
+                font-size: 40px;
+            }
+        }
+
+        .swiper-slide {
+            text-align: center;
+            font-size: 18px;
+            background: #fff;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+        }
+
+        .swiper-slide img {
+            display: block;
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            filter: brightness(65%)
+        }
+
+        .swiper-button-next, .swiper-button-prev {
+            color: $color-cream 
+        }
+        .swiper-pagination {
+            display: none;
+          }
     }
 
     .main__info {
@@ -35,7 +71,7 @@
         .main__parrafo {
             font-family: $Letter-body;
             padding: 30px 0;
-            font-size: 19px;
+            font-size: 23px;
             width: 75%;
             text-align: center;
         }
@@ -44,7 +80,7 @@
 
 .typeEvent__home {
     width: 100%;
-    padding: 30px 30px;
+    padding: 80px 80px;
     display: flex;
     flex-direction: column;
     align-items: center;
@@ -64,6 +100,8 @@
             border: none;
             border-radius: 12px;
             padding: 8px;
+            font-size: 18px;
+            font-weight: 500;
         }
 
         .btn__event:hover {
@@ -83,22 +121,23 @@
             height: 320px;
             width: 50%;
             gap: 30px;
-            padding-top: 110px;
             text-align: center;
-            align-items: end;
+            justify-content: center;
+            align-items: center;
 
             .description__title {
                 width: 50%;
+                font-size: 26px;
             }
 
             .description__parrafo {
-                width: 50%;
+                width: 60%;
+                font-size: 21px;
             }
         }
 
         .event__collage {
-            height: 320px;
-            width: 50%;
+            width: 60rem;
 
             .description__img {
                 width: 70%;
@@ -114,7 +153,7 @@
     flex-direction: column;
     align-items: center;
     background-color: $color-white;
-    padding-bottom: 30px;
+    padding-bottom: 50px;
 
     .services__title {
         text-align: center;
@@ -153,6 +192,7 @@
                 padding-top: 20px;
                 width: 60%;
                 text-align: center;
+                font-size: 21px;
             }
 
             .img__services {
@@ -164,20 +204,27 @@
                 width: 70%;
                 padding-bottom: 10px;
                 text-align: center;
+                font-size: 18px;
             }
+        }
+        .card__services:hover {
+            opacity: 0.68; 
+            width: 21%; 
+            transition: width 0.6s; 
         }
     }
 
     .service__btn {
         width: 10%;
-        height: 35px;
+        height: 50px;
         color: $color-black;
         background-color: $color-cream;
         border: none;
         border-radius: 12px;
         padding: 8px;
     }
-    .service__btn:hover{
+
+    .service__btn:hover {
         background-color: $color-black;
         color: white;
     }
@@ -190,7 +237,7 @@
     flex-direction: column;
     align-items: center;
     gap: 70px;
-    padding: 30px;
+    padding: 70px 0;
 
     .title {
         display: flex;
@@ -198,10 +245,6 @@
         justify-content: center;
         align-items: center;
         gap: 5px;
-
-        .line {
-            height: 5px;
-        }
 
         .location__title {
             font-size: 30px;
@@ -253,7 +296,8 @@
                 font-weight: 700;
                 padding: 8px;
             }
-            .btn__location:hover{
+
+            .btn__location:hover {
                 background-color: $color-black;
                 color: white;
             }
@@ -284,7 +328,7 @@
         height: 100%;
 
         .container__comen {
-            width: 40%;
+            width: 25%;
             display: flex;
             flex-direction: column;
             align-items: center;
@@ -309,11 +353,11 @@
         .container__calificacion {
             display: flex;
             gap: 10px;
-            width: 18%;
-            height: 28px;
+            width: 25px;
+            height: 35px;
             justify-content: center;
 
-            .tar-calificacion {
+            .star-calificacion {
                 width: 20px;
                 height: 20px;
             }
