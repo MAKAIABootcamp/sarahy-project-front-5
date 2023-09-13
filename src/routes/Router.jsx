@@ -4,6 +4,7 @@ import Home from '../components/home/Home'
 import Header from '../components/header/Header';
 import Footer from '../components/footer/footer';
 import Wedding from '../components/wedding/Wedding';
+import Domicilio from '../components/domicilio/Domicilio';
 
 
 
@@ -15,6 +16,7 @@ function Router() {
       <Routes>
           <Route path="/" element={<Home />}/>
           <Route path="bodas" element={<Wedding />}/>
+          <Route path="domicilio" element={<Domicilio />}/>
       </Routes>
       <Footer/>
     </BrowserRouter>

@@ -1,0 +1,94 @@
+@import "../../assets/reset.scss";
+@import "../../assets/variables.scss";
+
+.main__domicilio{
+    width: 100%;
+    .domicilio__info{
+        width: 100%;
+        display: flex;
+        flex-direction: column;
+        padding: 60px;
+        align-items: center;
+
+        .domicilio__info--title{
+            font-size: 40px;
+            text-align: center;
+            width: 100%;
+            font-family: $Letter-titles;
+            padding-bottom: 10px;
+
+          
+        }
+        .domicilio__info--line{
+            width: 20%;
+            border: 1px solid $color-cream;
+        }
+    }
+    .imagen__ubicacion{
+        width: 100%;
+        background-color: $color-white;
+        padding: 50px;
+        align-content: center;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+
+        .domicilio__ubicacion--imagen{
+            width: 40%;
+            object-fit: contain;
+            border-radius: 10px;
+        }
+    }
+    .ubicacion__info{
+        width: 100%;
+        display: flex;
+        gap: 40px;
+        justify-content: space-evenly;
+        padding: 40px;
+        flex-wrap: wrap;
+        align-items: center;
+        font-family: $Letter-body;
+        .ubicacion__titulo{
+            width: 50%;
+            font-size: 20px;
+        }
+        .ubicacion__mapa{
+           
+
+        }
+    }
+
+    .iconos__ubicacion{
+        width: 100%;
+        padding: 50px;
+        background-color: $color-white;
+        display: flex;
+        justify-content: space-evenly;
+        .container__iconos--ubicaciones{
+            display: flex;
+            flex-direction: column;
+            gap: 10px;
+            text-align: center;
+            .material-symbols-outlined{
+                color: $color-cream;
+                font-size: 80px;
+                border: 1px solid black;
+                border: none;
+                padding: 10px;
+                border-radius: 20px;
+                background-color: white;
+            }
+        }
+    }
+
+    .domicilio__vermas{
+        width: 10%;
+        height: 50px;
+        padding: 10px;
+        background-color: $color-cream;
+        color: $color-black;
+        margin: 50px;
+        border: none;
+        border-radius: 12px;
+    }
+}
