@@ -1,0 +1,168 @@
+@import "../../assets/reset.scss";
+@import "../../assets/variables.scss";
+
+
+.main__allies{
+    display: flex;
+    flex-direction: column;
+    width: 100%;
+
+    .main__allies--title{
+        padding-top: 40px;
+        padding-bottom: 10px;
+        font-size: 40px;
+    }
+    .linea__allies--title{
+        border: 1px solid $color-cream;
+        width: 15%;
+        margin-bottom: 30px;
+    }
+    .allies__principal{
+        width: 100%;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        .img__aliados{
+            height: 650px;
+            width: 100%;
+        }
+        .span__aliados{
+            position: absolute;
+            color: white;
+            font-size: 28px;
+            bottom: 4%;
+            width: 100%;
+            text-align: center;
+        }
+        .p__aliados{
+           
+            font-size: 20px;
+            text-align: center;
+            width: 70%;
+            padding-top: 50px;
+            padding-bottom: 20px;
+        }
+        .linea__allies{
+            border: 1px solid $color-cream;
+            width: 20%;
+            margin-bottom: 60px;
+        }
+    }
+    .datos{
+        background-color: $color-white;
+        width: 100%;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        padding: 50px 0;
+        .form__datos{
+            display: flex;
+            flex-wrap: wrap;
+            width: 80%;
+            background-color: white;
+            justify-content: space-around;
+            gap: 35px;
+            .h2__datos{
+                width: 100%;
+                font-size: 25px;
+                padding-top: 30px;
+                text-align: center;
+                padding-bottom: 10px;
+            }
+            .container__inputs{
+                display: flex;
+                flex-direction: column;
+                justify-content: center;
+                gap: 25px;
+                width: 40%;
+                .label__allies{
+                    display: flex;
+                    flex-direction: column;
+                    width: 80%;
+                    font-weight: bold;
+                    font-size: 18px;
+                }
+                .input__allies{
+                    border: none;
+                    border-bottom: 1px solid black;
+                    height: 30px;
+                }
+            }
+
+            .container__inputs2{
+                display: flex;
+                flex-direction: column;
+                gap: 23px;
+                width: 100%;
+                padding-top: 30px;
+                padding-bottom: 20px;
+                padding-left: 40px;
+                .label__allies--final{
+                    width: 100%;
+                    display: flex;
+                    flex-direction: column;
+                    font-weight: bold;
+                    font-size: 18px;
+                }
+                .input__allies--final{
+                    width: 97%;
+                    border: none;
+                    border-bottom: 1px solid black;
+                    height: 30px;
+                }
+            }
+
+            .button__allies{
+                padding: 15px;
+                background-color: $color-black;
+                border-radius: 10px;
+                border: none;
+                width: 10%;
+                margin-bottom: 40px;
+                color: white;
+            }
+        }
+    }
+
+    .recomendaciones{
+        background-color: white;
+        display: flex;
+        flex-direction: column;
+        width: 100%;
+        align-items: center;
+
+      
+        .recuadro__recomendaciones{
+            width: 90%;
+            display: flex;
+            gap: 20px;
+            flex-wrap: wrap;
+            background-color: white;
+            border-radius: 8px;
+            margin-bottom: 30px;
+            justify-content: center;
+            
+            .tarjeta__recuadro{
+                width: 28%;
+                display: flex;
+                flex-direction: column;
+                align-items: center;
+                gap: 15px;
+                padding: 40px;
+                .numero__tarjeta{
+                    font-size: 40px;
+                    color: $color-cream;
+                }
+                .titulo__tarjeta{
+                    font-size: 22px;
+                    font-weight: bold;
+                    text-align: center;
+                }
+                .descripcion__tarjeta{
+                    font-size: 17px;
+                    text-align: center;
+                }
+            }
+        }
+    }
+}

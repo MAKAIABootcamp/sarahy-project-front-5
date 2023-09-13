@@ -1,0 +1,102 @@
+@import "../../assets/reset.scss";
+@import "../../assets/variables.scss";
+
+.price__main{
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    background-color: white;
+    .price__info{
+        width: 100%;
+        display: flex;
+        flex-direction: column;
+        text-align: center;
+        align-items: center;
+        background-color: white;
+        .price__title{
+            font-size: 40px;
+            padding-top: 40px;
+            padding-bottom: 10px;
+            width: 100%;
+            text-align: center;
+        }
+        .price__line{
+            width: 20%;
+            align-items: center;
+            border: 1px solid $color-cream;
+            margin-bottom: 40px;
+        }
+        .price__text{
+            width: 70%;
+            padding-bottom: 20px;
+            font-family: $Letter-body;
+        }
+    }
+
+    .price__principal{
+        background-image: url('../../assets/image/fondo.png');
+        width: 70%;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        justify-content: center;
+        padding: 80px 0;
+        .recuadro__factura{
+            width: 80%;
+            background-color: $color-white;
+            padding: 50px;
+            border-radius: 10px;
+            .datos__cliente{
+                display: flex;
+                flex-direction: column;
+                gap: 10px;
+                font-size: 20px;
+                .price__nombre--cotizacion{
+                    padding-top: 50px;
+                    padding-bottom: 10px;
+                }
+            }
+        }
+    }
+    .cliente{
+        padding: 0 40px;
+        display: flex;
+        flex-direction: column;
+        gap: 5px;
+        .container__cliente--cotizacion{
+            display: flex;
+            gap: 15px;
+            width: 45%;
+            justify-content: space-between;
+        }
+        padding-bottom: 30px;
+    }
+
+    .datos__precio{
+        display:flex;
+        width: 100%;
+        flex-wrap: wrap;
+        gap: 10px;
+        .infoSeleccion{
+            padding: 30px 0;
+            text-align: start;
+            width: 100%;
+        }
+        .servicios{
+            display: flex;
+            flex-direction: column;
+            gap: 10px;
+            width: 40%;
+        }
+        .precio__total{
+            display: flex;
+            flex-direction: column;
+            gap: 10px;
+            width: 40%;
+            align-items: end;
+            padding-bottom: 70px;
+        }
+    }
+}
