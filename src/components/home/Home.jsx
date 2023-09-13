@@ -12,6 +12,8 @@ import { Autoplay, Pagination, Navigation } from 'swiper/modules';
 // imagenes
 import bodas from '../../assets/image/boda.png'
 import servicios1 from '../../assets/image/servicios1.png'
+import servicios2 from '../../assets/image/decoracion.png'
+import servicios3 from '../../assets/image/catering.png'
 import line from '../../assets/image/line.png'
 import star from '../../assets/image/star.png'
 import location1 from '../../assets/image/location1.png'
@@ -59,14 +61,14 @@ const Home = () => {
                 <h1 className='main__title__home'>Bienvenido a Celebraciones Sarahy</h1>
                 <hr className='hr__home' />
                 <p className="main__parrafo">
-                    Somos la elección perfecta para convertir tus sueños en realidad. Con más de una década de experiencia en la planificación y ejecución de eventos sociales, empresariales y educativos  de primer nivel, estamos aquí para hacer que tus ocasiones especiales sean inolvidables.
+                Somos expertos en hacer eventos memorables. Con una pasión por la perfección y una atención meticulosa a cada detalle, nuestro objetivo es convertir tu boda en un día inolvidable. Desde la elección del lugar hasta la decoración, la gastronomía y la música, nos enorgullece crear experiencias únicas que reflejen tus sueños y deseos. Confía en nosotros para convertir tu día especial en un recuerdo que atesorarás para toda la vida
                 </p>
             </section>
             <section className='typeEvent__home'>
                 <div className="btns">
                     <button className="btn__event">bodas</button>
                     <button className="btn__event">Quince años</button>
-                    <button className="btn__event">Primera comunión</button>
+                    <button className="btn__event">Cumpleaños</button>
                     <button className="btn__event">Empresariales</button>
                     <button className="btn__event">Educativos</button>
                 </div>
@@ -74,7 +76,9 @@ const Home = () => {
                 <div className='event__info'>
                     <div className='event__description'>
                         <h2 className='description__title'>La boda de tus sueños</h2>
-                        <p className='description__parrafo'>Somos expertos en hacer eventos memorables, pensamos en cada detalle para que tu boda sea perfecta</p>
+                        <p className='description__parrafo'>
+                        Somos expertos en crear eventos memorables y nos enorgullece hacer que tu boda sea perfecta en cada detalle. Desde la elección del lugar hasta la decoración y el menú, dedicamos toda nuestra pasión para que tu día sea inolvidable
+                        </p>
                     </div>
                     <div className="event__collage">
                         <img src={bodas} className='description__img' alt="Imagen de descripcion del evento" />
@@ -89,27 +93,70 @@ const Home = () => {
                         <h3 className='card__services--title'>Fotografia</h3>
                         <img src={servicios1} alt="Imagen del servicio ofrecido" className='img__services' />
                         <span className='card__services--span'>
-                            Guardar los mejores momentos de tu evento
+                            Guardar los mejores momentos de tu evento con fotografias y videos de la mejor calidad.
                         </span>
                     </div>
                     <div className="card__services">
-                        <h3 className='card__services--title'>Fotografia</h3>
-                        <img src={servicios1} alt="Imagen del servicio ofrecido" className='img__services' />
+                        <h3 className='card__services--title'>Decoración</h3>
+                        <img src={servicios2} alt="Imagen del servicio ofrecido" className='img__services' />
                         <span className='card__services--span'>
-                            Guardar los mejores momentos de tu evento
+                        Transformamos espacios en escenarios de ensueño con nuestra decoración experta
                         </span>
                     </div>
                     <div className="card__services">
-                        <h3 className='card__services--title'>Fotografia</h3>
-                        <img src={servicios1} alt="Imagen del servicio ofrecido" className='img__services' />
+                        <h3 className='card__services--title'>Catering</h3>
+                        <img src={servicios3} alt="Imagen del servicio ofrecido" className='img__services' />
                         <span className='card__services--span'>
-                            Guardar los mejores momentos de tu evento
+                        Deléitate con nuestro exquisito servicio de catering y saborea el éxito de tu evento
                         </span>
                     </div>
                 </div>
                 <button className="service__btn">
                     Ver mas
                 </button>
+            </section>
+
+            <section className='beneficios'>
+                    <h1 className='beneficios__title'>Beneficios de realizar tu evento con nosotros</h1>
+                    <hr className="linea__beneficios" />
+                    <div className="container__beneficios">
+                        <div className='beneficio__card'>
+                            <span class="material-symbols-outlined">
+                                savings
+                            </span>
+                            <span className='card__beneficio--title'>
+                                Descuentos
+                            </span>
+                            <p className="card__beneficios--p">
+                            Accede a descuentos exclusivos en servicios y productos relacionados con eventos a través de nuestras asociaciones con proveedores.
+                            </p>
+                        </div>
+
+                        <div className='beneficio__card'>
+                        <span class="material-symbols-outlined">
+                            hourglass_empty
+                        </span>
+                            <span className='card__beneficio--title'>
+                                Ahorro de Tiempo
+                            </span>
+                            <p className="card__beneficios--p">
+                            Ahorramos tiempo valioso al manejar todas las tareas de organización, desde la logística hasta la coordinación, para que puedas concentrarte en disfrutar de tu día.
+                            </p>
+                        </div>
+
+                        <div className='beneficio__card'>
+                            <span class="material-symbols-outlined">
+                                phone_iphone
+                            </span>
+                            <span className='card__beneficio--title'>
+                            Innovación Tecnológica
+                            </span>
+                            <p className="card__beneficios--p">
+                            tilizamos las últimas tecnologías para brindarte soluciones modernas y eficientes en la gestión de eventos y seguimiento del proceso
+                            </p>
+                        </div>
+
+                    </div>
             </section>
 
             <section className="location">
@@ -148,11 +195,11 @@ const Home = () => {
                             Excelente servicio, me agradaron mucho las personas de logistica son muy amables y la pagina es perfecta los quiero
                         </span>
                         <div className="container__calificacion">
-                            <img src={corazon1} alt="star-calificacion" />
-                            <img src={corazon1} alt="star-calificacion" />
-                            <img src={corazon1} alt="star-calificacion" />
-                            <img src={corazon1} alt="star-calificacion" />
-                            <img src={corazon1} alt="star-calificacion" />
+                            <img src={corazon1} alt="star-calificacion" className='star-calificacion'/>
+                            <img src={corazon1} alt="star-calificacion" className='star-calificacion'/>
+                            <img src={corazon1} alt="star-calificacion" className='star-calificacion'/>
+                            <img src={corazon1} alt="star-calificacion" className='star-calificacion'/>
+                            <img src={corazon1} alt="star-calificacion" className='star-calificacion'/>
                         </div>
                     </div>
                     <div className='container__comen'>
@@ -161,11 +208,11 @@ const Home = () => {
                             Excelente servicio, me agradaron mucho las personas de logistica son muy amables y la pagina es perfecta los quiero
                         </span>
                         <div className="container__calificacion">
-                            <img src={corazon1} alt="star-calificacion" />
-                            <img src={corazon1} alt="star-calificacion" />
-                            <img src={corazon1} alt="star-calificacion" />
-                            <img src={corazon1} alt="star-calificacion" />
-                            <img src={corazon1} alt="star-calificacion" />
+                            <img src={corazon1} alt="star-calificacion" className='star-calificacion'/>
+                            <img src={corazon1} alt="star-calificacion" className='star-calificacion'/>
+                            <img src={corazon1} alt="star-calificacion" className='star-calificacion'/>
+                            <img src={corazon1} alt="star-calificacion" className='star-calificacion'/>
+                            <img src={corazon1} alt="star-calificacion" className='star-calificacion'/>
                         </div>
                     </div>
                     <div className='container__comen'>
@@ -174,11 +221,11 @@ const Home = () => {
                             Excelente servicio, me agradaron mucho las personas de logistica son muy amables y la pagina es perfecta los quiero
                         </span>
                         <div className="container__calificacion">
-                            <img src={corazon1} alt="star-calificacion" />
-                            <img src={corazon1} alt="star-calificacion" />
-                            <img src={corazon1} alt="star-calificacion" />
-                            <img src={corazon1} alt="star-calificacion" />
-                            <img src={corazon1} alt="star-calificacion" />
+                            <img src={corazon1} alt="star-calificacion" className='star-calificacion'/>
+                            <img src={corazon1} alt="star-calificacion" className='star-calificacion'/>
+                            <img src={corazon1} alt="star-calificacion" className='star-calificacion'/>
+                            <img src={corazon1} alt="star-calificacion" className='star-calificacion'/>
+                            <img src={corazon1} alt="star-calificacion" className='star-calificacion'/>
                         </div>
                     </div>
                 </div>

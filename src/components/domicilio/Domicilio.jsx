@@ -1,9 +1,12 @@
 import React from 'react'
 import './domicilio.scss'
 import ubicacion from '../../assets/image/sercicioDomicilio.png'
+import ubicacion2 from '../../assets/image/local1.png'
 import mapa from '../../assets/image/map.png'
 
+
 const Domicilio = () => {
+  
     return (
         <main className='main__domicilio'>
             <section className='domicilio__info'>
@@ -13,8 +16,9 @@ const Domicilio = () => {
                 <hr className='domicilio__info--line' />
             </section>
             <section className="imagen__ubicacion">
-              
+
                 <img src={ubicacion} alt="" className='domicilio__ubicacion--imagen' />
+                <img src={ubicacion2} alt="" className='domicilio__ubicacion--imagen' />
             </section>
             <section className='ubicacion__info'>
                 <p className='ubicacion__titulo'>

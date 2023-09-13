@@ -93,7 +93,7 @@
         padding-bottom: 40px;
 
         .btn__event {
-            width: 13%;
+            width: 20%;
             height: 50px;
             color: $color-black;
             background-color: $color-cream;
@@ -102,17 +102,20 @@
             padding: 8px;
             font-size: 18px;
             font-weight: 500;
+            font-family: $Letter-subtitles;
         }
 
         .btn__event:hover {
             background-color: $color-black;
             color: white;
+            cursor: pointer;
+            background-color: $color-black;
         }
     }
 
     .event__info {
         display: flex;
-        gap: 20px;
+        gap: 40px;
         justify-content: center;
 
         .event__description {
@@ -126,13 +129,15 @@
             align-items: center;
 
             .description__title {
-                width: 50%;
+                // width: 50%;
                 font-size: 26px;
+                font-family: $Letter-body;
             }
-
+            
             .description__parrafo {
-                width: 60%;
+                // width: 60%;
                 font-size: 21px;
+                font-family: $Letter-body;
             }
         }
 
@@ -161,6 +166,7 @@
         padding-bottom: 20px;
         font-size: 30px;
         width: 80%;
+        font-family: $Letter-subtitles;
     }
 
     .hr__services {
@@ -193,24 +199,27 @@
                 width: 60%;
                 text-align: center;
                 font-size: 21px;
+                font-family: $Letter-body;
             }
 
             .img__services {
-                width: 70%;
+                width: 80%;
                 height: 60%;
             }
 
             .card__services--span {
-                width: 70%;
+                width: 80%;
                 padding-bottom: 10px;
                 text-align: center;
                 font-size: 18px;
+                font-family: $Letter-body;
             }
         }
         .card__services:hover {
             opacity: 0.68; 
             width: 21%; 
             transition: width 0.6s; 
+            cursor: pointer;
         }
     }
 
@@ -222,11 +231,67 @@
         border: none;
         border-radius: 12px;
         padding: 8px;
+        font-family: $Letter-body;
+        font-size: 17px;
     }
 
     .service__btn:hover {
         background-color: $color-black;
         color: white;
+    }
+}
+
+.beneficios{
+    width: 100%;
+    background-color: $color-white;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    padding-bottom: 50px;
+    .beneficios__title{
+        padding-top: 50px;
+        padding-bottom: 20px;
+        font-size: 35px;
+        font-family: $Letter-subtitles;
+        text-align: center;
+    }
+    .linea__beneficios{
+        width: 20%;
+        border: 1px solid $color-cream;
+        margin-bottom: 50px;
+
+    }
+    .container__beneficios{
+        display: flex;
+        width: 100%;
+        gap: 10px;
+        justify-content: center;
+        .beneficio__card{
+            display: flex;
+            flex-direction: column;
+            gap: 20px;
+            width: 34%;
+            align-items: center;
+            .material-symbols-outlined{
+                font-size: 55px;
+                color: $color-cream;
+                border: 1px solid black;
+                border-radius: 20px;
+                padding: 3px;
+                background-color: white;
+                border: none;
+            }
+            .card__beneficio--title{
+                font-size: 22px;
+                font-family: $Letter-titles;
+            }
+            .card__beneficios--p{
+                font-size: 18px;
+                font-family: $Letter-body;
+                width: 80%;
+                text-align: center;
+            }
+        }
     }
 }
 
@@ -328,39 +393,38 @@
         height: 100%;
 
         .container__comen {
-            width: 25%;
             display: flex;
             flex-direction: column;
             align-items: center;
             height: 100%;
-        }
-
-        .img__comentario {
-            width: 30%;
-            height: 20%;
-            border-radius: 5px;
-            padding-bottom: 35px;
-        }
-
-        .testimonio {
-            width: 60%;
-            text-align: center;
-            padding-bottom: 30px;
-            color: $color-grey;
-            font-size: 19;
-        }
-
-        .container__calificacion {
-            display: flex;
-            gap: 10px;
-            width: 25px;
-            height: 35px;
-            justify-content: center;
-
-            .star-calificacion {
-                width: 20px;
-                height: 20px;
+            .img__comentario {
+                width: 30%;
+                height: 20%;
+                border-radius: 5px;
+                padding-bottom: 35px;
+            }
+    
+            .testimonio {
+                width: 60%;
+                text-align: center;
+                padding-bottom: 30px;
+                color: $color-grey;
+                font-size: 19;
+            }
+    
+            .container__calificacion {
+                display: flex;
+                gap: 10px;
+                width: 25px;
+                height: 30px;
+                justify-content: center;
+    
+                .star-calificacion {
+                    width: 30px;
+                    height: 30px;
+                }
             }
         }
+
     }
 }
