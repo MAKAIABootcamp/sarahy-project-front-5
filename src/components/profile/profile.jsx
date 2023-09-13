@@ -95,6 +95,84 @@ const Profile = () => {
 
             </section>
 
+            <section className="show__price">
+                <span className="title">Cotizaciones</span>
+
+                <div className="titles__price">
+                    <span className="span__title">Evento</span>
+                    <span className="span__title">Fecha</span>
+                    <span className="span__title">Valor</span>
+                </div>
+
+                <div className="data__price">
+                    <span className="span__data">Baby Shower</span>
+                    <span className="span__data">20/11/2023</span>
+                    <span className="span__data">$4'500.000</span>
+                </div>
+                <div className="data__price">
+                    <span className="span__data">Baby Shower</span>
+                    <span className="span__data">20/11/2023</span>
+                    <span className="span__data">$4'500.000</span>
+                </div>
+                <div className="data__price">
+                    <span className="span__data">Baby Shower</span>
+                    <span className="span__data">20/11/2023</span>
+                    <span className="span__data">$4'500.000</span>
+                </div>
+            </section>
+
+            <section className="show__events">
+                <span className="title">Historial de eventos</span>
+
+                <div className="titles__events">
+                    <span className="span__title">Evento</span>
+                    <span className="span__title">Fecha</span>
+                    <span className="span__title">Valor</span>
+                </div>
+
+                <div className="data__events">
+                    <span className="span__data">Baby Shower</span>
+                    <span className="span__data">20/11/2023</span>
+                    <span className="span__data">$4'500.000</span>
+                </div>
+                <div className="data__events">
+                    <span className="span__data">Baby Shower</span>
+                    <span className="span__data">20/11/2023</span>
+                    <span className="span__data">$4'500.000</span>
+                </div>
+                <div className="data__events">
+                    <span className="span__data">Baby Shower</span>
+                    <span className="span__data">20/11/2023</span>
+                    <span className="span__data">$4'500.000</span>
+                </div>
+            </section>
+
+
+            <section className="show__comments">
+                <span className="title">Déjanos tus comentarios</span>
+                <form action="" className="form__comments">
+                    <article className="article__form">
+                    <label htmlFor="" className="label">Evento:</label>
+                    <input type="text" placeholder="Ingresa el tipo de evento" className="input"/>
+                    </article>
+
+                    <article className="article__form">
+                    <label htmlFor="" className="label">Comentario:</label>
+                    <input type="text" placeholder="Escribe tu comentario" className="input"/>
+                    </article>
+
+                    <article className="article__form">
+                    <label htmlFor="" className="label">Calificación:</label>
+                   
+                    </article>
+                    
+                    <button className="btn__comments">Enviar comentario</button>
+                
+                </form>
+
+               
+            </section>
+
 
         </section>
     </section>
