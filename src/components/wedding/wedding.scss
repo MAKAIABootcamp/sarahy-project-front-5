@@ -15,9 +15,10 @@ main {
             font-size: 40px;
         }
         .wedding__img{
-            height: 750px;
+            height: 500px;
             width: 100%;
             border-radius: 8px;
+            padding-bottom: 20px;
         }
     }
     .wedding__description{
@@ -73,6 +74,117 @@ main {
                     background-color: white;
                     border-radius: 10px;
                     padding: 0 10px;
+                }
+            }
+        }
+    }
+
+    .wedding__slider{
+        background-color: white;
+        width: 100%;
+        padding: 20px;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        .wedding__slider-title{
+            font-size: 40px;
+            padding: 30px;
+        }
+
+        .div__slider{
+            width: 100%;
+            height: 350px;
+            background-color: $color-cream;
+            display: flex;
+            align-items: center;
+            .swiper {
+                width: 100%;
+                height: 90%;
+                padding-left: 20px;
+              }
+              
+              .swiper-slide {
+                text-align: center;
+                font-size: 18px;
+                background: $color-cream;
+              
+                /* Center slide text vertically */
+                display: flex;
+                flex-direction: column;
+                gap: 30px;
+                justify-content: center;
+                align-items: center;
+              }
+              
+              .swiper-slide img {
+                display: block;
+                width: 100%;
+                height: 90%;
+                object-fit: cover;
+            }
+        }
+
+        .btn__slider{
+            padding: 15px;
+            background-color: $color-cream;
+            border-radius: 10px;
+            border: none;
+            margin: 40px 0;
+        }
+        .btn__slider:hover{
+            background-color: $color-black;
+            color: white;
+            cursor: pointer;
+        }
+
+    }
+
+    .recomendaciones{
+        background-color: $color-white;
+        display: flex;
+        flex-direction: column;
+        width: 100%;
+        align-items: center;
+
+        .recomendaciones-title{
+            font-size: 40px;
+            padding: 30px;
+        }
+        .recuadro__recomendaciones{
+            width: 90%;
+            display: flex;
+            gap: 20px;
+            flex-wrap: wrap;
+            background-color: white;
+            border-radius: 8px;
+            margin-bottom: 30px;
+            justify-content: center;
+            .span__recomendaciones--aliados{
+                font-size: 23px;
+                width: 100%;
+                text-align: center;
+                padding-top: 40px;
+            }
+            .tarjeta__recuadro{
+                width: 28%;
+                display: flex;
+                flex-direction: column;
+                align-items: center;
+                gap: 15px;
+                padding-bottom: 40px;
+                .numero__tarjeta{
+                    font-size: 40px;
+                    color: $color-cream;
+                }
+                .titulo__tarjeta{
+                    font-size: 22px;
+                    font-weight: bold;
+                    text-align: center;
+                }
+                .descripcion__tarjeta{
+                    font-size: 17px;
+                    text-align: center;
+                    width: 100%;
                 }
             }
         }
