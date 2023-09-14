@@ -23,7 +23,7 @@ https://github.com/MAKAIABootcamp/sarahy-project-front-5.git
 4. Ejecutar comando: 
 `npm run dev`
 
-## Autores:fa-star:
+## Autores
 - [Maria Paulina Parra](https://github.com/MariaPaulinaP "Maria Paulina Parra")
 - [Sebastián Barrera](https://github.com/sebastianbarrerah "Sebastián Barrera")
 - Anyerson Ayola
