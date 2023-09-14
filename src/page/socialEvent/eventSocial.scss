@@ -30,14 +30,17 @@
             margin-bottom: 5vw;
         }
 
-        .listsEvents
+        .listsEventsSocial
         {
             width: 100vw;
-            height: 80vw;
+
             background-image: url('https://i.ibb.co/sFSLdg9/image-79.png');
             background-size:auto;
             background-position: center;
-            display: flex;
+            padding: 3vw;
+            display: grid; /* Cambia esta línea */ 
+            grid-template-columns: repeat(2, 1fr); 
+            grid-gap: 10px;
         }
 
     }

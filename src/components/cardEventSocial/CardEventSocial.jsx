@@ -1,6 +1,6 @@
 import React from 'react'
-
-const CardEventSocial = () => {
+import './cardEventSocial.scss'
+const CardEventSocial = ({imageIcon, image, name, text}) => {
   return (
 
     <article className='cardEventSocial'>
