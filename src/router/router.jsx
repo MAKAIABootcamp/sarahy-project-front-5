@@ -12,6 +12,7 @@ import Footer from '../components/footer/Footer';
 import Wedding from '../components/wedding/Wedding';
 import Allies from '../components/allies/Allies';
 import Domicilio from '../components/domicilio/Domicilio';
+import EventSocial from '../page/socialEvent/EventSocial';
 
 const Router = () => {
   return (
@@ -28,6 +29,13 @@ const Router = () => {
         <Route path="/perfil" element={<Profile />} />
         <Route path="/aliados" element={<Allies />} />
         <Route path="/domicilio" element={<Domicilio />} />
+
+        {/* <Route path="birthday" element={<Birthday />} />
+        <Route path="services" element={<Services/>} />
+        <Route path="quote" element={<Quote/>} /> */}
+        <Route path="/social" element={<EventSocial />} />
+        {/* <Route path="eventCompany" element={<EventCompany/>} /> */}
+        
 
 
     </Routes>

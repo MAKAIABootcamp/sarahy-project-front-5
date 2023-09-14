@@ -1,0 +1,78 @@
+
+
+.cardEventSocial
+{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    border-radius: 15px;
+    margin-left: 3vw;
+    margin-right: 3vw;
+    background-color: #FFF;
+    box-shadow: 5px 5px 10px gray;
+    margin-bottom: 2vw;
+    .infoCardSocial
+    {
+        display: flex;
+        justify-content: center;
+        gap: 10px;
+        margin-top: 25px;
+
+        figure
+        {
+            img
+            {
+                width: 3vw;
+                height: auto;
+            }
+        }
+
+        span
+        {
+            font-family: 'Merriweather', sans-serif;
+            font-size: 2vw;
+            align-self: flex-end;
+            
+
+
+        }
+
+        margin-bottom: 5px;
+    }
+
+    .figureEventSocial
+    {
+        img
+        {
+            width: 35vw;
+            height: auto;
+        }
+    }
+
+    .textEventSocial
+    {
+        width: 70%;
+        margin-left: 15%;
+        margin-right: 15%;
+        padding-top: 2vw;
+        font-family: 'Catamaran', sans-serif;
+        font-size: 2vw;
+    }
+
+    .detailEventSocial
+    {
+        padding-top: 1.2vw;
+        border-radius: 10px;
+        box-shadow: 1px 1px 2px #999;
+        margin-top: 3vw;
+        height: 6vw;
+        align-self: center;
+        width: 15vw;
+        color: #FFF;
+        background-color: #000;
+        font-family: 'Brygada 1918', serif;
+        font-size: 2.35vw;
+        margin-bottom: 25px;
+    }
+
+}

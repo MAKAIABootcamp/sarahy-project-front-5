@@ -7,6 +7,7 @@ import whatsapp from "../../assets/image/wpp.png";
 import logoWhite from "../../assets/image/logo-blanco.png";
 import { useNavigate } from 'react-router-dom';
 
+ 
 const Footer = () => {
     const navigate = useNavigate()
     return (

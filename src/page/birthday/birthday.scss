@@ -1,0 +1,319 @@
+
+@import url('https://fonts.googleapis.com/css2?family=Alata&family=Catamaran&family=Karla&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Merriweather:ital,wght@1,700&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Merriweather&display=swap');
+
+$color-black: #343434; 
+$color-grey: #8E8B82; 
+$color-cream: #E9DCBE; 
+$color-white: #F3F3F3; 
+
+$Letter-body: 'Catamaran', sans-serif;
+$Letter-titles:  'Merriweather', serif;
+$Letter-subtitles:'Merriweather', serif;
+
+.bithdayContainer
+{
+
+
+    .containerBirthday
+    {
+        display: flex;
+        flex-direction: column;
+        overflow: hidden;
+
+        .titleBrith
+        {
+                text-align: center;
+                font-size: 50px;
+                font-family: 'Merriweather', serif;
+                margin-top: 4vw;
+                margin-bottom: 4vw;
+
+
+        }
+
+        .nameBirthday
+        {
+
+            display: flex;
+            justify-content: center;
+            margin-bottom: 5px;
+            &__img
+            {
+
+                width: 98vw;
+                border-radius: 5px;
+
+            }
+        }
+
+        .birthInfo 
+        {
+            display: flex;
+            flex-direction: column;
+            width: 100vw;
+            height: 50vw;
+            background-color:  #F3F3F3;
+
+            &__title 
+            {
+                text-align: center;
+                align-self: center;
+                margin: 25px;
+                background-color: #FFF;
+                width: 80%;
+                padding: 10px;
+                font-family: 'Merriweather', serif;
+                font-size: 45px;
+
+            }
+
+            &__list 
+            {
+
+                display: flex;
+                align-self: center;
+                background-color: #FFF;
+                width: 80%;
+                height: 20vw;
+                align-items: center;
+                justify-content: space-between;
+                padding-left: 10vw;
+                padding-right: 10vw;
+                .birthLeft 
+                {
+                    display: flex;
+                    flex-direction: column;
+                    font-family: 'Merriweather', serif;
+                    font-size: 20px;
+                    gap: 3.5vw;
+                    text-align: center;
+                    text-shadow: 4px 4px 3px #999;
+
+                }
+
+                .birthRight
+                {
+                    display: flex;
+                    flex-direction: column;
+                    font-family: 'Merriweather', serif;
+                    font-size: 20px;
+                    gap: 3.5vw;
+                    text-align: center;
+                    text-shadow: 4px 4px 3px #999;
+                }
+
+                .birthSeparator
+                {
+                  height: 75%; // El alto es el porcentaje de la altura del contenedor
+                  width: 2.5px; // El ancho es el grosor de la línea
+                  background-color: #E9DCBE; // El color es el mismo que el de la línea
+                  
+                }
+
+            }
+
+            &__icons
+            {
+                display: flex;
+                justify-content: space-between;
+                padding-left: 10vw;
+                padding-right: 10vw;
+                margin-bottom: 0.5vw;
+
+                span
+                {
+                    
+                    
+                    background-color:  #E9DCBE;
+                    border-radius: 6px;
+                    text-align: end;
+                    align-self: center;
+                    padding: 10px;
+                    color: #FFF;
+                }
+
+            }
+
+            .divitioLine
+            {
+                width: 58vw;
+                background-color: #E9DCBE;
+                height: 2px;
+                align-items: center;
+                align-content: center;
+                align-self: center;
+            }
+        }
+
+        .types 
+        {
+            display: flex;
+            flex-direction: column;
+            background-color: #FFF;
+
+
+            &__title
+            {
+                font-family: 'Merriweather', serif;
+                font-size: 40px;
+                text-align: center;
+                margin: 5vw;
+            }
+
+            &__figure 
+            {
+                display: flex;
+                background-color: #E9DCBE;
+                margin-bottom: 2vw;
+                
+                .typeImg
+                {
+                    width: 40%;
+                    height: 40%;
+                    margin: 3vw;
+                }
+
+                .infoType
+                {
+                    margin-top: 3vw;
+                    margin-right: 3vw;
+                    display: flex;
+                    flex-direction: column;
+                    text-align: center;
+
+
+                    .typeOne
+                    {
+                        font-family: 'Merriweather', serif;
+                        font-size: 4vw;
+                        margin-bottom: 7vw;
+                    }
+
+                    .typeDetail
+                    {
+                        
+                        font-family: 'Merriweather', serif;
+                        font-size: 3.31vw;
+                        margin-bottom: 7vw;
+
+                    }
+                }
+            }
+
+            &__button
+            {
+                background-color:  #E9DCBE;
+                border-radius: 6px;
+                text-align: end;
+                align-self: center;
+                padding-left: 7vw;
+                padding-right: 7vw;
+                padding-top: 2vw;
+                padding-bottom: 2vw;
+                margin-bottom: 5vw;
+                font-size: 2vw;
+                color: #343434;
+                
+            }
+        }
+
+        .union
+        {
+            background-color:  #F3F3F3;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            
+            .ryC
+            {
+                font-family: 'Merriweather', serif;
+                font-size: 2.75vw;
+                text-align: center;
+                margin-bottom: 5vw;
+                margin-top: 2vw;
+
+
+            }
+            
+            .recursos
+            {
+                width: 90vw;    
+                background-color: #FFF;
+                align-content: center;
+                align-self: center;
+
+                .veer 
+                {
+                    width: 58vw;
+                    background-color: #E9DCBE;
+                    height: 2px;
+                    
+                    
+                }
+
+                &__up
+                {
+                    display: flex;
+                    flex-wrap: wrap;
+                    justify-content: space-between;
+                    margin-left: 3vw;
+                    margin-right: 3vw;
+                    article
+                    {
+                        width: 200px;
+                        height: 200px;
+                        display: flex;
+                        flex-direction: column;
+                        text-align: center;
+                        flex: 1;
+                        margin-bottom: 3vw;
+
+                        span 
+                        {
+                            font-family: 'Merriweather', serif;
+                            font-size: 3.25vw;
+                            color: #E9DCBE;
+                        }
+
+                        b
+                        {
+                            font-family: 'Merriweather', serif;
+                            font-size: 1.75vw;
+                            margin-bottom: 1vw;
+
+                        }
+
+                        p
+                        {
+                            font-family: 'Merriweather', serif;
+                            font-size: 1.35vw;
+                            width: 23vw;
+                            align-items: center;
+                            align-self: center;
+                            align-content: center;
+                            text-align: center;
+
+                        }
+                    }
+                }
+
+                .divitioLine
+                {
+                  width: 70vw;
+                  background-color: #E9DCBE;
+                  height: 2px;
+                  align-items: center;
+                  align-content: center;
+                  position: absolute;
+                  left: 14%;
+                  align-self: center;
+                }
+
+
+            
+            }
+        }
+    }
+}
