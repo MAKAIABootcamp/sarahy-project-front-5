@@ -12,20 +12,20 @@ const Header = () => {
             <div className='header__info'>
                 <span className='slogan'>Tu momento, nuestra pasión</span>
                 <div className='header__icons'>
-                    <img src={lupa} alt="icono buscar" />
-                    <img src={perfil} alt="icono perfil" />
+                    <img src={lupa} alt="icono buscar" onClick={() => navigate('/perfil')} className='buscar'/>
+                    <img src={perfil} alt="icono perfil" onClick={() => navigate('/ingresar')} className='perfil'/>
                 </div>
             </div>
             <div className="header__logo">
-                <img src={logo} alt="logo" className='logo__home' />    
+                <img src={logo} alt="logo" className='logo__home' onClick={() => navigate('/')}/>    
                 <nav className="header__nav">
                     <ul className='header__list'>
                         <li className='header__list--item' onClick={() => navigate('/')}>Incio</li>
-                        <li className='header__list--item' onClick={() => navigate('/bodas')}>Eventos sociales </li>
-                        <li className='header__list--item' onClick={() => navigate('/cotizacion')}>Eventos Empresariales</li>
+                        <li className='header__list--item'>Eventos sociales </li>
+                        <li className='header__list--item' onClick={() => navigate('/empresariales')}>Eventos Empresariales</li>
                         <li className='header__list--item'>Servicios</li>
-                        <li className='header__list--item'>Ubicaciones</li>
-                        <li className='header__list--item' onClick={() => navigate('/aliados')}
+                        <li className='header__list--item' onClick={() => navigate('/ubicaciones')}>Ubicaciones</li>
+                        <li className='header__list--item' onClick={() => navigate('/quienes-somos')}
                             >Quienes somos</li>
                     </ul>
                 </nav>

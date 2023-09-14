@@ -5,8 +5,10 @@ import facebook from "../../assets/image/face.png";
 import instagram from "../../assets/image/ig.png";
 import whatsapp from "../../assets/image/wpp.png";
 import logoWhite from "../../assets/image/logo-blanco.png";
+import { useNavigate } from 'react-router-dom';
 
 const Footer = () => {
+    const navigate = useNavigate()
     return (
         <footer className="footer">
             <div className="footer__information">
@@ -21,7 +23,7 @@ const Footer = () => {
             <div className="footer__information">
                 <h5>INFORMACIÓN</h5>
                 <span>Quienes somos</span>
-                <span>Alíate con nosotros</span>
+                <span onClick={() => navigate('/aliados')} className='aliados'>Alíate con nosotros</span>
                 <span>Trabaja con nosotros</span>
             </div>
 

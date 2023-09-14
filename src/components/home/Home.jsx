@@ -25,9 +25,11 @@ import sliderEmpresariales from '../../assets/image/empresariales1.jpg'
 import sliderGrados from '../../assets/image/grados.jpg'
 import sliderBufet from '../../assets/image/bufet.jpg'
 import sliderAniversarios from '../../assets/image/bufet.jpg'
+import { useNavigate } from 'react-router-dom';
 
 
 const Home = () => {
+    const navigate = useNavigate()
     return (
         <>
 
@@ -66,7 +68,7 @@ const Home = () => {
             </section>
             <section className='typeEvent__home'>
                 <div className="btns">
-                    <button className="btn__event">bodas</button>
+                    <button className="btn__event" onClick={() => navigate('/bodas')}> bodas</button>
                     <button className="btn__event">Quince años</button>
                     <button className="btn__event">Cumpleaños</button>
                     <button className="btn__event">Empresariales</button>

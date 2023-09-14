@@ -85,7 +85,7 @@ const Domicilio = () => {
 
 
             </section>
-            <button className='domicilio__vermas'>Ver mas ubicaciones</button>
+            <button className='domicilio__vermas'>Haz tu cotización</button>
         </main>
     )
 

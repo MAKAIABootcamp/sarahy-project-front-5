@@ -93,4 +93,9 @@
         border: none;
         border-radius: 12px;
     }
+    .domicilio__vermas:hover{
+       background-color: $color-black;
+       color: white;
+       cursor: pointer;
+    }
 }

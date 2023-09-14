@@ -1,0 +1,77 @@
+@import '../../assets/variables.scss';
+@import '../../assets/reset.scss';
+
+.container__aboutUs {
+    display: flex;
+    flex-direction: column;
+    margin: 2rem;
+
+    .info {
+        display: flex;
+        gap: 2rem;
+        align-items: center;
+        margin-bottom: 0.5rem;
+
+        .fig {
+            width: 70%;
+
+            .img {
+                width: 100%;
+                border-left: 1rem solid $color-cream;
+                border-top: 1rem solid $color-cream;
+                border-bottom-left-radius: 10px;
+                border-top-left-radius: 10px;
+                border-top-right-radius: 10px;
+            }
+        }
+
+        .paragraph {
+            width: 45%;
+            text-align: justify;
+            display: flex;
+            flex-direction: column;
+            gap: 1rem;
+
+            .span {
+                font-family: $Letter-subtitles;
+            }
+
+            .details {
+                font-family: $Letter-body;
+                line-height: 24px;
+            }
+        }
+    }
+
+    .containers__data {
+        display: flex;
+        margin-top: 3rem;
+        justify-content: space-evenly; 
+
+        .data {
+            display: flex;
+            flex-direction: column;
+            width: 40%;
+            align-items: center;
+
+            .span {
+                font-family: $Letter-subtitles;
+            }
+
+            .line {
+                height: 2px;
+                width: 20%;
+                color: $color-cream;
+                background-color: $color-cream;
+                border: none;
+                margin-top: 0.3rem;
+            }
+            .paragraph{
+                font-family: $Letter-body;
+                margin-top: 1rem;
+                text-align: justify; 
+                line-height: 22px;
+            }
+        }
+    }
+}
