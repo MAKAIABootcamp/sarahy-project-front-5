@@ -16,6 +16,7 @@ import EventSocial from '../page/socialEvent/EventSocial';
 import Birthday from '../page/birthday/Birthday';
 import Quote from '../page/quote/Quote';
 import EventCompany from '../page/eventCompany/EventCompany';
+import Services from '../page/ourServices/Services';
 
 const Router = () => {
   return (
@@ -34,7 +35,8 @@ const Router = () => {
         <Route path="/domicilio" element={<Domicilio />} />
         <Route path="/cumpleaños" element={<Birthday />} />
         <Route path="quote" element={<Quote/>} />
-        <Route path="/empresariales'" element={<EventCompany/>} />
+        <Route path="/empresariales" element={<EventCompany/>} />
+        <Route path="/servicios" element={<Services/>} />
 
         {/* <Route path="birthday" element={<Birthday />} />
         <Route path="services" element={<Services/>} />

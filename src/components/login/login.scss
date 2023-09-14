@@ -7,7 +7,9 @@
 
   @import url('https://fonts.googleapis.com/css2?family=Almarai:wght@300&family=Brygada+1918:ital,wght@1,500&display=swap');
 
-
+  @import "../../assets/reset.scss";
+  @import "../../assets/variables.scss";
+  
 
 
 
@@ -58,7 +60,7 @@
     
       max-width: 450px;
 
-      height: 85vh;
+      height: 100%;
       &.register
       {
         height:95vh;
@@ -111,6 +113,20 @@
                 background-color: rgb(233, 220, 190);
                 overflow: hidden;
                 padding: 20px;
+
+                &__button {
+                  font-size: 16px;
+                  padding: 10px;
+                  border-radius: 5px;
+                  border: none;
+                  background-color: $color-black;
+                  color: white;
+                  cursor: pointer;
+                  width: 50%;
+                  display: flex;
+                  align-self: center;
+                  justify-content: center;
+                  }
 
                 &.register
                 {

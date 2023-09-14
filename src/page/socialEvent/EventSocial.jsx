@@ -15,7 +15,7 @@ const EventSocial = () => {
         <section className='listsEventsSocial'>
 
 
-          <CardEventSocial imageIcon={'https://i.ibb.co/wQQWs9w/Layer-3.png'} image={'https://i.ibb.co/8cpdmPY/image-10.png'} text={'Organizamos y Diseñamos bodas inolvidables a tu medida.'} name={'Body'} ruta={'/bodas'} />
+          <CardEventSocial imageIcon={'https://i.ibb.co/wQQWs9w/Layer-3.png'} image={'https://i.ibb.co/8cpdmPY/image-10.png'} text={'Organizamos y Diseñamos bodas inolvidables a tu medida.'} name={'Boda'} ruta={'/bodas'} />
 
           <CardEventSocial imageIcon={'https://i.ibb.co/j5fsbdV/Rectangle-2.png'} image={'https://i.ibb.co/8cpdmPY/image-10.png'} text={'Celebra tu fiesta de quince años de una forma inolvidable.'} name={'Quinceañeros'} />
 
