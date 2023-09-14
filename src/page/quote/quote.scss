@@ -1,0 +1,144 @@
+
+
+.sectionQuote
+{
+    display: flex;
+    flex-direction: column;
+    text-align: center;
+    .containerQuote 
+    {
+        display: flex;
+        flex-direction: column;
+
+        .titleQuote 
+        {
+            margin-top: 2vw;
+            margin-bottom: 0.5vw;
+            font-family: 'Merriweather', serif;
+            font-size: 4vw;
+            text-shadow: 3px 3px 3px #999;
+        }
+
+        .lineTitle
+        {
+            text-align: center;
+            width: 22.5vw;
+            height: 2px;
+            background-color: #E9DCBE;
+            align-self: center;
+            margin-bottom: 5vw;
+        }
+
+        .textQuote
+        {
+            width: 76vw;
+            margin-left: 12vw;
+            margin-right: 12vw;
+            font-family: 'Catamaran', sans-serif;
+            font-size: 2.3vw;
+        }
+
+        .formQuote
+        {
+            width: 100vw;
+            background-image: url('https://i.ibb.co/sFSLdg9/image-79.png');
+            background-size:auto;
+            background-position: center;
+            display: flex;
+
+            
+            form
+            {
+                
+                width: 60vw;
+                display: flex;
+                flex-direction: column;
+                background-color: #E9DCBE;
+                padding: 5vw;
+                border-radius: 10px;
+                margin-top: 4vw;
+                margin-left: 20vw;
+                margin-right: 20vw;
+                margin-bottom: 4vw;
+
+
+                
+                    .loginLabel 
+                    {
+                        margin-left: 5px;
+                        font-size: 16px;
+                        margin-bottom: 5px;
+                        color: rgb(51, 51, 51);
+                        align-self: flex-start;
+                        font-family: 'Brygada 1918', serif;
+                        margin-top: 10px;
+
+                    }
+
+                    .loginDown__input {
+                    border: 0px solid rgb(255, 255, 255);
+                    font-size: 16px;
+                    padding: 10px;
+                    border-radius: 10px;
+                    background-color: rgb(255, 255, 255);;
+                    margin-bottom: 25px;
+                    box-shadow: inset 0 0 5px rgba(0,0,0,0.1);
+                    outline: none;
+                    color: rgb(91, 82, 82);
+                    
+                    }
+
+                    &__error {
+                    font-size: 14px;
+                    color: red;
+                    margin-bottom: 10px;
+                    }
+
+                    &__button {
+                    font-size: 16px;
+                    padding: 10px;
+                    border-radius: 5px;
+                    border: none;
+                    background-color: rgb(255,153,0);
+                    color: white;
+                    cursor: pointer;
+                    }
+
+                    .selectServices
+                    {
+                        margin-bottom: 3.5vw;
+                    }
+
+                    .service__options
+                    {
+                        margin-top: 5px;
+                        display: flex;
+                        flex-direction: column;
+                        align-items: flex-start;
+                        margin-left: 23px;
+                        gap: 10px;
+                        span
+                        {
+                            display: flex;
+                            gap: 10px;
+                        }
+                    }
+
+                .generation
+                {
+                    padding-top: 1.2vw;
+                    border-radius: 10px;
+                    box-shadow: 1px 1px 2px #999;
+                    margin-top: 3vw;
+                    height: 6vw;
+                    align-self: center;
+                    width: 25vw;
+                    color: #FFF;
+                    background-color: #000;
+                    font-family: 'Brygada 1918', serif;
+                    font-size: 2.35vw;
+                }
+            }
+        }
+    }
+}

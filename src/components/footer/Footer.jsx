@@ -5,7 +5,7 @@ import facebook from "../../assets/image/face.png";
 import instagram from "../../assets/image/ig.png";
 import whatsapp from "../../assets/image/wpp.png";
 import logoWhite from "../../assets/image/logo-blanco.png";
-
+ 
 const Footer = () => {
     return (
         <footer className="footer">

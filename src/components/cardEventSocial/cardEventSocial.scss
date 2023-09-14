@@ -1,0 +1,43 @@
+
+
+.cardEventSocial
+{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    width: 94vw;
+    margin-left: 3vw;
+    margin-right: 3vw;
+
+    .infoCardSocial
+    {
+        display: flex;
+        justify-content: center;
+        gap: 10px;
+
+        figure
+        {
+            img
+            {
+                width: 3vw;
+                height: auto;
+            }
+        }
+
+        span
+        {
+            font-family: 'Catamaran', sans-serif;
+            font-size: 1.5vw;
+        }
+    }
+
+    .figureEventSocial
+    {
+        img
+        {
+            width: 35vw;
+            height: auto;
+        }
+    }
+
+}
