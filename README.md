@@ -24,6 +24,6 @@ https://github.com/MAKAIABootcamp/sarahy-project-front-5.git
 `npm run dev`
 
 ## Autores
-- [Maria Paulina Parra](http://https://github.com/MariaPaulinaP "Maria Paulina Parra")
-- [Sebastián Barrera](http://https://github.com/sebastianbarrerah "Sebastián Barrera")
+- [Maria Paulina Parra](https://github.com/MariaPaulinaP "Maria Paulina Parra")
+- [Sebastián Barrera](https://github.com/sebastianbarrerah "Sebastián Barrera")
 - Anyerson Ayola
