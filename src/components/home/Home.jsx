@@ -24,7 +24,8 @@ import sliderCumpleaños from '../../assets/image/cumpleaños.jpg'
 import sliderEmpresariales from '../../assets/image/empresariales1.jpg'
 import sliderGrados from '../../assets/image/grados.jpg'
 import sliderBufet from '../../assets/image/bufet.jpg'
-import sliderAniversarios from '../../assets/image/bufet.jpg'
+import sliderAniversarios from '../../assets/image/bufet.jpg' 
+import adornoFloral2 from '../../assets/image/adornoFloral2.png'
 import { useNavigate } from 'react-router-dom';
 
 
@@ -118,6 +119,16 @@ const Home = () => {
                 </button>
             </section>
 
+            
+            <section className="encantados">
+                <h2 className='encantados__title'>Encantados de verte aqui en sarahy</h2>
+                <span className='encantados__span'> encontraras </span>
+                <hr className='hr__encantados'/>
+                <span className='encantados__descripcion'>Aqui podras encontar los mejores precios y productos de calidad para tus eventos especiales, somos los profesonales que buscabas</span>
+                <img src={servicios1} alt="" className='encantados__img'/> 
+                <img src={adornoFloral2} alt="" className='encantados__img--floral'/>
+            </section>
+
             <section className='beneficios'>
                     <h1 className='beneficios__title'>Beneficios de realizar tu evento con nosotros</h1>
                     <hr className="linea__beneficios" />
@@ -161,7 +172,35 @@ const Home = () => {
                     </div>
             </section>
 
-            <section className="location">
+            <section className="ubicacion">
+                <div className='container__ubicacion--card'>
+                    <div className="card__ubicacion">
+                        <h3 className='ubicacion__title'>Poblado</h3>
+                        <p className='ubicacion__p'>Esta locación la podemos encontrar en todo el centro administrativo de la ciudad contando con unas vistas maravillosas al sur con una accesibilidad a todo tipo de publico</p>
+                        <span className='btn__detalles'>Detalles</span>
+                    </div>
+                    <div className="card__ubicacion">
+                        <h3 className='ubicacion__title'>Poblado</h3>
+                        <p className='ubicacion__p'>Esta locación la podemos encontrar en todo el centro administrativo de la ciudad contando con unas vistas maravillosas al sur con una accesibilidad a todo tipo de publico</p>
+                        <span className='btn__detalles'>Detalles</span>
+                    </div>
+                </div>
+                
+                <div className='container__ubicacion--card'>
+                    <div className="card__ubicacion">
+                        <h3 className='ubicacion__title'>Poblado</h3>
+                        <p className='ubicacion__p'>Esta locación la podemos encontrar en todo el centro administrativo de la ciudad contando con unas vistas maravillosas al sur con una accesibilidad a todo tipo de publico</p>
+                        <span className='btn__detalles'>Detalles</span>
+                    </div>
+                    <div className="card__ubicacion">
+                        <h3 className='ubicacion__title'>Poblado</h3>
+                        <p className='ubicacion__p'>Esta locación la podemos encontrar en todo el centro administrativo de la ciudad contando con unas vistas maravillosas al sur con una accesibilidad a todo tipo de publico</p>
+                        <span className='btn__detalles'>Detalles</span>
+                    </div>
+                </div>
+            </section>
+
+            {/* <section className="location">
                 <div className="title">
                     <img src={star} alt="" className="star" />
                     <img src={line} alt="" className="line" />
@@ -186,7 +225,7 @@ const Home = () => {
                         <button className="btn__location">Ver mas</button>
                     </div>
                 </div>
-            </section>
+            </section> */}
             <section className="comentarios">
                 <h2 className='comentarios__title'>Testimonios</h2>
                 <hr className='hr__services' />
