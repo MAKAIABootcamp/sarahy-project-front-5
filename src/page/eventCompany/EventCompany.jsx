@@ -20,7 +20,7 @@ const EventCompany = () => {
 
                 <CardEventSocial  imageIcon={'https://i.ibb.co/tLVgT4X/image-90.png'} image={'https://i.ibb.co/s2BrTvD/image-9.png'}  text={'Reconoce y celebra los logros destacados en nuestras galas de premiación.'} name={'Gala de Premiación'}   />
 
-                <CardEventSocial  imageIcon={'https://i.ibb.co/nsD0fZ5/image-91.png'} image={'https://i.ibb.co/Fw5YBH4/image-14-2.png'}  text={'Celebra tu fiesta de quince años de una forma inolvidable.'} name={'Quinceañeros'}    />
+                <CardEventSocial  imageIcon={'https://i.ibb.co/nsD0fZ5/image-91.png'} image={'https://i.ibb.co/Fw5YBH4/image-14-2.png'}  text={'Impulsa tu marca con eventos de lanzamiento memorables y efectivos.'} name={'Lanzamiento de Marca'}    />
                 
                 <CardEventSocial  imageIcon={'https://i.ibb.co/QDt9Pgz/image-92.png'} image={'https://i.ibb.co/KK2yF5r/image-17-1.png'}  text={'Eleva tus eventos a un nivel superior con cenas de gala llenas de elegancia y sofisticación.'} name={'Cena de Gala'}   />
 
