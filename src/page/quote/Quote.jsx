@@ -1,4 +1,4 @@
-import React from "react";
+import React, { useState } from "react";
 import "./quote.scss";
 import Header from "../../components/header/Header";
 import Footer from "../../components/footer/Footer";
@@ -8,13 +8,20 @@ import { useForm, Controller } from "react-hook-form";
 const Quote = () => {
   const { register, handleSubmit, formState: { errors }  } = useForm();
 
+  const [one, setOne] = useState(false); 
+  const [Two, setTwo] = useState(false); 
+  const [trhee, setThree] = useState(false); 
+  const [four, setFour] = useState(false); 
+  const [five, setFive] = useState(false); 
+  const [six, setSix] = useState(false);
+
   const onSubmit = (data) => {
     console.log(data);
   };
 
   return (
     <section className="sectionQuote">
-      <Header />
+
       <main className="containerQuote">
         <span className="titleQuote">Cotización</span>
         <span className="lineTitle"></span>
@@ -64,8 +71,8 @@ const Quote = () => {
                 <span className="selectServices">Selecciona los Servicios Deseados</span>
 
                 
-                <span className="loginLabel">1. Catering</span>
-                <div className="service">
+                <span className="loginLabel">1. Catering <img onClick={() => setOne(!one)} src={!one ? 'https://res.cloudinary.com/dibw7aluj/image/upload/v1694702149/expand_more_FILL0_wght400_GRAD0_opsz24_dhc0o5.svg':'https://res.cloudinary.com/dibw7aluj/image/upload/v1694702128/expand_less_FILL0_wght400_GRAD0_opsz24_g48cub.svg'} alt="up" /></span>
+{ one &&                <div className="service">
                     <div className="service__options"> 
                         <span>
 
@@ -102,121 +109,176 @@ const Quote = () => {
                         
                     </div> 
 
-                </div>
+                </div>}
 
-                <span className="loginLabel">2. Fotografía</span>
-
-                    
+                <span className="loginLabel">2. Fotografía <img onClick={() => setTwo(!Two)} src={!Two ? 'https://res.cloudinary.com/dibw7aluj/image/upload/v1694702149/expand_more_FILL0_wght400_GRAD0_opsz24_dhc0o5.svg':'https://res.cloudinary.com/dibw7aluj/image/upload/v1694702128/expand_less_FILL0_wght400_GRAD0_opsz24_g48cub.svg'} alt="up" /></span>
+{ Two &&                <div className="service">
                     <div className="service__options"> 
-                    
                         <span>
 
-                            <input type="radio" id="si-foto" name="fotografia" value="si-foto" {...register("fotografia")}/> 
-                            <label for="si-foto">Sí</label> 
+                            <input type="checkbox" id="Video" name="fotografia[]" value="Video" {...register("fotografia", { required: true })}/>
+                            <label for="Video">Video</label>
 
                         </span>
 
                         <span>
+                            <input type="checkbox" id="animaciones" name="fotografia[]" value="animaciones" {...register("fotografia", { required: true })}/> 
+                            <label for="animaciones">Animaciones</label> 
+                        </span>
 
-                            <input type="radio" id="no-foto" name="fotografia" value="no-foto" {...register("fotografia")}/> 
-                            <label for="no-foto">No</label>
+                        <span>
+
+                            <input type="checkbox" id="fotoRetro" name="fotografia[]" value="fotoRetro" {...register("fotografia", { required: true })}/> 
+                            <label for="fotoRetro">Foto Retro</label> 
 
                         </span>
-                
+
+                        <span>
+                        <input type="checkbox" id="album" name="fotografia[]" value="album" {...register("fotografia", { required: true })}/>
+                        <label for="album">Album</label> 
+                        </span>
+
+                        <span>
+
+                        <input type="checkbox" id="foto360" name="fotografia[]" value="foto360" {...register("fotografia", { required: true })}/> 
+                        <label for="foto360">Fotos 360°</label> 
+
+                        </span>
+
+
+                        
                     </div> 
 
-                    <span className="loginLabel">3. Decoración</span>
+                </div>}
 
-                    <div className="service__options"> 
-                        <span>
 
-                            <input type= "radio" id= "si-deco" name= "decoracion" value= "si-deco"{...register("decoracion")}/> 
-                            <label for= "si-deco">Sí</label> 
 
-                        </span>
+                    <span className="loginLabel">3. Decoración <img onClick={() => setThree(!trhee)} src={!trhee ? 'https://res.cloudinary.com/dibw7aluj/image/upload/v1694702149/expand_more_FILL0_wght400_GRAD0_opsz24_dhc0o5.svg':'https://res.cloudinary.com/dibw7aluj/image/upload/v1694702128/expand_less_FILL0_wght400_GRAD0_opsz24_g48cub.svg'} alt="up" /></span>
+
+{       trhee &&             <div className="service__options"> 
+    <span>
+        <input type="checkbox" id="pintura" value="pintura" {...register("decoracion")}/> 
+        <label for="pintura">Pintura</label> 
+    </span>
+    
+    <span>
+        <input type="checkbox" id="globos" value="globos" {...register("decoracion")}/> 
+        <label for="globos">Globos</label> 
+    </span>
+
+    <span>
+        <input type="checkbox" id="luces" value="luces" {...register("decoracion")}/> 
+        <label for="luces">Luces</label> 
+    </span>
+
+    <span>
+        <input type="checkbox" id="sillas" value="sillas" {...register("decoracion")}/> 
+        <label for="sillas">Sillas</label> 
+    </span>
+
+    <span>
+        <input type="checkbox" id="mesas" value="mesas" {...register("decoracion")}/> 
+        <label for="mesas">Mesas</label> 
+    </span>
+</div>  }
+
+                    <span className="loginLabel" onClick={() => setFour(!four)}>4. Animación <img src={!four ? 'https://res.cloudinary.com/dibw7aluj/image/upload/v1694702149/expand_more_FILL0_wght400_GRAD0_opsz24_dhc0o5.svg':'https://res.cloudinary.com/dibw7aluj/image/upload/v1694702128/expand_less_FILL0_wght400_GRAD0_opsz24_g48cub.svg'} alt="up" /></span>
+
+
+
+                         { four && <div class= "service__options"> 
                         
-                        <span>
+                            <span>
+                                    <input type="checkbox" id="payaso" name="animacion[]" value="payaso" {...register("animacion")}/> 
+                                    <label for="payaso">Payaso</label> 
 
-                            <input type= "radio"id= "no-deco"name= "decoracion"value= "no-deco"{...register("decoracion")}/> 
-                            <label for= "no-deco">No</label> 
+                            </span>
 
-                        </span>
-                    </div>
+                            <span>
+                                <input type="checkbox" id="magia" name="animacion[]" value="magia" {...register("animacion")}/> <label for="magia">Magia</label> 
+                            </span>
 
-                    <span className="loginLabel">4. Animación</span>
+                            <span>
+                                    <input type="checkbox" id="musica" name="animacion[]" value="musica" {...register("animacion")}/> 
+                                    <label for="musica">Música</label> 
+                            </span>
 
+                            <span>
+                                    <input type="checkbox" id="baile" name="animacion[]" value="baile" {...register("animacion")}/> 
+                                        <label for="baile">Baile</label> 
 
+                            </span>
+                            
 
-                    <div class= "service__options"> 
-                       
-                        <span>
-                                <input type="checkbox" id="payaso" name="animacion[]" value="payaso" {...register("animacion")}/> 
-                                <label for="payaso">Payaso</label> 
-
-                        </span>
-
-                        <span>
-                            <input type="checkbox" id="magia" name="animacion[]" value="magia" {...register("animacion")}/> <label for="magia">Magia</label> 
-                        </span>
-
-                        <span>
-                                <input type="checkbox" id="musica" name="animacion[]" value="musica" {...register("animacion")}/> 
-                                <label for="musica">Música</label> 
-                        </span>
-
-                        <span>
-                                <input type="checkbox" id="baile" name="animacion[]" value="baile" {...register("animacion")}/> 
-                                    <label for="baile">Baile</label> 
-
-                        </span>
-                        
-
-                    </div> 
+                        </div> }
 
 
-                    <span className="loginLabel">5. Iluminación</span>
+                    <span className="loginLabel">5. Iluminación <img onClick={() => setFive(!five)} src={!five ? 'https://res.cloudinary.com/dibw7aluj/image/upload/v1694702149/expand_more_FILL0_wght400_GRAD0_opsz24_dhc0o5.svg':'https://res.cloudinary.com/dibw7aluj/image/upload/v1694702128/expand_less_FILL0_wght400_GRAD0_opsz24_g48cub.svg'} alt="up" /></span>
 
-                    <div className="service__options"> 
-                        <span>
+{ five &&                   <div className="service__options"> 
+    <span>
+        <input type= "checkbox" id= "leds" value= "leds"{...register("ilumination")}/> 
+        <label for= "leds">Leds</label> 
+    </span>
+    
+    <span>
+        <input type= "checkbox"id= "velas"value= "velas"{...register("ilumination")}/> 
+        <label for= "velas">Velas</label> 
+    </span>
 
-                            <input type= "radio" id= "si-ilumination" name= "decoracion" value= "si-ilumination"{...register("ilumination")}/> 
-                            <label for= "si-ilumination">Sí</label> 
+    <span>
+        <input type= "checkbox"id= "focos"value= "focos"{...register("ilumination")}/> 
+        <label for= "focos">Focos</label> 
+    </span>
 
-                        </span>
-                        
-                        <span>
+    <span>
+        <input type= "checkbox"id= "laser"value= "laser"{...register("ilumination")}/> 
+        <label for= "laser">Láser</label> 
+    </span>
 
-                            <input type= "radio"id= "no-ilumination"name= "ilumination"value= "no-ilumination"{...register("ilumination")}/> 
-                            <label for= "no-ilumination">No</label> 
+    <span>
+        <input type= "checkbox"id= "neon"value= "neon"{...register("ilumination")}/> 
+        <label for= "neon">Neón</label> 
+    </span>
+</div>}
 
-                        </span>
-                    </div>
 
 
-                    <span className="loginLabel">6. Música y Dj</span>
+                    <span className="loginLabel">6. Música y Dj <img onClick={() => setSix(!six)} src={!six ? 'https://res.cloudinary.com/dibw7aluj/image/upload/v1694702149/expand_more_FILL0_wght400_GRAD0_opsz24_dhc0o5.svg':'https://res.cloudinary.com/dibw7aluj/image/upload/v1694702128/expand_less_FILL0_wght400_GRAD0_opsz24_g48cub.svg'} alt="up" /></span>
 
-                    <div className="service__options"> 
-                        <span>
+                    
+{six && <div className="service__options"> 
+    <span>
+        <input type= "checkbox" id= "rock" value= "rock"{...register("music")}/> 
+        <label for= "rock">Rock</label> 
+    </span>
+    
+    <span>
+        <input type= "checkbox"id= "pop"name= "pop"value= "pop"{...register("music")}/> 
+        <label for= "pop">Pop</label> 
+    </span>
 
-                            <input type= "radio" id= "si-music" name= "music" value= "si-music"{...register("music")}/> 
-                            <label for= "si-music">Sí</label> 
+    <span>
+        <input type= "checkbox"id= "reggaeton"name= "reggaeton"value= "reggaeton"{...register("music")}/> 
+        <label for= "reggaeton">Reggaetón</label> 
+    </span>
 
-                        </span>
-                        
-                        <span>
+    <span>
+        <input type= "checkbox"id= "electronica"name= "electronica"value= "electronica"{...register("music")}/> 
+        <label for= "electronica">Electrónica</label> 
+    </span>
 
-                            <input type= "radio"id= "no-music"name= "music"value= "no-music"{...register("music")}/> 
-                            <label for= "no-music">No</label> 
-
-                        </span>
-                    </div>
-                <span type="submit" className="generation">Generar Cotización</span>
+    <span>
+        <input type= "checkbox"id= "salsa"name= "salsa"value= "salsa"{...register("music")}/> 
+        <label for= "salsa">Salsa</label> 
+    </span>
+</div>}
+                <button type="submit" className="generation">Generar Cotización</button>
             </form>
 
 
         </section>
       </main>
-      <Footer />
     </section>
   );
 };
