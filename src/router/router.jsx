@@ -30,10 +30,12 @@ const Router = () => {
         <Route path="/aliados" element={<Allies />} />
         <Route path="/domicilio" element={<Domicilio />} />
 
-        {/* <Route path="birthday" element={<Birthday />} />
-        <Route path="services" element={<Services/>} />
-        <Route path="quote" element={<Quote/>} /> */}
+        {/* <Route path="/cumpleaños" element={<Birthday />} />  */}
         <Route path="/social" element={<EventSocial />} />
+
+
+        {/* <Route path="services" element={<Services/>} />
+        <Route path="quote" element={<Quote/>} /> */}
         {/* <Route path="eventCompany" element={<EventCompany/>} /> */}
         
 
@@ -43,6 +45,8 @@ const Router = () => {
     </BrowserRouter>
   )
 }
+
+
 
 
 export default Router;

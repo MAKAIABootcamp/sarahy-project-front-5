@@ -21,8 +21,8 @@ const Header = () => {
                 <nav className="header__nav">
                     <ul className='header__list'>
                         <li className='header__list--item' onClick={() => navigate('/')}>Incio</li>
-                        <li className='header__list--item'>Eventos sociales </li>
-                        <li className='header__list--item' onClick={() => navigate('/social')}>Eventos Empresariales</li>
+                        <li className='header__list--item' onClick={() => navigate('/social')}>Eventos sociales </li>
+                        <li className='header__list--item' >Eventos Empresariales</li>
                         <li className='header__list--item'>Servicios</li>
                         <li className='header__list--item' onClick={() => navigate('/ubicaciones')}>Ubicaciones</li>
                         <li className='header__list--item' onClick={() => navigate('/quienes-somos')}

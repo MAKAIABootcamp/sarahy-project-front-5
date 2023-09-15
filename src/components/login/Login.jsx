@@ -1,7 +1,7 @@
 import React from 'react'
 import { useForm } from 'react-hook-form'
 import './login.scss'
-import { loginWithEmailAndPassword } from '../../redux/store/auth/authAction'
+import { loginFacebook, loginGoogle, loginWithEmailAndPassword } from '../../redux/store/auth/authAction'
 import { useDispatch } from 'react-redux'
 import { useNavigate } from 'react-router-dom'
 import { userLogged } from '../../redux/store/auth/authReducer'
@@ -20,6 +20,10 @@ const Login = () => {
   const salir = () => {
     dispatch(userLogged(false))
     navigate("/")
+  }
+
+  const intro = () => {
+    dispatch(loginGoogle())
   }
 
   
@@ -53,8 +57,9 @@ const Login = () => {
 
             <span className='red'>
 
-                    <img src="https://assets.stickpng.com/images/5a951939c4ffc33e8c148af2.png" alt="Google" />
-                    <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/5/51/Facebook_f_logo_%282019%29.svg/2048px-Facebook_f_logo_%282019%29.svg.png" alt="Facebook" />
+                    <img src="https://assets.stickpng.com/images/5847f9cbcef1014c0b5e48c8.png" alt="Google" onClick={intro}/>
+                    <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/5/51/Facebook_f_logo_%282019%29.svg/2048px-Facebook_f_logo_%282019%29.svg.png" alt="Facebook" onClick={loginFacebook}/>
+
             </span>
             <a href="#" className="loginDown__register" onClick={() => navigate("/registro")}>¿No tienes una cuenta? Regístrate aquí</a>
         </div>
