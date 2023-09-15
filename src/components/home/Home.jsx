@@ -69,7 +69,7 @@ const Home = () => {
             </section>
             <section className='typeEvent__home'>
                 <div className="btns">
-                    <button className="btn__event" onClick={() => navigate('/bodas')}> bodas</button>
+                    <button className="btn__event" onClick={() => navigate('/bodas')}> Bodas</button>
                     <button className="btn__event">Quince años</button>
                     <button className="btn__event">Cumpleaños</button>
                     <button className="btn__event">Empresariales</button>

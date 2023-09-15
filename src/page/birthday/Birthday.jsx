@@ -2,12 +2,14 @@ import React from 'react'
 import './birthday.scss'
 import Header from '../../components/header/Header'
 import Footer from '../../components/footer/Footer'
+import { useNavigate } from 'react-router-dom'
 
 const Birthday = () => {
+    const navigate = useNavigate();
   return (
     <section className='bithdayContainer'>
 
-        <Header/>
+
 
         <main className='containerBirthday'>
             <span className='titleBrith'>Cumpleaños</span>
@@ -59,7 +61,7 @@ const Birthday = () => {
                     </div>
                 </figure> 
 
-                <span className='types__button'>
+                <span className='types__button' onClick={() => navigate('/quote')}>
                     Haz tu cotización
                 </span>
 
@@ -122,7 +124,7 @@ const Birthday = () => {
             
         </main>
 
-        <Footer/>
+
 
     </section>
   )

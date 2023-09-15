@@ -31,7 +31,7 @@ const Login = () => {
   
   return (
     <main className="login">
-      <img src='https://res.cloudinary.com/dibw7aluj/image/upload/v1694414835/Vector_v5muay.png' alt="Back" className="login__back" /> 
+      {/* <img src='https://res.cloudinary.com/dibw7aluj/image/upload/v1694414835/Vector_v5muay.png' alt="Back" className="login__back" />  */}
       <section className="login__container">
         <div className='loginUp'>
 
@@ -63,8 +63,6 @@ const Login = () => {
             </span>
             <a href="#" className="loginDown__register" onClick={() => navigate("/registro")}>¿No tienes una cuenta? Regístrate aquí</a>
         </div>
-
-        <button onClick={salir}>Salir</button>
 
 
       </section>

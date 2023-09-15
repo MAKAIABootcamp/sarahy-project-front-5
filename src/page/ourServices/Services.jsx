@@ -5,10 +5,10 @@ import OneService from '../../components/oneService/OneService';
 import Footer from '../../components/footer/Footer';
 
 const Services = () => {
+
   return (
     <section className='ourServices'>
 
-        <Header/>
 
         <main className='containerServices'>
 
@@ -45,7 +45,6 @@ const Services = () => {
 
 
         </main>
-        <Footer/>
 
     </section>
   )
