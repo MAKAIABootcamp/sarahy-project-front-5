@@ -1,6 +1,16 @@
-import { GoogleAuthProvider, createUserWithEmailAndPassword, signInWithEmailAndPassword, signInWithPopup, updateProfile, FacebookAuthProvider  } from "firebase/auth";
+import {
+  GoogleAuthProvider,
+  createUserWithEmailAndPassword,
+  signInWithEmailAndPassword,
+  signInWithPopup,
+  updateProfile,
+  FacebookAuthProvider,
+} from "firebase/auth";
 import { auth } from "../../../firebase/firebaseConfig";
-import { createAnUserInCollection, getUserFromCollection } from "../../../services/getUser";
+import {
+  createAnUserInCollection,
+  getUserFromCollection,
+} from "../../../services/getUser";
 import { setError, userDataLogged, userLogged } from "./authReducer";
 
 export const createAnUser = (newUser) => {
@@ -39,7 +49,11 @@ export const createAnUser = (newUser) => {
 export const loginWithEmailAndPassword = (loggedUser) => {
   return async (dispatch) => {
     try {
-      const { user } = await signInWithEmailAndPassword(auth, loggedUser.email, loggedUser.password);
+      const { user } = await signInWithEmailAndPassword(
+        auth,
+        loggedUser.email,
+        loggedUser.password
+      );
       const foundUser = await getUserFromCollection(user.uid);
       console.log("respuesta firebase", user);
       console.log("respuesta firestore", foundUser);
@@ -49,57 +63,64 @@ export const loginWithEmailAndPassword = (loggedUser) => {
       dispatch(setError(false));
     } catch (error) {
       console.log(error);
-      dispatch(setError({
-        error: true,
-        code: error.code,
-        message: error.message
-      }))
+      dispatch(
+        setError({
+          error: true,
+          code: error.code,
+          message: error.message,
+        })
+      );
     }
-  }
-}
+  };
+};
 
 export const loginGoogle = () => {
   return async (dispatch) => {
-  try {
-    const provider = new GoogleAuthProvider()
-    const { user } = await signInWithPopup(auth, provider)
+    try {
+      const provider = new GoogleAuthProvider();
+      const { user } = await signInWithPopup(auth, provider);
 
-    const dataUser = {
-      nombre: user.displayName,
-      email: user.email,
-      uid: user.uid,
-      foto: user.photoURL,
-      numero: user.phoneNumber
+      const dataUser = {
+        nombre: user.displayName,
+        email: user.email,
+        uid: user.uid,
+        foto: user.photoURL,
+        numero: user.phoneNumber,
+      };
+      console.log(dataUser);
+      dispatch(userLogged(true));
+      dispatch(userDataLogged(dataUser));
+      dispatch(setError(false));
+    } catch (error) {
+      console.log(error.code);
+      dispatch(
+        setError({
+          error: true,
+          code: error.code,
+          message: error.message,
+        })
+      );
     }
-    console.log(provider);
-    dispatch(userLogged(true));
-    dispatch(userDataLogged(dataUser));
-    dispatch(setError(false));
-  } catch (error) {
-    console.log(error.code);
-    dispatch(setError({
-      error: true,
-      code: error.code,
-      message: error.message
-    }))
-  }}
+  };
+};
 
-}
-export const loginFacebook = async() => {
-  try {
-    const provider = new FacebookAuthProvider()
-    const { userFace } = await signInWithPopup(auth, provider)
-
-    const dataUserFace = {
-      nombre: user.displayName,
-      email: user.email,
-      uid: user.uid,
-      foto: user.photoURL,
-      numero: user.phoneNumber
+export const loginFacebook = () => {
+  return async (dispatch) => {
+    try {
+      const provider = new FacebookAuthProvider();
+      const userFace = await signInWithPopup(auth, provider);
+      const dataUserFace = {
+        nombre: userFace.user.displayName,
+        email: userFace.user.email,
+        uid: userFace.user.uid,
+        foto: userFace.user.photoURL,
+        numero: userFace.user.phoneNumber,
+      };
+      dispatch(userLogged(true));
+      dispatch(userDataLogged(dataUserFace));
+      dispatch(setError(false));
+    } catch (error) {
+      console.log(error.code);
     }
-    console.log(userFace);
-
-  } catch (error) {
-    console.log(error.code);
-  }
-}
+  };
+};

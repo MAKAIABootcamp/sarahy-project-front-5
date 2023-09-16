@@ -26,6 +26,10 @@ const Login = () => {
     dispatch(loginGoogle())
   }
 
+  const introFacebook = () => {
+    dispatch(loginFacebook())
+  }
+
   
 
   
@@ -58,13 +62,11 @@ const Login = () => {
             <span className='red'>
 
                     <img src="https://assets.stickpng.com/images/5847f9cbcef1014c0b5e48c8.png" alt="Google" onClick={intro}/>
-                    <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/5/51/Facebook_f_logo_%282019%29.svg/2048px-Facebook_f_logo_%282019%29.svg.png" alt="Facebook" onClick={loginFacebook}/>
+                    <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/5/51/Facebook_f_logo_%282019%29.svg/2048px-Facebook_f_logo_%282019%29.svg.png" alt="Facebook" onClick={introFacebook}/>
 
             </span>
             <a href="#" className="loginDown__register" onClick={() => navigate("/registro")}>¿No tienes una cuenta? Regístrate aquí</a>
         </div>
-
-
       </section>
     </main>
   )
