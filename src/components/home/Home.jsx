@@ -1,5 +1,5 @@
 // react
-import React from 'react'
+import React, { useEffect } from 'react'
 import './home.scss';
 
 // swiper
@@ -27,10 +27,57 @@ import sliderBufet from '../../assets/image/bufet.jpg'
 import sliderAniversarios from '../../assets/image/bufet.jpg' 
 import adornoFloral2 from '../../assets/image/adornoFloral2.png'
 import { useNavigate } from 'react-router-dom';
+import { getService } from '../../services/getServices';
+import { addNewService } from '../../services/addNewService';
+import { editServiceField } from '../../services/editServicesFild';
+import { deleteServiceField } from '../../services/deleteServiceFild';
 
 
 const Home = () => {
     const navigate = useNavigate()
+    useEffect( () => 
+    {
+        const getServiceAll = async () => 
+        {
+            const date = await getService('photography');
+            
+            if(date)
+            {
+                console.log('Los Servicios de foto son: ', date);
+            }
+            else
+            {
+                console.log('Acción fallida.')
+            }
+        }
+
+        const addService = async () => 
+        {
+            const nuevoServicio = {
+                description: "Graba ese momento para un futuro. ",
+                image: "URL de la nueva imagen",
+                name: "Movie",
+                price: 110000,
+              };
+              
+            await addNewService('photography', nuevoServicio);
+            
+
+        }
+
+        const editService = async () => 
+        {
+            await editServiceField("photography", "Fotolibro30x40.description", "Aquí se proporciona un album de fotos luego del evento. Y a un bajo costo.");
+        } 
+
+        const deleteService = async() => 
+        {
+            await deleteServiceField("photography", "Movie");
+        }
+
+        deleteService();
+
+    },[])
     return (
         <>
 
@@ -134,7 +181,7 @@ const Home = () => {
                     <hr className="linea__beneficios" />
                     <div className="container__beneficios">
                         <div className='beneficio__card'>
-                            <span class="material-symbols-outlined">
+                            <span className="material-symbols-outlined">
                                 savings
                             </span>
                             <span className='card__beneficio--title'>
@@ -146,7 +193,7 @@ const Home = () => {
                         </div>
 
                         <div className='beneficio__card'>
-                        <span class="material-symbols-outlined">
+                        <span className="material-symbols-outlined">
                             hourglass_empty
                         </span>
                             <span className='card__beneficio--title'>
@@ -158,7 +205,7 @@ const Home = () => {
                         </div>
 
                         <div className='beneficio__card'>
-                            <span class="material-symbols-outlined">
+                            <span className="material-symbols-outlined">
                                 phone_iphone
                             </span>
                             <span className='card__beneficio--title'>

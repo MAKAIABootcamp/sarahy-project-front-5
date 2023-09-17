@@ -186,7 +186,7 @@ const Quote = () => {
 
 
 
-                         { four && <div class= "service__options"> 
+                         { four && <div className= "service__options"> 
                         
                             <span>
                                     <input type="checkbox" id="payaso" name="animacion[]" value="payaso" {...register("animacion")}/> 
