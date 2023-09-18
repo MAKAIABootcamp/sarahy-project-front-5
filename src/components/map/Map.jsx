@@ -1,9 +1,9 @@
 import React from 'react';
-import { MapContainer, Marker, Popup, TileLayer } from 'react-leaflet';
+import marcador from '../../assets/image/puntoMapa.png'
+import { MapContainer, Marker, Polyline, Popup, TileLayer } from 'react-leaflet';
 import 'leaflet/dist/leaflet.css';
 import './map.scss';
 import icono from 'leaflet/dist/images/Marker-icon.png';
-import iconoSombra from 'leaflet/dist/images/Marker-icon.png';
 import Leaflet from 'leaflet'
 
 
@@ -16,7 +16,7 @@ const Map = () => {
 
   const image = new Leaflet.icon({
     iconUrl: icono,          // URL del icono
-   // URL de la sombra
+    // URL de la sombra
     iconSize: [35, 47],      // tamaño del icono (ancho, alto)
     shadowSize: [50, 64],    // tamaño de la sombra (ancho, alto)
     iconAnchor: [22, 94],    // punto del icono que corresponderá a la ubicación del marcador
@@ -24,10 +24,9 @@ const Map = () => {
     popupAnchor: [-3, -76]   // punto desde el cual se abrirá el popup en relación con iconAnchor
   })
 
-
   return (
     <div>
-      <MapContainer center={colombiaCoords} zoom={13} scrollWheelZoom={true} className='map-container'>
+      <MapContainer center={colombiaCoords} zoom={14} scrollWheelZoom={true} className='map-container'>
         <TileLayer
           url="https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png"
         />
@@ -37,8 +36,13 @@ const Map = () => {
           </Popup>
         </Marker>
         <Marker position={salonLaureles} icon={image}>
-          <Popup>
-            Salon laureles
+        <Popup>
+            <div>
+              <h2>Salón Laureles</h2>
+              <p>Telefono: {"direccion"}</p>
+              <p>Telefono: {"telefono"}</p>
+              <p>Otra información adicional aquí...</p>
+            </div>
           </Popup>
         </Marker>
       </MapContainer>
