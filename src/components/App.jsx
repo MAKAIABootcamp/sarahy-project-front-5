@@ -1,10 +1,12 @@
 import React from 'react'
 import Router from '../router/router';
+import Map from './map/Map';
 
 
 function App() {
   return (
-    <Router />
+    // <Router />
+    <Map />
   )
 }
 
