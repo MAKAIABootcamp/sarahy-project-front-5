@@ -6,8 +6,8 @@ import Map from './map/Map';
 
 function App() {
   return (
-    // <Router />
-    <Map />
+    <Router />
+    // <Map />
   )
 }
 
