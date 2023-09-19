@@ -16,12 +16,16 @@ import EventSocial from '../page/socialEvent/EventSocial';
 import Birthday from '../page/birthday/Birthday';
 import Quote from '../page/quote/Quote';
 import EventCompany from '../page/eventCompany/EventCompany';
+import Services from '../page/ourServices/Services';
+// import PrivateRoutes from './privateRoutes';
 
 const Router = () => {
   return (
     <BrowserRouter>
-      <Header/>
-    <Routes>
+      <Header />
+      <Routes>
+
+        {/* publicas */}
         <Route path="/" element={<Home />} />
         <Route path="/ingresar" element={<Login />} />
         <Route path="/registro" element={<Register />} />
@@ -33,22 +37,20 @@ const Router = () => {
         <Route path="/aliados" element={<Allies />} />
         <Route path="/domicilio" element={<Domicilio />} />
         <Route path="/cumpleaños" element={<Birthday />} />
-        <Route path="quote" element={<Quote/>} />
-        <Route path="/empresariales'" element={<EventCompany/>} />
-
-        {/* <Route path="birthday" element={<Birthday />} />
-        <Route path="services" element={<Services/>} />
-        <Route path="quote" element={<Quote/>} /> */}
+        <Route path="quote" element={<Quote />} />
+        <Route path="/empresariales" element={<EventCompany />} />
         <Route path="/social" element={<EventSocial />} />
-        {/*  */}
-        
+
+     
 
 
-    </Routes>
-        <Footer/>
+      </Routes>
+      <Footer />
     </BrowserRouter>
   )
 }
+
+
 
 
 export default Router;
