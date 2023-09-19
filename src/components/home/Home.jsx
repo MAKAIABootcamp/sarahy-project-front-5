@@ -31,6 +31,7 @@ import { getService } from '../../services/getServices';
 import { addNewService } from '../../services/addNewService';
 import { editServiceField } from '../../services/editServicesFild';
 import { deleteServiceField } from '../../services/deleteServiceFild';
+import { addNewQuote } from '../../services/addNewQuote';
 
 
 const Home = () => {
@@ -56,7 +57,7 @@ const Home = () => {
             const nuevoServicio = {
                 description: "Graba ese momento para un futuro. ",
                 image: "URL de la nueva imagen",
-                name: "Movie",
+                name: "Captura Históricas",
                 price: 110000,
               };
               
@@ -67,7 +68,7 @@ const Home = () => {
 
         const editService = async () => 
         {
-            await editServiceField("photography", "Fotolibro30x40.description", "Aquí se proporciona un album de fotos luego del evento. Y a un bajo costo.");
+            await editServiceField("photography", "Fotolibro30x40.description", "Nuevo título para prueba.");
         } 
 
         const deleteService = async() => 
@@ -75,7 +76,15 @@ const Home = () => {
             await deleteServiceField("photography", "Movie");
         }
 
+
+        const addQuote = async() => 
+        {
+            const quote = {event: "Cumpleaños", servicios: [1, 2, 3, 4], total: 58900 }
+            await addNewQuote("JlQjLzQgnyNH27JozbhUv28atw22", quote);
+        }
+
         deleteService();
+
 
     },[])
     return (
