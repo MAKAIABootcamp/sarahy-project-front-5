@@ -64,6 +64,7 @@ const WeddingPage = () => {
                     <ServiceWeddingPlan image={'https://i.ibb.co/R2MFwTp/image-121-5.png'} text={'Catering'}/>
                     <ServiceWeddingPlan image={'https://i.ibb.co/LZmMfJm/image-121-7.png'} text={'Pastel de boda'}/>
                     <ServiceWeddingPlan image={'https://i.ibb.co/2dxynvV/image-121-9.png'} text={'Lugares de celebración'}/>
+                    <ServiceWeddingPlan image={'https://i.ibb.co/T8K1CNb/image-121-4.png'} text={'Decoración'}/>
 
                 </section>
             </article>
