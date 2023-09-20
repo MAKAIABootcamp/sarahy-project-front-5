@@ -24,8 +24,8 @@ function Companies() {
             Sarahy, hacemos realidad tus ideas para fortalecer tu equipo y
             celebrar el éxito de tu empresa. ¡Hagámoslo juntos!"
           </p>
-          <span className="span">Nuestros servicios</span>
-          <hr className="line" />
+          {/* <span className="span">Nuestros servicios</span> */}
+          {/* <hr className="line" /> */}
         </div>
 
         <div className="cards">
