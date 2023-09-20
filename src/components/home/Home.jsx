@@ -113,7 +113,7 @@ const Home = () => {
                             <li className='navbar__items'>Eventos empresariales</li>
                             <li className='navbar__items--logo'>{<img src={logo} className='logo__item--img' />}</li>
                             <li className='navbar__items'>Seamos aliados</li>
-                            <li className='navbar__items'>Contactanos</li>
+                            <li className='navbar__items'>Contáctanos</li>
                             <li className='navbar__items'>Cotiza aquí</li>
                         </ul>
                     </nav>

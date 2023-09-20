@@ -35,7 +35,7 @@ const CustomModal = ({ isOpen, onRequestClose }) => {
       <section className="informacion__modal">
         <div className='informacion__modal--titulo'>
           <h1 className='titulo__modal'>
-            CONVENIO BOSTON
+            Convenio Bostón
           </h1>
           <img src={capacidad} alt="" className='imagen__modal--icono' />
           <span className='capacidad__modal'>
@@ -45,7 +45,10 @@ const CustomModal = ({ isOpen, onRequestClose }) => {
         <div className='informacion__modal--mapa'>
           <Map />
         </div>
+        
       </section>
+      <div className='div__info2'>
+        </div>
     </Modal>
   )
 }

@@ -26,22 +26,16 @@ const Map = () => {
 
   return (
     <div>
-      <MapContainer center={colombiaCoords} zoom={14} scrollWheelZoom={true} className='map-container'>
+      <MapContainer center={casaBoston} zoom={14} scrollWheelZoom={true} className='map-container'>
         <TileLayer
           url="https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png"
         />
         <Marker position={casaBoston} icon={image}>
           <Popup>
             Casa de Boston.
-          </Popup>
-        </Marker>
-        <Marker position={salonLaureles} icon={image}>
-        <Popup>
             <div>
-              <h2>Salón Laureles</h2>
-              <p>Telefono: {"direccion"}</p>
-              <p>Telefono: {"telefono"}</p>
-              <p>Otra información adicional aquí...</p>
+              <h2>Convenio Bostón</h2>
+              <p>Telefono: 2365968</p>
             </div>
           </Popup>
         </Marker>

@@ -9,6 +9,7 @@ import {
 import { useDispatch } from "react-redux";
 import { useNavigate } from "react-router-dom";
 import { userLogged } from "../../redux/store/auth/authReducer";
+import Swal from "sweetalert2";
 
 const Login = () => {
   const navigate = useNavigate();
@@ -31,6 +32,14 @@ const Login = () => {
 
   const intro = () => {
     dispatch(loginGoogle());
+    Swal.fire({
+      position: 'top-end',
+      icon: 'success',
+      title: 'Ingreso exitoso',
+      showConfirmButton: false,
+      timer: 1500
+    })
+    navigate("/");
   };
 
   const introFacebook = () => {
