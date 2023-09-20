@@ -24,7 +24,7 @@
     width: 100vw;
     background-image: url('https://i.ibb.co/C7TCFcH/Inicio-de-Sesi-n.png'); // la imagen de fondo que tienes con una opacidad del 30%
     padding: 0px;
-    
+    overflow: hidden;
     background-size:contain;
     background-position: center;
     display: flex;
@@ -41,6 +41,16 @@
         height: 100%;
         background-color: white;
         opacity: 0.3;
+
+        button {
+                    font-size: 16px;
+                    padding: 10px;
+                    border-radius: 5px;
+                    border: none;
+                    background-color: rgb(255,153,0);
+                    color: white;
+                    cursor: pointer;
+                    }
         
       }
   
@@ -60,7 +70,11 @@
     
       max-width: 450px;
 
+<<<<<<< HEAD
+      height: 98vh;
+=======
       height: 100%;
+>>>>>>> 114ed6f01e3b56243e8e928bc43b553997cb729f
       &.register
       {
         height:95vh;
@@ -182,7 +196,7 @@
                     margin-bottom: 10px;
                     }
 
-                    &__button {
+                    button {
                     font-size: 16px;
                     padding: 10px;
                     border-radius: 5px;

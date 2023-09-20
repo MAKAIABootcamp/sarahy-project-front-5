@@ -35,7 +35,11 @@ const Login = () => {
   
   return (
     <main className="login">
+<<<<<<< HEAD
+       
+=======
       {/* <img src='https://res.cloudinary.com/dibw7aluj/image/upload/v1694414835/Vector_v5muay.png' alt="Back" className="login__back" />  */}
+>>>>>>> 114ed6f01e3b56243e8e928bc43b553997cb729f
       <section className="login__container">
         <div className='loginUp'>
 
@@ -67,6 +71,13 @@ const Login = () => {
             </span>
             <a href="#" className="loginDown__register" onClick={() => navigate("/registro")}>¿No tienes una cuenta? Regístrate aquí</a>
         </div>
+<<<<<<< HEAD
+
+        {/* <button className='outSalir' onClick={salir}>Salir</button> */}
+
+
+=======
+>>>>>>> 114ed6f01e3b56243e8e928bc43b553997cb729f
       </section>
     </main>
   )

@@ -1,5 +1,5 @@
 // react
-import React, { useState } from 'react'
+import React from 'react'
 import './home.scss';
 
 // swiper
@@ -35,7 +35,6 @@ import celGota from '../../assets/image/celGota.png'
 
 
 import { useNavigate } from 'react-router-dom';
-import CustomModal from '../modal/CustomModal';
 
 
 const Home = () => {
@@ -51,6 +50,57 @@ const Home = () => {
       };
 
     const navigate = useNavigate()
+    useEffect( () => 
+    {
+        const getServiceAll = async () => 
+        {
+            const date = await getService('photography');
+            
+            if(date)
+            {
+                console.log('Los Servicios de foto son: ', date);
+            }
+            else
+            {
+                console.log('Acción fallida.')
+            }
+        }
+
+        const addService = async () => 
+        {
+            const nuevoServicio = {
+                description: "Graba ese momento para un futuro. ",
+                image: "URL de la nueva imagen",
+                name: "Captura Históricas",
+                price: 110000,
+              };
+              
+            await addNewService('photography', nuevoServicio);
+            
+
+        }
+
+        const editService = async () => 
+        {
+            await editServiceField("photography", "Fotolibro30x40.description", "Nuevo título para prueba.");
+        } 
+
+        const deleteService = async() => 
+        {
+            await deleteServiceField("photography", "Movie");
+        }
+
+
+        const addQuote = async() => 
+        {
+            const quote = {event: "Cumpleaños", servicios: [1, 2, 3, 4], total: 58900 }
+            await addNewQuote("JlQjLzQgnyNH27JozbhUv28atw22", quote);
+        }
+
+        deleteService();
+
+
+    },[])
     return (
         <>
             <main className="main__home">
