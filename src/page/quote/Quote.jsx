@@ -28,6 +28,7 @@ const Quote = () => {
     const dateSelected = watch('date', '');
     const music = watch('music', []);
 
+
     useEffect(() => {
         console.log('La fecha seleccionada es: ', dateSelected, '. ');
         const selectedDate = new Date(dateSelected);
@@ -85,36 +86,67 @@ const Quote = () => {
     useEffect(() => {
         let total = 0;
 
-        for (let option of catering) {
-            // suma al total el precio de la opción multiplicado por el número de asistentes
-            total += prices.catering[option] * attendees;
+        console.log('EL CATERING ES: ', catering);
+        console.log('Su lenght es: ', catering.lenght)
+        if (catering.length >0 )
+        {
+            for (let option of catering) {
+                // suma al total el precio de la opción multiplicado por el número de asistentes
+                total += prices.catering[option] * attendees;
+    
+            }
+
 
         }
 
-        for (let option of photograpy) {
-            // suma al total el precio de la opción multiplicado por el número de asistentes
-            total += prices.photograpy[option];
+        if(photograpy.length > 0) 
+        {
+            for (let option of photograpy) {
+                // suma al total el precio de la opción multiplicado por el número de asistentes
+                total += prices.photograpy[option];
+            }
+
         }
 
-        for (let option of decor) {
-            // suma al total el precio de la opción multiplicado por el número de asistentes
-            total += prices.decor[option];
+
+        if(decor.length >0) 
+        {
+        
+            for (let option of decor) {
+                // suma al total el precio de la opción multiplicado por el número de asistentes
+                total += prices.decor[option];
+            }
+        
         }
 
-        for (let option of animation) {
-            // suma al total el precio de la opción multiplicado por el número de asistentes
-            total += prices.animation[option];
-            console.log('AAAAAAA', prices.animation[option])
+        if(animation.length > 0) 
+        {
+            for (let option of animation) {
+                // suma al total el precio de la opción multiplicado por el número de asistentes
+                total += prices.animation[option];
+                console.log('AAAAAAA', prices.animation[option])
+            }
+
         }
 
-        for (let option of ilumination) {
-            // suma al total el precio de la opción multiplicado por el número de asistentes
-            total += prices.ilumination[option];
+
+        if(ilumination.length > 0) 
+        {
+            for (let option of ilumination) {
+                // suma al total el precio de la opción multiplicado por el número de asistentes
+                total += prices.ilumination[option];
+            }
         }
 
-        for (let option of music) {
-            // suma al total el precio de la opción multiplicado por el número de asistentes
-            total += prices.music[option];
+        if (music.length > 0) 
+        {
+            
+            for (let option of music) {
+                // suma al total el precio de la opción multiplicado por el número de asistentes
+                total += prices.music[option];
+            }
+
+
         }
 
         console.log('El total es: ', total);
