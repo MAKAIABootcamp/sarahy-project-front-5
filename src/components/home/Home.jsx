@@ -145,11 +145,16 @@ const Home = () => {
                 </section>
 
                 <section className='main__info'>
-                    <h1 className='main__title__home'>Bienvenido a</h1>
-                    <h4 className='main__subtitle'>Celebraciones Sarahy</h4>
-                    <p className="main__parrafo">
-                        Somos expertos en hacer eventos memorables. Con una pasión por la perfección y una atención meticulosa a cada detalle, nuestro objetivo es convertir tu boda en un día inolvidable. Desde la elección del lugar hasta la decoración, la gastronomía y la música, nos enorgullece crear experiencias únicas que reflejen tus sueños y deseos. Confía en nosotros para convertir tu día especial en un recuerdo que atesorarás para toda la vida
-                    </p>
+                    <img src={logoIzquierda} alt="" className='logoIzquierda'/>
+                    <div className="container__intro">
+                        <h1 className='main__title__home'>Bienvenido a</h1>
+                        <h4 className='main__subtitle'>Celebraciones Sarahy</h4>
+                        <p className="main__parrafo">
+                            Somos expertos en hacer eventos memorables. Con una pasión por la perfección y una atención meticulosa a cada detalle, nuestro objetivo es convertir tu boda en un día inolvidable. Desde la elección del lugar hasta la decoración, la gastronomía y la música, nos enorgullece crear experiencias únicas que reflejen tus sueños y deseos. Confía en nosotros para convertir tu día especial en un recuerdo que atesorarás para toda la vida
+                        </p>
+
+                    </div>
+                    <img src={logoDerecha} alt="" className='logoDerecha'/>
                 </section>
 
                 <section className='typeEvent__home'>
@@ -163,7 +168,7 @@ const Home = () => {
 
                     <div className='event__info'>
                         <div className='event__description'>
-                            <h2 className='description__title'>La boda de tus sueños</h2>
+                            <h2 className='description__title'>LA BODA DE TUS SUEÑOS</h2>
                             <p className='description__parrafo'>
                                 Somos expertos en crear eventos memorables y nos enorgullece hacer que tu boda sea perfecta en cada detalle. Desde la elección del lugar hasta la decoración y el menú, dedicamos toda nuestra pasión para que tu día sea inolvidable
                             </p>
@@ -180,11 +185,11 @@ const Home = () => {
 
 
                 <section className="services">
-                    <h2 className='services__title'>Conoce más de nuestros servicios</h2>
+                    <h2 className='services__title'>CONOCE NUESTROS SERVICIOS</h2>
                     <div className='container__cards--services'>
 
                         <div className="card__services">
-                            <h3 className='card__services--title'>musica</h3>
+                            <h3 className='card__services--title'>FOTOGRAFÍA</h3>
                             <img src={servicios1} alt="Imagen del servicio ofrecido" className='img__services' />
                             <span className='card__services--span'>
                                 Guardar los mejores momentos de tu evento con fotografias y videos de la mejor calidad.
@@ -193,7 +198,7 @@ const Home = () => {
                         </div>
 
                         <div className="card__services">
-                            <h3 className='card__services--title'>Decoración</h3>
+                            <h3 className='card__services--title'>DECORACIÓN</h3>
                             <img src={servicios2} alt="Imagen del servicio ofrecido" className='img__services' />
                             <span className='card__services--span'>
                                 Transformamos espacios en escenarios de ensueño con nuestra decoración experta
@@ -202,7 +207,7 @@ const Home = () => {
                         </div>
 
                         <div className="card__services">
-                            <h3 className='card__services--title'>Catering</h3>
+                            <h3 className='card__services--title'>CATERING</h3>
                             <img src={servicios3} alt="Imagen del servicio ofrecido" className='img__services' />
                             <span className='card__services--span'>
                                 Deléitate con nuestro exquisito servicio de catering y saborea el éxito de tu evento
@@ -222,7 +227,7 @@ const Home = () => {
                         <h2 className='encantados__title'>Encantados de verte aqui </h2>
                         <div className="logo__subtitulo">
                             <img src={loguito} alt="" className='encantado__subtitulo--img' />
-                            <h4 className='encantado__subtitulo'>en sarahy encontraras... </h4>
+                            <h4 className='encantado__subtitulo'>En Sarahy encontrarás... </h4>
                         </div>
                         <p className="encantados__descripcion">
                             Aqui podrás encontrar los mejores precios y productos de calidad para tus eventos especiales, somos los profesionales que buscabas.
@@ -232,7 +237,7 @@ const Home = () => {
                 </section>
 
                 <section className='beneficios'>
-                    <h1 className='beneficios__title'>Beneficios de realizar tu evento con nosotros</h1>
+                    <h1 className='beneficios__title'>BENEFICIOS DE REALIZAR TU EVENTO CON NOSOTROS</h1>
                     <div className="container__beneficios">
                         <div className='beneficio__card card__beneficio--1'>
                             <img src={marrano} alt="" className="icnono__beneficios"/>
@@ -342,13 +347,13 @@ const Home = () => {
 
                
                 <section className="comentarios">
-                    <h2 className='comentarios__title'>Testimonios</h2>
+                    <h2 className='comentarios__title'>TESTIMONIOS</h2>
                     <hr className='hr__services' />
                     <div className="container__cards--coments">
                         <div className='container__comen'>
                             <img src={testimonio1} alt="imagen de comentario" className='img__comentario' />
                             <span className="testimonio">
-                                Excelente servicio, me agradaron mucho las personas de logistica son muy amables y la pagina es perfecta los quiero
+                                Realizarón la boda de mis sueños muchas gracias...
                             </span>
                             <div className="container__calificacion">
                                 <img src={corazon1} alt="star-calificacion" className='star-calificacion' />
@@ -374,7 +379,7 @@ const Home = () => {
                         <div className='container__comen'>
                             <img src={testimonio3} alt="imagen de comentario" className='img__comentario' />
                             <span className="testimonio">
-                                Excelente servicio, me agradaron mucho las personas de logistica son muy amables y la pagina es perfecta los quiero
+                              Los recomiendo demasiado los mejores en prestar este tipo de servicios
                             </span>
                             <div className="container__calificacion">
                                 <img src={corazon1} alt="star-calificacion" className='star-calificacion' />

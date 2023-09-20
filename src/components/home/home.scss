@@ -34,7 +34,7 @@
         }
     }
     .slider__home {
-        height: 770px;
+        height: 27rem;
         width: 100%;
         background-color: $color-cream;
 
@@ -78,37 +78,54 @@
 
     .main__info {
         display: flex;
-        flex-direction: column;
         width: 100%;
-        padding: 60px 30px;
+        padding: 40px 30px;
         background-color: $color-white;
+        justify-content: space-evenly;
         align-items: center;
-        .main__title__home {
-            color: $color-black;
-            font-size: 70px;
-            font-family: $Letter-titles;
+        .logoIzquierda{
+            width: 8rem;
+            height: 8rem;
         }
-        .main__subtitle{
-            font-size: 28px;
-            font-family: $Letter-subtitles;
-            position: relative;
-            left: 125px;
-            bottom: 15px;
-            font-weight: 800;
-        }
-
-        .main__parrafo {
-            font-family: $Letter-body;
-            padding: 30px 0;
-            font-size: 23px;
+        .container__intro{
             width: 50%;
+            padding: 10px 40px;
+
+            .main__title__home {
+                color: $color-black;
+                font-size: 70px;
+                font-family: $Letter-titles;
+                text-align: center;
+
+            }
+            .main__subtitle{
+                font-size: 28px;
+                font-family: $Letter-subtitles;
+                position: relative;
+                left: 125px;
+                bottom: 15px;
+                font-weight: 800;
+                text-align: center;
+            }
+    
+            .main__parrafo {
+                font-family: $Letter-body;
+                padding: 30px 0;
+                font-size: 23px;
+                text-align: justify;
+            }
+
+        }
+        .logoDerecha{
+            width: 8rem;
+            height: 8rem;
         }
     }
 }
 
 .typeEvent__home {
     width: 100%;
-    padding: 80px 80px;
+    padding: 50px 80px;
     display: flex;
     flex-direction: column;
     align-items: center;
@@ -153,7 +170,6 @@
             width: 50%;
             gap: 30px;
             position: relative;
-            top: 50px;
             align-items: center;
           
 
@@ -161,7 +177,7 @@
                 width: 100%;
                 font-size: 27px;
                 font-family: $Letter-body;
-                text-align: start;
+                text-align: center;
             }
             
             .description__parrafo {
@@ -249,7 +265,7 @@
 
             .img__services {
                 width: 100%;
-                height: 23rem;
+                height: 15rem;
             }
 
             .card__services--span {
@@ -258,6 +274,7 @@
                 text-align: center;
                 font-size: 18px;
                 font-family: $Letter-body;
+                text-align: justify;
             }
             .service__btn {
                 width: 60%;
@@ -286,7 +303,7 @@
     display: flex;
     width: 100%;
     background-color: white;
-    padding: 80px 80px;
+    padding: 40px 80px;
     justify-content: end;
     .gota{
         width: 30%;
@@ -320,7 +337,7 @@
         }
     }
     .encantados__descripcion{
-        width: 40%;
+        width: 60%;
         font-size: 20px;
     }
 
@@ -338,8 +355,9 @@
     object-fit: contain;
     display: flex;
     flex-direction: column;
+    align-items: center;
     .ubicacion__transparencia{
-        background: linear-gradient( rgb(255 255 255 / 80%), rgb(255 255 255 / 10%));
+        background-color: #ffffff5a;
         width: 100%;
         height: 3rem;
         text-align: center;
@@ -347,21 +365,22 @@
         padding: 14px;  
         margin-bottom: 50px;
         font-size: 25px;
+        font-family: $Letter-subtitles;
     }
     .container__locaciones{
         display: flex;
-        width: 100%;
+        width: 80%;
         flex-wrap: wrap;
         justify-content: space-between;
         
         .card__ubicacion{
-            background: linear-gradient(to top, rgba(255, 255, 255, 0.9), rgba(255, 255, 255, -1.1));
+            background-color: #ffffff5a;
             display: flex;
             flex-direction: column;
             width: 28%;
-            gap: 25px;
+            gap: 10px;
             align-items: center;
-            margin-bottom: 70px;
+            margin-bottom: 2rem;
             .card__separacion--ubicacion{
                 display: flex;
                 gap: 20px;
@@ -371,16 +390,17 @@
                     width: 50px;
                 }
                 .nombre__ubicacion{
-                    font-size: 27px;
+                    font-size: 20px;
                     font-family: $Letter-subtitles;
                 }
             }
             .verDetalles__ubicacion{
-                background: linear-gradient(to top, rgba(255, 255, 255, 0.3), rgba(255, 255, 255, 0.5));
+                background-color: #ffffff5a;
                 height: 2rem;
                 width: 50%;
                 border-radius: 10px;
                 margin-bottom: 15px;
+                border: 2px solid;
             }
             .verDetalles__ubicacion:hover{
                 background-color: $color-grey;
@@ -393,8 +413,8 @@
         display: flex;
         flex-direction: column;
         align-items: center;
-        gap: 40px;
-        background: linear-gradient( rgba(255, 255, 255, 0.3), rgba(255, 255, 255, 0.5));
+        gap: 10px;
+        background-color: #ffffff5a;
         .container__barra{
             display: flex;
             gap: 10px;
@@ -410,7 +430,7 @@
         }
 
         .ver__barra{
-            width: 15%;
+            width: 30%;
             height: 2rem;
             border-radius: 10px;
             background: linear-gradient(to right, rgba(255, 255, 255, 0.6), rgba(255, 255, 255, -9.3));
@@ -517,7 +537,7 @@
             align-items: center;
             width: 80%;
             .icnono__beneficios{
-               width: 8rem;
+               width: 5rem;
             }
             .card__beneficio--title{
                 font-size: 22px;
@@ -526,7 +546,7 @@
             .card__beneficios--p{
                 font-size: 18px;
                 font-family: $Letter-body;
-                width: 60%;
+                width: 70%;
                 text-align: center;
                 text-align: justify;
             }
