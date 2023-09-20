@@ -35,49 +35,49 @@ const Domicilio = () => {
             </section>
             <section className="iconos__ubicacion">
                 <div className="container__iconos--ubicaciones">
-                    <span class="material-symbols-outlined">
+                    <span className="material-symbols-outlined">
                         local_parking
                     </span>
                     <span className='name__icon'>Parqueadero</span>
                 </div>
 
                 <div className="container__iconos--ubicaciones">
-                    <span class="material-symbols-outlined">
+                    <span className="material-symbols-outlined">
                         accessible
                     </span>
                     <span className='name__icon'>Accesibilidad</span>
                 </div>
 
                 <div className="container__iconos--ubicaciones">
-                    <span class="material-symbols-outlined">
+                    <span className="material-symbols-outlined">
                         wc
                     </span>
                     <span className='name__icon'>Baños</span>
                 </div>
 
                 <div className="container__iconos--ubicaciones">
-                    <span class="material-symbols-outlined">
+                    <span className="material-symbols-outlined">
                         nature_people
                     </span>
                     <span className='name__icon'>Aire libre</span>
                 </div>
 
                 <div className="container__iconos--ubicaciones">
-                    <span class="material-symbols-outlined">
+                    <span className="material-symbols-outlined">
                         volume_up
                     </span>
                     <span className='name__icon'>Sonido multimedia</span>
                 </div>
 
                 <div className="container__iconos--ubicaciones">
-                    <span class="material-symbols-outlined">
+                    <span className="material-symbols-outlined">
                         wifi
                     </span>
                     <span className='name__icon'>Wifi</span>
                 </div>
 
                 <div className="container__iconos--ubicaciones">
-                    <span class="material-symbols-outlined">
+                    <span className="material-symbols-outlined">
                         security
                     </span>
                     <span className='name__icon'>Seguridad privada</span>
