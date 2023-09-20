@@ -24,9 +24,14 @@
                 font-size: 22px;
                 color: white;
             }
+            .navbar__items{
+                cursor: pointer;
+                color: #ffffff;
+            }
             .navbar__items--logo{
                 list-style: none;
                 font-size: 22px;
+                cursor: pointer;
                 .logo__item--img{
                     width: 10rem
                 }
@@ -79,7 +84,7 @@
     .main__info {
         display: flex;
         width: 100%;
-        padding: 40px 30px;
+        padding: 20px 30px;
         background-color: $color-white;
         justify-content: space-evenly;
         align-items: center;
@@ -88,7 +93,7 @@
             height: 8rem;
         }
         .container__intro{
-            width: 50%;
+            width: 70%;
             padding: 10px 40px;
 
             .main__title__home {
@@ -110,7 +115,7 @@
     
             .main__parrafo {
                 font-family: $Letter-body;
-                padding: 30px 0;
+                padding: 25px 0;
                 font-size: 23px;
                 text-align: justify;
             }
@@ -125,7 +130,7 @@
 
 .typeEvent__home {
     width: 100%;
-    padding: 50px 80px;
+    padding: 40px 80px;
     display: flex;
     flex-direction: column;
     align-items: center;
@@ -177,13 +182,14 @@
                 width: 100%;
                 font-size: 27px;
                 font-family: $Letter-body;
-                text-align: center;
+                text-align: start;
             }
             
             .description__parrafo {
                 font-size: 21px;
                 font-family: $Letter-body;
                 text-align: start;
+                text-align: justify;
             }
             .description__btn{
                 width: 35%;
@@ -201,7 +207,7 @@
         }
 
         .event__collage {
-            width: 48%;
+            width: 60%;
 
             .description__img {
                 width: 100%;
@@ -224,7 +230,7 @@
         text-align: center;
         padding-top: 30px;
         padding-bottom: 20px;
-        font-size: 35px;
+        font-size: 25px;
         width: 80%;
         font-family: $Letter-subtitles;
     }
@@ -238,7 +244,7 @@
         padding-bottom: 40px;
 
         .card__services {
-            width: 27%;
+            width: 32%;
             display: flex;
             flex-direction: column;
             padding: 25px;
@@ -253,7 +259,7 @@
                 background: #E9DCBE;
                 transform: rotate(90deg);
                 position: absolute;
-                margin-left: 150px;
+                margin-left: 210px;
                 margin-top: 55px;   
                 height: 5%;
                 width: 12%;
@@ -275,6 +281,7 @@
                 font-size: 18px;
                 font-family: $Letter-body;
                 text-align: justify;
+                line-height: 21px;
             }
             .service__btn {
                 width: 60%;
@@ -303,13 +310,13 @@
     display: flex;
     width: 100%;
     background-color: white;
-    padding: 40px 80px;
+    padding: 20px 80px;
     justify-content: end;
     .gota{
         width: 30%;
         .gota__img{
             width: 100%;
-            height: 20rem;
+            height: 17rem;
             object-fit: contain;
         }
     }
@@ -319,7 +326,7 @@
         flex-direction: column;
         gap: 20px;
         .encantados__title{
-            font-size: 60px;
+            font-size: 55px;
             font-family: $Letter-titles;
         }
         .logo__subtitulo{
@@ -349,7 +356,7 @@
 .ubicacion{
     background-image: url("../../assets/image/fondoLocacion.jpg");
     width: 100%;
-    padding: 50px 80px;
+    padding: 20px 80px;
     background-repeat: no-repeat;
     background-size: cover;
     object-fit: contain;
@@ -357,7 +364,7 @@
     flex-direction: column;
     align-items: center;
     .ubicacion__transparencia{
-        background-color: #ffffff5a;
+        background-color: rgba(255, 255, 255, 0.7);
         width: 100%;
         height: 3rem;
         text-align: center;
@@ -369,12 +376,12 @@
     }
     .container__locaciones{
         display: flex;
-        width: 80%;
+        width: 70%;
         flex-wrap: wrap;
         justify-content: space-between;
         
         .card__ubicacion{
-            background-color: #ffffff5a;
+            background-color: rgba(255, 255, 255, 0.7);
             display: flex;
             flex-direction: column;
             width: 28%;
@@ -390,7 +397,7 @@
                     width: 50px;
                 }
                 .nombre__ubicacion{
-                    font-size: 20px;
+                    font-size: 30px;
                     font-family: $Letter-subtitles;
                 }
             }
@@ -400,7 +407,7 @@
                 width: 50%;
                 border-radius: 10px;
                 margin-bottom: 15px;
-                border: 2px solid;
+                border: 3px solid;
             }
             .verDetalles__ubicacion:hover{
                 background-color: $color-grey;
@@ -409,12 +416,12 @@
         }
     }
     .barra__grande--ubicacion{
-        padding: 50px;
+        padding: 20px;
         display: flex;
         flex-direction: column;
         align-items: center;
         gap: 10px;
-        background-color: #ffffff5a;
+        background-color: rgba(255, 255, 255, 0.7);
         .container__barra{
             display: flex;
             gap: 10px;
@@ -424,7 +431,7 @@
                 width: 50px;
             }
             .ubicacion__barra{
-                font-size: 40px;
+                font-size: 30px;
                 font-family: $Letter-subtitles;
             }
         }
@@ -453,7 +460,7 @@
     padding: 40px;
 
     .comentarios__title {
-        font-size: 30px;
+        font-size: 25px;
         width: 100%;
         text-align: center;
         font-family: $Letter-subtitles;
@@ -513,7 +520,7 @@
     .beneficios__title{
         padding-top: 50px;
         padding-bottom: 20px;
-        font-size: 35px;
+        font-size: 25px;
         font-family: $Letter-subtitles;
         text-align: center;
     }
@@ -540,7 +547,7 @@
                width: 5rem;
             }
             .card__beneficio--title{
-                font-size: 22px;
+                font-size: 20px;
                 font-family: $Letter-subtitles;
             }
             .card__beneficios--p{
@@ -549,6 +556,7 @@
                 width: 70%;
                 text-align: center;
                 text-align: justify;
+                line-height: 22px;
             }
         }
       

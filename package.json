@@ -10,11 +10,7 @@
     "preview": "vite preview"
   },
   "dependencies": {
-<<<<<<< HEAD
-    "date-fns": "^2.30.0",
-=======
     "leaflet": "^1.9.4",
->>>>>>> 114ed6f01e3b56243e8e928bc43b553997cb729f
     "react": "^18.2.0",
     "react-dom": "^18.2.0",
     "react-leaflet": "^4.2.1",

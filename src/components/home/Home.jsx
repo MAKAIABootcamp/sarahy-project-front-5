@@ -48,7 +48,7 @@ const Home = () => {
     
       const closeModal = () => {
         setModal(false);
-      };
+    };
 
     const navigate = useNavigate()
     // useEffect( () => 
@@ -108,8 +108,8 @@ const Home = () => {
                 <div className="header__transparent">
                     <nav clasName="header__navbar">
                         <ul className='header__navbar--lista'>
-                            <li className='navbar__items'>Incio</li>
-                            <li className='navbar__items'>Eventos sociales</li>
+                            <li className='navbar__items' onClick={() => {navigate("/")}}>Incio</li>
+                            <li className='navbar__items' >Eventos sociales</li>
                             <li className='navbar__items'>Eventos empresariales</li>
                             <li className='navbar__items--logo'>{<img src={logo} className='logo__item--img' />}</li>
                             <li className='navbar__items'>Seamos aliados</li>
@@ -150,7 +150,7 @@ const Home = () => {
                         <h1 className='main__title__home'>Bienvenido a</h1>
                         <h4 className='main__subtitle'>Celebraciones Sarahy</h4>
                         <p className="main__parrafo">
-                            Somos expertos en hacer eventos memorables. Con una pasión por la perfección y una atención meticulosa a cada detalle, nuestro objetivo es convertir tu boda en un día inolvidable. Desde la elección del lugar hasta la decoración, la gastronomía y la música, nos enorgullece crear experiencias únicas que reflejen tus sueños y deseos. Confía en nosotros para convertir tu día especial en un recuerdo que atesorarás para toda la vida
+                            Somos expertos en hacer eventos memorables. Con una pasión por la perfección y una atención meticulosa a cada detalle, nuestro objetivo es convertir tu boda en un día inolvidable. Desde la elección del lugar hasta la decoración, la gastronomía y la música, nos enorgullece crear experiencias únicas que reflejen tus sueños y deseos. Confía en nosotros para convertir tu día especial en un recuerdo que atesorarás para toda la vida. 
                         </p>
 
                     </div>
@@ -170,7 +170,7 @@ const Home = () => {
                         <div className='event__description'>
                             <h2 className='description__title'>LA BODA DE TUS SUEÑOS</h2>
                             <p className='description__parrafo'>
-                                Somos expertos en crear eventos memorables y nos enorgullece hacer que tu boda sea perfecta en cada detalle. Desde la elección del lugar hasta la decoración y el menú, dedicamos toda nuestra pasión para que tu día sea inolvidable
+                                Somos expertos en crear eventos memorables y nos enorgullece hacer que tu boda sea perfecta en cada detalle. Desde la elección del lugar hasta la decoración y el menú, dedicamos toda nuestra pasión para que tu día sea inolvidable.
                             </p>
                             <button className="description__btn">
                                 Haz tu cotización
@@ -224,7 +224,7 @@ const Home = () => {
                         <img src={gota} alt="" className="gota__img" />
                     </div>
                     <div className="encatados__info">
-                        <h2 className='encantados__title'>Encantados de verte aqui </h2>
+                        <h2 className='encantados__title'>¡Encantados de verte aquí! </h2>
                         <div className="logo__subtitulo">
                             <img src={loguito} alt="" className='encantado__subtitulo--img' />
                             <h4 className='encantado__subtitulo'>En Sarahy encontrarás... </h4>
@@ -336,7 +336,7 @@ const Home = () => {
                         <div className="container__barra">
                             <img src={loguito} alt="" className="loguito__ubicacion--barra" />
                             <h3 className="ubicacion__barra">
-                                Servicio a domicilio
+                                SERVICIO A DOMICILIO
                             </h3>
                         </div>
                             <button className="ver__barra">VER DETALLES</button>

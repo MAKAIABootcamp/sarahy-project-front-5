@@ -1,12 +1,11 @@
 import React from 'react'
 import perfil1 from '../../assets/image/pefil1.png'
 import lupa from '../../assets/image/lupaBlack.png'
-
+import { useNavigate } from 'react-router-dom'
 import './header.scss'
-// import { useNavigate } from 'react-router-dom'
 
 const Header = () => {
-    // const navigate = useNavigate()
+    const navigate = useNavigate()
     return (
         <header className="header__home">
             <div className='header__info'>
