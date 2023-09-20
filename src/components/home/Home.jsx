@@ -51,57 +51,18 @@ const Home = () => {
     };
 
     const navigate = useNavigate()
-    // useEffect( () => 
-    // {
-    //     const getServiceAll = async () => 
-    //     {
-    //         const date = await getService('photography');
-            
-    //         if(date)
-    //         {
-    //             console.log('Los Servicios de foto son: ', date);
-    //         }
-    //         else
-    //         {
-    //             console.log('Acción fallida.')
-    //         }
-    //     }
+ 
+    const coordenadas = {
+        boston: [6.181351558809866, -75.63979898219357],
+        martin: [6.257171994676571, -75.56078624930181],
+        milagrosa: [6.238439649830454, -75.5553639364111],
+        playa: [6.247105551200784, -75.55793605912363],
+    }
+    const [coordenadasBoston, setCoordenadasBoston] = useState(coordenadas.boston);
+    const [coordenadasMartin, setCoordenadasMartin] = useState(coordenadas.martin);
+    const [coordenadasMilagrosa, setCoordenadasMilagrosa] = useState(coordenadas.milagrosa);
+    const [coordenadasPlaya, setCoordenadasPlaya] = useState(coordenadas.playa);
 
-    //     const addService = async () => 
-    //     {
-    //         const nuevoServicio = {
-    //             description: "Graba ese momento para un futuro. ",
-    //             image: "URL de la nueva imagen",
-    //             name: "Captura Históricas",
-    //             price: 110000,
-    //           };
-              
-    //         await addNewService('photography', nuevoServicio);
-            
-
-        
-
-        // const editService = async () => 
-        // {
-        //     await editServiceField("photography", "Fotolibro30x40.description", "Nuevo título para prueba.");
-        // } 
-
-        // const deleteService = async() => 
-        // {
-        //     await deleteServiceField("photography", "Movie");
-        // }
-
-
-        // const addQuote = async() => 
-        // {
-        //     const quote = {event: "Cumpleaños", servicios: [1, 2, 3, 4], total: 58900 }
-        //     await addNewQuote("JlQjLzQgnyNH27JozbhUv28atw22", quote);
-        // }
-
-        // deleteService();
-
-
-    // },[])
     return (
         <>
             <main className="main__home">
@@ -286,13 +247,13 @@ const Home = () => {
                                 <h3 className="nombre__ubicacion">CONVENIO BOSTON</h3>
                             </div>
                             <button className="verDetalles__ubicacion" onClick={openModal}>VER DETALLES</button>
-                            <CustomModal isOpen={modal} onRequestClose={closeModal} />
+                            <CustomModal isOpen={modal} onRequestClose={closeModal} cordenada={coordenadasBoston}/>
                         </div>
 
                         <div className="card__ubicacion">
                             <div className='card__separacion--ubicacion'>
                                 <img src={loguito} alt="" className="loguito__ubicacion" />
-                                <h3 className="nombre__ubicacion">CONVENIO BOSTON</h3>
+                                <h3 className="nombre__ubicacion">SALON SAN MARTIN</h3>
                             </div>
                             <button className="verDetalles__ubicacion">VER DETALLES</button>
                         </div>
@@ -300,7 +261,7 @@ const Home = () => {
                         <div className="card__ubicacion">
                             <div className='card__separacion--ubicacion'>
                                 <img src={loguito} alt="" className="loguito__ubicacion" />
-                                <h3 className="nombre__ubicacion">CONVENIO BOSTON</h3>
+                                <h3 className="nombre__ubicacion">VILLA MANUELA LA MILAGROSA </h3>
                             </div>
                             <button className="verDetalles__ubicacion">VER DETALLES</button>
                         </div>
@@ -308,7 +269,7 @@ const Home = () => {
                         <div className="card__ubicacion">
                             <div className='card__separacion--ubicacion'>
                                 <img src={loguito} alt="" className="loguito__ubicacion" />
-                                <h3 className="nombre__ubicacion">CONVENIO BOSTON</h3>
+                                <h3 className="nombre__ubicacion">PLAYA REAL</h3>
                             </div>
                             <button className="verDetalles__ubicacion">VER DETALLES</button>
                         </div>
@@ -327,7 +288,7 @@ const Home = () => {
                                 <h3 className="nombre__ubicacion">CONVENIO BOSTON</h3>
                             </div>
                             <button className="verDetalles__ubicacion" onClick={openModal} >VER DETALLES</button>
-                            <CustomModal isOpen={modal} onRequestClose={closeModal} />
+                            <CustomModal isOpen={modal} onRequestClose={closeModal} cordenada={coordenadasBoston}/>
 
                         </div>
                     </div>

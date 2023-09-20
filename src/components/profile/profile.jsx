@@ -7,9 +7,13 @@ import logoBlack from "../../assets/image/logoSarahyBlack.png";
 import facebook from "../../assets/image/face.png";
 import instagram from "../../assets/image/ig.png";
 import whatsapp from "../../assets/image/wpp.png";
+import { useSelector } from "react-redux";
+import { userDataLogged } from "../../redux/store/auth/authReducer";
 
 
 const Profile = () => {
+    const datosUsuarios = useSelector(state => state.aunthentication.userDataLogged);
+    console.log(datosUsuarios)
   return (
     <>
     <section className="title__profile">
