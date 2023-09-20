@@ -1,5 +1,5 @@
 // react
-import React from 'react'
+import React, { useState } from 'react'
 import './home.scss';
 
 // swiper
@@ -16,7 +16,6 @@ import servicios1 from '../../assets/image/servicios1.png'
 import servicios2 from '../../assets/image/decoracion.png'
 import servicios3 from '../../assets/image/catering.png'
 import corazon1 from '../../assets/image/corazon1.png'
-import comentario1 from '../../assets/image/comentario1.png'
 import sliderBodas from '../../assets/image/boda.jpg'
 import sliderCumpleaños from '../../assets/image/cumpleaños.jpg'
 import sliderEmpresariales from '../../assets/image/empresariales1.jpg'
@@ -33,12 +32,24 @@ import logoDerecha from '../../assets/image/gotaDerecha.png'
 import marrano from '../../assets/image/marrano.png'
 import relojArena from '../../assets/image/relojArena.png'
 import celGota from '../../assets/image/celGota.png'
-import locacionFondo from '../../assets/image/fondoLocacion.png'
+
 
 import { useNavigate } from 'react-router-dom';
+import CustomModal from '../modal/CustomModal';
 
 
 const Home = () => {
+
+    const [modal, setModal] = useState(false);
+
+    const openModal = () => {
+        setModal(true);
+      };
+    
+      const closeModal = () => {
+        setModal(false);
+      };
+
     const navigate = useNavigate()
     return (
         <>
@@ -206,7 +217,75 @@ const Home = () => {
                 </section>
 
                 <section className="ubicacion">
+                    <div className="ubicacion__transparencia">
+                        <span className="ubicacion__title--transparencia">
+                            LOCACIONES
+                        </span>
+                    </div>
+
+                    <div className="container__locaciones">
+                        <div className="card__ubicacion">
+                            <div className='card__separacion--ubicacion'>
+                                <img src={loguito} alt="" className="loguito__ubicacion" />
+                                <h3 className="nombre__ubicacion">CONVENIO BOSTON</h3>
+                            </div>
+                            <button className="verDetalles__ubicacion" onClick={openModal}>VER DETALLES</button>
+                            <CustomModal isOpen={modal} onRequestClose={closeModal} />
+                        </div>
+
+                        <div className="card__ubicacion">
+                            <div className='card__separacion--ubicacion'>
+                                <img src={loguito} alt="" className="loguito__ubicacion" />
+                                <h3 className="nombre__ubicacion">CONVENIO BOSTON</h3>
+                            </div>
+                            <button className="verDetalles__ubicacion">VER DETALLES</button>
+                        </div>
+
+                        <div className="card__ubicacion">
+                            <div className='card__separacion--ubicacion'>
+                                <img src={loguito} alt="" className="loguito__ubicacion" />
+                                <h3 className="nombre__ubicacion">CONVENIO BOSTON</h3>
+                            </div>
+                            <button className="verDetalles__ubicacion">VER DETALLES</button>
+                        </div>
+
+                        <div className="card__ubicacion">
+                            <div className='card__separacion--ubicacion'>
+                                <img src={loguito} alt="" className="loguito__ubicacion" />
+                                <h3 className="nombre__ubicacion">CONVENIO BOSTON</h3>
+                            </div>
+                            <button className="verDetalles__ubicacion">VER DETALLES</button>
+                        </div>
+
+                        <div className="card__ubicacion">
+                            <div className='card__separacion--ubicacion'>
+                                <img src={loguito} alt="" className="loguito__ubicacion" />
+                                <h3 className="nombre__ubicacion">CONVENIO BOSTON</h3>
+                            </div>
+                            <button className="verDetalles__ubicacion">VER DETALLES</button>
+                        </div>
+
+                        <div className="card__ubicacion">
+                            <div className='card__separacion--ubicacion'>
+                                <img src={loguito} alt="" className="loguito__ubicacion" />
+                                <h3 className="nombre__ubicacion">CONVENIO BOSTON</h3>
+                            </div>
+                            <button className="verDetalles__ubicacion" onClick={openModal} >VER DETALLES</button>
+                            <CustomModal isOpen={modal} onRequestClose={closeModal} />
+
+                        </div>
+                    </div>
                     
+                    <div className="barra__grande--ubicacion">
+                        <div className="container__barra">
+                            <img src={loguito} alt="" className="loguito__ubicacion--barra" />
+                            <h3 className="ubicacion__barra">
+                                Servicio a domicilio
+                            </h3>
+                        </div>
+                            <button className="ver__barra">VER DETALLES</button>
+                    </div>
+
 
                 </section>
 
@@ -216,7 +295,7 @@ const Home = () => {
                     <hr className='hr__services' />
                     <div className="container__cards--coments">
                         <div className='container__comen'>
-                            <img src={comentario1} alt="imagen de comentario" className='img__comentario' />
+                            <img src={testimonio1} alt="imagen de comentario" className='img__comentario' />
                             <span className="testimonio">
                                 Excelente servicio, me agradaron mucho las personas de logistica son muy amables y la pagina es perfecta los quiero
                             </span>
@@ -229,7 +308,7 @@ const Home = () => {
                             </div>
                         </div>
                         <div className='container__comen'>
-                            <img src={comentario1} alt="imagen de comentario" className='img__comentario' />
+                            <img src={testimonio2} alt="imagen de comentario" className='img__comentario' />
                             <span className="testimonio">
                                 Excelente servicio, me agradaron mucho las personas de logistica son muy amables y la pagina es perfecta los quiero
                             </span>
@@ -242,7 +321,7 @@ const Home = () => {
                             </div>
                         </div>
                         <div className='container__comen'>
-                            <img src={comentario1} alt="imagen de comentario" className='img__comentario' />
+                            <img src={testimonio3} alt="imagen de comentario" className='img__comentario' />
                             <span className="testimonio">
                                 Excelente servicio, me agradaron mucho las personas de logistica son muy amables y la pagina es perfecta los quiero
                             </span>

@@ -28,7 +28,7 @@
                 list-style: none;
                 font-size: 22px;
                 .logo__item--img{
-                    width: 8rem
+                    width: 10rem
                 }
             }
         }
@@ -68,7 +68,8 @@
         }
 
         .swiper-button-next, .swiper-button-prev {
-            color: $color-cream 
+            color: $color-cream;
+            display: none;
         }
         .swiper-pagination {
             display: none;
@@ -281,7 +282,7 @@
     display: flex;
     width: 100%;
     background-color: white;
-    padding: 30px 80px;
+    padding: 80px 80px;
     justify-content: end;
     .gota{
         width: 30%;
@@ -325,12 +326,96 @@
 
 
 .ubicacion{
-    background-image: url("../../assets/image/fondoLocacion.png");
+    background-image: url("../../assets/image/fondoLocacion.jpg");
     width: 100%;
-    padding: 20px;
+    padding: 50px 80px;
     background-repeat: no-repeat;
     background-size: cover;
+    object-fit: contain;
     display: flex;
+    flex-direction: column;
+    .ubicacion__transparencia{
+        background: linear-gradient( rgb(255 255 255 / 80%), rgb(255 255 255 / 10%));
+        width: 100%;
+        height: 3rem;
+        text-align: center;
+        margin-bottom: 30px;
+        padding: 14px;  
+        margin-bottom: 50px;
+        font-size: 25px;
+    }
+    .container__locaciones{
+        display: flex;
+        width: 100%;
+        flex-wrap: wrap;
+        justify-content: space-between;
+        
+        .card__ubicacion{
+            background: linear-gradient(to top, rgba(255, 255, 255, 0.9), rgba(255, 255, 255, -1.1));
+            display: flex;
+            flex-direction: column;
+            width: 28%;
+            gap: 25px;
+            align-items: center;
+            margin-bottom: 70px;
+            .card__separacion--ubicacion{
+                display: flex;
+                gap: 20px;
+                align-items: center;
+                padding: 30px;
+                .loguito__ubicacion{
+                    width: 50px;
+                }
+                .nombre__ubicacion{
+                    font-size: 27px;
+                    font-family: $Letter-subtitles;
+                }
+            }
+            .verDetalles__ubicacion{
+                background: linear-gradient(to top, rgba(255, 255, 255, 0.3), rgba(255, 255, 255, 0.5));
+                height: 2rem;
+                width: 50%;
+                border-radius: 10px;
+                margin-bottom: 15px;
+            }
+            .verDetalles__ubicacion:hover{
+                background-color: $color-grey;
+                cursor: pointer;
+            }
+        }
+    }
+    .barra__grande--ubicacion{
+        padding: 50px;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        gap: 40px;
+        background: linear-gradient( rgba(255, 255, 255, 0.3), rgba(255, 255, 255, 0.5));
+        .container__barra{
+            display: flex;
+            gap: 10px;
+            width: 100%;
+            justify-content: center;
+            .loguito__ubicacion--barra{
+                width: 50px;
+            }
+            .ubicacion__barra{
+                font-size: 40px;
+                font-family: $Letter-subtitles;
+            }
+        }
+
+        .ver__barra{
+            width: 15%;
+            height: 2rem;
+            border-radius: 10px;
+            background: linear-gradient(to right, rgba(255, 255, 255, 0.6), rgba(255, 255, 255, -9.3));
+        }
+        .ver__barra:hover{
+            background-color: $color-grey;
+            cursor: pointer;
+        }
+    }
 }
 
 
@@ -347,6 +432,7 @@
         font-size: 30px;
         width: 100%;
         text-align: center;
+        font-family: $Letter-subtitles;
     }
 
     .container__cards--coments {
@@ -372,7 +458,6 @@
                 width: 60%;
                 text-align: center;
                 padding-bottom: 30px;
-                color: $color-grey;
                 font-size: 19;
             }
     
@@ -428,7 +513,7 @@
             align-items: center;
             width: 80%;
             .icnono__beneficios{
-               width: 80px;
+               width: 8rem;
             }
             .card__beneficio--title{
                 font-size: 22px;
@@ -439,6 +524,7 @@
                 font-family: $Letter-body;
                 width: 60%;
                 text-align: center;
+                text-align: justify;
             }
         }
       
