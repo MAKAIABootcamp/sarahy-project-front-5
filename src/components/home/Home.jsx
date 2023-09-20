@@ -33,7 +33,7 @@ import logoDerecha from '../../assets/image/gotaDerecha.png'
 import marrano from '../../assets/image/marrano.png'
 import relojArena from '../../assets/image/relojArena.png'
 import celGota from '../../assets/image/celGota.png'
-import locacionFondo from '../../assets/image/fondoLocacion.png'
+// import locacionFondo from '../../assets/image/fondoLocacion.png'
 
 import { useNavigate } from 'react-router-dom';
 import { getService } from '../../services/getServices';

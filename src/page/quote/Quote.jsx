@@ -1,5 +1,5 @@
 import React, { useEffect, useState } from "react";
-import { isWeekend } from "date-fns";
+// import { isWeekend } from "date-fns";
 import "./quote.scss";
 import { useForm, Controller } from "react-hook-form";
 import { addNewQuote } from "../../services/addNewQuote";
@@ -28,8 +28,8 @@ const Quote = () => {
     {
         console.log('La fecha seleccionada es: ', dateSelected, '. ');
         const selectedDate = new Date(dateSelected);
-        const isWeekendDate = isWeekend(selectedDate);
-        isWeekendDate ? console.log('Es Fin de Semana') : console.log('Es Día de Semana.');
+        // const isWeekendDate = isWeekend(selectedDate);
+        // isWeekendDate ? console.log('Es Fin de Semana') : console.log('Es Día de Semana.');
     }, [dateSelected]);
 
     const prices = {

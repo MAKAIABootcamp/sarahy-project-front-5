@@ -1,0 +1,23 @@
+
+
+.classWeddingCard
+{
+    display: flex;
+    flex-direction: column;
+    gap: 1.5vw;
+    align-items: center;
+    &__figure
+    {
+
+        .classWeddingCardImg
+        {
+            width: 20vw;
+            height: 13vw;
+        }
+    }    
+
+    &__title 
+    {
+        font-size: 1.5vw;
+    }
+}

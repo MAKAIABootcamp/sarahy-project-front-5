@@ -1,0 +1,218 @@
+@import url('https://fonts.googleapis.com/css2?family=Almarai:wght@300&family=Brygada+1918:ital,wght@1,500&family=Pattaya,wght@1,500&family=Montserrat:wght@100&display=swap');
+
+
+.weddingPage
+{
+    width: 100vw;
+    max-width: 100%;
+    height: 600vh;
+    background-color: #F3F3F3;
+    display: flex;
+    flex-direction: column;
+    overflow: hidden;
+    overflow-x: hidden;
+
+    .introduction
+    {
+        height: 30vh;
+        display: flex;
+        margin: 5vw;
+        align-items: center;
+        overflow: hidden;
+
+
+
+        gap: 3vw;
+        .decorWedding
+        {
+
+
+
+            .imgDecorWedding
+            {
+
+
+                width: 10vw;
+                height: 10vw;
+                transform: rotate(45deg);
+
+            }
+
+        }
+
+        .infoIntroduction
+        {
+            display: flex;
+            flex-direction: column;
+            text-align: center;
+
+            .titleIntroduction
+            {
+                font-family: 'Pattaya', sans-serif;
+                font-size: 4vw;
+            }
+
+            .textDecorWedding
+            {
+                font-family: 'Montserrat', sans-serif;
+                text-align: justify;
+                font-size: 1.5vw;
+            }
+        }
+    }
+
+
+    .servicesWeddingPlanning 
+    {
+        display: flex;
+        flex-direction: column;
+        width: 100vw;
+        align-items: center;
+    
+
+        &__title
+        {
+            font-family: 'Montserrat', sans-serif;
+            font-size: 2.5vw;
+        }
+
+        &__list
+        {
+            font-family: 'Montserrat', sans-serif;
+            font-size: 2vw;
+            display: flex;
+            gap: 5vw;
+            margin-top: 3vw;
+        }
+
+        &__button
+        {
+
+            font-family: 'Montserrat', sans-serif;
+            font-size: 2.3vw;
+            background-color: #343434;
+            padding: 2vw;
+            border-radius: 2vw;
+            box-shadow: 1px 1px 2px #999;
+            color: #FFF;
+
+        }
+
+    }
+
+
+    .classWedding
+    {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        width: 100vw;
+        height: 25vw;
+        background-color: #FFF;
+        margin-top: 5vw;
+        font-family: 'Montserrat', sans-serif;
+
+        
+        &__title    
+        {
+            font-size: 2vw;
+            margin: 2vw;
+        }
+
+        &__list 
+        {
+            display: flex;
+            gap: 2vw;
+        }
+    }
+
+
+    .tipsWedding
+    {
+        width: 100vw;
+        height: 50vw;
+
+        background-image: url('https://i.ibb.co/fn06ynT/gypsophila-sobre-fondo-gris-espacio-copia-centro-1.png'); // la imagen de fondo que tienes con una opacidad del 30%
+        padding: 0px;
+        overflow: hidden;
+        background-size:cover;
+
+        display: flex;
+        flex-direction: column;
+        margin-top: 3vw;
+
+
+        &__title 
+        {
+            margin-top: 2vw;
+            width: 100%;
+            height: 3vw;
+            background-color: #ffffff70;
+
+            p
+            {
+                text-align: center;
+                font-family: 'Montserrat', sans-serif;
+                font-size: 1.5vw;
+                margin-top: 0.7vw ;
+            }
+        }
+
+        &__list
+        {
+            display: flex;
+            margin: 5vw;
+            display: flex;
+            flex-direction: column;
+            gap: 4vw;
+            align-items: center;
+
+
+            .listCardTipsWedding 
+            {
+                display: flex;
+                gap: 2vw;
+            }
+        }
+    }
+
+    .galleryWedding
+    {
+        width: 100vw;
+        height: 95vh;
+        background-color: rgb(255, 255, 255);
+        box-shadow: 5px 5px 10px gray;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        align-content: center;
+        text-align: center;
+
+        &__list
+        {
+            width: 90vw;
+            margin: 5vw;
+            box-shadow: 5px 5px 10px gray;
+
+            figure 
+            {
+                margin-top: 3vw;
+                img
+                {
+                    width: 85vw;
+                    height: 65vh;
+                }
+            }
+
+            span
+            {
+                font-family: 'Pattaya', sans-serif;
+                font-size: 3.5vw;
+            }
+
+        }
+    }
+
+
+    
+}

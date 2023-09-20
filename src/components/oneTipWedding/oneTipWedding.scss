@@ -1,0 +1,38 @@
+
+.tipsWeddingCard
+{
+    width: 25vw;
+    height: 12.5vw;
+    background-color: #ffffffb2;
+    display: flex;
+    align-items: center;
+
+    &__number
+    {
+            margin: 1vw;
+    }
+
+    &__info
+    {
+        margin: 1vw;
+        display: flex;
+        flex-direction: column;
+        gap: 1vw;
+
+        .tipsWeddingCardTitle
+        {
+            font-family: 'Montserrat', sans-serif;
+            font-size: 1.2vw;
+            text-align: center;
+        }
+
+        .tipsWeddingCardText
+        {
+            font-family: 'Montserrat', sans-serif;
+            font-size: 0.9vw;
+            text-align: justify;
+        }
+
+    }
+
+}
