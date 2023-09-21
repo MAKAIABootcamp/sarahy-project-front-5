@@ -32,24 +32,19 @@ const Map = ({ cordenada1 }) => {
 
   return (
     <div>
-      <MapContainer center={colombiaCoords} zoom={13} scrollWheelZoom={true} className='map-container'>
+      <MapContainer center={casaBoston} zoom={14} scrollWheelZoom={true} className='map-container'>
         <TileLayer
           url="https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png"
         />
-        {/* {cordenada1 && (
-          <Marker position={} icon={image}>
-            <Popup>Casa de Boston.</Popup>
-          </Marker>
-        )} */}
-          <Marker position={casaBoston} icon={image}>
-            <Popup>
-              <h1>Casa Boston  </h1>
-              <br />
-              <span>telefono: 31145784235</span> <br />
-              <span>direccion: calle 13 # 13-15</span>
-            </Popup>
-          </Marker>
-
+        <Marker position={casaBoston} icon={image}>
+          <Popup>
+            Casa de Boston.
+            <div>
+              <h2>Convenio Bostón</h2>
+              <p>Telefono: 2365968</p>
+            </div>
+          </Popup>
+        </Marker>
       </MapContainer>
     </div>
   );

@@ -1,6 +1,6 @@
 import React from 'react';
 import aliados from '../../assets/image/aliados.png';
-import './allies.scss'
+import './WorkWhit.scss'
 import logo from "../../assets/image/logo-blanco.png";
 import fondo from "../../assets/image/fondoAliados.png";
 import logoIzquierda from '../../assets/image/gotaIzquierda.png'
@@ -9,7 +9,7 @@ import logoRecomendaciones from '../../assets/image/logoIdentificador.png'
 import imagenContactanos from '../../assets/image/imagenContactanos.png'
 import { useForm  } from 'react-hook-form';
 
-const Allies = () => {
+const WorkWhithUs = () => {
     const {register, reset, handleSubmit } = useForm()
 
     const onSubmit = (data) => {
@@ -38,7 +38,7 @@ const Allies = () => {
             <section className='main__info'>
                 <img src={logoIzquierda} alt="" className='logoIzquierda' />
                 <div className="container__intro">
-                    <h1 className='main__title__home'>Seamos aliados</h1>
+                    <h1 className='main__title__home'>Trabaja con nostros</h1>
                     <p className="main__parrafo">
                         Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.
                     </p>
@@ -96,4 +96,4 @@ const Allies = () => {
     )
 }
 
-export default Allies;
+export default WorkWhithUs;

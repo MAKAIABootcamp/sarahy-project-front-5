@@ -12,8 +12,10 @@ import { userDataLogged } from "../../redux/store/auth/authReducer";
 
 
 const Profile = () => {
-    const datosUsuarios = useSelector(state => state.aunthentication.userDataLogged);
-    console.log(datosUsuarios)
+
+   const user = useSelector((state) => state.aunthentication.userLogged)
+   console.log(user)
+
   return (
     <>
     <section className="title__profile">
@@ -25,11 +27,11 @@ const Profile = () => {
       <section className="container__profile">
             <section className="introduction__profile">
             <figure className="fig__profile">
-                <img className="img" src={photoProfile} alt="Foto perfil" />
+                <img className="img" src={user.foto} alt="Foto perfil" />
             </figure>
             <div className="data__profile">
-                <h4 className="name">Juanito Pérez</h4>
-                <span>juanito@gmail.com</span>
+                <h4 className="name">{user.nombre}</h4>
+                <span>{user.email}</span>
                 <span>3203003030</span>
             </div>
             </section>
@@ -64,14 +66,14 @@ const Profile = () => {
                 <span className="title">Datos personales</span>
                 <div className="edit__item">
                     <span className="span">Nombre</span>
-                    <span className="span">Juanito Pérez</span>
+                    <span className="span">{user.nombre}</span>
                     <img src={iconEdit} alt="" />
                 </div>
                 <hr className="line__profile"/>
 
                 <div className="edit__item">
                     <span className="span">Contacto</span>
-                    <span className="span">3003652020</span>
+                    <span className="span">3203003030</span>
                     <img src={iconEdit} alt="" />
                 </div>
                 <hr className="line__profile"/>

@@ -24,28 +24,11 @@ const Register = () => {
 
   return (
     <main className="login">
-      <img
-        src="https://res.cloudinary.com/dibw7aluj/image/upload/v1694414835/Vector_v5muay.png"
-        alt="Back"
-        className="login__back"
-      />
       <section className="login__container register">
-        <div className="loginUp register">
-          <figure className="loginFigure">
-            <img
-              className="loginImg"
-              src="https://i.ibb.co/Jc07Cs4/Rectangle-6.png"
-              alt="Imagen"
-            />
-          </figure>
-        </div>
         <div className="loginDown register">
           <h1 className="loginDown__title">
             <b>Registro</b>
           </h1>
-          <p className="loginDown__subtitle">
-            Completa todos los campos para registrate
-          </p>
 
           <form onSubmit={handleSubmit(onSubmit)} className="loginDown__form">
             <span className="loginLabel">Nombre</span>
@@ -62,7 +45,7 @@ const Register = () => {
               </span>
             )}
             
-            <span className="loginLabel">Numero</span>
+            <span className="loginLabel">Contacto</span>
             <input
               type="number"
               id="password"
@@ -78,7 +61,7 @@ const Register = () => {
 
             
             
-            <span className="loginLabel">Email</span>
+            <span className="loginLabel">E-mail</span>
             <input
               type="email"
               id="email"
@@ -104,7 +87,7 @@ const Register = () => {
                 Este campo es obligatorio
               </span>
             )}
-            <span className="loginLabel">Verificar Contraseña</span>
+            <span className="loginLabel">Verificar contraseña</span>
             <input
               type="password"
               id="password"
