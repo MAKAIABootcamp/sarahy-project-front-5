@@ -21,19 +21,7 @@ const Allies = () => {
     return (
         <main className='main__allies'>
             <img src={fondo} alt="" className='imagen__aliados' />
-            <div className="header__transparent">
-                <nav clasName="header__navbar">
-                    <ul className='header__navbar--lista'>
-                        <li className='navbar__items' onClick={() => { navigate("/") }}>Incio</li>
-                        <li className='navbar__items' >Eventos sociales</li>
-                        <li className='navbar__items'>Eventos empresariales</li>
-                        <li className='navbar__items--logo'>{<img src={logo} className='logo__item--img' />}</li>
-                        <li className='navbar__items'>Seamos aliados</li>
-                        <li className='navbar__items'>Contáctanos</li>
-                        <li className='navbar__items'>Cotiza aquí</li>
-                    </ul>
-                </nav>
-            </div>
+           
 
             <section className='main__info'>
                 <img src={logoIzquierda} alt="" className='logoIzquierda' />

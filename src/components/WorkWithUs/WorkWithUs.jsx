@@ -1,5 +1,4 @@
 import React from 'react';
-import aliados from '../../assets/image/aliados.png';
 import './WorkWhit.scss'
 import logo from "../../assets/image/logo-blanco.png";
 import fondo from "../../assets/image/fondoAliados.png";
