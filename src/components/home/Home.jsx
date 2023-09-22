@@ -32,8 +32,6 @@ import logoDerecha from '../../assets/image/gotaDerecha.png'
 import marrano from '../../assets/image/marrano.png'
 import relojArena from '../../assets/image/relojArena.png'
 import celGota from '../../assets/image/celGota.png'
-
-
 import { useNavigate } from 'react-router-dom';
 import CustomModal from '../modal/CustomModal';
 
@@ -114,7 +112,7 @@ const Home = () => {
                             <li className='navbar__items--logo'>{<img src={logo} className='logo__item--img' />}</li>
                             <li className='navbar__items'>Seamos aliados</li>
                             <li className='navbar__items'>Contáctanos</li>
-                            <li className='navbar__items'>Cotiza aquí</li>
+                            <li className='navbar__items' onClick={()=>{navigate("/quote")}}>Cotiza aquí</li>
                         </ul>
                     </nav>
                 </div>

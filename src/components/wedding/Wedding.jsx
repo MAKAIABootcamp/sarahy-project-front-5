@@ -21,6 +21,7 @@ import sliderAniversarios from '../../assets/image/bufet.jpg'
 const Wedding = () => {
   return (
     <main className='main__Wedding'>
+      
       <section className='wedding__section'>
         <h1 className='wedding__title'>Matrimonio</h1>
         <img src={matrimonio} alt="" className='wedding__img' />

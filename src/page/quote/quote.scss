@@ -14,8 +14,8 @@
         {
             margin-top: 2vw;
             margin-bottom: 0.5vw;
-            font-family: 'Merriweather', serif;
-            font-size: 4vw;
+            font-family: 'Pattaya', sans-serif;
+            font-size: 3.5vw;
             text-shadow: 3px 3px 3px #999;
         }
 
@@ -31,11 +31,11 @@
 
         .textQuote
         {
-            width: 76vw;
-            margin-left: 12vw;
-            margin-right: 12vw;
+            width: 45vw;
+            
             font-family: 'Catamaran', sans-serif;
-            font-size: 2.3vw;
+            font-size: 1.2vw;
+            text-align: justify;
         }
 
         .formQuote
@@ -65,22 +65,23 @@
                 
                     .loginLabel 
                     {
-                        margin-left: 5px;
+                        margin-left: 2vw;
                         font-size: 16px;
-                        margin-bottom: 5px;
+                        margin-bottom: 2vw;
                         color: rgb(51, 51, 51);
                         align-self: flex-start;
-                        font-family: 'Brygada 1918', serif;
-                        margin-top: 10px;
+                        font-family: 'Pattaya', sans-serif;
+                        margin-top: 2vw;
+                        font-size: 2vw;
 
                     }
 
                     .loginDown__input {
-                    border: 0px solid rgb(255, 255, 255);
+                    border: 0px solid rgba(255, 255, 255, 0.034);
                     font-size: 16px;
                     padding: 10px;
                     border-radius: 10px;
-                    background-color: rgb(255, 255, 255);;
+                    background-color: rgba(255, 255, 255, 0);;
                     margin-bottom: 25px;
                     box-shadow: inset 0 0 5px rgba(0,0,0,0.1);
                     outline: none;
@@ -107,16 +108,17 @@
                     .selectServices
                     {
                         margin-bottom: 3.5vw;
+                        margin-top: 2vw;
                     }
 
                     .service__options
                     {
-                        margin-top: 5px;
+                        
                         display: flex;
                         flex-direction: column;
                         align-items: flex-start;
-                        margin-left: 23px;
-                        gap: 10px;
+                        margin-left: 2vw;
+                        gap: 2vw;
                         span
                         {
                             display: flex;
@@ -126,17 +128,17 @@
 
                 .generation
                 {
-                    padding-top: 1.2vw;
                     border-radius: 10px;
                     box-shadow: 1px 1px 2px #999;
                     margin-top: 3vw;
-                    height: 6vw;
+                    height: 3rem;
                     align-self: center;
-                    width: 25vw;
+                    width: 20%;
                     color: #FFF;
                     background-color: #000;
                     font-family: 'Brygada 1918', serif;
-                    font-size: 2.35vw;
+                    font-size: 20px;
+                    text-align: center;
                 }
             }
         }
@@ -151,4 +153,38 @@
         width: 18px;
         height: 18px;
     }
+}
+
+
+
+
+
+
+.sliderForm
+{
+    display: flex;
+    
+    .imageSliderForm
+    {
+        flex: 1;
+        height: 35vw;
+    }
+
+    .optionsSliderForm
+    {
+        display: flex;
+        flex-direction: column;
+        background-color: #FFF;
+        flex: 3;
+    }
+
+
+}
+
+
+.titleOptionService
+{
+    text-align: justify;
+    margin-right: 1vw;
+    font-size: 1.5vw;
 }

@@ -11,7 +11,7 @@ import Leaflet from 'leaflet'
 const Map = () => {
   const colombiaCoords = [6.2442, -75.5812];
   const casaBoston = [6.247367954395559, -75.55800910625467]
-  const salonLaureles = [6.239721264886833, -75.59696424146144]
+  const salonLaureles = [6.239721264886833, -75.59696424146144] 
 
 
   const image = new Leaflet.icon({
