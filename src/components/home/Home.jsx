@@ -10,18 +10,10 @@ import 'swiper/css/navigation';
 import { Autoplay, Pagination, Navigation, FreeMode } from 'swiper/modules';
 
 // imagenes
-import logo from "../../assets/image/logo-blanco.png";
-import bodas from '../../assets/image/boda.png'
 import servicios1 from '../../assets/image/servicios1.png'
 import servicios2 from '../../assets/image/decoracion.png'
 import servicios3 from '../../assets/image/catering.png'
 import corazon1 from '../../assets/image/corazon1.png'
-import sliderBodas from '../../assets/image/boda.jpg'
-import sliderCumpleaños from '../../assets/image/cumpleaños.jpg'
-import sliderEmpresariales from '../../assets/image/empresariales1.jpg'
-import sliderGrados from '../../assets/image/grados.jpg'
-import sliderBufet from '../../assets/image/bufet.jpg'
-import sliderAniversarios from '../../assets/image/bufet.jpg'
 import loguito from '../../assets/image/loguito.png'
 import gota from '../../assets/image/gota.png'
 import testimonio1 from '../../assets/image/testimonio1.png'
@@ -33,13 +25,20 @@ import marrano from '../../assets/image/marrano.png'
 import relojArena from '../../assets/image/relojArena.png'
 import celGota from '../../assets/image/celGota.png'
 import circulo from '../../assets/image/circuloSomos.png'
-import arrowL from '../../assets/image/arrowLeft.png'
-import arrowR from '../../assets/image/arrowR.png'
+import sliderBodas from '../../assets/image/boda.jpg'
+import sliderCumpleaños from '../../assets/image/cumpleaños.jpg'
+import sliderEmpresariales from '../../assets/image/empresariales1.jpg'
+import sliderGrados from '../../assets/image/grados.jpg'
+import sliderBufet from '../../assets/image/bufet.jpg'
+import sliderAniversarios from '../../assets/image/bufet.jpg'
+
 
 
 
 import { useNavigate } from 'react-router-dom';
 import CustomModal from '../modal/CustomModal';
+import Collage from '../collage/Collage';
+import { typEvent } from './hookTypEvent';
 
 
 const Home = () => {
@@ -66,6 +65,12 @@ const Home = () => {
     const [coordenadasMartin, setCoordenadasMartin] = useState(coordenadas.martin);
     const [coordenadasMilagrosa, setCoordenadasMilagrosa] = useState(coordenadas.milagrosa);
     const [coordenadasPlaya, setCoordenadasPlaya] = useState(coordenadas.playa);
+
+    const [eventoSeleccionado, setEventoSeleccionado] = useState("Bodas")
+
+      const handleEventoClick = (evento) => {
+        setEventoSeleccionado(evento);
+      };
 
 
 
@@ -111,111 +116,41 @@ const Home = () => {
                     <img src={logoDerecha} alt="" className='logoDerecha' />
                 </section>
 
-                <section className='typeEvent__home'>
-                    <div className="btns">
-                        <button className="btn__event" onClick={() => navigate('/bodas')}> Bodas</button>
-                        <button className="btn__event">Quince años</button>
-                        <button className="btn__event">Cumpleaños</button>
-                        <button className="btn__event">Empresariales</button>
-                        <button className="btn__event">Educativos</button>
-                    </div>
+                <section className="typeEvent__home">
+        <div className="btns">
+          
+          <button className={`btn__event ${eventoSeleccionado === "Bodas" ? "selected" : ""}`}
+           onClick={() => handleEventoClick("Bodas")}>
+            Bodas
+          </button>
+          <button className={`btn__event ${eventoSeleccionado === "Quinces" ? "selected" : ""}`} onClick={() => handleEventoClick("Quinces")}>
+            Quinces
+          </button>
+          <button className={`btn__event ${eventoSeleccionado === "Cumpleaños" ? "selected" : ""}`} onClick={() => handleEventoClick("Cumpleaños")}>
+            Cumpleaños
+          </button>
+          <button className={`btn__event ${eventoSeleccionado === "Empresariales" ? "selected" : ""}`} onClick={() => handleEventoClick("Empresariales")}>
+            Empresariales
+          </button>
+          <button className={`btn__event ${eventoSeleccionado === "Educativos" ? "selected" : ""}`} onClick={() => handleEventoClick("Educativos")}>
+            Educativos
+          </button>
+        </div>
+        {eventoSeleccionado && (
+          <div className="event__info">
+            <div className="event__description">
+              <h2 className="description__title">{typEvent[eventoSeleccionado].title}</h2>
+              <p className="description__parrafo">{typEvent[eventoSeleccionado].description}</p>
+              <button className="description__btn">Haz tu cotización</button>
+            </div>
+            <div className="event__collage">
+              <Collage imagenes={typEvent[eventoSeleccionado].imagenes} className="description__img" />
+            </div>
+          </div>
+        )}
+      </section>
 
-                    <div className='event__info'>
-                        <div className='event__description'>
-                            <h2 className='description__title'>LA BODA DE TUS SUEÑOS</h2>
-                            <p className='description__parrafo'>
-                                Somos expertos en crear eventos memorables y nos enorgullece hacer que tu boda sea perfecta en cada detalle. Desde la elección del lugar hasta la decoración y el menú, dedicamos toda nuestra pasión para que tu día sea inolvidable.
-                            </p>
-                            <button className="description__btn">
-                                Haz tu cotización
-                            </button>
-                        </div>
-                        <div className="event__collage">
-                            <img src={bodas} className='description__img' alt="Imagen de descripcion del evento" />
-                        </div>
-                    </div>
 
-                </section>
-
-                <div class="galeria">
-                    <a href="#imagen1" className='galeria__ancora'>
-                        <img src={sliderAniversarios} alt="" className='imagenes__iniciales' />
-                    </a>
-                    <a href="#imagen2" className='galeria__ancora'>
-                        <img src={sliderBodas} alt="" className='imagenes__iniciales' />
-                    </a>
-                    <a href="#imagen3" className='galeria__ancora'>
-                        <img src={sliderCumpleaños} alt="" className='imagenes__iniciales2' />
-                    </a>
-                    <a href="#imagen4" className='galeria__ancora'>
-                        <img src={sliderEmpresariales} alt="" className='imagenes__iniciales2' />
-                    </a>
-                    <a href="#imagen5" className='galeria__ancora'>
-                        <img src={sliderCumpleaños} alt="" className='imagenes__iniciales2' />
-                    </a>
-                </div>
-
-                <div id="imagen1" class='galeria__grande'>
-                    <a href="#imagen5"> <span class="material-symbols-outlined">
-                        arrow_back_ios
-                    </span></a>
-                    <img src={sliderAniversarios} alt="" />
-                    <a href="#imagen2"><span class="material-symbols-outlined">
-                        arrow_forward_ios
-                    </span></a>
-                    <a href="#cerrar" className='close'><span class="material-symbols-outlined">
-                        close
-                    </span></a>
-                    <div id="cerrar"></div>
-                </div>
-                <div id="imagen2" class='galeria__grande'>
-                    <a href="#imagen1"> <span class="material-symbols-outlined">
-                        arrow_back_ios
-                    </span></a>
-                    <img src={sliderBodas} alt="" />
-                    <a href="#imagen3"> <span class="material-symbols-outlined">
-                        arrow_forward_ios
-                    </span></a>
-                    <a href="#cerrar" className='close'><span class="material-symbols-outlined">
-                        close
-                    </span></a>
-                </div>
-                <div id="imagen3" class='galeria__grande'>
-                    <a href="#imagen2"> <span class="material-symbols-outlined">
-                        arrow_back_ios
-                    </span></a>
-                    <img src={sliderCumpleaños} alt="" />
-                    <a href="#imagen4"> <span class="material-symbols-outlined">
-                        arrow_forward_ios
-                    </span></a>
-                    <a href="#cerrar" className='close'><span class="material-symbols-outlined">
-                        close
-                    </span></a>
-                </div>
-                <div id="imagen4" class='galeria__grande'>
-                    <a href="#imagen3"> <span class="material-symbols-outlined">
-                        arrow_back_ios
-                    </span></a>
-                    <img src={sliderEmpresariales} alt="" />
-                    <a href="#imagen5"> <span class="material-symbols-outlined">
-                        arrow_forward_ios
-                    </span></a>
-                    <a href="#cerrar" className='close'><span class="material-symbols-outlined">
-                        close
-                    </span></a>
-                </div>
-                <div id="imagen5" class='galeria__grande'>
-                    <a href="#imagen4"> <span class="material-symbols-outlined">
-                        arrow_back_ios
-                    </span></a>
-                    <img src={sliderCumpleaños} alt="" />
-                    <a href="#imagen1"> <span class="material-symbols-outlined">
-                        arrow_forward_ios
-                    </span></a>
-                    <a href="#cerrar" className='close'><span class="material-symbols-outlined arrow">
-                        close
-                    </span></a>
-                </div>
 
 
                 <section className="services">
