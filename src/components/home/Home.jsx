@@ -7,7 +7,7 @@ import { Swiper, SwiperSlide } from 'swiper/react';
 import 'swiper/css';
 import 'swiper/css/pagination';
 import 'swiper/css/navigation';
-import { Autoplay, Pagination, Navigation } from 'swiper/modules';
+import { Autoplay, Pagination, Navigation, FreeMode } from 'swiper/modules';
 
 // imagenes
 import logo from "../../assets/image/logo-blanco.png";
@@ -21,17 +21,21 @@ import sliderCumpleaños from '../../assets/image/cumpleaños.jpg'
 import sliderEmpresariales from '../../assets/image/empresariales1.jpg'
 import sliderGrados from '../../assets/image/grados.jpg'
 import sliderBufet from '../../assets/image/bufet.jpg'
-import sliderAniversarios from '../../assets/image/bufet.jpg' 
+import sliderAniversarios from '../../assets/image/bufet.jpg'
 import loguito from '../../assets/image/loguito.png'
 import gota from '../../assets/image/gota.png'
 import testimonio1 from '../../assets/image/testimonio1.png'
 import testimonio2 from '../../assets/image/testimonio2.png'
 import testimonio3 from '../../assets/image/testimonio3.png'
 import logoIzquierda from '../../assets/image/gotaIzquierda.png'
-import logoDerecha from '../../assets/image/gotaDerecha.png' 
+import logoDerecha from '../../assets/image/gotaDerecha.png'
 import marrano from '../../assets/image/marrano.png'
 import relojArena from '../../assets/image/relojArena.png'
 import celGota from '../../assets/image/celGota.png'
+import circulo from '../../assets/image/circuloSomos.png'
+import arrowL from '../../assets/image/arrowLeft.png'
+import arrowR from '../../assets/image/arrowR.png'
+
 
 
 import { useNavigate } from 'react-router-dom';
@@ -44,14 +48,14 @@ const Home = () => {
 
     const openModal = () => {
         setModal(true);
-      };
-    
-      const closeModal = () => {
+    };
+
+    const closeModal = () => {
         setModal(false);
     };
 
     const navigate = useNavigate()
- 
+
     const coordenadas = {
         boston: [6.181351558809866, -75.63979898219357],
         martin: [6.257171994676571, -75.56078624930181],
@@ -63,22 +67,11 @@ const Home = () => {
     const [coordenadasMilagrosa, setCoordenadasMilagrosa] = useState(coordenadas.milagrosa);
     const [coordenadasPlaya, setCoordenadasPlaya] = useState(coordenadas.playa);
 
+
+
     return (
         <>
             <main className="main__home">
-                <div className="header__transparent">
-                    <nav clasName="header__navbar">
-                        <ul className='header__navbar--lista'>
-                            <li className='navbar__items' onClick={() => {navigate("/")}}>Incio</li>
-                            <li className='navbar__items' >Eventos sociales</li>
-                            <li className='navbar__items'>Eventos empresariales</li>
-                            <li className='navbar__items--logo'>{<img src={logo} className='logo__item--img' />}</li>
-                            <li className='navbar__items'>Seamos aliados</li>
-                            <li className='navbar__items'>Contáctanos</li>
-                            <li className='navbar__items'>Cotiza aquí</li>
-                        </ul>
-                    </nav>
-                </div>
                 <section className='slider__home'>
                     <Swiper
                         spaceBetween={30}
@@ -106,16 +99,16 @@ const Home = () => {
                 </section>
 
                 <section className='main__info'>
-                    <img src={logoIzquierda} alt="" className='logoIzquierda'/>
+                    <img src={logoIzquierda} alt="" className='logoIzquierda' />
                     <div className="container__intro">
                         <h1 className='main__title__home'>Bienvenido a</h1>
                         <h4 className='main__subtitle'>Celebraciones Sarahy</h4>
                         <p className="main__parrafo">
-                            Somos expertos en hacer eventos memorables. Con una pasión por la perfección y una atención meticulosa a cada detalle, nuestro objetivo es convertir tu boda en un día inolvidable. Desde la elección del lugar hasta la decoración, la gastronomía y la música, nos enorgullece crear experiencias únicas que reflejen tus sueños y deseos. Confía en nosotros para convertir tu día especial en un recuerdo que atesorarás para toda la vida. 
+                            Somos expertos en hacer eventos memorables. Con una pasión por la perfección y una atención meticulosa a cada detalle, nuestro objetivo es convertir tu boda en un día inolvidable. Desde la elección del lugar hasta la decoración, la gastronomía y la música, nos enorgullece crear experiencias únicas que reflejen tus sueños y deseos. Confía en nosotros para convertir tu día especial en un recuerdo que atesorarás para toda la vida.
                         </p>
 
                     </div>
-                    <img src={logoDerecha} alt="" className='logoDerecha'/>
+                    <img src={logoDerecha} alt="" className='logoDerecha' />
                 </section>
 
                 <section className='typeEvent__home'>
@@ -143,6 +136,86 @@ const Home = () => {
                     </div>
 
                 </section>
+
+                <div class="galeria">
+                    <a href="#imagen1" className='galeria__ancora'>
+                        <img src={sliderAniversarios} alt="" className='imagenes__iniciales' />
+                    </a>
+                    <a href="#imagen2" className='galeria__ancora'>
+                        <img src={sliderBodas} alt="" className='imagenes__iniciales' />
+                    </a>
+                    <a href="#imagen3" className='galeria__ancora'>
+                        <img src={sliderCumpleaños} alt="" className='imagenes__iniciales2' />
+                    </a>
+                    <a href="#imagen4" className='galeria__ancora'>
+                        <img src={sliderEmpresariales} alt="" className='imagenes__iniciales2' />
+                    </a>
+                    <a href="#imagen5" className='galeria__ancora'>
+                        <img src={sliderCumpleaños} alt="" className='imagenes__iniciales2' />
+                    </a>
+                </div>
+
+                <div id="imagen1" class='galeria__grande'>
+                    <a href="#imagen5"> <span class="material-symbols-outlined">
+                        arrow_back_ios
+                    </span></a>
+                    <img src={sliderAniversarios} alt="" />
+                    <a href="#imagen2"><span class="material-symbols-outlined">
+                        arrow_forward_ios
+                    </span></a>
+                    <a href="#" className='close'><span class="material-symbols-outlined">
+                        close
+                    </span></a>
+                </div>
+                <div id="imagen2" class='galeria__grande'>
+                    <a href="#imagen1"> <span class="material-symbols-outlined">
+                        arrow_back_ios
+                    </span></a>
+                    <img src={sliderBodas} alt="" />
+                    <a href="#imagen3"> <span class="material-symbols-outlined">
+                        arrow_forward_ios
+                    </span></a>
+                    <a href="#" className='close'><span class="material-symbols-outlined">
+                        close
+                    </span></a>
+                </div>
+                <div id="imagen3" class='galeria__grande'>
+                    <a href="#imagen2"> <span class="material-symbols-outlined">
+                        arrow_back_ios
+                    </span></a>
+                    <img src={sliderCumpleaños} alt="" />
+                    <a href="#imagen4"> <span class="material-symbols-outlined">
+                        arrow_forward_ios
+                    </span></a>
+                    <a href="#" className='close'><span class="material-symbols-outlined">
+                        close
+                    </span></a>
+                </div>
+                <div id="imagen4" class='galeria__grande'>
+                    <a href="#imagen3"> <span class="material-symbols-outlined">
+                        arrow_back_ios
+                    </span></a>
+                    <img src={sliderEmpresariales} alt="" />
+                    <a href="#imagen5"> <span class="material-symbols-outlined">
+                        arrow_forward_ios
+                    </span></a>
+                    <a href="#" className='close'><span class="material-symbols-outlined">
+                        close
+                    </span></a>
+                </div>
+                <div id="imagen5" class='galeria__grande'>
+                    <a href="#imagen4"> <span class="material-symbols-outlined">
+                        arrow_back_ios
+                    </span></a>
+                    <img src={sliderCumpleaños} alt="" />
+                    <a href="#imagen1"> <span class="material-symbols-outlined">
+                        arrow_forward_ios
+                    </span></a>
+                    <a href="#" className='close'><span class="material-symbols-outlined arrow">
+                        close
+                    </span></a>
+                </div>
+
 
 
                 <section className="services">
@@ -201,7 +274,7 @@ const Home = () => {
                     <h1 className='beneficios__title'>BENEFICIOS DE REALIZAR TU EVENTO CON NOSOTROS</h1>
                     <div className="container__beneficios">
                         <div className='beneficio__card card__beneficio--1'>
-                            <img src={marrano} alt="" className="icnono__beneficios"/>
+                            <img src={marrano} alt="" className="icnono__beneficios" />
                             <span className='card__beneficio--title'>
                                 Descuentos
                             </span>
@@ -211,7 +284,7 @@ const Home = () => {
                         </div>
 
                         <div className='beneficio__card card__beneficio--2'>
-                            <img src={celGota} alt="" className="icnono__beneficios"/>
+                            <img src={celGota} alt="" className="icnono__beneficios" />
                             <span className='card__beneficio--title'>
                                 Ahorro de Tiempo
                             </span>
@@ -221,7 +294,7 @@ const Home = () => {
                         </div>
 
                         <div className='beneficio__card'>
-                            <img src={relojArena} alt="" className="icnono__beneficios"/>
+                            <img src={relojArena} alt="" className="icnono__beneficios" />
                             <span className='card__beneficio--title'>
                                 Innovación Tecnológica
                             </span>
@@ -247,7 +320,7 @@ const Home = () => {
                                 <h3 className="nombre__ubicacion">CONVENIO BOSTON</h3>
                             </div>
                             <button className="verDetalles__ubicacion" onClick={openModal}>VER DETALLES</button>
-                            <CustomModal isOpen={modal} onRequestClose={closeModal} cordenada={coordenadasBoston}/>
+                            <CustomModal isOpen={modal} onRequestClose={closeModal} cordenada={coordenadasBoston} />
                         </div>
 
                         <div className="card__ubicacion">
@@ -288,11 +361,11 @@ const Home = () => {
                                 <h3 className="nombre__ubicacion">CONVENIO BOSTON</h3>
                             </div>
                             <button className="verDetalles__ubicacion" onClick={openModal} >VER DETALLES</button>
-                            <CustomModal isOpen={modal} onRequestClose={closeModal} cordenada={coordenadasBoston}/>
+                            <CustomModal isOpen={modal} onRequestClose={closeModal} cordenada={coordenadasBoston} />
 
                         </div>
                     </div>
-                    
+
                     <div className="barra__grande--ubicacion">
                         <div className="container__barra">
                             <img src={loguito} alt="" className="loguito__ubicacion--barra" />
@@ -300,13 +373,23 @@ const Home = () => {
                                 SERVICIO A DOMICILIO
                             </h3>
                         </div>
-                            <button className="ver__barra">VER DETALLES</button>
+                        <button className="ver__barra">VER DETALLES</button>
                     </div>
 
 
                 </section>
 
-               
+                <section className="quieneSomos">
+                    <div className="circuloSomos">
+                        <img src={circulo} alt="" className="circulo__somos--img" />
+                    </div>
+                    <div className="descripcion">
+                        Somos una empresa creada para prestación de servicios a nivel regional especializada en la organización de todo tipo de eventos .
+                        Fiestas de cumpleaños, Bodas, Reuniones y eventos corporativos, Recepciones, Conferencias, Eventos deportivos; Ofrecemos planificación de eventos, diseño y producción. Sea lo que sea que necesite, disponemos de lo necesario para hacer que su evento sea inolvidable
+                    </div>
+                </section>
+
+
                 <section className="comentarios">
                     <h2 className='comentarios__title'>TESTIMONIOS</h2>
                     <hr className='hr__services' />
@@ -340,7 +423,7 @@ const Home = () => {
                         <div className='container__comen'>
                             <img src={testimonio3} alt="imagen de comentario" className='img__comentario' />
                             <span className="testimonio">
-                              Los recomiendo demasiado los mejores en prestar este tipo de servicios
+                                Los recomiendo demasiado los mejores en prestar este tipo de servicios
                             </span>
                             <div className="container__calificacion">
                                 <img src={corazon1} alt="star-calificacion" className='star-calificacion' />
@@ -356,5 +439,5 @@ const Home = () => {
         </>
     )
 
-                    }
+}
 export default Home;
