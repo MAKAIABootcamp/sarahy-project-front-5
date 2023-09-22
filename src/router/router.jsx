@@ -17,6 +17,7 @@ import Birthday from '../page/birthday/Birthday';
 // import Quote from '../page/quote/Quote';
 import EventCompany from '../page/eventCompany/EventCompany';
 import Services from '../page/ourServices/Services';
+import WorkWhithUs from '../components/WorkWithUs/WorkWithUs';
 // import PrivateRoutes from './privateRoutes';
 
 const Router = () => {
@@ -40,6 +41,7 @@ const Router = () => {
         {/* <Route path="quote" element={<Quote />} /> */}
         <Route path="/empresariales" element={<EventCompany />} />
         <Route path="/social" element={<EventSocial />} />
+        <Route path="/trabajemos" element={<WorkWhithUs />} />
 
      
 

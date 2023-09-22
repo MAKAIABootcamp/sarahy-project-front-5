@@ -12,6 +12,7 @@ import {
   getUserFromCollection,
 } from "../../../services/getUser";
 import { setError, userDataLogged, userLogged } from "./authReducer";
+import Swal from "sweetalert2";
 
 export const createAnUser = (newUser) => {
   return async (dispatch) => {
@@ -61,6 +62,13 @@ export const loginWithEmailAndPassword = (loggedUser) => {
       dispatch(userLogged(true));
       dispatch(userDataLogged(foundUser));
       dispatch(setError(false));
+      Swal.fire({
+        position: 'top-end',
+        icon: 'success',
+        title: 'Ingreso exitoso',
+        showConfirmButton: false,
+        timer: 1500
+      })
     } catch (error) {
       console.log(error);
       dispatch(
@@ -91,6 +99,7 @@ export const loginGoogle = () => {
       dispatch(userLogged(true));
       dispatch(userDataLogged(dataUser));
       dispatch(setError(false));
+     
     } catch (error) {
       console.log(error.code);
       dispatch(
@@ -119,6 +128,7 @@ export const loginFacebook = () => {
       dispatch(userLogged(true));
       dispatch(userDataLogged(dataUserFace));
       dispatch(setError(false));
+      
     } catch (error) {
       console.log(error.code);
     }

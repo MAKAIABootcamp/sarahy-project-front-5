@@ -29,6 +29,7 @@
     margin-top: 3rem;
     display: flex;
     flex-direction: column;
+    align-items: center; 
 
     .line__locations{
         margin: 2rem 0;
@@ -46,6 +47,8 @@
         display: flex;
         height: 14rem; 
         gap: 1rem; 
+        width: 80%;
+        max-width: 1070px;
 
         .figure{
             width: 60%;
@@ -97,6 +100,8 @@
         flex-direction: row-reverse; 
         height: 14rem; 
         gap: 1rem; 
+        width: 80%;
+         max-width: 1070px;
 
         .figure{
             width: 60%;

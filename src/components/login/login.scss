@@ -9,8 +9,6 @@
 
   @import "../../assets/reset.scss";
   @import "../../assets/variables.scss";
-  
-
 
 
 * {
@@ -21,15 +19,15 @@
 
 .login {
     height: 100vh;
-    width: 100vw;
-    background-image: url('https://i.ibb.co/C7TCFcH/Inicio-de-Sesi-n.png'); // la imagen de fondo que tienes con una opacidad del 30%
+    width: 100%;
+    background-image: url('https://images.unsplash.com/photo-1525441273400-056e9c7517b3?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1470&q=80'); // la imagen de fondo que tienes con una opacidad del 30%
     padding: 0px;
-    overflow: hidden;
-    background-size:contain;
-    background-position: center;
+    // overflow: hidden;
+    // background-position: center;
     display: flex;
     align-items: center;
     justify-content: center;
+    background-size: cover; 
   
   
     &::before {
@@ -66,20 +64,16 @@
     &__container {
         position: absolute;
       width: 50vw;
-      min-width: 260px;
-    
-      max-width: 450px;
-
-      height: 98vh;
-      height: 100%;
+      width: 35%;
+      height: 70%;
       &.register
       {
         height:95vh;
 
       }
-      background-color: white;
+      background-color: rgb(255, 255, 255);
 
-      border-radius: 5vw;
+      border-radius: 20px;
       box-shadow: 0 0 10px rgba(0,0,0,0.1);
       display: flex;
       flex-direction: column;
@@ -121,9 +115,12 @@
 
     .loginDown {
                 flex: 2.75;
-                background-color: rgb(233, 220, 190);
+                background-color: rgb(249, 249, 249);
                 overflow: hidden;
                 padding: 20px;
+                display: flex;
+                flex-direction: column;
+                align-items: center; 
 
                 &__button {
                   font-size: 16px;
@@ -150,6 +147,8 @@
                     font-family: 'Brygada 1918', serif;
                     margin-bottom: 10px;
                     color: rgb(51, 51, 51);
+                    font-family: $Letter-titles; 
+                    margin-top: 2.5rem;
                 }
 
                 &__subtitle {
@@ -164,6 +163,8 @@
                 &__form {
                     display: flex;
                     flex-direction: column;
+                    width: 90%;
+                    gap: 0.5rem; 
 
                     .loginLabel {
                     margin-left: 5px;
@@ -171,7 +172,9 @@
                     margin-bottom: 5px;
                     color: rgb(51, 51, 51);
                     align-self: flex-start;
-                    font-family: 'Brygada 1918', serif;
+                    font-family: $Letter-subtitles; 
+                    margin-top: 1rem;
+
 
                     }
 
@@ -180,7 +183,7 @@
                     font-size: 16px;
                     padding: 10px;
                     border-radius: 5px;
-                    background-color: rgb(233, 220, 190);;
+                    background-color: rgb(255, 255, 255);;
                     margin-bottom: 10px;
                     box-shadow: inset 0 0 5px rgba(0,0,0,0.1);
                     outline: none;
@@ -198,9 +201,11 @@
                     padding: 10px;
                     border-radius: 5px;
                     border: none;
-                    background-color: rgb(255,153,0);
+                    background-color: rgb(28, 27, 27);
                     color: white;
                     cursor: pointer;
+                    font-family:  $Letter-subtitles; 
+                    margin-top: 2.5rem;
                     }
                 }
 
@@ -226,8 +231,9 @@
                     justify-content: center;
                     img
                     {
-                        width: 20px;
-                        height: 20px;
+                        width: 6%;
+                        margin-right: 0.5rem;
+                       
                     }
 
                 }
