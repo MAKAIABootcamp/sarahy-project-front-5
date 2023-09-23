@@ -7,115 +7,77 @@ import { Swiper, SwiperSlide } from 'swiper/react';
 import 'swiper/css';
 import 'swiper/css/pagination';
 import 'swiper/css/navigation';
-import { Autoplay, Pagination, Navigation } from 'swiper/modules';
+import { Autoplay, Pagination, Navigation, FreeMode } from 'swiper/modules';
 
 // imagenes
-import logo from "../../assets/image/logo-blanco.png";
-import bodas from '../../assets/image/boda.png'
 import servicios1 from '../../assets/image/servicios1.png'
 import servicios2 from '../../assets/image/decoracion.png'
 import servicios3 from '../../assets/image/catering.png'
 import corazon1 from '../../assets/image/corazon1.png'
-import sliderBodas from '../../assets/image/boda.jpg'
-import sliderCumpleaños from '../../assets/image/cumpleaños.jpg'
-import sliderEmpresariales from '../../assets/image/empresariales1.jpg'
-import sliderGrados from '../../assets/image/grados.jpg'
-import sliderBufet from '../../assets/image/bufet.jpg'
-import sliderAniversarios from '../../assets/image/bufet.jpg' 
 import loguito from '../../assets/image/loguito.png'
 import gota from '../../assets/image/gota.png'
 import testimonio1 from '../../assets/image/testimonio1.png'
 import testimonio2 from '../../assets/image/testimonio2.png'
 import testimonio3 from '../../assets/image/testimonio3.png'
 import logoIzquierda from '../../assets/image/gotaIzquierda.png'
-import logoDerecha from '../../assets/image/gotaDerecha.png' 
+import logoDerecha from '../../assets/image/gotaDerecha.png'
 import marrano from '../../assets/image/marrano.png'
 import relojArena from '../../assets/image/relojArena.png'
 import celGota from '../../assets/image/celGota.png'
+import circulo from '../../assets/image/circuloSomos.png'
+import sliderBodas from '../../assets/image/boda.jpg'
+import sliderCumpleaños from '../../assets/image/cumpleaños.jpg'
+import sliderEmpresariales from '../../assets/image/empresariales1.jpg'
+import sliderGrados from '../../assets/image/grados.jpg'
+import sliderBufet from '../../assets/image/bufet.jpg'
+import sliderAniversarios from '../../assets/image/bufet.jpg'
+
+
+
+
 import { useNavigate } from 'react-router-dom';
-import CustomModal from '../modal/CustomModal';
+import CustomModal from '../modalLocations/CustomModal';
+import Collage from '../collage/Collage';
+import { typEvent } from './hookTypEvent';
+import { addNewService } from '../../services/addNewService';
 
 
 const Home = () => {
-
+  
     const [modal, setModal] = useState(false);
 
     const openModal = () => {
         setModal(true);
-      };
-    
-      const closeModal = () => {
+    };
+
+    const closeModal = () => {
         setModal(false);
     };
 
     const navigate = useNavigate()
-    // useEffect( () => 
-    // {
-    //     const getServiceAll = async () => 
-    //     {
-    //         const date = await getService('photography');
-            
-    //         if(date)
-    //         {
-    //             console.log('Los Servicios de foto son: ', date);
-    //         }
-    //         else
-    //         {
-    //             console.log('Acción fallida.')
-    //         }
-    //     }
 
-    //     const addService = async () => 
-    //     {
-    //         const nuevoServicio = {
-    //             description: "Graba ese momento para un futuro. ",
-    //             image: "URL de la nueva imagen",
-    //             name: "Captura Históricas",
-    //             price: 110000,
-    //           };
-              
-    //         await addNewService('photography', nuevoServicio);
-            
+    const coordenadas = {
+        boston: [6.181351558809866, -75.63979898219357],
+        martin: [6.257171994676571, -75.56078624930181],
+        milagrosa: [6.238439649830454, -75.5553639364111],
+        playa: [6.247105551200784, -75.55793605912363],
+    }
+    const [coordenadasBoston, setCoordenadasBoston] = useState(coordenadas.boston);
+    const [coordenadasMartin, setCoordenadasMartin] = useState(coordenadas.martin);
+    const [coordenadasMilagrosa, setCoordenadasMilagrosa] = useState(coordenadas.milagrosa);
+    const [coordenadasPlaya, setCoordenadasPlaya] = useState(coordenadas.playa);
 
-        
+    const [eventoSeleccionado, setEventoSeleccionado] = useState("Bodas")
 
-        // const editService = async () => 
-        // {
-        //     await editServiceField("photography", "Fotolibro30x40.description", "Nuevo título para prueba.");
-        // } 
-
-        // const deleteService = async() => 
-        // {
-        //     await deleteServiceField("photography", "Movie");
-        // }
+      const handleEventoClick = (evento) => {
+        setEventoSeleccionado(evento);
+      };
 
 
-        // const addQuote = async() => 
-        // {
-        //     const quote = {event: "Cumpleaños", servicios: [1, 2, 3, 4], total: 58900 }
-        //     await addNewQuote("JlQjLzQgnyNH27JozbhUv28atw22", quote);
-        // }
 
-        // deleteService();
-
-
-    // },[])
     return (
         <>
             <main className="main__home">
-                <div className="header__transparent">
-                    <nav clasName="header__navbar">
-                        <ul className='header__navbar--lista'>
-                            <li className='navbar__items' onClick={() => {navigate("/")}}>Incio</li>
-                            <li className='navbar__items' >Eventos sociales</li>
-                            <li className='navbar__items'>Eventos empresariales</li>
-                            <li className='navbar__items--logo'>{<img src={logo} className='logo__item--img' />}</li>
-                            <li className='navbar__items'>Seamos aliados</li>
-                            <li className='navbar__items'>Contáctanos</li>
-                            <li className='navbar__items' onClick={()=>{navigate("/quote")}}>Cotiza aquí</li>
-                        </ul>
-                    </nav>
-                </div>
                 <section className='slider__home'>
                     <Swiper
                         spaceBetween={30}
@@ -143,43 +105,53 @@ const Home = () => {
                 </section>
 
                 <section className='main__info'>
-                    <img src={logoIzquierda} alt="" className='logoIzquierda'/>
+                    <img src={logoIzquierda} alt="" className='logoIzquierda' />
                     <div className="container__intro">
                         <h1 className='main__title__home'>Bienvenido a</h1>
                         <h4 className='main__subtitle'>Celebraciones Sarahy</h4>
                         <p className="main__parrafo">
-                            Somos expertos en hacer eventos memorables. Con una pasión por la perfección y una atención meticulosa a cada detalle, nuestro objetivo es convertir tu boda en un día inolvidable. Desde la elección del lugar hasta la decoración, la gastronomía y la música, nos enorgullece crear experiencias únicas que reflejen tus sueños y deseos. Confía en nosotros para convertir tu día especial en un recuerdo que atesorarás para toda la vida. 
+                            Somos expertos en hacer eventos memorables. Con una pasión por la perfección y una atención meticulosa a cada detalle, nuestro objetivo es convertir tu boda en un día inolvidable. Desde la elección del lugar hasta la decoración, la gastronomía y la música, nos enorgullece crear experiencias únicas que reflejen tus sueños y deseos. Confía en nosotros para convertir tu día especial en un recuerdo que atesorarás para toda la vida.
                         </p>
 
                     </div>
-                    <img src={logoDerecha} alt="" className='logoDerecha'/>
+                    <img src={logoDerecha} alt="" className='logoDerecha' />
                 </section>
 
-                <section className='typeEvent__home'>
-                    <div className="btns">
-                        <button className="btn__event" onClick={() => navigate('/bodas')}> Bodas</button>
-                        <button className="btn__event">Quince años</button>
-                        <button className="btn__event">Cumpleaños</button>
-                        <button className="btn__event">Empresariales</button>
-                        <button className="btn__event">Educativos</button>
-                    </div>
+                <section className="typeEvent__home">
+        <div className="btns">
+          
+          <button className={`btn__event ${eventoSeleccionado === "Bodas" ? "selected" : ""}`}
+           onClick={() => handleEventoClick("Bodas")}>
+            Bodas
+          </button>
+          <button className={`btn__event ${eventoSeleccionado === "Quinces" ? "selected" : ""}`} onClick={() => handleEventoClick("Quinces")}>
+            Quinces
+          </button>
+          <button className={`btn__event ${eventoSeleccionado === "Cumpleaños" ? "selected" : ""}`} onClick={() => handleEventoClick("Cumpleaños")}>
+            Cumpleaños
+          </button>
+          <button className={`btn__event ${eventoSeleccionado === "Empresariales" ? "selected" : ""}`} onClick={() => handleEventoClick("Empresariales")}>
+            Empresariales
+          </button>
+          <button className={`btn__event ${eventoSeleccionado === "Educativos" ? "selected" : ""}`} onClick={() => handleEventoClick("Educativos")}>
+            Educativos
+          </button>
+        </div>
+        {eventoSeleccionado && (
+          <div className="event__info">
+            <div className="event__description">
+              <h2 className="description__title">{typEvent[eventoSeleccionado].title}</h2>
+              <p className="description__parrafo">{typEvent[eventoSeleccionado].description}</p>
+              <button className="description__btn">Haz tu cotización</button>
+            </div>
+            <div className="event__collage">
+              <Collage imagenes={typEvent[eventoSeleccionado].imagenes} className="description__img" />
+            </div>
+          </div>
+        )}
+      </section>
 
-                    <div className='event__info'>
-                        <div className='event__description'>
-                            <h2 className='description__title'>LA BODA DE TUS SUEÑOS</h2>
-                            <p className='description__parrafo'>
-                                Somos expertos en crear eventos memorables y nos enorgullece hacer que tu boda sea perfecta en cada detalle. Desde la elección del lugar hasta la decoración y el menú, dedicamos toda nuestra pasión para que tu día sea inolvidable.
-                            </p>
-                            <button className="description__btn">
-                                Haz tu cotización
-                            </button>
-                        </div>
-                        <div className="event__collage">
-                            <img src={bodas} className='description__img' alt="Imagen de descripcion del evento" />
-                        </div>
-                    </div>
 
-                </section>
 
 
                 <section className="services">
@@ -238,7 +210,7 @@ const Home = () => {
                     <h1 className='beneficios__title'>BENEFICIOS DE REALIZAR TU EVENTO CON NOSOTROS</h1>
                     <div className="container__beneficios">
                         <div className='beneficio__card card__beneficio--1'>
-                            <img src={marrano} alt="" className="icnono__beneficios"/>
+                            <img src={marrano} alt="" className="icnono__beneficios" />
                             <span className='card__beneficio--title'>
                                 Descuentos
                             </span>
@@ -248,7 +220,7 @@ const Home = () => {
                         </div>
 
                         <div className='beneficio__card card__beneficio--2'>
-                            <img src={celGota} alt="" className="icnono__beneficios"/>
+                            <img src={celGota} alt="" className="icnono__beneficios" />
                             <span className='card__beneficio--title'>
                                 Ahorro de Tiempo
                             </span>
@@ -258,7 +230,7 @@ const Home = () => {
                         </div>
 
                         <div className='beneficio__card'>
-                            <img src={relojArena} alt="" className="icnono__beneficios"/>
+                            <img src={relojArena} alt="" className="icnono__beneficios" />
                             <span className='card__beneficio--title'>
                                 Innovación Tecnológica
                             </span>
@@ -284,13 +256,13 @@ const Home = () => {
                                 <h3 className="nombre__ubicacion">CONVENIO BOSTON</h3>
                             </div>
                             <button className="verDetalles__ubicacion" onClick={openModal}>VER DETALLES</button>
-                            <CustomModal isOpen={modal} onRequestClose={closeModal} />
+                            <CustomModal isOpen={modal} onRequestClose={closeModal} cordenada={coordenadasBoston} />
                         </div>
 
                         <div className="card__ubicacion">
                             <div className='card__separacion--ubicacion'>
                                 <img src={loguito} alt="" className="loguito__ubicacion" />
-                                <h3 className="nombre__ubicacion">CONVENIO BOSTON</h3>
+                                <h3 className="nombre__ubicacion">SALON SAN MARTIN</h3>
                             </div>
                             <button className="verDetalles__ubicacion">VER DETALLES</button>
                         </div>
@@ -298,7 +270,7 @@ const Home = () => {
                         <div className="card__ubicacion">
                             <div className='card__separacion--ubicacion'>
                                 <img src={loguito} alt="" className="loguito__ubicacion" />
-                                <h3 className="nombre__ubicacion">CONVENIO BOSTON</h3>
+                                <h3 className="nombre__ubicacion">VILLA MANUELA LA MILAGROSA </h3>
                             </div>
                             <button className="verDetalles__ubicacion">VER DETALLES</button>
                         </div>
@@ -306,7 +278,7 @@ const Home = () => {
                         <div className="card__ubicacion">
                             <div className='card__separacion--ubicacion'>
                                 <img src={loguito} alt="" className="loguito__ubicacion" />
-                                <h3 className="nombre__ubicacion">CONVENIO BOSTON</h3>
+                                <h3 className="nombre__ubicacion">PLAYA REAL</h3>
                             </div>
                             <button className="verDetalles__ubicacion">VER DETALLES</button>
                         </div>
@@ -325,11 +297,11 @@ const Home = () => {
                                 <h3 className="nombre__ubicacion">CONVENIO BOSTON</h3>
                             </div>
                             <button className="verDetalles__ubicacion" onClick={openModal} >VER DETALLES</button>
-                            <CustomModal isOpen={modal} onRequestClose={closeModal} />
+                            <CustomModal isOpen={modal} onRequestClose={closeModal} cordenada={coordenadasBoston} />
 
                         </div>
                     </div>
-                    
+
                     <div className="barra__grande--ubicacion">
                         <div className="container__barra">
                             <img src={loguito} alt="" className="loguito__ubicacion--barra" />
@@ -337,13 +309,23 @@ const Home = () => {
                                 SERVICIO A DOMICILIO
                             </h3>
                         </div>
-                            <button className="ver__barra">VER DETALLES</button>
+                        <button className="ver__barra">VER DETALLES</button>
                     </div>
 
 
                 </section>
 
-               
+                <section className="quieneSomos">
+                    <div className="circuloSomos">
+                        <img src={circulo} alt="" className="circulo__somos--img" />
+                    </div>
+                    <div className="descripcion">
+                        Somos una empresa creada para prestación de servicios a nivel regional especializada en la organización de todo tipo de eventos .
+                        Fiestas de cumpleaños, Bodas, Reuniones y eventos corporativos, Recepciones, Conferencias, Eventos deportivos; Ofrecemos planificación de eventos, diseño y producción. Sea lo que sea que necesite, disponemos de lo necesario para hacer que su evento sea inolvidable
+                    </div>
+                </section>
+
+
                 <section className="comentarios">
                     <h2 className='comentarios__title'>TESTIMONIOS</h2>
                     <hr className='hr__services' />
@@ -377,7 +359,7 @@ const Home = () => {
                         <div className='container__comen'>
                             <img src={testimonio3} alt="imagen de comentario" className='img__comentario' />
                             <span className="testimonio">
-                              Los recomiendo demasiado los mejores en prestar este tipo de servicios
+                                Los recomiendo demasiado los mejores en prestar este tipo de servicios
                             </span>
                             <div className="container__calificacion">
                                 <img src={corazon1} alt="star-calificacion" className='star-calificacion' />
@@ -393,5 +375,5 @@ const Home = () => {
         </>
     )
 
-                    }
+}
 export default Home;

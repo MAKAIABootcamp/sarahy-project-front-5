@@ -16,6 +16,9 @@ import empresa4 from "./assets/empresa4.jpeg";
 import empresa5 from "./assets/empresa5.jpeg";
 import "./companiesEvents.scss";
 
+import { typEvent } from "./hookTypEvent";
+import CollageEvents from "../collageEvents/Collage";
+
 const CompaniesEvents = () => {
   return (
     <main className="main__home">
@@ -151,10 +154,12 @@ const CompaniesEvents = () => {
             <span className="span">Galería</span>
             <button className="button__companies">Haz tu cotización </button>
             </div>
-
-            <figure className="collage__galery">
+            <div className="event__collagePlus">
+              <CollageEvents imagenes={typEvent} className="description__img" />
+            </div>
+            {/* <figure className="collage__galery">
             <img src={prueba} alt="" className="img" />
-            </figure>
+            </figure> */}
       </section>
 
       <section className="others__companies">

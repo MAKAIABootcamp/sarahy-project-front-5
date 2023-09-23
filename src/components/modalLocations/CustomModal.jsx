@@ -11,9 +11,8 @@ import sliderBufet from '../../assets/image/bufet.jpg';
 
 import Modal from "react-modal";
 
-const CustomModal = ({ isOpen, onRequestClose }) => {
+const CustomModal = ({ isOpen, onRequestClose, cordenada }) => {
   if (!isOpen) {
-    return null;
   }
   return (
     <Modal isOpen={isOpen} onRequestClose={onRequestClose} className="modal custom-modal">
@@ -35,7 +34,7 @@ const CustomModal = ({ isOpen, onRequestClose }) => {
       <section className="informacion__modal">
         <div className='informacion__modal--titulo'>
           <h1 className='titulo__modal'>
-            Convenio Bostón
+            CONVENIO BOSTON
           </h1>
           <img src={capacidad} alt="" className='imagen__modal--icono' />
           <span className='capacidad__modal'>
@@ -43,14 +42,12 @@ const CustomModal = ({ isOpen, onRequestClose }) => {
           </span>
         </div>
         <div className='informacion__modal--mapa'>
-          <Map />
+          {cordenada && <Map cordenada1={cordenada} />}
         </div>
-        
       </section>
-      <div className='div__info2'>
-        </div>
     </Modal>
   )
 }
+
 
 export default CustomModal;

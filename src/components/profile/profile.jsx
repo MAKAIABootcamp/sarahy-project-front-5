@@ -8,6 +8,7 @@ import facebook from "../../assets/image/face.png";
 import instagram from "../../assets/image/ig.png";
 import whatsapp from "../../assets/image/wpp.png";
 import { useSelector } from "react-redux";
+import { userDataLogged } from "../../redux/store/auth/authReducer";
 
 
 const Profile = () => {
