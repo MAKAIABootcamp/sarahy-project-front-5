@@ -39,6 +39,9 @@ import { useNavigate } from 'react-router-dom';
 import CustomModal from '../modal/CustomModal';
 import Collage from '../collage/Collage';
 import { typEvent } from './hookTypEvent';
+import 'swiper/swiper-bundle.css'; // Asegúrate de importar los estilos de Swiper
+
+
 
 
 const Home = () => {
@@ -68,9 +71,9 @@ const Home = () => {
 
     const [eventoSeleccionado, setEventoSeleccionado] = useState("Bodas")
 
-      const handleEventoClick = (evento) => {
+    const handleEventoClick = (evento) => {
         setEventoSeleccionado(evento);
-      };
+    };
 
 
 
@@ -117,76 +120,116 @@ const Home = () => {
                 </section>
 
                 <section className="typeEvent__home">
-        <div className="btns">
-          
-          <button className={`btn__event ${eventoSeleccionado === "Bodas" ? "selected" : ""}`}
-           onClick={() => handleEventoClick("Bodas")}>
-            Bodas
-          </button>
-          <button className={`btn__event ${eventoSeleccionado === "Quinces" ? "selected" : ""}`} onClick={() => handleEventoClick("Quinces")}>
-            Quinces
-          </button>
-          <button className={`btn__event ${eventoSeleccionado === "Cumpleaños" ? "selected" : ""}`} onClick={() => handleEventoClick("Cumpleaños")}>
-            Cumpleaños
-          </button>
-          <button className={`btn__event ${eventoSeleccionado === "Empresariales" ? "selected" : ""}`} onClick={() => handleEventoClick("Empresariales")}>
-            Empresariales
-          </button>
-          <button className={`btn__event ${eventoSeleccionado === "Educativos" ? "selected" : ""}`} onClick={() => handleEventoClick("Educativos")}>
-            Educativos
-          </button>
-        </div>
-        {eventoSeleccionado && (
-          <div className="event__info">
-            <div className="event__description">
-              <h2 className="description__title">{typEvent[eventoSeleccionado].title}</h2>
-              <p className="description__parrafo">{typEvent[eventoSeleccionado].description}</p>
-              <button className="description__btn">Haz tu cotización</button>
-            </div>
-            <div className="event__collage">
-              <Collage imagenes={typEvent[eventoSeleccionado].imagenes} className="description__img" />
-            </div>
-          </div>
-        )}
-      </section>
+                    <div className="btns">
+
+                        <button className={`btn__event ${eventoSeleccionado === "Bodas" ? "selected" : ""}`}
+                            onClick={() => handleEventoClick("Bodas")}>
+                            Bodas
+                        </button>
+                        <button className={`btn__event ${eventoSeleccionado === "Quinces" ? "selected" : ""}`} onClick={() => handleEventoClick("Quinces")}>
+                            Quinces
+                        </button>
+                        <button className={`btn__event ${eventoSeleccionado === "Cumpleaños" ? "selected" : ""}`} onClick={() => handleEventoClick("Cumpleaños")}>
+                            Cumpleaños
+                        </button>
+                        <button className={`btn__event ${eventoSeleccionado === "Empresariales" ? "selected" : ""}`} onClick={() => handleEventoClick("Empresariales")}>
+                            Empresariales
+                        </button>
+                        <button className={`btn__event ${eventoSeleccionado === "Educativos" ? "selected" : ""}`} onClick={() => handleEventoClick("Educativos")}>
+                            Educativos
+                        </button>
+                    </div>
+                    {eventoSeleccionado && (
+                        <div className="event__info">
+                            <div className="event__description">
+                                <h2 className="description__title">{typEvent[eventoSeleccionado].title}</h2>
+                                <p className="description__parrafo">{typEvent[eventoSeleccionado].description}</p>
+                                <button className="description__btn">Haz tu cotización</button>
+                            </div>
+                            <div className="event__collage">
+                                <Collage imagenes={typEvent[eventoSeleccionado].imagenes} className="description__img" />
+                            </div>
+                        </div>
+                    )}
+                </section>
 
 
 
 
                 <section className="services">
                     <h2 className='services__title'>CONOCE NUESTROS SERVICIOS</h2>
+
                     <div className='container__cards--services'>
 
-                        <div className="card__services">
-                            <h3 className='card__services--title'>FOTOGRAFÍA</h3>
-                            <img src={servicios1} alt="Imagen del servicio ofrecido" className='img__services' />
-                            <span className='card__services--span'>
-                                Guardar los mejores momentos de tu evento con fotografias y videos de la mejor calidad.
-                            </span>
-                            <button className="service__btn">Ver más</button>
-                        </div>
 
-                        <div className="card__services">
-                            <h3 className='card__services--title'>DECORACIÓN</h3>
-                            <img src={servicios2} alt="Imagen del servicio ofrecido" className='img__services' />
-                            <span className='card__services--span'>
-                                Transformamos espacios en escenarios de ensueño con nuestra decoración experta
-                            </span>
-                            <button className="service__btn">Ver más</button>
-                        </div>
+                        <Swiper
+                            className="my-swiper-2" // Clase personalizada para el Swiper
+                            spaceBetween={30}
+                            slidesPerView={3}
+                            navigation
+                            pagination={{ clickable: true }}
+                            scrollbar={{ draggable: true }}
+                            freeMode={true}
+                        >
+                            {/* Slide 1 */}
+                            <SwiperSlide>
+                                <div className="card__services">
+                                    <h3 className='card__services--title'>FOTOGRAFÍA</h3>
+                                    <img src={servicios1} alt="Imagen del servicio ofrecido" className='img__services' />
+                                    <span className='card__services--span'>
+                                        Guardar los mejores momentos de tu evento con fotografías y videos de la mejor calidad.
+                                    </span>
+                                    <button className="service__btn">Ver más</button>
+                                </div>
+                            </SwiperSlide>
 
-                        <div className="card__services">
-                            <h3 className='card__services--title'>CATERING</h3>
-                            <img src={servicios3} alt="Imagen del servicio ofrecido" className='img__services' />
-                            <span className='card__services--span'>
-                                Deléitate con nuestro exquisito servicio de catering y saborea el éxito de tu evento
-                            </span>
-                            <button className="service__btn">Ver más</button>
-                        </div>
+                            {/* Slide 2 */}
+                            <SwiperSlide>
+                                <div className="card__services">
+                                    <h3 className='card__services--title'>DECORACIÓN</h3>
+                                    <img src={servicios2} alt="Imagen del servicio ofrecido" className='img__services' />
+                                    <span className='card__services--span'>
+                                        Transformamos espacios en escenarios de ensueño con nuestra decoración experta
+                                    </span>
+                                    <button className="service__btn">Ver más</button>
+                                </div>
+                            </SwiperSlide>
+
+                            {/* Slide 3 */}
+                            <SwiperSlide>
+                                <div className="card__services">
+                                    <h3 className='card__services--title'>CATERING</h3>
+                                    <img src={servicios3} alt="Imagen del servicio ofrecido" className='img__services' />
+                                    <span className='card__services--span'>
+                                        Deléitate con nuestro exquisito servicio de catering y saborea el éxito de tu evento
+                                    </span>
+                                    <button className="service__btn">Ver más</button>
+                                </div>
+                            </SwiperSlide>
+                            <SwiperSlide>
+                                <div className="card__services">
+                                    <h3 className='card__services--title'>CATERING</h3>
+                                    <img src={servicios3} alt="Imagen del servicio ofrecido" className='img__services' />
+                                    <span className='card__services--span'>
+                                        Deléitate con nuestro exquisito servicio de catering y saborea el éxito de tu evento
+                                    </span>
+                                    <button className="service__btn">Ver más</button>
+                                </div>
+                            </SwiperSlide>
+                            <SwiperSlide>
+                                <div className="card__services">
+                                    <h3 className='card__services--title'>CATERING</h3>
+                                    <img src={servicios3} alt="Imagen del servicio ofrecido" className='img__services' />
+                                    <span className='card__services--span'>
+                                        Deléitate con nuestro exquisito servicio de catering y saborea el éxito de tu evento
+                                    </span>
+                                    <button className="service__btn">Ver más</button>
+                                </div>
+                            </SwiperSlide>
+                        </Swiper>
+
                     </div>
-
                 </section>
-
 
                 <section className="encantados">
                     <div className="gota">
@@ -269,7 +312,7 @@ const Home = () => {
                         <div className="card__ubicacion">
                             <div className='card__separacion--ubicacion'>
                                 <img src={loguito} alt="" className="loguito__ubicacion" />
-                                <h3 className="nombre__ubicacion">VILLA MANUELA LA MILAGROSA </h3>
+                                <h3 className="nombre__ubicacion"> LA MILAGROSA </h3>
                             </div>
                             <button className="verDetalles__ubicacion">VER DETALLES</button>
                         </div>
@@ -305,10 +348,9 @@ const Home = () => {
                         <div className="container__barra">
                             <img src={loguito} alt="" className="loguito__ubicacion--barra" />
                             <h3 className="ubicacion__barra">
-                                SERVICIO A DOMICILIO
+                            ¡Recuerda! Tenemos servicio a domicilio
                             </h3>
                         </div>
-                        <button className="ver__barra">VER DETALLES</button>
                     </div>
 
 
