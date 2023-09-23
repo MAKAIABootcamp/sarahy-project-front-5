@@ -12,6 +12,7 @@
     overflow: hidden;
     overflow-x: hidden;
 
+
     .introduction
     {
 
@@ -189,7 +190,7 @@
     .galleryWedding
     {
         width: 100vw;
-        height: 110vh;
+
         background-color: rgb(255, 255, 255);
         box-shadow: 5px 5px 10px gray;
         display: flex;
@@ -203,17 +204,27 @@
         &__list
         {
             width: 90vw;
-            height: 100vh;
+
+ 
             margin: 5vw;
             box-shadow: 5px 5px 10px gray;
 
-            figure 
+            .mySwiper
             {
-                margin-top: 3vw;
-                img
+                &.swipeWedding
                 {
-                    width: 75vw;
-                    height: 55vh;
+                    height: 60vw;
+
+                    .weddingSwiperSlider
+                    {
+                        height: 60vw;
+
+                        .imageSliderGallery
+                        {
+                            width: 85vw;
+                            height: 50vw;
+                        }
+                    }
                 }
             }
 
@@ -234,9 +245,17 @@
 
 
 
-.imageSliderGallery
+
+.backGroundWedding
 {
-    width: 300px;
-    height: 150px;
-    margin-bottom: 4vw;
+    width: 100vw;
+    height: 30vw;
+    object-fit: cover;
+    filter: brightness(80%);
+}
+
+.swiper-slide
+{
+
+
 }

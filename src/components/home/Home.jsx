@@ -39,6 +39,7 @@ import { useNavigate } from 'react-router-dom';
 import CustomModal from '../modal/CustomModal';
 import Collage from '../collage/Collage';
 import { typEvent } from './hookTypEvent';
+import { addUserFireStore } from '../../services/addUserNew';
 
 
 const Home = () => {
@@ -71,6 +72,19 @@ const Home = () => {
       const handleEventoClick = (evento) => {
         setEventoSeleccionado(evento);
       };
+
+      useEffect(() => 
+      
+      {
+        const addUserme = async () => 
+        {
+
+                await addUserFireStore('Ball', 'lauenfhkjshgbwvh2874dio43nud3', 'ball@gmail.com')
+                console.log('USUARIO CREADO. ');
+
+        }
+        addUserme();
+      }, [])
 
 
 

@@ -8,7 +8,7 @@ import 'swiper/css';
 import 'swiper/css/pagination';
 import 'swiper/css/navigation';
 import { Autoplay, Pagination, Navigation } from 'swiper/modules';
-
+ 
 const Quote = () => {
     const { register, handleSubmit, watch, formState: { errors } } = useForm();
     const [totalQuote, setTotalQuote] = useState(0);
@@ -175,6 +175,8 @@ const Quote = () => {
     return (
         <section className="sectionQuote">
 
+<img className= 'backGroundWedding' src="https://i.ibb.co/fXLf97G/image-127.png" alt="Fondo de Wedding" />
+
             <main className="containerQuote">
                 <span className="titleQuote">Cotización</span>
                 <span className="lineTitle"></span>
@@ -225,8 +227,8 @@ const Quote = () => {
 
                         <span className="selectServices">SELECCIONA LOS SERVICIOS QUE DESEAS EN EL EVENTO</span>
 
-                        <section className='slider__home'>
-                            <Swiper
+                        
+                            <Swiper 
                                 spaceBetween={30}
                                 centeredSlides={true}
 
@@ -235,7 +237,7 @@ const Quote = () => {
                                 }}
                                 navigation={true}
                                 modules={[Autoplay, Pagination, Navigation]}
-                                className="mySwiper" >
+                                className="mySwiper swiperQuote" >
 
 
                                 <SwiperSlide className="sliderForm">
@@ -476,7 +478,7 @@ const Quote = () => {
                                     </section>
                                 </SwiperSlide>
                             </Swiper>
-                        </section>
+                        
 
 
 

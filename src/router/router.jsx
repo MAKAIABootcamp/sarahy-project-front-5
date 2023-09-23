@@ -19,6 +19,7 @@ import EventCompany from '../page/eventCompany/EventCompany';
 import Services from '../page/ourServices/Services';
 import WeddingPage from '../page/wedding/WeddingPage';
 import WorkWhithUs from '../components/WorkWithUs/WorkWithUs';
+import Quote from '../page/quote/Quote';
 // import PrivateRoutes from './privateRoutes';
 
 const Router = () => {
@@ -39,7 +40,7 @@ const Router = () => {
         <Route path="/aliados" element={<Allies />} />
         <Route path="/domicilio" element={<Domicilio />} />
         <Route path="/cumpleaños" element={<Birthday />} />
-        {/* <Route path="quote" element={<Quote />} /> */}
+        <Route path="quote" element={<Quote/>} />
         <Route path="/empresariales" element={<EventCompany />} />
         <Route path="/social" element={<EventSocial />} />
         <Route path="/wedding" element={<WeddingPage />} />

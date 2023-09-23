@@ -109,6 +109,40 @@
                     {
                         margin-bottom: 3.5vw;
                         margin-top: 2vw;
+
+
+                        .mySwiper
+                        {
+
+
+                            &.swiperQuote
+                            {
+                                
+
+                                .sliderForm
+                                {
+                                    
+                                    
+                                    .imageSliderForm
+                                    {
+                                        width: 5vw;
+                                        height: 35vw;
+                                    }
+
+                                    .optionsSliderForm
+                                    {
+                                        display: flex;
+                                        flex-direction: column;
+                                        background-color: #FFF;
+                                        
+                                        width: 50vw;
+                                    }
+                                
+
+                                }
+                            }
+
+                        }
                     }
 
                     .service__options
@@ -160,26 +194,7 @@
 
 
 
-.sliderForm
-{
-    display: flex;
-    
-    .imageSliderForm
-    {
-        flex: 1;
-        height: 35vw;
-    }
 
-    .optionsSliderForm
-    {
-        display: flex;
-        flex-direction: column;
-        background-color: #FFF;
-        flex: 3;
-    }
-
-
-}
 
 
 .titleOptionService
