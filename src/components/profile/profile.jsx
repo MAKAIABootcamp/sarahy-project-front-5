@@ -1,31 +1,37 @@
 import React from "react";
 import "./profile.scss";
-import arrowRight from "../../assets/images/flechaDerecha.png";
-import photoProfile from "../../assets/images/fotoHombre.jpg";
-import iconEdit from "../../assets/images/Edit.png";
-import logoBlack from "../../assets/images/logoSarahyBlack.png";
-import facebook from "../../assets/images/face.png";
-import instagram from "../../assets/images/ig.png";
-import whatsapp from "../../assets/images/wpp.png";
+import arrowRight from "../../assets/image/flechaDerecha.png";
+import photoProfile from "../../assets/image/fotoHombre.jpg";
+import iconEdit from "../../assets/image/Edit.png";
+import logoBlack from "../../assets/image/logoSarahyBlack.png";
+import facebook from "../../assets/image/face.png";
+import instagram from "../../assets/image/ig.png";
+import whatsapp from "../../assets/image/wpp.png";
+import { useSelector } from "react-redux";
+import { userDataLogged } from "../../redux/store/auth/authReducer";
 
 
 const Profile = () => {
+
+   const user = useSelector((state) => state.aunthentication.userLogged)
+   console.log(user)
+
   return (
     <>
     <section className="title__profile">
         <h2 className="title">Perfil</h2>
-        <hr className="line" />
+        <hr className="line__profile" />
       </section>
 
     <section className="main__profile">
       <section className="container__profile">
             <section className="introduction__profile">
             <figure className="fig__profile">
-                <img className="img" src={photoProfile} alt="Foto perfil" />
+                <img className="img" src={user.foto} alt="Foto perfil" />
             </figure>
             <div className="data__profile">
-                <h4 className="name">Juanito Pérez</h4>
-                <span>juanito@gmail.com</span>
+                <h4 className="name">{user.nombre}</h4>
+                <span>{user.email}</span>
                 <span>3203003030</span>
             </div>
             </section>
@@ -59,47 +65,125 @@ const Profile = () => {
 
                 <span className="title">Datos personales</span>
                 <div className="edit__item">
-                    <span>Nombre</span>
-                    <span>Juanito Pérez</span>
+                    <span className="span">Nombre</span>
+                    <span className="span">{user.nombre}</span>
                     <img src={iconEdit} alt="" />
                 </div>
                 <hr className="line__profile"/>
 
                 <div className="edit__item">
-                    <span>Contacto</span>
-                    <span>3003652020</span>
+                    <span className="span">Contacto</span>
+                    <span className="span">3203003030</span>
                     <img src={iconEdit} alt="" />
                 </div>
                 <hr className="line__profile"/>
 
                 <div className="edit__item">
-                    <span>Edad</span>
-                    <span>32</span>
+                    <span className="span">Edad</span>
+                    <span className="span">32</span>
                     <img src={iconEdit} alt="" />
                 </div>
                 <hr className="line__profile"/>
 
                 <div className="edit__item">
-                    <span>Cuidad</span>
-                    <span>Medellín</span>
+                    <span className="span">Cuidad</span>
+                    <span className="span">Medellín</span>
                     <img src={iconEdit} alt="" />
                 </div>
                 <hr className="line__profile"/>
 
                 <div className="edit__item">
-                    <span>Dirección</span>
-                    <span>Cra 56 # 30-30</span>
+                    <span className="span">Dirección</span>
+                    <span className="span">Cra 56 # 30-30</span>
                     <img src={iconEdit} alt="" />
                 </div>
                 <hr className="line__profile"/>
 
             </section>
 
+            <section className="show__price">
+                <span className="title">Cotizaciones</span>
+
+                <div className="titles__price">
+                    <span className="span__title">Evento</span>
+                    <span className="span__title">Fecha</span>
+                    <span className="span__title">Valor</span>
+                </div>
+
+                <div className="data__price">
+                    <span className="span__data">Baby Shower</span>
+                    <span className="span__data">20/11/2023</span>
+                    <span className="span__data">$4'500.000</span>
+                </div>
+                <div className="data__price">
+                    <span className="span__data">Baby Shower</span>
+                    <span className="span__data">20/11/2023</span>
+                    <span className="span__data">$4'500.000</span>
+                </div>
+                <div className="data__price">
+                    <span className="span__data">Baby Shower</span>
+                    <span className="span__data">20/11/2023</span>
+                    <span className="span__data">$4'500.000</span>
+                </div>
+            </section>
+
+            <section className="show__events">
+                <span className="title">Historial de eventos</span>
+
+                <div className="titles__events">
+                    <span className="span__title">Evento</span>
+                    <span className="span__title">Fecha</span>
+                    <span className="span__title">Valor</span>
+                </div>
+
+                <div className="data__events">
+                    <span className="span__data">Baby Shower</span>
+                    <span className="span__data">20/11/2023</span>
+                    <span className="span__data">$4'500.000</span>
+                </div>
+                <div className="data__events">
+                    <span className="span__data">Baby Shower</span>
+                    <span className="span__data">20/11/2023</span>
+                    <span className="span__data">$4'500.000</span>
+                </div>
+                <div className="data__events">
+                    <span className="span__data">Baby Shower</span>
+                    <span className="span__data">20/11/2023</span>
+                    <span className="span__data">$4'500.000</span>
+                </div>
+            </section>
+
+
+            <section className="show__comments">
+                <span className="title">Déjanos tus comentarios</span>
+                <form action="" className="form__comments">
+                    <article className="article__form">
+                    <label htmlFor="" className="label">Evento:</label>
+                    <input type="text" placeholder="Ingresa el tipo de evento" className="input"/>
+                    </article>
+
+                    <article className="article__form">
+                    <label htmlFor="" className="label">Comentario:</label>
+                    <input type="text" placeholder="Escribe tu comentario" className="input"/>
+                    </article>
+
+                    <article className="article__form">
+                    <label htmlFor="" className="label">Calificación:</label>
+                   
+                    </article>
+                    
+                    <button className="btn__comments">Enviar comentario</button>
+                
+                </form>
+
+               
+            </section>
+
 
         </section>
     </section>
 
-    <section className="footer">
+    {/* <section className="footer">
         <div className="footer__information">
             <h5>CONTÁCTANOS</h5>
             <span>Celebraciones Sarahy</span>
@@ -128,7 +212,7 @@ const Profile = () => {
         </article>
         </div>
         
-    </section>
+    </section> */}
     </>
   );
 };

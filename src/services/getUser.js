@@ -12,6 +12,9 @@ export const createAnUserInCollection = async (uid, newUser) => {
             ok: true,
             user: {
                 id: uid,
+                admi: false, 
+                quote: [], 
+                chat: [], 
                 ...newUser
             }
         }
