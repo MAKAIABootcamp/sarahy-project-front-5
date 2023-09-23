@@ -6,10 +6,10 @@ const Collage = ( { imagenes } ) => {
         <div className="row">
 
             <div class="galeria">
-                <a href="#imagen1" className='galeria__ancora'>
+                <a href="#imagen1" className='galeria__ancora2'>
                     <img src={imagenes[0]} alt="" className='imagenes__iniciales' />
                 </a>
-                <a href="#imagen2" className='galeria__ancora'>
+                <a href="#imagen2" className='galeria__ancora2'>
                     <img src={imagenes[1]} alt="" className='imagenes__iniciales' />
                 </a>
                 <a href="#imagen3" className='galeria__ancora'>
@@ -23,8 +23,6 @@ const Collage = ( { imagenes } ) => {
                 </a>
             </div>
 
-
-
             <div id="imagen1" class='galeria__grande'>
                 <a href="#imagen5"> <span class="material-symbols-outlined">
                     arrow_back_ios
@@ -33,10 +31,10 @@ const Collage = ( { imagenes } ) => {
                 <a href="#imagen2"><span class="material-symbols-outlined">
                     arrow_forward_ios
                 </span></a>
-                <a href="#cerrar" className='close'><span class="material-symbols-outlined">
+                <a href="#home" className='close'><span class="material-symbols-outlined">
                     close
                 </span></a>
-                <div id="cerrar"></div>
+                <div id="home"></div>
             </div>
 
             <div id="imagen2" class='galeria__grande'>
@@ -47,7 +45,7 @@ const Collage = ( { imagenes } ) => {
                 <a href="#imagen3"> <span class="material-symbols-outlined">
                     arrow_forward_ios
                 </span></a>
-                <a href="#cerrar" className='close'><span class="material-symbols-outlined">
+                <a href="#home" className='close'><span class="material-symbols-outlined">
                     close
                 </span></a>
             </div>
@@ -60,7 +58,7 @@ const Collage = ( { imagenes } ) => {
                 <a href="#imagen4"> <span class="material-symbols-outlined">
                     arrow_forward_ios
                 </span></a>
-                <a href="#cerrar" className='close'><span class="material-symbols-outlined">
+                <a href="#home" className='close'><span class="material-symbols-outlined">
                     close
                 </span></a>
             </div>
@@ -73,7 +71,7 @@ const Collage = ( { imagenes } ) => {
                 <a href="#imagen5"> <span class="material-symbols-outlined">
                     arrow_forward_ios
                 </span></a>
-                <a href="#cerrar" className='close'><span class="material-symbols-outlined">
+                <a href="#home" className='close'><span class="material-symbols-outlined">
                     close
                 </span></a>
             </div>
@@ -86,7 +84,7 @@ const Collage = ( { imagenes } ) => {
                 <a href="#imagen1"> <span class="material-symbols-outlined">
                     arrow_forward_ios
                 </span></a>
-                <a href="#cerrar" className='close'><span class="material-symbols-outlined arrow">
+                <a href="#home" className='close'><span class="material-symbols-outlined arrow">
                     close
                 </span></a>
             </div>

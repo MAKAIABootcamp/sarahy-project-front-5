@@ -174,13 +174,13 @@
             cursor: pointer;
             font-weight: 800;
         }
-        
+
         .selected {
-            background-color: $color-cream; 
-            color: $color-black; 
+            background-color: $color-cream;
+            color: $color-black;
             font-weight: 800;
-            
-          }
+
+        }
     }
 
     .event__info {
@@ -260,10 +260,10 @@
         padding-bottom: 20px;
         font-size: 25px;
         width: 80%;
+        padding-bottom: 40px;
         font-family: $Letter-subtitles;
     }
 
-    
     .container__cards--services {
         display: flex;
         gap: 40px;
@@ -271,8 +271,35 @@
         justify-content: space-between;
         padding-bottom: 40px;
 
+        .swiper-horizontal {
+            touch-action: pan-y;
+            height: 30rem;
+
+            .swiper-scrollbar {
+                display: none;
+            }
+
+            .swiper-pagination {
+                color: aqua;
+            }
+
+            .swiper-button-next:after,
+            .swiper-rtl .swiper-button-prev:after {
+                content: 'next';
+                color: $color-cream;
+                display: none;
+            }
+
+            .swiper-button-prev:after,
+            .swiper-rtl .swiper-button-next:after {
+                content: 'prev';
+                color: $color-cream;
+                display: none;
+            }
+        }
+
+
         .card__services {
-            width: 32%;
             display: flex;
             flex-direction: column;
             padding: 25px;
@@ -287,14 +314,13 @@
                 background: #E9DCBE;
                 transform: rotate(90deg);
                 position: absolute;
-                margin-left: 210px;
-                margin-top: 55px;
-                height: 5%;
-                width: 12%;
+                margin-left: 10rem;
+                margin-top: 2rem;
+                width: 50%;
                 text-align: center;
                 padding: 6px;
                 font-size: 22px;
-                font-family: $Letter-subtitles;
+                font-family: "Montserrat", sans-serif;
             }
 
             .img__services {
@@ -330,8 +356,9 @@
                 cursor: pointer;
             }
         }
-
     }
+
+
 
 }
 
@@ -416,7 +443,7 @@
 
     .container__locaciones {
         display: flex;
-        width: 70%;
+        width: 90%;
         flex-wrap: wrap;
         justify-content: space-between;
 
@@ -433,14 +460,14 @@
                 display: flex;
                 gap: 20px;
                 align-items: center;
-                padding: 30px;
+                padding: 15px;
 
                 .loguito__ubicacion {
-                    width: 50px;
+                    width: 40px;
                 }
 
                 .nombre__ubicacion {
-                    font-size: 30px;
+                    font-size: 20px;
                     font-family: $Letter-subtitles;
                 }
             }
@@ -469,7 +496,7 @@
         align-items: center;
         gap: 10px;
         background-color: rgba(255, 255, 255, 0.7);
-
+        width: 90%;
         .container__barra {
             display: flex;
             gap: 10px;
@@ -505,23 +532,27 @@
     }
 }
 
-.quieneSomos{
+.quieneSomos {
     display: flex;
     width: 100%;
     padding: 50px 0px;
     background-color: #F3F3F3;
     justify-content: center;
     align-items: center;
-    .circuloSomos{
+
+    .circuloSomos {
         width: 30%;
-        .circulo__somos--img{
+
+        .circulo__somos--img {
             width: 70%;
         }
     }
-    .descripcion{
+
+    .descripcion {
         width: 50%;
         text-align: justify;
         font-size: 20px;
+        line-height: 30px;
     }
 }
 
@@ -643,6 +674,132 @@
                 line-height: 22px;
             }
         }
-
     }
 }
+
+
+@media (max-width: 999px) {
+    .main__home {
+        .main__info{
+            .logoDerecha{
+                width: 4rem;
+                height: 4rem;
+            }
+            .logoIzquierda{
+                width: 4rem;
+                height: 4rem;
+            }
+            .container__intro{
+                .main__parrafo{
+                    font-size: 18px
+                }
+            }
+        }
+       
+        .typeEvent__home {
+            padding: 40px 20px;
+            .btns{
+                width: 100%;
+                .btn__event {
+                    width: 20%;
+                    height: 3rem;
+                    font-size: 16px;
+                    text-align: center;
+                    line-height: 1px;
+                }
+                
+            }
+            .event__info{
+                display: flex;
+                gap: 20px;
+                justify-content: center;
+                width: auto;
+                .description__title{
+                    font-size: 22px;
+                }
+                .description__parrafo{
+                    font-size: 19px;
+                }
+
+                .description__btn{
+                    width: auto;
+                    padding: 0 10px;
+                }
+            }
+        }
+        .services{
+            padding: 10px 0;
+            .container__cards--services {
+                .card__services{
+                    margin: auto;
+                    height: 24rem;
+                    .card__services--span{
+                        text-align: center;
+                        width: auto;
+                    } 
+                    .card__services--title{
+                        width: 75%;
+                        font-size: 20px;
+                    }
+                    
+                }
+                .swiper-horizontal {
+                    height: 23rem;
+                }
+                
+            }
+            
+        }
+        .encantados{
+            padding: 20px 20px;
+            .encatados__info{
+                .encantados__title{
+                    font-size: 40px;
+                }
+                .logo__subtitulo{
+                    .encantado__subtitulo--img{
+                        width: 30px;
+                    }
+                    .encantado__subtitulo{
+                        font-size: 25px;
+                    }
+                }
+            }
+        }
+    }
+    // .slider__home {
+    //     height: 20rem; 
+    // }
+
+    // .main__info {
+    //     padding: 20px 10px; 
+    // }
+}
+
+// @media (max-width: 758px) {
+//     .main__home {
+//         padding: 0 20px;
+//         .typeEvent__home {
+//             background-color: aqua;
+//             .btns{
+//                 .btn__event {
+//                     height: 50px;
+//                     border-radius: 12px;
+//                     border: 3px solid $color-black;
+//                     padding: 8px;
+//                     font-size: 18px;
+//                     font-weight: 500;
+//                     background-color: white;
+//                 }
+
+//             }
+//         }
+//     }
+//     .slider__home {
+//         height: 20rem; 
+//     }
+
+//     .main__info {
+//         padding: 20px 10px; 
+//     }
+// }
