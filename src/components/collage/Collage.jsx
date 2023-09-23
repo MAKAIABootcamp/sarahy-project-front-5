@@ -6,10 +6,10 @@ const Collage = ( { imagenes } ) => {
         <div className="row">
 
             <div class="galeria">
-                <a href="#imagen1" className='galeria__ancora'>
+                <a href="#imagen1" className='galeria__ancora2'>
                     <img src={imagenes[0]} alt="" className='imagenes__iniciales' />
                 </a>
-                <a href="#imagen2" className='galeria__ancora'>
+                <a href="#imagen2" className='galeria__ancora2'>
                     <img src={imagenes[1]} alt="" className='imagenes__iniciales' />
                 </a>
                 <a href="#imagen3" className='galeria__ancora'>
