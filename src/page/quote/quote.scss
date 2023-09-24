@@ -1,0 +1,190 @@
+
+
+.sectionQuote
+{
+    display: flex;
+    flex-direction: column;
+    text-align: center;
+    .containerQuote 
+    {
+        display: flex;
+        flex-direction: column;
+
+        .titleQuote 
+        {
+            margin-top: 2vw;
+            margin-bottom: 0.5vw;
+            font-family: 'Pattaya', sans-serif;
+            font-size: 3.5vw;
+            text-shadow: 3px 3px 3px #999;
+        }
+
+        .lineTitle
+        {
+            text-align: center;
+            width: 22.5vw;
+            height: 2px;
+            background-color: #E9DCBE;
+            align-self: center;
+            margin-bottom: 5vw;
+        }
+
+        .textQuote
+        {
+            width: 45vw;
+            
+            font-family: 'Catamaran', sans-serif;
+            font-size: 1.2vw;
+            text-align: justify;
+        }
+
+        .formQuote
+        {
+            width: 100vw;
+            background-image: url('https://i.ibb.co/sFSLdg9/image-79.png');
+            background-size:auto;
+            background-position: center;
+            display: flex;
+
+            
+            form
+            {
+                
+                width: 60vw;
+                display: flex;
+                flex-direction: column;
+                background-color: #E9DCBE;
+                padding: 5vw;
+                border-radius: 10px;
+                margin-top: 4vw;
+                margin-left: 20vw;
+                margin-right: 20vw;
+                margin-bottom: 4vw;
+
+
+                
+                    .loginLabel 
+                    {
+                        margin-left: 2vw;
+                        font-size: 16px;
+                        margin-bottom: 2vw;
+                        color: rgb(51, 51, 51);
+                        align-self: flex-start;
+                        font-family: 'Pattaya', sans-serif;
+                        margin-top: 2vw;
+                        font-size: 2vw;
+
+                    }
+
+                    .loginDown__input {
+                    border: 0px solid rgba(255, 255, 255, 0.034);
+                    font-size: 16px;
+                    padding: 10px;
+                    border-radius: 10px;
+                    background-color: rgba(255, 255, 255, 0);;
+                    margin-bottom: 25px;
+                    box-shadow: inset 0 0 5px rgba(0,0,0,0.1);
+                    outline: none;
+                    color: rgb(91, 82, 82);
+                    
+                    }
+
+                    &__error {
+                    font-size: 14px;
+                    color: red;
+                    margin-bottom: 10px;
+                    }
+
+                    &__button {
+                    font-size: 16px;
+                    padding: 10px;
+                    border-radius: 5px;
+                    border: none;
+                    background-color: rgb(255,153,0);
+                    color: white;
+                    cursor: pointer;
+                    }
+
+                    .selectServices
+                    {
+                        margin-bottom: 3.5vw;
+                        margin-top: 2vw;
+                    }
+
+                    .service__options
+                    {
+                        
+                        display: flex;
+                        flex-direction: column;
+                        align-items: flex-start;
+                        margin-left: 2vw;
+                        gap: 2vw;
+                        span
+                        {
+                            display: flex;
+                            gap: 10px;
+                        }
+                    }
+
+                .generation
+                {
+                    border-radius: 10px;
+                    box-shadow: 1px 1px 2px #999;
+                    margin-top: 3vw;
+                    height: 3rem;
+                    align-self: center;
+                    width: 20%;
+                    color: #FFF;
+                    background-color: #000;
+                    font-family: 'Brygada 1918', serif;
+                    font-size: 20px;
+                    text-align: center;
+                }
+            }
+        }
+    }
+}
+
+
+.loginLabel
+{
+    img
+    {
+        width: 18px;
+        height: 18px;
+    }
+}
+
+
+
+
+
+
+.sliderForm
+{
+    display: flex;
+    
+    .imageSliderForm
+    {
+        flex: 1;
+        height: 35vw;
+    }
+
+    .optionsSliderForm
+    {
+        display: flex;
+        flex-direction: column;
+        background-color: #FFF;
+        flex: 3;
+    }
+
+
+}
+
+
+.titleOptionService
+{
+    text-align: justify;
+    margin-right: 1vw;
+    font-size: 1.5vw;
+}

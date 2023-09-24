@@ -1,0 +1,25 @@
+
+
+.oneServiceWeddingPlan
+{
+    margin-bottom: 0.75vw;
+    
+    display: flex;
+
+    align-items: center;
+    gap: 1vw;
+    &__figure
+    {
+        .oneServiceWeddingPlanImg
+        {
+            width: 3.5vw;
+            height: 4vw;
+        }
+    }
+
+    &__text
+    {
+    
+    }
+
+}
