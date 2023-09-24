@@ -36,16 +36,17 @@ import sliderAniversarios from '../../assets/image/bufet.jpg'
 
 
 import { useNavigate } from 'react-router-dom';
-import CustomModal from '../modal/CustomModal';
+import CustomModal from '../modalLocations/CustomModal';
 import Collage from '../collage/Collage';
 import { typEvent } from './hookTypEvent';
+import { addNewService } from '../../services/addNewService';
 import 'swiper/swiper-bundle.css'; // Asegúrate de importar los estilos de Swiper
 
 
 
 
 const Home = () => {
-
+  
     const [modal, setModal] = useState(false);
 
     const openModal = () => {

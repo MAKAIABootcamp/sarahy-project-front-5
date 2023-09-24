@@ -1,3 +1,4 @@
+
 import {
   GoogleAuthProvider,
   createUserWithEmailAndPassword,
@@ -13,8 +14,12 @@ import {
 } from "../../../services/getUser";
 import { setError, userDataLogged, userLogged } from "./authReducer";
 import Swal from "sweetalert2";
+import { Navigate, useNavigate } from "react-router-dom";
 
 export const createAnUser = (newUser) => {
+
+
+
   return async (dispatch) => {
     try {
       const { user } = await createUserWithEmailAndPassword(
@@ -25,16 +30,19 @@ export const createAnUser = (newUser) => {
       await updateProfile(auth.currentUser, {
         displayName: newUser.displayName,
         photoURL: newUser.photoURL,
+        admi: false, 
+        quote: []
       });
       const createdUser = await createAnUserInCollection(user.uid, newUser);
       console.log(createdUser);
       // console.log("respuesta firebase", user);
       // console.log("respuesta firestore", createdUser);
       // console.log("respuesta firestore user", createdUser.user);
+      console.log(createdUser)
 
-      dispatch(userLogged(true));
-      dispatch(userDataLogged(createdUser.user));
-      dispatch(setError(false));
+      // dispatch(userLogged(true));
+      // dispatch(userDataLogged(createdUser));
+      // dispatch(setError(false));
     } catch (error) {
       console.log(error);
       dispatch(
@@ -49,6 +57,7 @@ export const createAnUser = (newUser) => {
 };
 
 export const loginWithEmailAndPassword = (loggedUser) => {
+
   return async (dispatch) => {
     try {
       const { user } = await signInWithEmailAndPassword(
@@ -70,6 +79,7 @@ export const loginWithEmailAndPassword = (loggedUser) => {
         showConfirmButton: false,
         timer: 1500
       })
+      
     } catch (error) {
       console.log(error);
       dispatch(
@@ -95,10 +105,15 @@ export const loginGoogle = () => {
         uid: user.uid,
         foto: user.photoURL,
         numero: user.phoneNumber,
+        admi: false, 
+        quote: [], 
+        chat: [], 
       };
+      const createdUser = await createAnUserInCollection(dataUser.uid, dataUser);
+ 
       console.log(dataUser);
       dispatch(userLogged(true));
-      dispatch(userDataLogged(dataUser));
+      dispatch(userDataLogged(createdUser));
       dispatch(setError(false));
      
     } catch (error) {
@@ -135,5 +150,3 @@ export const loginFacebook = () => {
     }
   };
 };
-
-
