@@ -18,7 +18,8 @@ const Register = () => {
   } = useForm();
 
   const onSubmit = (data) => {
-    dispatch(createAnUser(data));
+    console.log(data);
+    // dispatch(createAnUser(data));
     console.log("funciona crear cuenta");
   };
 
@@ -34,7 +35,7 @@ const Register = () => {
             <span className="loginLabel">Nombre</span>
             <input
               type="text"
-              id="name"
+           
               {...register("name", { required: true })}
               placeholder="Ingresa tu nombre"
               className="loginDown__input"
@@ -100,7 +101,7 @@ const Register = () => {
                 Este campo es obligatorio
               </span>
             )}
-            <button type="submit" className="loginDown__button" onClick={() => navigate("/ingresar")}>
+            <button type="submit" className="loginDown__button">
               Registrarse
             </button>
           </form>
