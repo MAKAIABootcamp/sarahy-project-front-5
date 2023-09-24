@@ -9,8 +9,8 @@ const Register = () => {
 
   const navigate = useNavigate();
   const dispatch = useDispatch();
-  const aunthenticationRedux = useSelector((state) => state.aunthentication);
-  console.log(aunthenticationRedux);
+  // const aunthenticationRedux = useSelector((state) => state.aunthentication);
+  // console.log(aunthenticationRedux);
   const {
     register,
     handleSubmit,
@@ -18,6 +18,7 @@ const Register = () => {
   } = useForm();
 
   const onSubmit = (data) => {
+    console.log(data);
     dispatch(createAnUser(data));
     console.log("funciona crear cuenta");
   };
@@ -34,12 +35,12 @@ const Register = () => {
             <span className="loginLabel">Nombre</span>
             <input
               type="text"
-              id="name"
-              {...register("name", { required: true })}
+              
+              {...register(Nombre, { required: true })}
               placeholder="Ingresa tu nombre"
               className="loginDown__input"
             />
-            {errors.email && (
+            {/* {errors.email && (
               <span className="loginDown__error">
                 Este campo es obligatorio
               </span>
@@ -99,8 +100,8 @@ const Register = () => {
               <span className="loginDown__error">
                 Este campo es obligatorio
               </span>
-            )}
-            <button type="submit" className="loginDown__button" onClick={() => navigate("/ingresar")}>
+            )} */}
+            <button className="loginDown__button" onClick={() => navigate("/ingresar")}>
               Registrarse
             </button>
           </form>

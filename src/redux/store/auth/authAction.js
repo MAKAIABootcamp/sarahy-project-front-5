@@ -27,6 +27,7 @@ export const createAnUser = (newUser) => {
         photoURL: newUser.photoURL,
       });
       const createdUser = await createAnUserInCollection(user.uid, newUser);
+      console.log(createdUser);
       // console.log("respuesta firebase", user);
       // console.log("respuesta firestore", createdUser);
       // console.log("respuesta firestore user", createdUser.user);
