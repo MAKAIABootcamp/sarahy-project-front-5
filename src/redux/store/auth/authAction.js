@@ -100,11 +100,11 @@ export const loginGoogle = () => {
       const { user } = await signInWithPopup(auth, provider);
 
       const dataUser = {
-        nombre: user.displayName,
+        name: user.displayName,
         email: user.email,
         uid: user.uid,
-        foto: user.photoURL,
-        numero: user.phoneNumber,
+        photo: user.photoURL,
+        number: user.phoneNumber,
         admi: false, 
         quote: [], 
         chat: [], 
@@ -135,11 +135,11 @@ export const loginFacebook = () => {
       const provider = new FacebookAuthProvider();
       const userFace = await signInWithPopup(auth, provider);
       const dataUserFace = {
-        nombre: userFace.user.displayName,
+        name: userFace.user.displayName,
         email: userFace.user.email,
         uid: userFace.user.uid,
-        foto: userFace.user.photoURL,
-        numero: userFace.user.phoneNumber,
+        photo: userFace.user.photoURL,
+        number: userFace.user.phoneNumber,
       };
       dispatch(userLogged(true));
       dispatch(userDataLogged(dataUserFace));

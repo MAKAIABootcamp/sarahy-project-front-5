@@ -1,5 +1,5 @@
 import React, { useEffect, useState } from 'react';
-import { GoogleMap, LoadScript, Marker, DirectionsService, DirectionsRenderer } from '@react-google-maps/api';
+import { GoogleMap, LoadScript, Marker, DirectionsService, DirectionsRenderer, StreetViewPanorama } from '@react-google-maps/api';
 
 const MapContainer = () => {
   const containerStyle = {
@@ -13,10 +13,9 @@ const MapContainer = () => {
   };
 
   const [currentLocation, setCurrentLocation] = useState(null);
-  const [directions, setDirections] = useState(null); // Nuevo estado para las direcciones
+  const [directions, setDirections] = useState(null); 
 
   useEffect(() => {
-    // Obtener la ubicación actual del usuario
     if (navigator.geolocation) {
       navigator.geolocation.getCurrentPosition((position) => {
         const { latitude, longitude } = position.coords;
@@ -36,7 +35,6 @@ const MapContainer = () => {
     travelMode: 'DRIVING',
   };
 
-  // Función de devolución de llamada para manejar las direcciones
   const onDirectionsReady = (result, status) => {
     if (status === 'OK') {
       setDirections(result);
@@ -58,9 +56,13 @@ const MapContainer = () => {
             <Marker position={destination} label="Destino" />
             <DirectionsService
               options={directionsOptions}
-              callback={onDirectionsReady} // Utiliza callback para manejar las direcciones
+              callback={onDirectionsReady} 
             />
-            {directions && <DirectionsRenderer directions={directions} />} {/* Renderiza las direcciones */}
+            {directions && <DirectionsRenderer directions={directions} />}
+            <StreetViewPanorama
+              position={currentLocation} // Puedes ajustar la posición según tus necesidades
+              visible={false}
+            />
           </>
         )}
       </GoogleMap>
@@ -69,3 +71,5 @@ const MapContainer = () => {
 };
 
 export default MapContainer;
+
+  
