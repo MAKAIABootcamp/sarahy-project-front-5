@@ -8,12 +8,15 @@ import 'swiper/css';
 import 'swiper/css/pagination';
 import 'swiper/css/navigation';
 import { Autoplay, Pagination, Navigation } from 'swiper/modules';
+import logo from "../../assets/image/logo-blanco.png";
+import sliderBodas from '../../assets/image/boda.jpg'
 
 const WeddingPage = () => {
   return (
-    <main className='weddingPage'>
+    <main className='weddingPage '>
 
-        <img className= 'backGroundWedding' src="https://images.unsplash.com/photo-1595407753234-0882f1e77954?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1470&q=80" alt="Fondo de Wedding" />
+
+        <img className= 'backGroundHeader' src="https://images.unsplash.com/photo-1595407753234-0882f1e77954?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1470&q=80" alt="Fondo de Wedding" />
 
         <section className='introduction'>
             <figure className='decorWedding'>

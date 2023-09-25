@@ -17,9 +17,15 @@ const Register = () => {
     formState: { errors },
   } = useForm();
 
+  const navigateToLogin = () => {
+    navigate("/ingresar");
+  }
+
   const onSubmit = (data) => {
+    // console.log(data)
     dispatch(createAnUser(data));
     console.log("funciona crear cuenta");
+    navigateToLogin()
   };
 
   return (
@@ -34,12 +40,12 @@ const Register = () => {
             <span className="loginLabel">Nombre</span>
             <input
               type="text"
-              id="name"
+              // id="name"
               {...register("name", { required: true })}
               placeholder="Ingresa tu nombre"
               className="loginDown__input"
             />
-            {errors.email && (
+            {errors.name && (
               <span className="loginDown__error">
                 Este campo es obligatorio
               </span>
@@ -48,12 +54,12 @@ const Register = () => {
             <span className="loginLabel">Contacto</span>
             <input
               type="number"
-              id="password"
-              {...register("numero", { required: true })}
+              // id="number"
+              {...register("number", { required: true })}
               placeholder="Ingresa tu número"
               className="loginDown__input"
             />
-            {errors.password && (
+            {errors.number && (
               <span className="loginDown__error">
                 Este campo es obligatorio
               </span>
@@ -64,7 +70,7 @@ const Register = () => {
             <span className="loginLabel">E-mail</span>
             <input
               type="email"
-              id="email"
+              // id="email"
               {...register("email", { required: true })}
               placeholder="ejemplo@tuemail.com"
               className="loginDown__input"
@@ -77,7 +83,7 @@ const Register = () => {
             <span className="loginLabel">Contraseña</span>
             <input
               type="password"
-              id="password"
+              // id="password"
               {...register("password", { required: true })}
               placeholder="**********"
               className="loginDown__input"
@@ -90,17 +96,17 @@ const Register = () => {
             <span className="loginLabel">Verificar contraseña</span>
             <input
               type="password"
-              id="password"
-              {...register("verificatePassword", { required: true })}
+              // id="passwordtwo"
+              {...register("passwordtwo", { required: true })}
               placeholder="**********"
               className="loginDown__input"
             />
-            {errors.password && (
+            {errors.passwordtwo && (
               <span className="loginDown__error">
                 Este campo es obligatorio
               </span>
             )}
-            <button type="submit" className="loginDown__button" onClick={() => navigate("/ingresar")}>
+            <button type="submit" className="loginDown__button" >
               Registrarse
             </button>
           </form>

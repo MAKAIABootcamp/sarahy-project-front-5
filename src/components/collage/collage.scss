@@ -63,3 +63,36 @@
         color: $color-cream;
     }
 }
+
+
+@media (max-width: 999px) {
+    .row{
+        width: 100%;
+        .galeria{
+            display: flex;
+            flex-wrap: wrap;
+            width: 26rem;
+            .galeria__ancora2{
+                width: 48%;
+                .imagenes__iniciales{
+                    width: 98%;
+                    margin-left: 4px;
+                    cursor: pointer;
+                }
+            }
+            .galeria__ancora{
+                width: 32%;
+                .imagenes__iniciales{
+                    width: 98%;
+                    margin-left: 4px;
+                    cursor: pointer;
+                }
+                .imagenes__iniciales2{
+                    width: 98%;
+                    margin-left: 4px;
+                    cursor: pointer;
+                }
+            }
+        }
+    }
+}

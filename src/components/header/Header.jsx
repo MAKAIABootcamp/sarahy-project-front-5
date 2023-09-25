@@ -17,9 +17,9 @@ const Header = () => {
                 </div>
             </div>
             <div className="header__transparent">
-                <nav clasName="header__navbar">
+                <nav className="header__navbar">
                     <ul className='header__navbar--lista'>
-                        <li className='navbar__items' onClick={() => { navigate("/") }}>Incio</li>
+                        <li className='navbar__items' onClick={() => { navigate("/") }}>Inicio</li>
                         <li className='navbar__items' >Eventos sociales</li>
                         <li className='navbar__items'>Eventos empresariales</li>
                         <li className='navbar__items--logo'>{<img src={logo} className='logo__item--img' />}</li>

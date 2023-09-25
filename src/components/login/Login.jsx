@@ -20,11 +20,17 @@ const Login = () => {
     formState: { errors },
   } = useForm();
 
+  const navigateToHome = () => {
+    navigate("/");
+  }
+
   const onSubmit = (data) => {
     dispatch(loginWithEmailAndPassword(data));
-
-    // console.log(data)
+    console.log('entra sarahy')
+    navigateToHome()
   };
+ 
+
   const salir = () => {
     dispatch(userLogged(false));
     navigate("/");
@@ -85,7 +91,6 @@ const Login = () => {
             <button
               type="submit"
               className="loginDown__button"
-              onClick={() => navigate("/")}
             >
               Iniciar sesión
             </button>
