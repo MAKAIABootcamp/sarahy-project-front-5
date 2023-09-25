@@ -281,80 +281,48 @@
 
             .article__form{
                 display: flex;
-                gap: 0.5rem; 
+                gap: 0.5rem;
+                margin-bottom: 20px;
 
+                .label__evento{
+                    margin-right: 31px;
+                }
                 .input{
                     border: none;
-                    border-bottom: solid 1px $color-black;
+                    border-bottom: solid 1px $color-cream;
                     background-color: $color-white;
                     width: 90%;
+                    padding: 0 10px;
+                    font-size: 16px;
+                }
 
+                #calificacion{
+                    border-radius: 10px;
+                    background: $color-cream;
+                    padding: 5px;
+                    font-size: 15px;
                 }
             }
             .btn__comments{
                 display: flex;
                 align-self: center;
-                width: 30%;
-                padding: 0.3rem;
+                width: 20%;
+                padding: 9px;
                 border: none;
-                background-color: $color-black;
+                background-color: #343434;
                 border-radius: 10px;
-                color: $color-white;
+                color: #F3F3F3;
                 justify-content: center;
+                height: 32px;
                 cursor: pointer;
+                margin-top: 20px;
+            }
+            .btn__comments:hover{
+                background-color: $color-cream;
+                color: #000000;
             }
             
         }
         
     }
 }
-
-// .footer{
-//     width: 100%;
-//     background-color: $color-black;
-//     display: flex;
-//     justify-content: space-between; 
-//     color: $color-white; 
-//     font-family: $Letter-body;
-//     height: max-content;
-//     padding-top: 5%;
-//     padding-bottom: 4%;
-//     margin-top: 4%;
-
-//     .footer__information{
-//         display: flex;
-//         flex-direction: column;
-//         margin-left: 2rem;
-//         h5{
-//             margin-bottom: 0.5rem;
-//         }
-//     }
-
-//     .followme{
-//         display: flex;
-//         flex-direction: column; 
-//         margin-right: 2rem;
-//         h5{
-//             margin-bottom: 0.5rem;
-//         }
-
-//         .fig__logo{
-//             width: 6rem;
-//             margin: 0;
-
-//             .img__logo{
-//                 width: 100%;
-//             }
-//         }
-//         .networks{
-//             display: flex;
-//             justify-content: space-evenly; 
-//             margin-top: 0.5rem;
-//             .img__network{
-//                 height: 1rem;
-//             }
-            
-//         }
-
-//     }
-// }

@@ -497,6 +497,7 @@
         gap: 10px;
         background-color: rgba(255, 255, 255, 0.7);
         width: 90%;
+
         .container__barra {
             display: flex;
             gap: 10px;
@@ -603,9 +604,9 @@
             .container__calificacion {
                 display: flex;
                 gap: 10px;
-                width: 25px;
                 height: 30px;
                 justify-content: center;
+                margin-top: 21px;
 
                 .star-calificacion {
                     width: 30px;
@@ -680,26 +681,30 @@
 
 @media (max-width: 999px) {
     .main__home {
-        .main__info{
-            .logoDerecha{
+        .main__info {
+            .logoDerecha {
                 width: 4rem;
                 height: 4rem;
             }
-            .logoIzquierda{
+
+            .logoIzquierda {
                 width: 4rem;
                 height: 4rem;
             }
-            .container__intro{
-                .main__parrafo{
+
+            .container__intro {
+                .main__parrafo {
                     font-size: 18px
                 }
             }
         }
-       
+
         .typeEvent__home {
             padding: 40px 20px;
-            .btns{
+
+            .btns {
                 width: 100%;
+
                 .btn__event {
                     width: 20%;
                     height: 3rem;
@@ -707,99 +712,190 @@
                     text-align: center;
                     line-height: 1px;
                 }
-                
+
             }
-            .event__info{
+
+            .event__info {
                 display: flex;
                 gap: 20px;
                 justify-content: center;
                 width: auto;
-                .description__title{
+
+                .description__title {
                     font-size: 22px;
                 }
-                .description__parrafo{
+
+                .description__parrafo {
                     font-size: 19px;
                 }
 
-                .description__btn{
+                .description__btn {
                     width: auto;
                     padding: 0 10px;
                 }
             }
         }
-        .services{
+
+        .services {
             padding: 10px 0;
+
             .container__cards--services {
-                .card__services{
+                .card__services {
                     margin: auto;
                     height: 24rem;
-                    .card__services--span{
+
+                    .card__services--span {
                         text-align: center;
                         width: auto;
-                    } 
-                    .card__services--title{
+                    }
+
+                    .card__services--title {
                         width: 75%;
                         font-size: 20px;
                     }
-                    
+
                 }
+
                 .swiper-horizontal {
                     height: 23rem;
                 }
-                
+
             }
-            
+
         }
-        .encantados{
+
+        .encantados {
             padding: 20px 20px;
-            .encatados__info{
-                .encantados__title{
+
+            .encatados__info {
+                .encantados__title {
                     font-size: 40px;
                 }
-                .logo__subtitulo{
-                    .encantado__subtitulo--img{
+
+                .logo__subtitulo {
+                    .encantado__subtitulo--img {
                         width: 30px;
                     }
-                    .encantado__subtitulo{
+
+                    .encantado__subtitulo {
                         font-size: 25px;
                     }
                 }
             }
         }
     }
-    // .slider__home {
-    //     height: 20rem; 
-    // }
 
-    // .main__info {
-    //     padding: 20px 10px; 
-    // }
 }
 
-// @media (max-width: 758px) {
-//     .main__home {
-//         padding: 0 20px;
-//         .typeEvent__home {
-//             background-color: aqua;
-//             .btns{
-//                 .btn__event {
-//                     height: 50px;
-//                     border-radius: 12px;
-//                     border: 3px solid $color-black;
-//                     padding: 8px;
-//                     font-size: 18px;
-//                     font-weight: 500;
-//                     background-color: white;
-//                 }
+@media (max-width: 758px) {
+    .main__home {
+        .main__info {
+            .logoDerecha {
+                width: 4rem;
+                height: 4rem;
+                display: none;
+            }
 
-//             }
-//         }
-//     }
-//     .slider__home {
-//         height: 20rem; 
-//     }
+            .logoIzquierda {
+                width: 4rem;
+                height: 4rem;
+                display: none;
+            }
 
-//     .main__info {
-//         padding: 20px 10px; 
-//     }
-// }
+            .container__intro {
+                width: auto;
+                .main__parrafo {
+                    font-family: "Catamaran", sans-serif;
+                    padding: 25px 0;
+                    text-align: center;
+                }
+            }
+        }
+
+        .typeEvent__home {
+            padding: 40px 20px;
+
+            .btns {
+                width: 100%;
+
+                .btn__event {
+                    width: 20%;
+                    height: 3rem;
+                    font-size: 16px;
+                    text-align: center;
+                    line-height: 1px;
+                }
+
+            }
+
+            .event__info {
+                display: flex;
+                gap: 20px;
+                justify-content: center;
+                width: auto;
+
+                .description__title {
+                    font-size: 22px;
+                }
+
+                .description__parrafo {
+                    font-size: 19px;
+                }
+
+                .description__btn {
+                    width: auto;
+                    padding: 0 10px;
+                }
+            }
+        }
+
+        .services {
+            padding: 10px 0;
+
+            .container__cards--services {
+                .card__services {
+                    margin: auto;
+                    height: 24rem;
+
+                    .card__services--span {
+                        text-align: center;
+                        width: auto;
+                    }
+
+                    .card__services--title {
+                        width: 75%;
+                        font-size: 20px;
+                    }
+
+                }
+
+                .swiper-horizontal {
+                    height: 23rem;
+                }
+
+            }
+
+        }
+
+        .encantados {
+            padding: 20px 20px;
+
+            .encatados__info {
+                .encantados__title {
+                    font-size: 40px;
+                }
+
+                .logo__subtitulo {
+                    .encantado__subtitulo--img {
+                        width: 30px;
+                    }
+
+                    .encantado__subtitulo {
+                        font-size: 25px;
+                    }
+                }
+            }
+        }
+    }
+
+}

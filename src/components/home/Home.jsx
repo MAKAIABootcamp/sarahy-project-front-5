@@ -16,9 +16,6 @@ import servicios3 from '../../assets/image/catering.png'
 import corazon1 from '../../assets/image/corazon1.png'
 import loguito from '../../assets/image/loguito.png'
 import gota from '../../assets/image/gota.png'
-import testimonio1 from '../../assets/image/testimonio1.png'
-import testimonio2 from '../../assets/image/testimonio2.png'
-import testimonio3 from '../../assets/image/testimonio3.png'
 import logoIzquierda from '../../assets/image/gotaIzquierda.png'
 import logoDerecha from '../../assets/image/gotaDerecha.png'
 import marrano from '../../assets/image/marrano.png'
@@ -31,6 +28,7 @@ import sliderEmpresariales from '../../assets/image/empresariales1.jpg'
 import sliderGrados from '../../assets/image/grados.jpg'
 import sliderBufet from '../../assets/image/bufet.jpg'
 import sliderAniversarios from '../../assets/image/bufet.jpg'
+import { collection, getDocs } from "firebase/firestore";
 
 
 
@@ -40,13 +38,15 @@ import CustomModal from '../modalLocations/CustomModal';
 import Collage from '../collage/Collage';
 import { typEvent } from './hookTypEvent';
 import { addNewService } from '../../services/addNewService';
-import 'swiper/swiper-bundle.css'; // Asegúrate de importar los estilos de Swiper
+import 'swiper/swiper-bundle.css'; 
+import { firestore } from '../../firebase/firebaseConfig';
 
 
 
 
 const Home = () => {
-  
+
+    const [comentarios, setComentarios] = useState([]);
     const [modal, setModal] = useState(false);
 
     const openModal = () => {
@@ -77,6 +77,25 @@ const Home = () => {
     };
 
 
+    const traerComentarios = async () => {
+        try {
+            const comentarios = [];
+            const querySnapshot = await getDocs(collection(firestore, "comments"));
+
+            querySnapshot.forEach((doc) => {
+                const comentarioData = doc.data();
+                comentarios.push(comentarioData);
+            });
+
+            setComentarios(comentarios);
+        } catch (error) {
+            console.error("Error al traer comentarios:", error);
+        }
+    }
+
+    useEffect(() => {
+        traerComentarios();
+    }, []);
 
     return (
         <>
@@ -154,9 +173,6 @@ const Home = () => {
                     )}
                 </section>
 
-
-
-
                 <section className="services">
                     <h2 className='services__title'>CONOCE NUESTROS SERVICIOS</h2>
 
@@ -164,7 +180,7 @@ const Home = () => {
 
 
                         <Swiper
-                            className="my-swiper-2" // Clase personalizada para el Swiper
+                            className="my-swiper-2"
                             spaceBetween={30}
                             slidesPerView={3}
                             navigation
@@ -349,7 +365,7 @@ const Home = () => {
                         <div className="container__barra">
                             <img src={loguito} alt="" className="loguito__ubicacion--barra" />
                             <h3 className="ubicacion__barra">
-                            ¡Recuerda! Tenemos servicio a domicilio
+                                ¡Recuerda! Tenemos servicio a domicilio
                             </h3>
                         </div>
                     </div>
@@ -372,46 +388,23 @@ const Home = () => {
                     <h2 className='comentarios__title'>TESTIMONIOS</h2>
                     <hr className='hr__services' />
                     <div className="container__cards--coments">
-                        <div className='container__comen'>
-                            <img src={testimonio1} alt="imagen de comentario" className='img__comentario' />
-                            <span className="testimonio">
-                                Realizarón la boda de mis sueños muchas gracias...
-                            </span>
-                            <div className="container__calificacion">
-                                <img src={corazon1} alt="star-calificacion" className='star-calificacion' />
-                                <img src={corazon1} alt="star-calificacion" className='star-calificacion' />
-                                <img src={corazon1} alt="star-calificacion" className='star-calificacion' />
-                                <img src={corazon1} alt="star-calificacion" className='star-calificacion' />
-                                <img src={corazon1} alt="star-calificacion" className='star-calificacion' />
-                            </div>
-                        </div>
-                        <div className='container__comen'>
-                            <img src={testimonio2} alt="imagen de comentario" className='img__comentario' />
-                            <span className="testimonio">
-                                Excelente servicio, me agradaron mucho las personas de logistica son muy amables y la pagina es perfecta los quiero
-                            </span>
-                            <div className="container__calificacion">
-                                <img src={corazon1} alt="star-calificacion" className='star-calificacion' />
-                                <img src={corazon1} alt="star-calificacion" className='star-calificacion' />
-                                <img src={corazon1} alt="star-calificacion" className='star-calificacion' />
-                                <img src={corazon1} alt="star-calificacion" className='star-calificacion' />
-                                <img src={corazon1} alt="star-calificacion" className='star-calificacion' />
-                            </div>
-                        </div>
-                        <div className='container__comen'>
-                            <img src={testimonio3} alt="imagen de comentario" className='img__comentario' />
-                            <span className="testimonio">
-                                Los recomiendo demasiado los mejores en prestar este tipo de servicios
-                            </span>
-                            <div className="container__calificacion">
-                                <img src={corazon1} alt="star-calificacion" className='star-calificacion' />
-                                <img src={corazon1} alt="star-calificacion" className='star-calificacion' />
-                                <img src={corazon1} alt="star-calificacion" className='star-calificacion' />
-                                <img src={corazon1} alt="star-calificacion" className='star-calificacion' />
-                                <img src={corazon1} alt="star-calificacion" className='star-calificacion' />
-                            </div>
-                        </div>
+                        {
+                            comentarios.map((comentario, index) => (
+                                <div className='container__comen' key={index}>
+                                    <img src={comentario.photo} alt="imagen de comentario" className='img__comentario' />
+                                    <span className="testimonio">
+                                        {comentario.comment}
+                                        <div className="container__calificacion">
+                                            {Array.from({ length: Math.min(comentario.qualification, 5) }, (_, i) => (
+                                                <img key={i} src={corazon1} alt="star-calificacion" className='star-calificacion' />
+                                            ))}
+                                        </div>
+                                    </span>
+                                </div>
+                            ))
+                        }
                     </div>
+
                 </section>
             </main >
         </>

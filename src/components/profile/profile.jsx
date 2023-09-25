@@ -4,13 +4,12 @@ import arrowRight from "../../assets/image/flechaDerecha.png";
 import iconEdit from "../../assets/image/Edit.png";
 import perfil from "../../assets/image/perfilDefault.jpg";
 import { useDispatch, useSelector } from "react-redux";
-import { useForm } from "react-hook-form";
+import { set, useForm } from "react-hook-form";
 import { getAuth, updateProfile } from "firebase/auth";
 import { firestore } from "../../firebase/firebaseConfig";
-import { doc, getDoc, updateDoc } from "firebase/firestore";
+import { addDoc, collection, doc, getDoc, updateDoc } from "firebase/firestore";
 import { userDataLogged, userLogged } from "../../redux/store/auth/authReducer";
 import { useNavigate } from "react-router-dom";
-import { getUserFromCollection } from "../../services/getUser";
 import Swal from "sweetalert2";
 
 
@@ -20,8 +19,23 @@ const Profile = () => {
     const user = useSelector((state) => state.aunthentication.userLogged)
     console.log(user)
 
+    const [datoUsuario, setdatoUsuario] = useState({})
 
     const dispatch = useDispatch()
+
+    const traerDatosFirestore = async () => {
+        const userRef = doc(firestore, "users", user.id || user.user.id);
+        const userNew1 = await getDoc(userRef);
+        setdatoUsuario(userNew1.data())
+        console.log(userNew1.data());
+        
+    }
+
+    useEffect(() => {
+      traerDatosFirestore()
+    }, [])
+    
+    console.log(datoUsuario);
 
     const [sectionSeleccionada, setsectionSeleccionada] = useState("Editar perfil")
 
@@ -49,14 +63,14 @@ const Profile = () => {
         console.log(data, "los datos de data");
 
         try {
-            // const auth = getAuth();
-            // await updateProfile(auth.currentUser, {
-            //     displayName: name,
-            //     number: number,
-            //     age: edad,
-            //     city: ciudad,
-            //     address: direccion,
-            // });
+            const auth = getAuth();
+            await updateProfile(auth.currentUser, {
+                displayName: name,
+                number: number,
+                age: edad,
+                city: ciudad,
+                address: direccion,
+            });
 
             const userRef = doc(firestore, "users", user.id || user.user.id);
             await updateDoc(userRef, {
@@ -101,6 +115,27 @@ const Profile = () => {
         navigate("/");
     }
 
+    const comentarios = async (data) => {
+        try {
+            const evento = data.evento;
+            const comentario = data.comentario;
+            const calificacion = data.calificacion;
+            console.log(evento, comentario, calificacion, "todos los datos");
+
+            const docRef = await addDoc(collection(firestore, "comments"), {
+                event: evento,
+                comment: comentario,
+                qualification: calificacion,
+                photo:  user.photo || user.user.photo
+            });
+            console.log("documento ", docRef);
+        } catch (error) {
+            console.error("Error adding document: ", error);
+            console.error(error.code);
+            console.error(error.message);
+        }
+    }
+
 
     return (
         <>
@@ -117,14 +152,14 @@ const Profile = () => {
                         <figure className="fig__profile">
                             <img
                                 className="photProfile"
-                                src={(user && user.user && user.user.photo) || user.photo || perfil}
+                                src={datoUsuario && datoUsuario.photo ? datoUsuario.photo : perfil}
                                 alt="Foto perfil"
                             />
                         </figure>
                         <div className="data__profile">
-                            <h4 className="name">{user.name || user.user.name}</h4>
-                            <span>{user.email || user.user.email}</span>
-                            <span>{user.number || user.user.number ? user.number || user.user.number : user.email}</span>
+                            <h4 className="name">{datoUsuario? datoUsuario.name: datoUsuario.email}</h4>
+                            <span>{datoUsuario? datoUsuario.email: datoUsuario.number}</span>
+
                         </div>
                     </section>
 
@@ -178,14 +213,14 @@ const Profile = () => {
                                     {editando ? (
                                         <input
                                             type="text"
-                                            placeholder={user.name || user.user.name ? user.name || user.user.name : user.email || user.user.email}
+                                            placeholder="juan perez"
                                             {...register("name")}
                                             className="input__profile"
                                             autoFocus
                                             focus
                                         />
                                     ) : (
-                                        <span className="span">{user.name || user.user.name ? user.name || user.user.name : user.email || user.user.email}</span>
+                                        <span className="span">{datoUsuario? datoUsuario.name: datoUsuario.email}</span>
                                     )}
                                     <img
                                         src={iconEdit}
@@ -203,12 +238,12 @@ const Profile = () => {
                                         editando ? (
                                             <input
                                                 type="number"
-                                                placeholder={user.number || user.user.number ? user.number || user.user.number : user.email || user.user.email}
+                                                placeholder=""
                                                 {...register("number")}
                                                 className="input__profile"
                                             />
                                         ) : (
-                                            <span className="span">{user.number || user.user.number ? user.number || user.user.number : user.email || user.user.email}</span>
+                                            <span className="span">{datoUsuario && datoUsuario.number ? datoUsuario.number : datoUsuario.email}</span>
                                         )
                                     }
                                     <img
@@ -227,13 +262,13 @@ const Profile = () => {
                                     {editando ? (
                                         <input
                                             type="number"
-                                            placeholder={user.age || user.user.age ? user.age || user.user.age : ""}
+                                            placeholder=""
                                             {...register("Edad")}
                                             className="input__profile"
 
                                         />
                                     ) : (
-                                        <span className="span">{user.age || user.user.age ? user.age || user.user.age : "Edad"}</span>
+                                        <span className="span">{datoUsuario? datoUsuario.age:""}</span>
                                     )
                                     }
                                     <img
@@ -252,12 +287,12 @@ const Profile = () => {
                                     {editando ? (
                                         <input
                                             type="text"
-                                            placeholder={user.city || user.user.city ? user.city || user.user.city : ""}
+                                            placeholder=""
                                             {...register("ciudad")}
                                             className="input__profile"
                                         />
                                     ) : (
-                                        <span className="span">{user.city || user.user.city ? user.city || user.user.city : "Ciudad"}</span>
+                                        <span className="span">{datoUsuario? datoUsuario.city:""}</span>
                                     )
                                     }
                                     <img
@@ -273,12 +308,12 @@ const Profile = () => {
                                     {editando ? (
                                         <input
                                             type="text"
-                                            placeholder={user.address || user.user.address ? user.address || user.user.address : ""}
+                                            placeholder=""
                                             {...register("Direccion")}
                                             className="input__profile"
                                         />
                                     ) : (
-                                        <span className="span">{user.address || user.user.address ? user.address || user.user.address : "Dirección"}</span>
+                                        <span className="span"> {datoUsuario? datoUsuario.address:""}</span>
                                     )
                                     }
                                     <img
@@ -312,7 +347,7 @@ const Profile = () => {
                         </section>
                     )}
 
-                    {sectionSeleccionada === "Ver eventos" && (
+                    {/* {sectionSeleccionada === "Ver eventos" && (
                         <section className="show__events">
                             <span className="title">Historial de eventos</span>
 
@@ -338,24 +373,35 @@ const Profile = () => {
                                 <span className="span__data">$4'500.000</span>
                             </div>
                         </section>
-                    )}
+                    )} */}
                     {sectionSeleccionada === "Comentarios" && (
                         <section className="show__comments">
                             <span className="title">Déjanos tus comentarios</span>
-                            <form action="" className="form__comments">
+                            <form action="" className="form__comments" onSubmit={handleSubmit(comentarios)}>
+
+
                                 <article className="article__form">
-                                    <label htmlFor="" className="label">Evento:</label>
-                                    <input type="text" placeholder="Ingresa el tipo de evento" className="input" />
+                                    <label htmlFor="" className="label__evento" >Evento:</label>
+                                    <input type="text" placeholder="Ingresa el tipo de evento" className="input" {...register("evento")} />
                                 </article>
 
                                 <article className="article__form">
                                     <label htmlFor="" className="label">Comentario:</label>
-                                    <input type="text" placeholder="Escribe tu comentario" className="input" />
+                                    <input type="text" placeholder="Escribe tu comentario" className="input" {...register("comentario")} />
                                 </article>
 
                                 <article className="article__form">
-                                    <label htmlFor="" className="label">Calificación:</label>
-
+                                    <label htmlFor="calificacion" className="label">
+                                        Calificación:
+                                        ¿que tan bueno fue el servicio?
+                                    </label>
+                                    <select name="Calificacion" id="calificacion" {...register("calificacion")}>
+                                        <option value="1">Poco</option>
+                                        <option value="2">Algo</option>
+                                        <option value="3">Moderado</option>
+                                        <option value="4">Bastante</option>
+                                        <option value="5">Mucho</option>
+                                    </select>
                                 </article>
 
                                 <button className="btn__comments">Enviar comentario</button>

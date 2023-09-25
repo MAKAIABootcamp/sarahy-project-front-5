@@ -34,7 +34,6 @@ export const createAnUser = (newUser) => {
         quote: []
       });
       const createdUser = await createAnUserInCollection(user.uid, newUser);
-      console.log(createdUser);
       // console.log("respuesta firebase", user);
       // console.log("respuesta firestore", createdUser);
       // console.log("respuesta firestore user", createdUser.user);
@@ -135,11 +134,11 @@ export const loginFacebook = () => {
       const provider = new FacebookAuthProvider();
       const userFace = await signInWithPopup(auth, provider);
       const dataUserFace = {
-        name: userFace.user.displayName,
+        nombre: userFace.user.displayName,
         email: userFace.user.email,
         uid: userFace.user.uid,
-        photo: userFace.user.photoURL,
-        number: userFace.user.phoneNumber,
+        foto: userFace.user.photoURL,
+        numero: userFace.user.phoneNumber,
       };
       dispatch(userLogged(true));
       dispatch(userDataLogged(dataUserFace));
