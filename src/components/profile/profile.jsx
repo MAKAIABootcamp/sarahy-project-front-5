@@ -180,6 +180,7 @@ const Profile = () => {
                                 className="photProfile"
                                 src={datoUsuario && datoUsuario.photo ? datoUsuario.photo : perfil}
                                 alt="Foto perfil"
+                                
                             />
                         </figure>
                         <div className="data__profile">
