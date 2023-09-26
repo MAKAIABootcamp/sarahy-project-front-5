@@ -40,6 +40,8 @@ import { typEvent } from './hookTypEvent';
 import { addNewService } from '../../services/addNewService';
 import 'swiper/swiper-bundle.css';
 import { firestore } from '../../firebase/firebaseConfig';
+import { ubicaciones } from './hookUbicaciones';
+import { element } from 'prop-types';
 
 
 
@@ -48,28 +50,21 @@ const Home = () => {
 
     const [comentarios, setComentarios] = useState([]);
     const [modal, setModal] = useState(false);
-
-    const openModal = () => {
-        setModal(true);
+    const [selectedElement, setSelectedElement] = useState({}); // Nuevo estado para el elemento seleccionado
+  
+    const openModal = (element) => {
+      setSelectedElement(element); // Al hacer clic en el botón, guarda el elemento seleccionado
+      setModal(true);
     };
-
+  
     const closeModal = () => {
-        setModal(false);
+      setSelectedElement(null); // Resetea el elemento seleccionado cuando se cierra el modal
+      setModal(false);
     };
 
     const navigate = useNavigate()
 
-    const coordenadas = {
-        boston: [6.181351558809866, -75.63979898219357],
-        martin: [6.257171994676571, -75.56078624930181],
-        milagrosa: [6.238439649830454, -75.5553639364111],
-        playa: [6.247105551200784, -75.55793605912363],
-    }
-    const [coordenadasBoston, setCoordenadasBoston] = useState(coordenadas.boston);
-    const [coordenadasMartin, setCoordenadasMartin] = useState(coordenadas.martin);
-    const [coordenadasMilagrosa, setCoordenadasMilagrosa] = useState(coordenadas.milagrosa);
-    const [coordenadasPlaya, setCoordenadasPlaya] = useState(coordenadas.playa);
-
+    
     const [eventoSeleccionado, setEventoSeleccionado] = useState("Bodas")
 
     const handleEventoClick = (evento) => {
@@ -197,7 +192,7 @@ const Home = () => {
                                     <span className='card__services--span'>
                                         Guardar los mejores momentos de tu evento con fotografías y videos de la mejor calidad.
                                     </span>
-                                    <button className="service__btn">Ver más</button>
+                                    
                                 </div>
                             </SwiperSlide>
 
@@ -310,56 +305,16 @@ const Home = () => {
                     </div>
 
                     <div className="container__locaciones">
-                        <div className="card__ubicacion">
-                            <div className='card__separacion--ubicacion'>
-                                <img src={loguito} alt="" className="loguito__ubicacion" />
-                                <h3 className="nombre__ubicacion">CONVENIO BOSTON</h3>
+                        {ubicaciones.map((element, index ) => (
+                            <div className="card__ubicacion" key={index}>
+                                <div className='card__separacion--ubicacion'>
+                                    <img src={loguito} alt="" className="loguito__ubicacion" />
+                                    <h3 className="nombre__ubicacion">{element.nombre}</h3>
+                                </div>
+                                <button className="verDetalles__ubicacion" onClick={() => openModal(element)}>VER DETALLES</button>
+                                <CustomModal isOpen={modal} onRequestClose={closeModal} data={selectedElement} />
                             </div>
-                            <button className="verDetalles__ubicacion" onClick={openModal}>VER DETALLES</button>
-                            <CustomModal isOpen={modal} onRequestClose={closeModal} cordenada={coordenadasBoston} />
-                        </div>
-
-                        <div className="card__ubicacion">
-                            <div className='card__separacion--ubicacion'>
-                                <img src={loguito} alt="" className="loguito__ubicacion" />
-                                <h3 className="nombre__ubicacion">SALON SAN MARTIN</h3>
-                            </div>
-                            <button className="verDetalles__ubicacion">VER DETALLES</button>
-                        </div>
-
-                        <div className="card__ubicacion">
-                            <div className='card__separacion--ubicacion'>
-                                <img src={loguito} alt="" className="loguito__ubicacion" />
-                                <h3 className="nombre__ubicacion"> LA MILAGROSA </h3>
-                            </div>
-                            <button className="verDetalles__ubicacion">VER DETALLES</button>
-                        </div>
-
-                        <div className="card__ubicacion">
-                            <div className='card__separacion--ubicacion'>
-                                <img src={loguito} alt="" className="loguito__ubicacion" />
-                                <h3 className="nombre__ubicacion">PLAYA REAL</h3>
-                            </div>
-                            <button className="verDetalles__ubicacion">VER DETALLES</button>
-                        </div>
-
-                        <div className="card__ubicacion">
-                            <div className='card__separacion--ubicacion'>
-                                <img src={loguito} alt="" className="loguito__ubicacion" />
-                                <h3 className="nombre__ubicacion">CONVENIO BOSTON</h3>
-                            </div>
-                            <button className="verDetalles__ubicacion">VER DETALLES</button>
-                        </div>
-
-                        <div className="card__ubicacion">
-                            <div className='card__separacion--ubicacion'>
-                                <img src={loguito} alt="" className="loguito__ubicacion" />
-                                <h3 className="nombre__ubicacion">CONVENIO BOSTON</h3>
-                            </div>
-                            <button className="verDetalles__ubicacion" onClick={openModal} >VER DETALLES</button>
-                            <CustomModal isOpen={modal} onRequestClose={closeModal} cordenada={coordenadasBoston} />
-
-                        </div>
+                        ))}
                     </div>
 
                     <div className="barra__grande--ubicacion">
@@ -394,11 +349,11 @@ const Home = () => {
                             className="swiper-container3"
                             spaceBetween={30}
                             autoplay={{
-                              delay: 4000,
-                              disableOnInteraction: false,
+                                delay: 4000,
+                                disableOnInteraction: false,
                             }}
                             pagination={{
-                              clickable: true,
+                                clickable: true,
                             }}
                             navigation={true}
                             modules={[Autoplay, Pagination, Navigation]}

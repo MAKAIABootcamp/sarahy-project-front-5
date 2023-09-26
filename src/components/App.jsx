@@ -2,6 +2,7 @@ import React from 'react'
 import Router from '../router/router';
 import Map from './map/Map';
 import CustomModal from './modalLocations/CustomModal';
+import LoginFacebook from './loginFacebook/LoginFacebook';
 
 
 
@@ -11,7 +12,7 @@ function App() {
     <Router />
     // <Map />
     // <CustomModal/>
-
+    // <LoginFacebook/>
   )
 }
 

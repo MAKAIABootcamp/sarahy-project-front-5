@@ -175,9 +175,6 @@ const Profile = () => {
         }
     }
 
-    
-
-
     return (
         <>
             <section className="title__profile">

@@ -98,33 +98,40 @@
     align-items: center;
     text-align: center;
     padding: 20px; 
-  
+    
     .informacion__modal--titulo {
-        display: flex;
-        flex-direction: column;
-        gap: 20px;
-        align-items: center;
-        width: 50%;
+      display: flex;
+      flex-direction: column;
+      gap: 20px;
+      align-items: center;
+      width: 50%;
   
       .titulo__modal {
         font-size: 50px;
         font-family: $Letter-titles;
       }
-  
+      
       .imagen__modal--icono {
         width: 8rem;
       }
-  
+      
       .capacidad__modal {
         font-size: 24px;
         font-family: $Letter-body;
       }
     }
-  
+    
     .informacion__modal--mapa {
       width: 50%;
-      max-width: 100%; 
-
+      max-width: 100%;
+      height: 21rem;
+      border-radius: 57px;
+      .gm-style{
+        background-color: aqua;
+      }
+      .place-card {
+       background-color: red;
+     }
     }
   }
   
