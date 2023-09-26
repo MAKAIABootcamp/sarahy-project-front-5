@@ -16,6 +16,7 @@ import { useSelector } from 'react-redux';
 import Quote from '../page/quote/Quote';
 import WeddingPage from '../page/wedding/WeddingPage';
 import QuoteGenerated from '../page/quoteGenerated/QuoteGenerated';
+import DownloadQuote from '../page/downloadQuotePDF/DownloadQuotePDF';
 
 const Router = () => {
   let userLogged = null;
@@ -49,6 +50,7 @@ const Router = () => {
         { !isLogged && <Route path="/ingresar" element={<Login />} />}
         <Route path="/quote" element={<Quote />} />
         <Route path="/Cotizacion" element={<QuoteGenerated/>} />
+        <Route path="/PDF" element={<DownloadQuote/>} />
 
    
         <Route path="/registro" element={<Register />} />
