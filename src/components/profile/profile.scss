@@ -43,7 +43,7 @@
             width: 100%;
             display: flex;
             gap: 0.5rem;
-         
+            
             .fig__profile{
                 width: 30%;
                 margin: 0;
@@ -53,35 +53,19 @@
                     width: 6rem;;
                     border-radius: 50%;
                 }
-
-                .photProfile-container:hover::before {
-                    content: "Haz clic para cambiar la imagen";
-                    position: absolute;
-                    top: 0;
-                    left: 0;
-                    right: 0;
-                    bottom: 0;
-                    background-color: rgba(0, 0, 0, 0.8);
-                    color: white; 
+                }
+                .data__profile{
+                    font-family: $Letter-body; 
+                    font-size: 14px;
                     display: flex;
-                    align-items: center;
-                    justify-content: center;
-                    opacity: 1;
-                    transition: opacity 0.3s;
-                    pointer-events: none;
-                }
+                    flex-direction: column;
+                    
+                    .name{
+                        margin: 2%;
+                        font-size: 18px;
+                    }
             }
-            .data__profile{
-                font-family: $Letter-body; 
-                font-size: 14px;
-                display: flex;
-                flex-direction: column;
-
-                .name{
-                    margin: 2%;
-                    font-size: 18px;
-                }
-            }
+          
         }
         .active{
             background-color: $color-cream;

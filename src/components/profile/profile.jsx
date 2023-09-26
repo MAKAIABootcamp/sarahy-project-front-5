@@ -12,6 +12,7 @@ import { userDataLogged, userLogged } from "../../redux/store/auth/authReducer";
 import { useNavigate } from "react-router-dom";
 import Swal from "sweetalert2";
 import ModalDetalle from "../modalDetalle/ModalDetalle";
+import uploadFile from "../../services/upLoadfile";
 
 
 const Profile = () => {
@@ -70,6 +71,9 @@ const Profile = () => {
         setEditando(true);
         focus()
     }
+
+    
+
     const onSubmit = async (data) => {
         const name = data.name;
         const number = data.number;
@@ -78,7 +82,14 @@ const Profile = () => {
         const direccion = data.Direccion
         console.log(data, "los datos de data");
 
+
         try {
+
+            const foto = await uploadFile(data.foto[0]);
+            data.foto = foto;
+            console.log(data, "esta es la url de la foton");
+            console.log(foto, "o esta");
+
             const auth = getAuth();
             await updateProfile(auth.currentUser, {
                 displayName: name,
@@ -86,6 +97,7 @@ const Profile = () => {
                 age: edad,
                 city: ciudad,
                 address: direccion,
+                photoURL: foto,
             });
 
             const userRef = doc(firestore, "users", user.id || user.user.id);
@@ -95,6 +107,7 @@ const Profile = () => {
                 age: edad,
                 city: ciudad,
                 address: direccion,
+                photo: foto,
             });
 
             const userId = user.id || (user.user && user.user.id) || user.user.uid || user.uid;
@@ -162,6 +175,8 @@ const Profile = () => {
         }
     }
 
+    
+
 
     return (
         <>
@@ -180,7 +195,6 @@ const Profile = () => {
                                 className="photProfile"
                                 src={datoUsuario && datoUsuario.photo ? datoUsuario.photo : perfil}
                                 alt="Foto perfil"
-                                
                             />
                         </figure>
                         <div className="data__profile">
@@ -333,6 +347,28 @@ const Profile = () => {
                                         />
                                     ) : (
                                         <span className="span"> {datoUsuario ? datoUsuario.address : ""}</span>
+                                    )
+                                    }
+                                    <img
+                                        src={iconEdit}
+                                        alt=""
+                                        className="editar__direccion"
+                                        onClick={handleEditar}
+                                    />
+                                </div>
+                                <hr className="line__profile" />
+                                
+                                <div className="edit__item">
+                                    <label className="span">Foto</label>
+                                    {editando ? (
+                                        <input
+                                            type="file"
+                                            placeholder=""
+                                            {...register("foto")}
+                                            className="input__profile"
+                                        />
+                                    ) : (
+                                        <span className="span">Imagen</span>
                                     )
                                     }
                                     <img
