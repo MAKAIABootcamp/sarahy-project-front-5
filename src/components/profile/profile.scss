@@ -53,6 +53,10 @@
                     width: 6rem;;
                     border-radius: 50%;
                 }
+                .photProfile{
+                    width: 6rem;;
+                    border-radius: 50%;
+                }
             }
             .data__profile{
                 font-family: $Letter-body; 
@@ -214,10 +218,14 @@
             padding: 0 2%;
             margin-top: 1rem;
             display: flex;
+            align-items: center;
 
             .span__data{
-                width: 33%;
+                width: 25%;
                 text-align:left;
+            }
+            .verMas{
+                cursor: pointer;
             }
         }
     }

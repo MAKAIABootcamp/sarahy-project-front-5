@@ -581,6 +581,20 @@
         width: 100%;
         height: 100%;
 
+        .swiper-container3 {
+            height: auto;
+
+            .swiper-pagination {
+                display: none;
+            }
+
+            .swiper-button-next,
+            .swiper-button-prev {
+                color: $color-black;
+                width: 10px;
+            }
+        }
+
         .container__comen {
             display: flex;
             flex-direction: column;
@@ -588,10 +602,8 @@
             height: 100%;
 
             .img__comentario {
-                width: 30%;
-                height: 20%;
-                border-radius: 5px;
-                padding-bottom: 35px;
+                clip-path: circle(50% at 50% 51%);
+                width: 10rem;
             }
 
             .testimonio {
@@ -804,6 +816,7 @@
 
             .container__intro {
                 width: auto;
+
                 .main__parrafo {
                     font-family: "Catamaran", sans-serif;
                     padding: 25px 0;

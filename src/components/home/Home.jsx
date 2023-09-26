@@ -38,7 +38,7 @@ import CustomModal from '../modalLocations/CustomModal';
 import Collage from '../collage/Collage';
 import { typEvent } from './hookTypEvent';
 import { addNewService } from '../../services/addNewService';
-import 'swiper/swiper-bundle.css'; 
+import 'swiper/swiper-bundle.css';
 import { firestore } from '../../firebase/firebaseConfig';
 
 
@@ -187,8 +187,9 @@ const Home = () => {
                             pagination={{ clickable: true }}
                             scrollbar={{ draggable: true }}
                             freeMode={true}
+                            loop={true}
                         >
-                            {/* Slide 1 */}
+
                             <SwiperSlide>
                                 <div className="card__services">
                                     <h3 className='card__services--title'>FOTOGRAFÍA</h3>
@@ -208,7 +209,7 @@ const Home = () => {
                                     <span className='card__services--span'>
                                         Transformamos espacios en escenarios de ensueño con nuestra decoración experta
                                     </span>
-                                    <button className="service__btn">Ver más</button>
+                                    {/* <button className="service__btn">Ver más</button> */}
                                 </div>
                             </SwiperSlide>
 
@@ -220,7 +221,7 @@ const Home = () => {
                                     <span className='card__services--span'>
                                         Deléitate con nuestro exquisito servicio de catering y saborea el éxito de tu evento
                                     </span>
-                                    <button className="service__btn">Ver más</button>
+                                    {/* <button className="service__btn">Ver más</button> */}
                                 </div>
                             </SwiperSlide>
                             <SwiperSlide>
@@ -230,7 +231,7 @@ const Home = () => {
                                     <span className='card__services--span'>
                                         Deléitate con nuestro exquisito servicio de catering y saborea el éxito de tu evento
                                     </span>
-                                    <button className="service__btn">Ver más</button>
+                                    {/* <button className="service__btn">Ver más</button> */}
                                 </div>
                             </SwiperSlide>
                             <SwiperSlide>
@@ -240,7 +241,7 @@ const Home = () => {
                                     <span className='card__services--span'>
                                         Deléitate con nuestro exquisito servicio de catering y saborea el éxito de tu evento
                                     </span>
-                                    <button className="service__btn">Ver más</button>
+                                    {/* <button className="service__btn">Ver más</button> */}
                                 </div>
                             </SwiperSlide>
                         </Swiper>
@@ -388,21 +389,38 @@ const Home = () => {
                     <h2 className='comentarios__title'>TESTIMONIOS</h2>
                     <hr className='hr__services' />
                     <div className="container__cards--coments">
-                        {
-                            comentarios.map((comentario, index) => (
-                                <div className='container__comen' key={index}>
-                                    <img src={comentario.photo} alt="imagen de comentario" className='img__comentario' />
-                                    <span className="testimonio">
-                                        {comentario.comment}
-                                        <div className="container__calificacion">
-                                            {Array.from({ length: Math.min(comentario.qualification, 5) }, (_, i) => (
-                                                <img key={i} src={corazon1} alt="star-calificacion" className='star-calificacion' />
-                                            ))}
-                                        </div>
-                                    </span>
-                                </div>
-                            ))
-                        }
+                        <Swiper
+                            slidesPerView={2}
+                            className="swiper-container3"
+                            spaceBetween={30}
+                            autoplay={{
+                              delay: 4000,
+                              disableOnInteraction: false,
+                            }}
+                            pagination={{
+                              clickable: true,
+                            }}
+                            navigation={true}
+                            modules={[Autoplay, Pagination, Navigation]}
+                            loop={true}
+
+                        >
+                            {comentarios.map((comentario, index) => (
+                                <SwiperSlide key={index}>
+                                    <div className="container__comen">
+                                        <img src={comentario.photo} alt="imagen de comentario" className="img__comentario" />
+                                        <span className="testimonio">
+                                            {comentario.comment}
+                                            <div className="container__calificacion">
+                                                {Array.from({ length: Math.min(comentario.qualification, 5) }, (_, i) => (
+                                                    <img key={i} src={corazon1} alt="star-calificacion" className="star-calificacion" />
+                                                ))}
+                                            </div>
+                                        </span>
+                                    </div>
+                                </SwiperSlide>
+                            ))}
+                        </Swiper>
                     </div>
 
                 </section>

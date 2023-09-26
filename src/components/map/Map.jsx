@@ -7,10 +7,9 @@ const MapContainer = () => {
     height: '400px',
   };
 
-
   const destination = {
-    lat: 6.247104372390021,
-    lng: -75.56885188203198,
+    lat: 6.257171994676571,
+    lng: -75.56078624930181,
   };
 
   return (
@@ -25,7 +24,7 @@ const MapContainer = () => {
 
         <StreetViewPanorama
           position={destination} 
-          visible={false}
+          visible={true}
         />
 
       </GoogleMap>

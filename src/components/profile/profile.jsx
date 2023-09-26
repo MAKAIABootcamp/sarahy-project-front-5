@@ -11,9 +11,23 @@ import { addDoc, collection, doc, getDoc, updateDoc } from "firebase/firestore";
 import { userDataLogged, userLogged } from "../../redux/store/auth/authReducer";
 import { useNavigate } from "react-router-dom";
 import Swal from "sweetalert2";
+import ModalDetalle from "../modalDetalle/ModalDetalle";
 
 
 const Profile = () => {
+
+    const [modal, setModal] = useState(false);
+    const [selectedElement, setSelectedElement] = useState({});
+
+    const openModal = (element) => {
+        setSelectedElement(element);
+        setModal(true);
+    };
+
+    const closeModal = () => {
+        setSelectedElement(null);
+        setModal(false);
+    };
 
     const [sectionPerfil, setSectiosPerfil] = useState("Editar perfil")
     const user = useSelector((state) => state.aunthentication.userLogged)
@@ -28,14 +42,16 @@ const Profile = () => {
         const userNew1 = await getDoc(userRef);
         setdatoUsuario(userNew1.data())
         console.log(userNew1.data());
-        
+
     }
 
     useEffect(() => {
-      traerDatosFirestore()
+        traerDatosFirestore()
     }, [])
-    
-    console.log(datoUsuario);
+
+
+    const dataEventos = datoUsuario.quote
+    console.log(dataEventos);
 
     const [sectionSeleccionada, setsectionSeleccionada] = useState("Editar perfil")
 
@@ -98,6 +114,11 @@ const Profile = () => {
             dispatch(userLogged(dataUserUpdate));
 
             console.log("Perfil actualizado correctamente.");
+            Swal.fire(
+                'Haz actualizado tu perfil',
+                'Espero que disfrutes tu experiencia',
+                'success'
+            )
             navigate("/");
         } catch (error) {
             console.error("Error al actualizar el perfil:", error);
@@ -120,15 +141,20 @@ const Profile = () => {
             const evento = data.evento;
             const comentario = data.comentario;
             const calificacion = data.calificacion;
-            console.log(evento, comentario, calificacion, "todos los datos");
-
             const docRef = await addDoc(collection(firestore, "comments"), {
                 event: evento,
                 comment: comentario,
                 qualification: calificacion,
-                photo:  user.photo || user.user.photo
+                photo: datoUsuario.photo ? datoUsuario.photo : perfil
             });
-            console.log("documento ", docRef);
+
+            Swal.fire(
+                'Comentario realizado con exito',
+                'Espero que disfrutes tu experiencia',
+                'success'
+            )
+            navigate("/");
+
         } catch (error) {
             console.error("Error adding document: ", error);
             console.error(error.code);
@@ -157,8 +183,8 @@ const Profile = () => {
                             />
                         </figure>
                         <div className="data__profile">
-                            <h4 className="name">{datoUsuario? datoUsuario.name: datoUsuario.email}</h4>
-                            <span>{datoUsuario? datoUsuario.email: datoUsuario.number}</span>
+                            <h4 className="name">{datoUsuario ? datoUsuario.name : datoUsuario.email}</h4>
+                            <span>{datoUsuario ? datoUsuario.email : datoUsuario.number}</span>
 
                         </div>
                     </section>
@@ -175,14 +201,6 @@ const Profile = () => {
                             onClick={() => handleSeleccion("Ver cotizaciones")}
                         >
                             <span>Ver cotizaciones</span>
-                            <img src={arrowRight} alt="" />
-                        </div>
-
-                        <div className={`item ${sectionPerfil === "Ver eventos" ? "active" : ""}`}
-                            onClick={() => handleSeleccion("Ver eventos")}
-
-                        >
-                            <span>Ver eventos</span>
                             <img src={arrowRight} alt="" />
                         </div>
 
@@ -220,7 +238,7 @@ const Profile = () => {
                                             focus
                                         />
                                     ) : (
-                                        <span className="span">{datoUsuario? datoUsuario.name: datoUsuario.email}</span>
+                                        <span className="span">{datoUsuario ? datoUsuario.name : datoUsuario.email}</span>
                                     )}
                                     <img
                                         src={iconEdit}
@@ -268,7 +286,7 @@ const Profile = () => {
 
                                         />
                                     ) : (
-                                        <span className="span">{datoUsuario? datoUsuario.age:""}</span>
+                                        <span className="span">{datoUsuario ? datoUsuario.age : ""}</span>
                                     )
                                     }
                                     <img
@@ -292,7 +310,7 @@ const Profile = () => {
                                             className="input__profile"
                                         />
                                     ) : (
-                                        <span className="span">{datoUsuario? datoUsuario.city:""}</span>
+                                        <span className="span">{datoUsuario ? datoUsuario.city : ""}</span>
                                     )
                                     }
                                     <img
@@ -313,7 +331,7 @@ const Profile = () => {
                                             className="input__profile"
                                         />
                                     ) : (
-                                        <span className="span"> {datoUsuario? datoUsuario.address:""}</span>
+                                        <span className="span"> {datoUsuario ? datoUsuario.address : ""}</span>
                                     )
                                     }
                                     <img
@@ -332,48 +350,35 @@ const Profile = () => {
                     {sectionSeleccionada === "Ver cotizaciones" && (
                         <section className="show__price">
                             <span className="title">Cotizaciones</span>
-
                             <div className="titles__price">
                                 <span className="span__title">Evento</span>
                                 <span className="span__title">Fecha</span>
                                 <span className="span__title">Valor</span>
+                                <span className="span__title">Detalles</span>
                             </div>
+                            {
+                                dataEventos.length === 0 ? (
+                                    <div className="data__price">
+                                        <span className="span__data">No hay cotizaciones</span>
+                                    </div>
+                                ) : (
+                                    dataEventos.map((element, index) => (
+                                        <div className="data__price" key={index}>
+                                            <span className="span__data">{element.type__Event}</span>
+                                            <span className="span__data">{element.date}</span>
+                                            <span className="span__data">$ {element.total}</span>
+                                            <span className="material-symbols-outlined verMas" onClick={() => openModal(element)}>
+                                                open_in_new
+                                            </span>
+                                            <ModalDetalle isOpen={modal} onRequestClose={closeModal} data={selectedElement} />
+                                        </div>
+                                    ))
+                                )
+                            }
 
-                            <div className="data__price">
-                                <span className="span__data">Baby Shower</span>
-                                <span className="span__data">20/11/2023</span>
-                                <span className="span__data">$4'500.000</span>
-                            </div>
                         </section>
                     )}
 
-                    {/* {sectionSeleccionada === "Ver eventos" && (
-                        <section className="show__events">
-                            <span className="title">Historial de eventos</span>
-
-                            <div className="titles__events">
-                                <span className="span__title">Evento</span>
-                                <span className="span__title">Fecha</span>
-                                <span className="span__title">Valor</span>
-                            </div>
-
-                            <div className="data__events">
-                                <span className="span__data">Baby Shower</span>
-                                <span className="span__data">20/11/2023</span>
-                                <span className="span__data">$4'500.000</span>
-                            </div>
-                            <div className="data__events">
-                                <span className="span__data">Baby Shower</span>
-                                <span className="span__data">20/11/2023</span>
-                                <span className="span__data">$4'500.000</span>
-                            </div>
-                            <div className="data__events">
-                                <span className="span__data">Baby Shower</span>
-                                <span className="span__data">20/11/2023</span>
-                                <span className="span__data">$4'500.000</span>
-                            </div>
-                        </section>
-                    )} */}
                     {sectionSeleccionada === "Comentarios" && (
                         <section className="show__comments">
                             <span className="title">Déjanos tus comentarios</span>
