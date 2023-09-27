@@ -1,30 +1,29 @@
 @import "../../assets/reset.scss";
 @import "../../assets/variables.scss";
 
-
-.row{
-
-    .galeria{
+.row {
+    .galeria {
         display: flex;
         width: 29.563rem;
         height: 19.938rem;
         flex-wrap: wrap;
     }
-    
-    .imagenes__iniciales{
+
+    .imagenes__iniciales {
         width: 14.375rem;
-    height: 9.969rem;
-    margin-left: 4px;
-    cursor: pointer;
+        height: 9.969rem;
+        margin-left: 4px;
+        cursor: pointer;
     }
-    .imagenes__iniciales2{
+
+    .imagenes__iniciales2 {
         width: 9.5rem;
         height: 9.969rem;
         cursor: pointer;
         margin-left: 4px;
     }
-    
-    .galeria__grande{
+
+    .galeria__grande {
         position: fixed;
         top: 0;
         left: 0;
@@ -38,14 +37,17 @@
         align-items: center;
         transform: scale(0);
     }
-    .galeria__grande:target{
+
+    .galeria__grande:target {
         transform: scale(1);
     }
-    .galeria__grande img{
-       width: 75vw;
-       height: 70vh;
+
+    .galeria__grande img {
+        width: 75vw;
+        height: 70vh;
     }
-    .close{
+
+    .close {
         display: block;
         position: absolute;
         top: 40px;
@@ -58,41 +60,89 @@
         padding: 7px;
         text-decoration: none;
     }
-    .material-symbols-outlined{
+
+    .material-symbols-outlined {
         font-size: 40px;
         color: $color-cream;
     }
 }
 
-
 @media (max-width: 999px) {
-    .row{
+    .row {
         width: 100%;
-        .galeria{
+
+        .galeria {
             display: flex;
             flex-wrap: wrap;
             width: 26rem;
-            .galeria__ancora2{
+
+            .galeria__ancora2 {
                 width: 48%;
-                .imagenes__iniciales{
+
+                .imagenes__iniciales {
                     width: 98%;
                     margin-left: 4px;
                     cursor: pointer;
                 }
             }
-            .galeria__ancora{
+
+            .galeria__ancora {
                 width: 32%;
-                .imagenes__iniciales{
+
+                .imagenes__iniciales {
                     width: 98%;
                     margin-left: 4px;
                     cursor: pointer;
                 }
-                .imagenes__iniciales2{
+
+                .imagenes__iniciales2 {
                     width: 98%;
                     margin-left: 4px;
                     cursor: pointer;
                 }
             }
+        }
+    }
+}
+
+@media (max-width: 550px) {
+    .row {
+        width: 100%;
+
+        .galeria {
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: center;
+            width: 100%;
+
+            .galeria__ancora2 {
+                width: 96%;
+                height: 51%
+            }
+
+            .galeria__ancora {
+                width: 96%;
+                height: 51%
+            }
+        }
+
+        .galeria__grande {
+            position: fixed;
+            top: 0;
+            left: 0;
+            background-color: rgba(0, 0, 0, 0.5);
+            width: auto;
+            height: 100vh;
+            transition: 1s ease-in-out;
+            z-index: 10;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            transform: scale(0);
+        }
+
+        .close {
+            top: 19px;
         }
     }
 }

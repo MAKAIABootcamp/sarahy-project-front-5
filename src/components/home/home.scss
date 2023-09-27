@@ -15,7 +15,9 @@
         z-index: 3;
         position: absolute;
         width: 100%;
-        background: linear-gradient(to right, rgb(255 255 255 / 10%), rgb(255 255 255 / 10%));
+        background: linear-gradient(to right,
+                rgb(255 255 255 / 10%),
+                rgb(255 255 255 / 10%));
 
         .header__navbar {
             width: 100%;
@@ -44,7 +46,7 @@
                 cursor: pointer;
 
                 .logo__item--img {
-                    width: 10rem
+                    width: 10rem;
                 }
             }
         }
@@ -81,7 +83,7 @@
             width: 100%;
             height: 100%;
             object-fit: cover;
-            filter: brightness(65%)
+            filter: brightness(65%);
         }
 
         .swiper-button-next,
@@ -134,7 +136,6 @@
                 font-size: 23px;
                 text-align: justify;
             }
-
         }
 
         .logoDerecha {
@@ -180,7 +181,6 @@
             background-color: $color-cream;
             color: $color-black;
             font-weight: 800;
-
         }
     }
 
@@ -199,7 +199,6 @@
             gap: 30px;
             position: relative;
             align-items: center;
-
 
             .description__title {
                 width: 100%;
@@ -242,10 +241,6 @@
     }
 }
 
-
-
-
-
 .services {
     width: 100%;
     display: flex;
@@ -286,19 +281,18 @@
 
             .swiper-button-next:after,
             .swiper-rtl .swiper-button-prev:after {
-                content: 'next';
+                content: "next";
                 color: $color-cream;
                 display: none;
             }
 
             .swiper-button-prev:after,
             .swiper-rtl .swiper-button-next:after {
-                content: 'prev';
+                content: "prev";
                 color: $color-cream;
                 display: none;
             }
         }
-
 
         .card__services {
             display: flex;
@@ -310,12 +304,12 @@
             margin-top: 35px;
             margin-bottom: 30px;
 
-            .swiperCard{
+            .swiperCard {
                 text-align: center;
             }
 
             .card__services--title {
-                background: #E9DCBE;
+                background: #e9dcbe;
                 transform: rotate(90deg);
                 position: absolute;
                 margin-left: 10rem;
@@ -361,9 +355,6 @@
             }
         }
     }
-
-
-
 }
 
 .encantados {
@@ -416,11 +407,7 @@
         font-size: 20px;
         font-family: $Letter-body;
     }
-
 }
-
-
-
 
 .ubicacion {
     background-image: url("../../assets/image/fondoLocacion.jpg");
@@ -526,7 +513,6 @@
             margin-bottom: 15px;
             border: 3px solid;
             cursor: pointer;
-
         }
 
         .ver__barra:hover {
@@ -541,7 +527,7 @@
     display: flex;
     width: 100%;
     padding: 50px 0px;
-    background-color: #F3F3F3;
+    background-color: #f3f3f3;
     justify-content: center;
     align-items: center;
 
@@ -560,7 +546,6 @@
         line-height: 30px;
     }
 }
-
 
 .comentarios {
     background-color: white;
@@ -630,10 +615,8 @@
                 }
             }
         }
-
     }
 }
-
 
 .beneficios {
     width: 100%;
@@ -694,7 +677,6 @@
     }
 }
 
-
 @media (max-width: 999px) {
     .main__home {
         .main__info {
@@ -710,7 +692,7 @@
 
             .container__intro {
                 .main__parrafo {
-                    font-size: 18px
+                    font-size: 18px;
                 }
             }
         }
@@ -728,7 +710,6 @@
                     text-align: center;
                     line-height: 1px;
                 }
-
             }
 
             .event__info {
@@ -769,15 +750,12 @@
                         width: 75%;
                         font-size: 20px;
                     }
-
                 }
 
                 .swiper-horizontal {
                     height: 23rem;
                 }
-
             }
-
         }
 
         .encantados {
@@ -800,12 +778,35 @@
             }
         }
     }
-
 }
 
-@media (max-width: 758px) {
+@media (max-width: 550px) {
     .main__home {
+        height: 15rem;
+        width: 100%;
+
+        .slider__home {
+            .swiper-slide img {
+                object-fit: contain;
+            }
+
+            .swiper {
+                height: 41rem;
+                width: 100%;
+            }
+
+            .swiper-slide {
+                display: block;
+                width: 100%;
+                height: 37%;
+                object-fit: cover;
+                filter: brightness(65%);
+            }
+        }
+
         .main__info {
+            position: absolute;
+
             .logoDerecha {
                 width: 4rem;
                 height: 4rem;
@@ -823,40 +824,72 @@
 
                 .main__parrafo {
                     font-family: "Catamaran", sans-serif;
-                    padding: 25px 0;
+                    padding: 10px 0;
                     text-align: center;
+                    font-size: 17px;
+                }
+            }
+
+            .container__intro {
+                padding: 0;
+                display: flex;
+                flex-direction: column;
+                align-items: center;
+
+                .main__subtitle {
+                    font-size: 20px;
+                    position: inherit;
+                }
+
+                .main__title__home {
+                    font-size: 25px;
                 }
             }
         }
 
         .typeEvent__home {
-            padding: 40px 20px;
+            position: absolute;
+            display: flex;
+            flex-direction: column;
+            top: 49rem;
+            align-items: center;
+            width: 100%;
 
             .btns {
                 width: 100%;
+                display: flex;
+                flex-wrap: wrap;
+                justify-content: center;
 
                 .btn__event {
-                    width: 20%;
-                    height: 3rem;
-                    font-size: 16px;
-                    text-align: center;
-                    line-height: 1px;
+                    width: 45%;
+                    height: 2.5rem;
                 }
-
             }
 
             .event__info {
                 display: flex;
+                flex-direction: column;
                 gap: 20px;
-                justify-content: center;
+                align-items: center;
                 width: auto;
 
+                .event__description {
+                    width: 100%;
+                    gap: 5px;
+                    text-align: center;
+                }
+
                 .description__title {
-                    font-size: 22px;
+                    font-size: 20px;
+                    text-align: center;
+                    width: 100%
                 }
 
                 .description__parrafo {
                     font-size: 19px;
+                    text-align: center;
+                    width: 100%
                 }
 
                 .description__btn {
@@ -864,55 +897,73 @@
                     padding: 0 10px;
                 }
             }
-        }
 
-        .services {
-            padding: 10px 0;
-
-            .container__cards--services {
-                .card__services {
-                    margin: auto;
-                    height: 24rem;
-
-                    .card__services--span {
-                        text-align: center;
-                        width: auto;
-                    }
-
-                    .card__services--title {
-                        width: 75%;
-                        font-size: 20px;
-                    }
-
-                }
-
-                .swiper-horizontal {
-                    height: 23rem;
-                }
+            .event__collage {
+                width: 100%;
 
             }
-
         }
 
-        .encantados {
-            padding: 20px 20px;
+    }
 
-            .encatados__info {
-                .encantados__title {
-                    font-size: 40px;
+    .services {
+        position: absolute;
+        top: 135rem;
+
+        .services__title {
+            font-size: 22px;
+            padding: 20px;
+            width: 100%;
+        }
+
+        .container__cards--services {
+            width: 95%;
+
+            .card__services {
+                margin: 0;
+                height: 15rem;
+                padding: 10px;
+
+                .card__services--span {
+                    text-align: center;
+                    width: 100%;
+                    font-size: 15px;
                 }
 
-                .logo__subtitulo {
-                    .encantado__subtitulo--img {
-                        width: 30px;
-                    }
-
-                    .encantado__subtitulo {
-                        font-size: 25px;
-                    }
+                .card__services--title {
+                    transform: rotate(26deg);
+                    right: -2rem;
+                    top: -1rem;
+                    width: 10rem;
+                    font-size: 14px;
                 }
+            }
+
+            .swiper-horizontal {
+                height: 18rem;
             }
         }
     }
 
+    .encantados {
+        position: absolute;
+        top: 168rem;
+    }
+
+        .encatados__info {
+            .encantados__title {
+                font-size: 40px;
+            }
+
+            .logo__subtitulo {
+                .encantado__subtitulo--img {
+                    width: 30px;
+                }
+
+                .encantado__subtitulo {
+                    font-size: 25px;
+                }
+            }
+        }
+    }
 }
