@@ -1,0 +1,116 @@
+@import '../../assets/variables.scss';
+@import '../../assets/reset.scss';
+
+.modal__detalles {
+    display: flex;
+    flex-direction: column;
+    max-width: 60%;
+    margin: 7% auto;
+    height: 48rem;
+    box-sizing: border-box;
+    border-radius: 15px;
+    border: 3px solid;
+    background-color: #ccc9c9;
+    transition: 1s ease-in-out;
+    justify-content: center;
+    align-items: center;
+    margin-top: 9rem;
+
+    .equis2 {
+        position: absolute;
+        top: 10rem;
+        right: 10rem;
+        font-size: 25px;
+        font-family: cursive;
+        font-weight: bold;
+        cursor: pointer;
+    }
+
+    .sectionQuote {
+        background-color: #f3f3f3;
+        flex-direction: column;
+    }
+
+    .containerQuote {
+        background: url("https://i.ibb.co/sFSLdg9/image-79.png");
+        background-size: auto;
+        background-position: center;
+        flex-direction: column;
+        margin: 5vw;
+    }
+
+    .textQuote {
+        background-color: #fff;
+        text-align: start;
+        padding: 2rem;
+        /* Cambiado de 8vw a 2rem */
+        width: 90%;
+        height: auto;
+        /* Cambiado de 90% a auto */
+    }
+
+    .titleQuoteGenerate {
+        font-family: Montserrat;
+        font-size: 25px;
+    }
+
+    .billTitleQuote {
+        background-color: gray;
+        text-align: center;
+        padding-top: 1rem;
+        /* Cambiado de 5% a 1rem */
+        padding-bottom: 1rem;
+        /* Cambiado de 5% a 1rem */
+        border: 1px solid;
+        font-size: 24px;
+    }
+
+    .numberQuoteLeft,
+    .numberQuoteRight {
+        flex-direction: column;
+        width: 50%;
+        height: 8vw;
+        border: 1px solid;
+        gap: 1vw;
+        font-size: 16px;
+        padding: 1rem;
+        /* Agregado padding */
+    }
+
+    .numberQuoteRight {
+        background-color: rgb(235, 235, 235);
+        padding-left: 0.5vw;
+        padding-top: 1vw;
+    }
+
+    .infoUserQuote__name,
+    .infoUserQuote__data1 {
+        flex-direction: column;
+        width: 25%;
+        border: 1px solid;
+        gap: 0.75vw;
+        font-size: 16px;
+        padding: 1.5vw;
+    }
+
+    .infoUserQuote__name {
+        background-color: rgb(217, 211, 211);
+    }
+
+    .infoUserQuote__data1 {
+        background-color: rgb(240, 234, 234);
+        width: 75%;
+    }
+
+    .table {
+        background-color: #f0f0f0;
+        width: 100%;
+        font-size: 16px;
+    }
+
+    .totalmyQuote {
+        background-color: #e6dbe4;
+        font-weight: bold;
+        color: #000;
+    }
+}

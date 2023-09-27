@@ -4,14 +4,16 @@
 .header__home {
     display: flex;
     flex-direction: column;
+
     .header__info {
         width: 100%;
         height: 3rem;
         padding: 10px 30px;
         display: flex;
         background-color: $color-cream;
-        font-family: $Letter-subtitles; 
+        font-family: $Letter-subtitles;
         justify-content: flex-end;
+
         .slogan {
             color: black;
             width: 100%;
@@ -23,14 +25,79 @@
             display: flex;
             gap: 40px;
             height: 20px;
-            justify-content: end;
+            justify-content: flex-end;
             position: absolute;
             cursor: pointer;
-            .perfil{
+
+            .perfil {
                 cursor: pointer;
+            }
+
+            .switchBtn {
+                position: relative;
+                display: inline-block;
+                width: 110px;
+                height: 34px;
+            }
+
+            .switchBtn input {
+                display: none;
+            }
+
+            .slide {
+                position: absolute;
+                cursor: pointer;
+                top: 0;
+                left: 0;
+                right: 0;
+                bottom: 0;
+                background-color: #ccc;
+                -webkit-transition: .4s;
+                transition: .4s;
+                padding: 8px;
+                color: #fff;
+                border-radius: 12px;
+            }
+
+            .slide:before {
+                position: absolute;
+                content: "";
+                height: 26px;
+                width: 26px;
+                left: 78px;
+                bottom: 4px;
+                background-color: white;
+                -webkit-transition: .4s;
+                transition: .4s;
+                border-radius: 12px;
+            }
+
+            input:checked+.slide {
+                background-color: #292929;
+                padding-left: 40px;
+            }
+
+            input:focus+.slide {
+                box-shadow: 0 0 1px #01aeed;
+            }
+
+            input:checked+.slide:before {
+                -webkit-transform: translateX(26px);
+                -ms-transform: translateX(26px);
+                transform: translateX(26px);
+                left: -20px;
+            }
+
+            .slide.round {
+                border-radius: 34px;
+            }
+
+            .slide.round:before {
+                border-radius: 50%;
             }
         }
     }
+
     .header__transparent {
         width: 100%;
         padding: 15px 30px;
@@ -69,6 +136,22 @@
                     width: 10rem
                 }
             }
+        }
+    }
+}
+
+@media (max-width: 550px) {
+    .header__home {
+        .header__icons {
+            display: flex;
+            gap: 40px;
+            height: 20px;
+            position: absolute;
+            width: 90%;
+            cursor: pointer;
+        }
+        .header__transparent{
+            display: none;
         }
     }
 }

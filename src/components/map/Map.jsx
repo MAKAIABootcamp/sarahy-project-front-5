@@ -1,53 +1,43 @@
 import React, { useEffect, useState } from 'react';
-import marcador from '../../assets/image/puntoMapa.png'
-import { MapContainer, Marker, Polyline, Popup, TileLayer } from 'react-leaflet';
-import 'leaflet/dist/leaflet.css';
-import './map.scss';
-import icono from 'leaflet/dist/images/Marker-icon.png';
-import Leaflet from 'leaflet'
+import { GoogleMap, LoadScript, Marker, DirectionsService, DirectionsRenderer, StreetViewPanorama } from '@react-google-maps/api';
+import { element } from 'prop-types';
 
-const Map = ({ cordenada1 }) => {
-  // console.log(cordenada1);
-  const colombiaCoords = [6.2442, -75.5812];
-  const locacionBoston = [cordenada1];
-  const casaBoston = [6.247367954395559, -75.55800910625467]
-  const salonLaureles = [6.239721264886833, -75.59696424146144]
-  // console.log("quemada, casa boston",casaBoston );
-  // console.log("props, locacion boston" , locacionBoston);
-  // console.log("latittud", locacionBoston[0], "longitud",locacionBoston[1]);
+const MapContainer = ({cordenada}) => {
+  console.log(cordenada);
+  const containerStyle = {
+    width: '100%',
+    height: '400px',
+  };
 
-  const image = new Leaflet.icon({
-    iconUrl: icono,
-    iconSize: [35, 47],
-    shadowSize: [50, 64],
-    iconAnchor: [22, 94],
-    shadowAnchor: [4, 62],
-    popupAnchor: [-3, -76]
-  })
+  const destination = {
+    lat: cordenada.coordenadas.lat,
+    lng: cordenada.coordenadas.ing,
+  };
 
-  // Verificar si cordenada1 es nula o indefinida antes de renderizar el mapa
-  if (!cordenada1 || cordenada1.length !== 2) {
-    return null; // No renderizar el mapa si no hay datos válidos
-  }
+  console.log(destination, "estas son las cordenada");
+
+  const nombreDestino = cordenada.nombre;
+
 
   return (
-    <div>
-      <MapContainer center={casaBoston} zoom={14} scrollWheelZoom={true} className='map-container'>
-        <TileLayer
-          url="https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png"
+    <LoadScript googleMapsApiKey="AIzaSyAM2qvvtesARLsQxOch-5eeArXiRUgdhmQ">
+      <GoogleMap
+        mapContainerStyle={containerStyle}
+        center={destination}
+        zoom={15}
+      >
+
+        <Marker position={destination} label={nombreDestino} />
+
+        <StreetViewPanorama
+          position={destination} 
+          visible={true}
         />
-        <Marker position={casaBoston} icon={image}>
-          <Popup>
-            Casa de Boston.
-            <div>
-              <h2>Convenio Bostón</h2>
-              <p>Telefono: 2365968</p>
-            </div>
-          </Popup>
-        </Marker>
-      </MapContainer>
-    </div>
+
+      </GoogleMap>
+    </LoadScript>
   );
 };
 
-export default Map;
+export default MapContainer;
+

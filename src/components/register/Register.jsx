@@ -9,18 +9,28 @@ const Register = () => {
 
   const navigate = useNavigate();
   const dispatch = useDispatch();
-  const aunthenticationRedux = useSelector((state) => state.aunthentication);
-  console.log(aunthenticationRedux);
+  // const aunthenticationRedux = useSelector((state) => state.aunthentication);
+  // console.log(aunthenticationRedux);
   const {
     register,
     handleSubmit,
     formState: { errors },
   } = useForm();
 
+  const navigateToLogin = () => {
+    navigate("/ingresar");
+  }
+
   const onSubmit = (data) => {
+<<<<<<< HEAD
     console.log(data);
     // dispatch(createAnUser(data));
+=======
+    // console.log(data)
+    dispatch(createAnUser(data));
+>>>>>>> a668810acd83fe34b1fd69e19c1eb58c42623462
     console.log("funciona crear cuenta");
+    navigateToLogin()
   };
 
   return (
@@ -35,12 +45,16 @@ const Register = () => {
             <span className="loginLabel">Nombre</span>
             <input
               type="text"
+<<<<<<< HEAD
            
+=======
+              // id="name"
+>>>>>>> a668810acd83fe34b1fd69e19c1eb58c42623462
               {...register("name", { required: true })}
               placeholder="Ingresa tu nombre"
               className="loginDown__input"
             />
-            {errors.email && (
+            {errors.name && (
               <span className="loginDown__error">
                 Este campo es obligatorio
               </span>
@@ -49,12 +63,12 @@ const Register = () => {
             <span className="loginLabel">Contacto</span>
             <input
               type="number"
-              id="password"
-              {...register("numero", { required: true })}
+              // id="number"
+              {...register("number", { required: true })}
               placeholder="Ingresa tu número"
               className="loginDown__input"
             />
-            {errors.password && (
+            {errors.number && (
               <span className="loginDown__error">
                 Este campo es obligatorio
               </span>
@@ -65,7 +79,7 @@ const Register = () => {
             <span className="loginLabel">E-mail</span>
             <input
               type="email"
-              id="email"
+              // id="email"
               {...register("email", { required: true })}
               placeholder="ejemplo@tuemail.com"
               className="loginDown__input"
@@ -78,7 +92,7 @@ const Register = () => {
             <span className="loginLabel">Contraseña</span>
             <input
               type="password"
-              id="password"
+              // id="password"
               {...register("password", { required: true })}
               placeholder="**********"
               className="loginDown__input"
@@ -91,17 +105,21 @@ const Register = () => {
             <span className="loginLabel">Verificar contraseña</span>
             <input
               type="password"
-              id="password"
-              {...register("verificatePassword", { required: true })}
+              // id="passwordtwo"
+              {...register("passwordtwo", { required: true })}
               placeholder="**********"
               className="loginDown__input"
             />
-            {errors.password && (
+            {errors.passwordtwo && (
               <span className="loginDown__error">
                 Este campo es obligatorio
               </span>
             )}
+<<<<<<< HEAD
             <button type="submit" className="loginDown__button">
+=======
+            <button type="submit" className="loginDown__button" >
+>>>>>>> a668810acd83fe34b1fd69e19c1eb58c42623462
               Registrarse
             </button>
           </form>
