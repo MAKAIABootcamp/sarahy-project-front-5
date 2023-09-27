@@ -22,7 +22,7 @@ const CustomModal = ({ isOpen, onRequestClose, data }) => {
   }, [data]);
 
   return (
-    <Modal isOpen={isOpen} onRequestClose={onRequestClose} className="modal custom-modal" >
+    <Modal isOpen={isOpen} onRequestClose={onRequestClose} className="modal6 custom-modal" >
       <button onClick={onRequestClose} className="btn__salir"></button>
       <div className="div__modal">
         <div className='div__info'>
