@@ -17,7 +17,7 @@ const Header = () => {
                 </div>
             </div>
             <div className="header__transparent">
-                <nav clasName="header__navbar">
+                <nav className="header__navbar">
                     <ul className='header__navbar--lista'>
                         <li className='navbar__items' onClick={() => { navigate("/") }}>Inicio</li>
                         <li className='navbar__items' >Eventos sociales</li>
