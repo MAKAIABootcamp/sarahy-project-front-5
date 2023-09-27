@@ -36,7 +36,7 @@ const Router = () => {
   
   return (
     <BrowserRouter>
-      {/* <Header /> */}
+      <Header />
       <Routes>
 
         { isLogged &&  <Route path="/perfil" element={<Profile />} />}       

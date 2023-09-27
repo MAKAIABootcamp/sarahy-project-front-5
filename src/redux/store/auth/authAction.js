@@ -99,11 +99,11 @@ export const loginGoogle = () => {
       const { user } = await signInWithPopup(auth, provider);
 
       const dataUser = {
-        nombre: user.displayName,
+        name: user.displayName,
         email: user.email,
         uid: user.uid,
-        foto: user.photoURL,
-        numero: user.phoneNumber,
+        photo: user.photoURL,
+        number: user.phoneNumber,
         admi: false, 
         quote: [], 
         chat: [], 

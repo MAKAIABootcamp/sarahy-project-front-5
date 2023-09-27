@@ -9,8 +9,8 @@ const Register = () => {
 
   const navigate = useNavigate();
   const dispatch = useDispatch();
-  const aunthenticationRedux = useSelector((state) => state.aunthentication);
-  console.log(aunthenticationRedux);
+  // const aunthenticationRedux = useSelector((state) => state.aunthentication);
+  // console.log(aunthenticationRedux);
   const {
     register,
     handleSubmit,

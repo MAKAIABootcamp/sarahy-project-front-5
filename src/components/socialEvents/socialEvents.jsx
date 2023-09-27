@@ -15,39 +15,12 @@ import testimonio1 from '../../assets/image/testimonio1.png'
 import testimonio2 from '../../assets/image/testimonio2.png'
 import testimonio3 from '../../assets/image/testimonio3.png'
 import corazon1 from '../../assets/image/corazon1.png'
+import CollageEvents from '../collageEvents/Collage';
+import { typEvent } from "./hookTypEvent";
 
 const SocialEvents = () => {
   return (
     <main className="main__home">
-    <div className="header__transparent">
-      <nav clasName="header__navbar">
-        <ul className="header__navbar--lista">
-          <li
-            className="navbar__items"
-            onClick={() => {
-              navigate("/");
-            }}
-          >
-            Incio
-          </li>
-          <li className="navbar__items">Eventos sociales</li>
-          <li className="navbar__items">Eventos empresariales</li>
-          <li className="navbar__items--logo">
-            {<img src={logo} className="logo__item--img" />}
-          </li>
-          <li className="navbar__items">Seamos aliados</li>
-          <li className="navbar__items">Contáctanos</li>
-          <li
-            className="navbar__items"
-            onClick={() => {
-              navigate("/quote");
-            }}
-          >
-            Cotiza aquí
-          </li>
-        </ul>
-      </nav>
-    </div>
     <img src={socialesPrincipal} alt="" className="imgSocial__intro" />
     <section className="main__info">
       <img src={logoIzquierda} alt="" className="logoIzquierda" />
@@ -140,13 +113,16 @@ const SocialEvents = () => {
           <span className="span">Galería</span>
           <button className="button__companies">Haz tu cotización </button>
           </div>
+          <div className="event__collagePlus">
+              <CollageEvents imagenes={typEvent} className="description__img" />
+            </div>
 
-          <figure className="collage__galery">
+          {/* <figure className="collage__galery">
           <img src={prueba} alt="" className="img" />
-          </figure>
+          </figure> */}
     </section>
 
-    <section className="comentarios">
+    {/* <section className="comentarios">
                     <h2 className='comentarios__title'>TESTIMONIOS</h2>
                     <hr className='hr__services' />
                     <div className="container__cards--coments">
@@ -190,7 +166,7 @@ const SocialEvents = () => {
                             </div>
                         </div>
                     </div>
-                </section>
+                </section> */}
 
   </main>
   )
