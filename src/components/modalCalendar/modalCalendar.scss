@@ -1,0 +1,34 @@
+@import "../../assets/reset.scss";
+@import "../../assets/variables.scss";
+
+
+.btn__scheduleDate{
+    border: none;
+    border-radius: 5px;
+    background-color: $color-black; 
+    color: white;
+    font-family: $Letter-body;
+    height: 2rem;
+    padding-left: 4px;
+    padding-right: 4px;
+    cursor: pointer;
+}
+
+
+.modal{
+    background-color:$color-white;
+    width: 40%;
+    height: 40%;
+    display: flex;
+    flex-direction: column;
+    margin-top: 8%;
+    border: none;
+    box-sizing: border-box;
+    border-radius: 15px;
+
+    align-items: start;
+    justify-content: start;
+    max-width: 60%;
+    margin: 0 auto;
+}
+

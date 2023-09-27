@@ -1,0 +1,283 @@
+@import '../../assets/variables.scss';
+@import '../../assets/reset.scss';
+
+.header__admi{
+    background-color: black;
+    height: 6.8rem;
+}
+.section__panelAdmi {
+    width: 100%;
+    padding-left: 10%;
+    padding-right: 10%;
+    display: flex;
+    flex-direction: column;
+    margin-top: 2rem;
+
+    .logo__title {
+        display: flex;
+        gap: 0.7rem;
+        margin-bottom: 1rem;
+
+        .fig {
+            width: 3%;
+
+            .img {
+                width: 100%;
+            }
+        }
+
+        .title {
+            font-family: $Letter-subtitles;
+            font-size: 20px;
+        }
+    }
+
+    .form__selectService{
+        font-family: $Letter-body;
+        display: flex;
+        gap: 0.6rem; 
+        .form{
+            width: 20%;
+            .select{
+                font-family: $Letter-body;
+                border: none;
+                border-radius: 10px;
+                background-color: $color-white;
+                width: 100%;
+                padding-left: 4%;
+                height: 2rem;
+            }
+        }
+        
+    }
+
+    .create__service {
+        display: flex;
+        justify-content: flex-end; 
+        margin-bottom: 1rem;
+        .btn__create{
+            font-family: $Letter-body;
+            border: none;
+            border-radius: 10px;
+            padding: 0.4rem;
+            background-color: rgb(154, 224, 154);
+            cursor: pointer;
+            
+        }
+    }
+
+    .div__findServices{
+        background-color: $color-white;
+        width: 55%;
+        display: flex;
+        align-self: center;
+        border-radius: 10px;
+        height: 8rem;
+        margin-bottom: 2rem;
+        justify-content: center;
+        align-items: center;
+        gap: 0.5rem; 
+        .fig {
+            width: 5%;
+
+            .img {
+                width: 100%;
+            }
+        }
+        
+        .span{
+            font-family: $Letter-body;
+            font-size: 22px;
+        }
+       
+    }
+
+    .table__services {
+        font-family: $Letter-body;
+        display: flex;
+        flex-direction: column;
+        margin-bottom: 2rem;
+        .titles__table{
+            background-color: $color-cream;
+            border-radius: 10px;
+            padding: 0 2%;
+            display: flex;
+            height: 2rem;
+            align-items: center;
+            margin-bottom: 0.5rem;
+
+            .span{
+                width: 30%;
+                text-align: left;
+            }
+        }
+        .data__table{
+            background-color: $color-white;
+            border-radius: 10px;
+            padding-left: 2%;
+            padding-right: 3%;
+            margin-top: 0.5rem;
+            display: flex;
+
+            .span{
+                width: 33%;
+                text-align:left;
+            }
+
+            .btn__listService{
+                border: none;
+                margin-left: 0.3rem;
+                width: 5%;
+                cursor: pointer;
+                .material-symbols-outlined{
+                    width: 80%;
+                    color:$color-black;
+                }
+            }
+        }
+    }
+    .modal__newService{
+        background-color: $color-white;
+        font-family: $Letter-body;
+        width: 45%;
+        border-radius: 10px;
+        padding: 2% 3%;
+        display: flex;
+        flex-direction: column;
+        align-self: center;
+        margin-bottom: 2rem;
+
+        .btn__closeModal{
+            border: none;
+                margin-left: 0.3rem;
+                width:100%;
+                display: flex;
+                justify-content: flex-end; 
+                
+                cursor: pointer;
+                .material-symbols-outlined{
+                    width: 8%;
+                    color:$color-black;
+                }
+
+        }
+    
+        .form{
+            display: flex;
+            flex-direction: column;
+            padding-left: 1rem;
+            padding-right: 1rem;
+            font-size: 15px;
+            width: 100%;
+           
+            .label{
+                display: flex;
+                flex-direction: column;
+                margin: 0.2rem 0;
+                width: 100%;
+
+                .select__modal{
+                    background-color: white; 
+                    border: none;
+                    border-radius: 5px;
+                    padding: 0.5%;
+                    font-family: $Letter-body;
+                }
+                .input__modal{
+                    background-color: white; 
+                    border: none;
+                    border-radius: 5px;
+                    padding: 0.5%;
+                    padding-left: 2%;
+                    font-family: $Letter-body;
+                }
+            }
+            .btn__modal{
+                width: 50%;
+                align-self: center;
+                border: none;
+                border-radius: 5px;
+                background-color: rgb(154, 224, 154);
+                padding: 3%;
+                font-family: $Letter-body;
+                font-weight: bolder;
+                cursor: pointer;
+                margin-top: 1rem;
+            }
+        }
+        
+    }
+
+    .modal__editService{
+        background-color: $color-white;
+        font-family: $Letter-body;
+        width: 45%;
+        border-radius: 10px;
+        padding: 2% 3%;
+        display: flex;
+        flex-direction: column;
+        align-self: center;
+        margin-bottom: 2rem;
+
+        .btn__closeModal{
+            border: none;
+                margin-left: 0.3rem;
+                width:100%;
+                display: flex;
+                justify-content: flex-end; 
+                
+                cursor: pointer;
+                .material-symbols-outlined{
+                    width: 8%;
+                    color:$color-black;
+                }
+
+        }
+    
+        .form{
+            display: flex;
+            flex-direction: column;
+            padding-left: 1rem;
+            padding-right: 1rem;
+            font-size: 15px;
+            width: 100%;
+           
+            .label{
+                display: flex;
+                flex-direction: column;
+                margin: 0.2rem 0;
+                width: 100%;
+
+                .select__modal{
+                    background-color: white; 
+                    border: none;
+                    border-radius: 5px;
+                    padding: 0.5%;
+                    font-family: $Letter-body;
+                }
+                .input__modal{
+                    background-color: white; 
+                    border: none;
+                    border-radius: 5px;
+                    padding: 0.5%;
+                    padding-left: 2%;
+                    font-family: $Letter-body;
+                }
+            }
+            .btn__modal{
+                width: 50%;
+                align-self: center;
+                border: none;
+                border-radius: 5px;
+                background-color: rgb(154, 224, 154);
+                padding: 3%;
+                font-family: $Letter-body;
+                font-weight: bolder;
+                cursor: pointer;
+                margin-top: 1rem;
+            }
+        }
+        
+    }
+
+}
