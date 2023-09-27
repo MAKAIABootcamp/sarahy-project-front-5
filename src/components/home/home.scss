@@ -747,7 +747,7 @@
                     }
 
                     .card__services--title {
-                        width: 75%;
+                        width: auto;
                         font-size: 20px;
                     }
                 }
@@ -910,6 +910,7 @@
         position: absolute;
         top: 135rem;
 
+
         .services__title {
             font-size: 22px;
             padding: 20px;
@@ -924,19 +925,21 @@
                 height: 15rem;
                 padding: 10px;
 
+                .card__services--title {
+                    transform: rotate(26deg);
+                    right: 0rem;
+                    top: -1rem;
+                    width: 10rem;
+                    font-size: 14px;
+                    width: 101%;
+                }
+
                 .card__services--span {
                     text-align: center;
                     width: 100%;
                     font-size: 15px;
                 }
 
-                .card__services--title {
-                    transform: rotate(26deg);
-                    right: -2rem;
-                    top: -1rem;
-                    width: 10rem;
-                    font-size: 14px;
-                }
             }
 
             .swiper-horizontal {
@@ -948,20 +951,137 @@
     .encantados {
         position: absolute;
         top: 168rem;
-    }
+        padding: 20px 20px;
+        width: 100%;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+
+        .gota {
+            width: 40%;
+
+            .gota__img {
+                width: 100%;
+                height: 17rem;
+                -o-object-fit: contain;
+                object-fit: contain;
+            }
+        }
 
         .encatados__info {
+            width: 100%;
+            display: flex;
+            flex-direction: column;
+            gap: 20px;
+            align-items: center;
+
             .encantados__title {
-                font-size: 40px;
+                font-size: 24px;
             }
 
             .logo__subtitulo {
-                .encantado__subtitulo--img {
-                    width: 30px;
-                }
+                display: flex;
+                gap: 20px;
+                align-items: center;
 
                 .encantado__subtitulo {
-                    font-size: 25px;
+                    font-size: 16px;
+                }
+            }
+
+            .encantados__descripcion {
+                width: 100%;
+                font-size: 16px;
+                text-align: center;
+                font-family: "Catamaran", sans-serif;
+            }
+
+
+        }
+    }
+
+    .beneficios {
+        position: absolute;
+        top: 204rem;
+        padding: 0;
+
+        .beneficios__title {
+            font-size: 19px;
+        }
+
+        .container__beneficios {
+            display: flex;
+            width: 100%;
+            padding-top: 30px;
+            flex-direction: column;
+            gap: 51px;
+            justify-content: space-between;
+            align-items: center;
+
+            .card__beneficio--1 {
+                border-right: none;
+            }
+
+            .card__beneficio--2 {
+                border-right: none;
+            }
+        }
+    }
+
+    .ubicacion {
+        position: absolute;
+        width: 100%;
+        top: 276rem;
+        padding: 0;
+
+        .container__locaciones {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+
+            .card__ubicacion {
+                width: 90%;
+            }
+        }
+
+        .barra__grande--ubicacion {
+            padding: 10px;
+        }
+    }
+
+    .quieneSomos {
+        position: absolute;
+        top: 353rem;
+        display: flex;
+        flex-direction: column;
+        width: 100%;
+        padding: 10px;
+        gap: 20px;
+
+        .descripcion {
+            font-size: 17px;
+            width: 90%;
+        }
+    }
+
+    .comentarios {
+        position: absolute;
+        top: 380rem;
+        display: none;
+
+        .container__cards--coments {
+            padding: 0;
+
+            .container__comen {
+                height: 60%;
+
+                .img__comentario {
+                    width: 6rem;
+                    height: 6rem;
+                }
+                .testimonio{
+                    font-size: 16px;
+                    width: 100%;
                 }
             }
         }

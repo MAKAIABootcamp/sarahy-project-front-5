@@ -161,7 +161,7 @@ const Home = () => {
                             <div className="event__description dark:text-neutral-300">
                                 <h2 className="description__title">{typEvent[eventoSeleccionado].title}</h2>
                                 <p className="description__parrafo">{typEvent[eventoSeleccionado].description}</p>
-                                <button className="description__btn dark:bg-neutral-500 dark:text-neutral-100">Haz tu cotización</button>
+                                <button className="description__btn dark:bg-neutral-500 dark:text-neutral-100" onClick={() => navigate("/cotizacion")}>Haz tu cotización</button>
                             </div>
                             <div className="event__collage">
                                 <Collage imagenes={typEvent[eventoSeleccionado].imagenes} className="description__img" />
@@ -299,7 +299,7 @@ const Home = () => {
                     </div>
                 </section>
 
-                <section className="ubicacion dark:bg-neutral-800 opacity-70">
+                <section className="ubicacion dark:bg-neutral-800 dark:opacity-70">
                     <div className="ubicacion__transparencia">
                         <span className="ubicacion__title--transparencia">
                             LOCACIONES
