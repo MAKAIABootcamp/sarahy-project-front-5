@@ -10,19 +10,13 @@
     "preview": "vite preview"
   },
   "dependencies": {
-    "@googlemaps/react-wrapper": "^1.1.35",
-    "@react-google-maps/api": "^2.19.2",
-    "@react-pdf/renderer": "^3.1.12",
-    "google-map-react": "^2.2.1",
     "leaflet": "^1.9.4",
     "react": "^18.2.0",
     "react-dom": "^18.2.0",
     "react-google-calendar-api": "^2.3.0",
     "react-leaflet": "^4.2.1",
     "react-leaflet-polyline": "^1.0.3",
-    "react-native-toggle-element": "^2.0.1",
-    "react-spring": "^9.7.2",
-    "reactjs-social-login": "^2.6.3"
+    "react-spring": "^9.7.2"
   },
   "devDependencies": {
     "@cloudinary/react": "^1.11.2",

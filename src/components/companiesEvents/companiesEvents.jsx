@@ -23,7 +23,7 @@ const CompaniesEvents = () => {
   return (
     <main className="main__home">
       <div className="header__transparent">
-        <nav clasName="header__navbar">
+        <nav className="header__navbar">
           <ul className="header__navbar--lista">
             <li
               className="navbar__items"
