@@ -1,6 +1,10 @@
 @import "../../assets/reset.scss";
 @import "../../assets/variables.scss";
 
+@import "tailwindcss/base";
+@import "tailwindcss/components";
+@import "tailwindcss/utilities";
+
 .main__home {
     width: 100%;
     overflow: hidden;
@@ -67,7 +71,6 @@
         .swiper-slide {
             text-align: center;
             font-size: 18px;
-            background: #fff;
             display: flex;
             justify-content: center;
             align-items: center;
@@ -110,11 +113,9 @@
             padding: 10px 40px;
 
             .main__title__home {
-                color: $color-black;
                 font-size: 70px;
                 font-family: $Letter-titles;
                 text-align: center;
-
             }
 
             .main__subtitle {
@@ -304,11 +305,14 @@
             flex-direction: column;
             padding: 25px;
             gap: 20px;
-            background-color: white;
             border-radius: 5px;
             align-items: center;
             margin-top: 35px;
             margin-bottom: 30px;
+
+            .swiperCard{
+                text-align: center;
+            }
 
             .card__services--title {
                 background: #E9DCBE;
@@ -367,7 +371,7 @@
     width: 100%;
     background-color: white;
     padding: 20px 80px;
-    justify-content: end;
+    justify-content: flex-end;
 
     .gota {
         width: 30%;
