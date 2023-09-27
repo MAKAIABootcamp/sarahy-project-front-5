@@ -1,11 +1,24 @@
-import React from 'react'
+import React, { useEffect } from 'react'
 import './quoteGenerated.scss'
 import { jsPDF } from "jspdf";
 import autoTable from 'jspdf-autotable'
 import { PDFViewer } from '@react-pdf/renderer';
+import Chat from '../chat/Chat';
+import {addAdminMessageToChat } from '../../services/addMessage';
+import { addMessageToExistingChat } from '../../services/addMessageToExistingChat ';
 
 const QuoteGenerated = () => {
 
+  useEffect(() => 
+  {
+
+    const addMessager = async () =>
+    {
+      await addMessageToExistingChat('rp17lp3q3x2s426z4m8fo', 'NUEVA XXXXXX PRUEBAAAAAAAAAA');
+    }
+    addMessager();
+
+  }, [])
 
   let total = 0;
   const data = [
@@ -40,6 +53,8 @@ const QuoteGenerated = () => {
       body: bodyData,
     });
 
+    
+
     doc.text(55, 80, 'Nombre del Usuario. ');
 
 
@@ -49,8 +64,8 @@ const QuoteGenerated = () => {
 
   return (
     <section className="sectionQuote">
-
-      <img className='backGroundHeader' src="https://i.ibb.co/fXLf97G/image-127.png" alt="Fondo de Wedding" />
+      <Chat/>
+      <img id='miHeader' className='backGroundHeader' src="https://i.ibb.co/fXLf97G/image-127.png" alt="Fondo de Wedding" />
 
       <main className="containerQuote">
         <span className="titleQuote">Tu cotización</span>

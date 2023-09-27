@@ -3,11 +3,13 @@
 
 
     background-color: #F3F3F3;
-
+    overflow: hidden;
     .dataQuote
     {
+        overflow: hidden;
+
         margin-top: 5vw;
-        width: 100vw;
+        width: 90%;
         background-size:auto;
         background-position: center;
         display: flex;
@@ -19,15 +21,19 @@
 
         .infoQuote
         {
+            
             width: 90%;
             height: 90%;
             margin: 5%;
             background-color: #ffffff89;
             text-align: start;
             padding: 8vw;
+            overflow: hidden;
 
             .introductionQuoteDate
             {
+                overflow: hidden;
+
                 display: flex;
                 flex-direction: column;
                 margin-bottom: 2vw;
@@ -35,13 +41,16 @@
                 .titleQuoteGenerate
                 {
                     font-family: 'Montserrat', sans-serif;
-                    font-size: clamp(7px, 3vw, 25px)
-                        
+                    font-size: clamp(7px, 3vw, 25px);
+                    overflow: hidden;
+
                 }
 
                 p
                 {
-                    font-size: clamp(5px, 1.5vw, 1.5vw)
+                    font-size: clamp(5px, 1.5vw, 1.5vw);
+                    overflow: hidden;
+
                 }
 
             }

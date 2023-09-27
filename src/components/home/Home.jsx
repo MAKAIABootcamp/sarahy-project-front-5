@@ -382,7 +382,7 @@ const Home = () => {
                 </section>
 
 
-                <section className="comentarios">
+                <section id="comentarios" className="comentarios">
                     <h2 className='comentarios__title'>TESTIMONIOS</h2>
                     <hr className='hr__services' />
                     <div className="container__cards--coments">
