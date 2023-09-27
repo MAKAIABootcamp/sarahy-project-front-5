@@ -9,16 +9,16 @@ import { addMessageToExistingChat } from '../../services/addMessageToExistingCha
 
 const QuoteGenerated = () => {
 
-  useEffect(() => 
-  {
+  // useEffect(() => 
+  // {
 
-    const addMessager = async () =>
-    {
-      await addMessageToExistingChat('rp17lp3q3x2s426z4m8fo', 'NUEVA XXXXXX PRUEBAAAAAAAAAA');
-    }
-    addMessager();
+  //   const addMessager = async () =>
+  //   {
+  //     await addMessageToExistingChat('rp17lp3q3x2s426z4m8fo', 'NUEVA XXXXXX PRUEBAAAAAAAAAA');
+  //   }
+  //   addMessager();
 
-  }, [])
+  // }, [])
 
   let total = 0;
   const data = [

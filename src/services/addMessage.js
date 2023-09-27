@@ -2,7 +2,7 @@ import { doc, getDoc, updateDoc, arrayUnion } from "firebase/firestore";
 import { firestore } from "../firebase/firebaseConfig";
 
 // Función para agregar un mensaje del usuario a un chat existente
-export const addAdminMessageToChat = async (message) => {
+export const addAdminMessageToChat = async (idChat, message) => {
   try {
     const chatId = '7r5KdKz8pJNRvgyNQ6Gi'; // ID del documento de chat
 
@@ -28,7 +28,7 @@ export const addAdminMessageToChat = async (message) => {
 
     // Actualiza el campo myChats con el nuevo mensaje
     const updatedChats = chatData.myChats.concat({
-      idChat: randomChatId,
+      idChat: idChat,
       myMessage: [messageObject],
     });
 
