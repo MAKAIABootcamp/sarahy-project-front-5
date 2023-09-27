@@ -7,7 +7,7 @@ import { useDispatch, useSelector } from "react-redux";
 import { set, useForm } from "react-hook-form";
 import { getAuth, updateProfile } from "firebase/auth";
 import { firestore } from "../../firebase/firebaseConfig";
-import { addDoc, collection, doc, getDoc, updateDoc } from "firebase/firestore";
+import { addDoc, collection, doc, getDoc, getDocs, onSnapshot, updateDoc } from "firebase/firestore";
 import { userDataLogged, userLogged } from "../../redux/store/auth/authReducer";
 import { useNavigate } from "react-router-dom";
 import Swal from "sweetalert2";
@@ -16,6 +16,60 @@ import uploadFile from "../../services/upLoadfile";
 
 
 const Profile = () => {
+
+    const [sectionPerfil, setSectiosPerfil] = useState("Editar perfil")
+    const user = useSelector((state) => state.aunthentication.userLogged)
+
+
+    const [datoUsuario, setdatoUsuario] = useState({})
+
+    const dispatch = useDispatch()
+
+    const traerDatosFirestore = async () => {
+        const userRef = doc(firestore, "users", user.id || user.user.id);
+        const userNew1 = await getDoc(userRef);
+        setdatoUsuario(userNew1.data())
+    }
+
+    useEffect(() => {
+        traerDatosFirestore()
+    }, [])
+
+    const dataEventos = datoUsuario.quote
+
+
+    const [sectionSeleccionada, setsectionSeleccionada] = useState("Editar perfil")
+
+    const [editando, setEditando] = useState(false);
+
+    const handleSeleccion = (evento) => {
+        setsectionSeleccionada(evento)
+        setSectiosPerfil(evento)
+    }
+console.log(datoUsuario.admi, "admi o no");
+
+    const [citas, setCitas] = useState([])
+    useEffect(() => {
+        if (datoUsuario.admi) {
+            const citasRef = collection(firestore, "dates");
+            const unsubscribe = onSnapshot(citasRef, (querySnapshot) => {
+                const citas1 = [];
+                querySnapshot.forEach((doc) => {
+                    const citasData = doc.data();
+                    citas1.push(citasData);
+                });
+                setCitas(citas1);
+            });
+    
+            return () => {
+                
+                unsubscribe();
+            };
+        }
+    }, [datoUsuario.admi]);
+
+    console.log(citas);
+    
 
     const [modal, setModal] = useState(false);
     const [selectedElement, setSelectedElement] = useState({});
@@ -30,39 +84,7 @@ const Profile = () => {
         setModal(false);
     };
 
-    const [sectionPerfil, setSectiosPerfil] = useState("Editar perfil")
-    const user = useSelector((state) => state.aunthentication.userLogged)
-    console.log(user)
-
-    const [datoUsuario, setdatoUsuario] = useState({})
-
-    const dispatch = useDispatch()
-
-    const traerDatosFirestore = async () => {
-        const userRef = doc(firestore, "users", user.id || user.user.id);
-        const userNew1 = await getDoc(userRef);
-        setdatoUsuario(userNew1.data())
-        console.log(userNew1.data());
-
-    }
-
-    useEffect(() => {
-        traerDatosFirestore()
-    }, [])
-
-
-    const dataEventos = datoUsuario.quote
-    console.log(dataEventos);
-
-    const [sectionSeleccionada, setsectionSeleccionada] = useState("Editar perfil")
-
-    const [editando, setEditando] = useState(false);
-
-    const handleSeleccion = (evento) => {
-        setsectionSeleccionada(evento)
-        setSectiosPerfil(evento)
-    }
-
+    
     const navigate = useNavigate()
 
     const { register, reset, handleSubmit } = useForm()
@@ -72,7 +94,7 @@ const Profile = () => {
         focus()
     }
 
-    
+
 
     const onSubmit = async (data) => {
         const name = data.name;
@@ -209,12 +231,15 @@ const Profile = () => {
                             <img src={arrowRight} alt="" />
                         </div>
 
-                        <div className={`item ${sectionPerfil === "Ver cotizaciones" ? "active" : ""}`}
-                            onClick={() => handleSeleccion("Ver cotizaciones")}
-                        >
-                            <span>Ver cotizaciones</span>
-                            <img src={arrowRight} alt="" />
-                        </div>
+                        {!datoUsuario.admi && (
+                            <div
+                                className={`item ${sectionPerfil === "Ver cotizaciones" ? "active" : ""}`}
+                                onClick={() => handleSeleccion("Ver cotizaciones")}
+                            >
+                                <span>Ver cotizaciones</span>
+                                <img src={arrowRight} alt="" />
+                            </div>
+                        )}
 
                         <div className={`item ${sectionPerfil === "Comentarios" ? "active" : ""}`}
                             onClick={() => handleSeleccion("Comentarios")}
@@ -222,6 +247,16 @@ const Profile = () => {
                             <span>Comentarios</span>
                             <img src={arrowRight} alt="" />
                         </div>
+
+                        {datoUsuario.admi && (
+                            <div
+                                className={`item ${sectionPerfil === "Citas" ? "active" : ""}`}
+                                onClick={() => handleSeleccion("Citas")}
+                            >
+                                <span>Citas</span>
+                                <img src={arrowRight} alt="" />
+                            </div>
+                        )}
                         <div className="item item__cerrar"
                             onClick={salir}
                         >
@@ -354,7 +389,7 @@ const Profile = () => {
                                     />
                                 </div>
                                 <hr className="line__profile" />
-                                
+
                                 <div className="edit__item">
                                     <label className="span">Foto</label>
                                     {editando ? (
@@ -409,6 +444,32 @@ const Profile = () => {
                                     ))
                                 )
                             }
+
+                        </section>
+                    )}
+                    {sectionSeleccionada === "Citas" && (
+                        <section className="show__price">
+                            <span className="title">Citas</span>
+                            <div className="titles__price">
+                                <span className="span__title">Nombre</span>
+                                <span className="span__title">Fecha</span>
+                                <span className="span__title">Hora</span>
+                                <span className="span__title">Contacto</span>
+                            </div>
+                            {citas && citas.length === 0 ? (
+                                <div className="data__price">
+                                    <span className="span__data">No hay citas</span>
+                                </div>
+                            ) : (
+                                citas.map((element, index) => (
+                                    <div className="data__price" key={index}>
+                                        <span className="span__data">{element.name}</span>
+                                        <span className="span__data">{element.fecha}</span>
+                                        <span className="span__data">$ {element.hora}</span>
+                                        <span className="span__data">$ {element.contact}</span>
+                                    </div>
+                                ))
+                            )}
 
                         </section>
                     )}
