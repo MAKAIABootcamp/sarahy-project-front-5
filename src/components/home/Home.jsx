@@ -45,12 +45,13 @@ import 'swiper/swiper-bundle.css';
 import { firestore } from '../../firebase/firebaseConfig';
 import { ubicaciones } from './hookUbicaciones';
 import { element } from 'prop-types';
+import Chat from '../../page/chat/Chat';
 
 
 
 
 const Home = () => {
-
+    
     const [comentarios, setComentarios] = useState([]);
     const [modal, setModal] = useState(false);
     const [selectedElement, setSelectedElement] = useState({}); 
@@ -111,6 +112,7 @@ const Home = () => {
     return (
         <>
             <main className="main__home dark:bg-neutral-800" >
+                <Chat />
                 <section className='slider__home'>
                     <Swiper
                         spaceBetween={30}
@@ -175,7 +177,7 @@ const Home = () => {
                             <div className="event__description dark:text-neutral-300">
                                 <h2 className="description__title">{typEvent[eventoSeleccionado].title}</h2>
                                 <p className="description__parrafo">{typEvent[eventoSeleccionado].description}</p>
-                                <button className="description__btn dark:bg-neutral-500 dark:text-neutral-100" onClick={() => navigate("/cotizacion")}>Haz tu cotización</button>
+                                <button className="description__btn dark:bg-neutral-500 dark:text-neutral-100" onClick={() => navigate("/quote")}>Haz tu cotización</button>
                             </div>
                             <div className="event__collage">
                                 <Collage imagenes={typEvent[eventoSeleccionado].imagenes} className="description__img" />

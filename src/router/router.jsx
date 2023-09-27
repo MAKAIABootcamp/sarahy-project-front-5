@@ -13,6 +13,12 @@ import SocialEvents from '../components/socialEvents/socialEvents';
 
 import PrivateRoutes from './privateRoutes';
 import { useSelector } from 'react-redux';
+import Quote from '../page/quote/Quote';
+import QuoteGenerated from '../page/quoteGenerated/QuoteGenerated';
+import DownloadQuote from '../page/downloadQuotePDF/DownloadQuotePDF';
+import Chat from '../page/chat/Chat';
+import PanelAdmi from '../components/panelAdmi/panelAdmi';
+import ModalCalendar from '../components/modalCalendar/modalCalendar';
 
 const Router = () => {
   let userLogged = null;
@@ -42,14 +48,17 @@ const Router = () => {
         <Route path="/sociales" element={<SocialEvents />} />
         <Route path="/empresariales" element={<CompaniesEvents />} />
 
-        { userLogged &&   <Route path="/aliados" element={<Allies />} />}        
+        { userLogged &&   <Route path="/aliados" element={<Allies />} />}   
+        { userLogged &&   <Route path="/administrador" element={<PanelAdmi />} />}   
+
         { !isLogged && <Route path="/ingresar" element={<Login />} />}
         <Route path="/quote" element={<Quote />} />
-        <Route path="/Cotizacion" element={<QuoteGenerated/>} />
-        <Route path="/PDF" element={<DownloadQuote/>} />
-        <Route path="/bot" element={<Chat/>} />
+        <Route path="/Cotizacion" element={<QuoteGenerated />} />
+        <Route path="/PDF" element={<DownloadQuote />} />
+        <Route path="/bot" element={<Chat />} />
         <Route path="/registro" element={<Register />} />
         <Route path="/*" element={<Register />} />
+        <Route path="/citas" element={<ModalCalendar />} />
 
        
       </Routes>
@@ -58,6 +67,7 @@ const Router = () => {
   )
 }
 export default Router;
+
 
 
 

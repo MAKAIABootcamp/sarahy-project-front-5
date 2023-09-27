@@ -25,7 +25,7 @@ const Footer = () => {
                 <h5>INFORMACIÓN</h5>
                 <span>Quienes somos</span>
                 <span onClick={() => navigate('/aliados')} className='aliados'>Alíate con nosotros</span>
-                <span>Trabaja con nosotros</span>
+                <span onClick={() => navigate('/administrador')}>Trabaja con nosotros</span>
             </div>
 
             <div className="followme">

@@ -1,19 +1,32 @@
-import React, { useEffect } from 'react'
+import React, { useEffect, useState } from 'react'
 import './quoteGenerated.scss'
 import { jsPDF } from "jspdf";
 import autoTable from 'jspdf-autotable'
 import { PDFViewer } from '@react-pdf/renderer';
 import Chat from '../chat/Chat';
-import {addAdminMessageToChat } from '../../services/addMessage';
+import { addAdminMessageToChat } from '../../services/addMessage';
 import { addMessageToExistingChat } from '../../services/addMessageToExistingChat ';
+import ModalCalendar from '../../components/modalCalendar/modalCalendar';
+import { useNavigate } from 'react-router-dom';
+import CalendarGoogle from '../../components/calendarGoogle/calendarGoogle';
 
 const QuoteGenerated = () => {
 
-  useEffect(() => 
-  {
+  const [modal, setModal] = useState(false);
 
-    const addMessager = async () =>
-    {
+  const openModal = () => {
+    setModal(true);
+  };
+
+  const closeModal = () => {
+    setModal(false);
+  };
+
+  const navigate = useNavigate()
+
+  useEffect(() => {
+
+    const addMessager = async () => {
       await addMessageToExistingChat('rp17lp3q3x2s426z4m8fo', 'NUEVA XXXXXX PRUEBAAAAAAAAAA');
     }
     addMessager();
@@ -53,7 +66,7 @@ const QuoteGenerated = () => {
       body: bodyData,
     });
 
-    
+
 
     doc.text(55, 80, 'Nombre del Usuario. ');
 
@@ -64,7 +77,7 @@ const QuoteGenerated = () => {
 
   return (
     <section className="sectionQuote">
-      <Chat/>
+      <Chat />
       <img id='miHeader' className='backGroundHeader' src="https://i.ibb.co/fXLf97G/image-127.png" alt="Fondo de Wedding" />
 
       <main className="containerQuote">
@@ -159,7 +172,14 @@ const QuoteGenerated = () => {
             </section>
 
           </article>
-          <span className='downloadQuote' onClick={() => generatePDF()}>DESCARGAR COTIZACIÓN </span>
+          <div className='container__btns'>
+
+          <span className='downloadQuote' onClick={() => generatePDF()}>Descargar cotización </span>
+          <div className='container__btns__calendar'>
+            <button className='btn__scheduleDate' onClick={openModal}>Agendar cita</button>
+            <CalendarGoogle isOpen={modal} onRequestCloset={closeModal} className="modal" />
+          </div>
+          </div>
 
         </section>
 

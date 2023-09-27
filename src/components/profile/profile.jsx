@@ -426,7 +426,7 @@ console.log(datoUsuario.admi, "admi o no");
                                 <span className="span__title">Detalles</span>
                             </div>
                             {
-                                dataEventos.length === 0 ? (
+                                dataEventos && dataEventos.length === 0 ? (
                                     <div className="data__price">
                                         <span className="span__data">No hay cotizaciones</span>
                                     </div>
