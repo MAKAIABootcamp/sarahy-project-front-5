@@ -22,35 +22,6 @@ import CollageEvents from "../collageEvents/Collage";
 const CompaniesEvents = () => {
   return (
     <main className="main__home">
-      <div className="header__transparent">
-        <nav className="header__navbar">
-          <ul className="header__navbar--lista">
-            <li
-              className="navbar__items"
-              onClick={() => {
-                navigate("/");
-              }}
-            >
-              Incio
-            </li>
-            <li className="navbar__items">Eventos sociales</li>
-            <li className="navbar__items">Eventos empresariales</li>
-            <li className="navbar__items--logo">
-              {<img src={logo} className="logo__item--img" />}
-            </li>
-            <li className="navbar__items">Seamos aliados</li>
-            <li className="navbar__items">Contáctanos</li>
-            <li
-              className="navbar__items"
-              onClick={() => {
-                navigate("/quote");
-              }}
-            >
-              Cotiza aquí
-            </li>
-          </ul>
-        </nav>
-      </div>
       <img src={empresasPrincipal} alt="" className="imgCompanies__intro" />
       <section className="main__info">
         <img src={logoIzquierda} alt="" className="logoIzquierda" />
@@ -160,6 +131,7 @@ const CompaniesEvents = () => {
             {/* <figure className="collage__galery">
             <img src={prueba} alt="" className="img" />
             </figure> */}
+            
       </section>
 
       <section className="others__companies">
