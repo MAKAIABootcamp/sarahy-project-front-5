@@ -89,12 +89,12 @@
         align-items: center;
 
         .logoIzquierda {
-            width: 8rem;
-            height: 8rem;
+            width: 7rem;
+            height: 7rem;
         }
-
+// BORRAR, REPETIDO
         .container__intro {
-            width: 70%;
+            width: 80%;
             padding: 10px 40px;
 
             .main__title__home {
@@ -118,17 +118,17 @@
                 padding: 25px 0;
                 font-size: 20px;
                 line-height: 23px;
-                text-align: justify;
+                text-align: center;
             }
 
         }
 
         .logoDerecha {
-            width: 8rem;
-            height: 8rem;
+            width: 7rem;
+            height: 7rem;
         }
     }
-
+// HASTA ACA
     .swiper-button-next,
     .swiper-button-prev {
       color: $color-cream;
@@ -149,8 +149,8 @@
     align-items: center;
 
     .logoIzquierda {
-      width: 8rem;
-      height: 8rem;
+      width: 7rem;
+      height: 7rem;
     }
 
     .container__intro {
@@ -162,6 +162,7 @@
         text-align: center;
         font-size: 50px;
         font-weight: bolder;
+        margin-right: 5rem;
       }
 
       .main__subtitle {
@@ -175,15 +176,15 @@
 
       .main__parrafo {
         font-family: $Letter-body;
-        padding: 25px 0;
+        padding: 10px 0;
         font-size: 18px;
         text-align: justify;
       }
     }
 
     .logoDerecha {
-      width: 8rem;
-      height: 8rem;
+      width: 7rem;
+      height: 7rem;
     }
   }
 }

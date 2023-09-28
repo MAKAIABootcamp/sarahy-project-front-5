@@ -14,12 +14,13 @@
         padding: 10px 30px;
         display: flex;
         background-color: $color-cream;
-        font-family: $Letter-subtitles; 
+        font-family: $Letter-body; 
         justify-content: flex-end;
         .slogan {
             color: black;
             width: 100%;
             font-size: 18px;
+            font-weight: bolder;
         }
 
         .header__icons {

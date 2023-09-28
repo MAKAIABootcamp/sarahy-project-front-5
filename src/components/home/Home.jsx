@@ -145,7 +145,7 @@ const Home = () => {
                         <h1 className='main__title__home dark:text-neutral-100'>Bienvenido a</h1>
                         <h4 className='main__subtitle dark:text-neutral-300' >Celebraciones Sarahy</h4>
                         <p className="main__parrafo dark:text-neutral-300">
-                            Somos expertos en hacer eventos memorables. Con una pasión por la perfección y una atención meticulosa a cada detalle, nuestro objetivo es convertir tu boda en un día inolvidable. Desde la elección del lugar hasta la decoración, la gastronomía y la música, nos enorgullece crear experiencias únicas que reflejen tus sueños y deseos. Confía en nosotros para convertir tu día especial en un recuerdo que atesorarás para toda la vida.
+                        Únete a nosotros en Celebraciones Sarahy y haz de tus eventos una experiencia excepcional. ¡Déjanos hacer realidad tus celebraciones de ensueño y transformar cada detalle en un recuerdo inolvidable que perdurará para siempre!
                         </p>
 
                     </div>
