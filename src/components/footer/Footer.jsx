@@ -11,7 +11,7 @@ import { useNavigate } from 'react-router-dom';
 const Footer = () => {
     const navigate = useNavigate()
     return (
-        <footer className="footer">
+        <footer id='miFooter' className="footer">
             <div className="footer__information">
                 <h5>CONTÁCTANOS</h5>
                 <span>Celebraciones Sarahy</span>
@@ -25,7 +25,7 @@ const Footer = () => {
                 <h5>INFORMACIÓN</h5>
                 <span>Quienes somos</span>
                 <span onClick={() => navigate('/aliados')} className='aliados'>Alíate con nosotros</span>
-                <span>Trabaja con nosotros</span>
+                <span onClick={() => navigate('/administrador')}>Trabaja con nosotros</span>
             </div>
 
             <div className="followme">

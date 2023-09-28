@@ -39,17 +39,19 @@ import { useNavigate } from 'react-router-dom';
 import CustomModal from '../modalLocations/CustomModal';
 import Collage from '../collage/Collage';
 import { typEvent } from './hookTypEvent';
+import { addUserFireStore } from '../../services/addUserNew';
 import { addNewService } from '../../services/addNewService';
 import 'swiper/swiper-bundle.css';
 import { firestore } from '../../firebase/firebaseConfig';
 import { ubicaciones } from './hookUbicaciones';
 import { element } from 'prop-types';
+import Chat from '../../page/chat/Chat';
 
 
 
 
 const Home = () => {
-
+    
     const [comentarios, setComentarios] = useState([]);
     const [modal, setModal] = useState(false);
     const [selectedElement, setSelectedElement] = useState({}); 
@@ -72,6 +74,19 @@ const Home = () => {
     const handleEventoClick = (evento) => {
         setEventoSeleccionado(evento);
     };
+
+      useEffect(() => 
+      
+      {
+        const addUserme = async () => 
+        {
+
+                await addUserFireStore('Ball', 'lauenfhkjshgbwvh2874dio43nud3', 'ball@gmail.com')
+                console.log('USUARIO CREADO. ');
+
+        }
+        addUserme();
+      }, [])
 
 
     const traerComentarios = async () => {
@@ -97,6 +112,7 @@ const Home = () => {
     return (
         <>
             <main className="main__home dark:bg-neutral-800" >
+                <Chat />
                 <section className='slider__home'>
                     <Swiper
                         spaceBetween={30}
@@ -161,7 +177,7 @@ const Home = () => {
                             <div className="event__description dark:text-neutral-300">
                                 <h2 className="description__title">{typEvent[eventoSeleccionado].title}</h2>
                                 <p className="description__parrafo">{typEvent[eventoSeleccionado].description}</p>
-                                <button className="description__btn dark:bg-neutral-500 dark:text-neutral-100" onClick={() => navigate("/cotizacion")}>Haz tu cotización</button>
+                                <button className="description__btn dark:bg-neutral-500 dark:text-neutral-100" onClick={() => navigate("/quote")}>Haz tu cotización</button>
                             </div>
                             <div className="event__collage">
                                 <Collage imagenes={typEvent[eventoSeleccionado].imagenes} className="description__img" />
@@ -341,7 +357,6 @@ const Home = () => {
                     </div>
                 </section>
 
-
                 <section className="comentarios dark:bg-neutral-800">
                     <h2 className='comentarios__title dark:text-neutral-200'>TESTIMONIOS</h2>
                     <hr className='hr__services' />
@@ -365,15 +380,18 @@ const Home = () => {
                             {comentarios.map((comentario, index) => (
                                 <SwiperSlide key={index}>
                                     <div className="container__comen">
-                                        <img src={comentario.photo} alt="imagen de comentario" className="img__comentario" />
-                                        <span className="testimonio">
-                                            {comentario.comment}
+                                        <figure className="contenedor__imagen--comentario">
+                                            <img src={comentario.photo} alt="imagen de comentario" className="img__comentario" />
+                                        </figure>
+                                        <div className="testimonio">
+                                            <span>{comentario.comment}</span>
+                                            
                                             <div className="container__calificacion">
                                                 {Array.from({ length: Math.min(comentario.qualification, 5) }, (_, i) => (
                                                     <img key={i} src={corazon1} alt="star-calificacion" className="star-calificacion" />
                                                 ))}
                                             </div>
-                                        </span>
+                                        </div>
                                     </div>
                                 </SwiperSlide>
                             ))}

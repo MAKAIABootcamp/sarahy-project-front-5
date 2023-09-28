@@ -2,6 +2,10 @@
 @import "../../assets/variables.scss";
 
 .main__home {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
     .imgCompanies__intro {
         width: 100%;
         height: 24rem;
@@ -29,6 +33,7 @@
             display: flex;
             justify-content: space-between;
             gap: 1.5rem;
+            width: 100%;
 
             .details__event {
                 display: flex;
@@ -71,6 +76,7 @@
             font-family: $Letter-subtitles;
             font-weight: bolder;
             font-size: 25px;
+            width: 80%;
         }
 
         .div__events {
@@ -144,13 +150,15 @@
             }
             .button__companies{
                 width: 80%;
-                height: 50px;
+                height: auto;
                 border-radius: 10px;
                 background-color: #343434;
                 color: white;
                 margin-top: 40px;
                 font-size: 19px;
                 cursor: pointer;
+                padding-top: 5%;
+                padding-bottom: 5%;
             }
 
         }
@@ -192,6 +200,290 @@
                 }
             }
         }
+    }
+
+}
+
+@media(max-width: 850px) and (min-width: 600px){
+    .main__home {
+        .imgCompanies__intro {
+            height: 14rem;
+        }
+    
+        .tipe__events {
+            padding-top: 30px;
+            padding-bottom: 30px;
+    
+            .title__events {
+                font-size: 20px;
+            }
+    
+            .cards__events {
+                display: flex;
+                justify-content: space-between;
+                gap: 1.5rem;
+    
+                .details__event {
+                    font-size: 15px;
+                }
+            }
+        }
+    
+        .data__events {
+            padding-top: 30px;
+            padding-bottom: 30px;
+    
+            .title__data {
+                font-size: 20px;
+                text-align: center;
+                margin-bottom: 30px;
+            }
+    
+            .div__events {
+            
+                .div__data {
+                    display: flex;
+                    flex-direction: column;
+                    gap: 1rem;
+                    width: 30%;
+                    font-family: $Letter-body;
+    
+                    .logo__title {
+                        gap: 0.5rem;
+    
+    
+                        .fig {
+                            width: 15%;
+    
+                            .img {
+                                width: 100%;
+                            }
+                        }
+    
+                        .span {
+                            font-size: 20px;
+                            line-height: 22px;
+                        }
+                    }
+    
+                    .paragraph {
+                        font-size: 18px;
+                        line-height: 20px;
+                    }
+                }
+            }
+        }
+    
+        .galery{
+            padding: 30px 10%;
+            gap: 4rem;
+            .logo__titleGalery{
+                gap: 0.5rem;
+    
+                .span{
+                    font-size: 26px;
+                }
+                .button__companies{
+                    margin-top: 1.5rem;
+                    font-size: 14px;
+                  
+                }
+    
+            }
+            .collage__galery{
+                width: 70%;
+                .img{
+                    width: 100%;
+                }
+            }
+            .event__collagePlus {
+                width: 70%;
+    
+                .description__img {
+                    width: 100%;
+                    height: auto;
+                }
+            }
+        }
+        .others__companies{
+            padding: 30px 0;
+            .title__companies{
+                margin-bottom: 5px;
+                font-size: 19px;
+                text-align: center;
+            } 
+        }
+    }
+}
+
+@media(max-width: 660px) {
+    .main__home {
+        
+        .imgCompanies__intro {
+            height: 10rem;
+        }
+    
+        .tipe__events {
+            width: 90%;
+            padding-top: 20px;
+            padding-bottom: 20px;
+    
+            .title__events {
+                align-self: center;
+                margin-bottom: 20px;
+                font-size: 15px;
+            }
+    
+            .cards__events {
+                display: flex;
+                flex-wrap: wrap;
+                justify-content: space-evenly; 
+                gap: 0.8rem;
+    
+                .details__event {
+                    width: 40%;
+                    font-size: 12px;
+    
+                    .fig {
+                        width: 80%;
+                        margin-bottom: 10px;
+    
+                        .img {
+                            width: 100%;
+                        }
+                    }
+    
+                }
+            }
+        }
+    
+        .data__events {
+            width: 100%;
+            padding-top: 20px;
+            padding-bottom: 20px;
+    
+            .title__data {
+                margin-bottom: 20px;
+                font-size: 18px;
+                width: 80%;
+                text-align: center;
+            }
+    
+            .div__events {
+                width: 90%;
+                display: flex;
+                flex-direction: column;
+                justify-content: center;
+                justify-content: space-between; 
+    
+                .div__data {
+                    display: flex;
+                    flex-direction: column;
+                    gap: 1rem;
+                    width: 100%;
+                    align-self: center; 
+                    margin-bottom: 1rem;
+    
+                    .logo__title {
+                        display: flex;
+                        gap: 0.5rem;
+                        align-items: center;
+                        justify-content: center; 
+    
+                        .fig {
+                            width: 5%;
+    
+                            .img {
+                                width: 100%;
+                            }
+                        }
+    
+                        .span {
+                            font-size: 17px;
+                            line-height: 19px;
+                        }
+                    }
+    
+                    .paragraph {
+                        text-align: justify;
+                        font-size: 15px;
+                        line-height: 18px;
+                        width: 100%;
+                    }
+                }
+            }
+        }
+    
+        .galery{
+            display: flex;
+            flex-direction: column;
+            padding: 20px 3%;
+            gap: 1rem;
+            
+            .logo__titleGalery{
+                display: flex;
+                flex-direction: column;
+                width: 50%;
+                gap: 0.5rem;
+    
+                .fig{
+                    width: 10%;
+                    .img{
+                        width: 100%;
+                        transform: rotate(45deg);
+                    }
+                }
+                .span{
+                    font-size: 22px;
+                }
+                .button__companies{
+                    width: 60%;
+                    height: auto;
+                    margin-top: 5px;
+                    font-size: 15px;
+                    padding-top: 1%;
+                    padding-bottom: 1%;
+                }
+    
+            }
+            .collage__galery{
+                width: 100%;
+                .img{
+                    width: 100%;
+                }
+            }
+            .event__collagePlus {
+                width: 100%;
+    
+                .description__img {
+                    width: 100%;
+                    height: auto;
+                }
+            }
+        }
+        .others__companies{
+            display: flex;
+            flex-direction: column;
+            width: 95%;
+            padding: 10px 0;
+            .title__companies{
+                margin-bottom: 5px;
+                font-size: 15px;
+            }
+            .img__companies{
+                display: flex;
+                flex-wrap: wrap;
+                justify-content: space-between; 
+                align-items: center; 
+                .fig{
+                    width: 14%;
+                    .img{
+                        width: 80%;
+                    }
+                }
+            }
+        }
+    
     }
 
 }

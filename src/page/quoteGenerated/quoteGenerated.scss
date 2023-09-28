@@ -1,0 +1,260 @@
+@import "../../assets/reset.scss";
+@import "../../assets/variables.scss";
+
+
+.containerQuote {
+
+    background-color: #F3F3F3;
+    overflow: hidden;
+
+    .dataQuote {
+        .backGroundHeader {
+            width: 100%;
+            height: 24rem;
+        }
+
+        overflow: hidden;
+
+        margin-top: 5vw;
+        width: 90%;
+        background-size:auto;
+        background-position: center;
+        display: flex;
+        margin-bottom: 5vw;
+        background-image: url('https://i.ibb.co/sFSLdg9/image-79.png');
+
+        display: flex;
+        flex-direction: column;
+
+        .infoQuote {
+
+            width: 90%;
+            height: 90%;
+            margin: 5%;
+            background-color: #ffffff89;
+            text-align: start;
+            padding: 8vw;
+            overflow: hidden;
+
+            .introductionQuoteDate {
+                overflow: hidden;
+
+                display: flex;
+                flex-direction: column;
+                margin-bottom: 2vw;
+                gap: 0.35vw;
+
+                .titleQuoteGenerate {
+                    font-family: 'Montserrat', sans-serif;
+                    font-size: clamp(7px, 3vw, 25px);
+                    overflow: hidden;
+
+                }
+
+                p {
+                    font-size: clamp(5px, 1.5vw, 1.5vw);
+                    overflow: hidden;
+
+                }
+
+            }
+
+            .dateUserQuote {
+
+                display: flex;
+                justify-content: space-between;
+
+
+
+                .dateQuoteGenerate {
+                    width: 30%;
+                    height: 100%;
+
+
+                    .billTitleQuote {
+
+
+                        p {
+                            background-color: rgba(228, 228, 228, 0.800);
+                            text-align: center;
+                            padding-top: 5%;
+                            padding-bottom: 5%;
+                            border: solid 1px;
+                            font-size: clamp(4px, 3vw, 24px)
+                        
+                        }
+                    }
+
+                    div {
+                        display: flex;
+                        width: 100%;
+                        height: 80%;
+
+                        .numberQuoteLeft {
+                            display: flex;
+                            flex-direction: column;
+                            padding-left: 0.5vw;
+                            width: 50%;
+                            height: 8vw;
+                            background-color: rgb(238, 238, 238, 0.800);
+                            border: solid 1px;
+                            padding-top: 1vw;
+                            gap: 1vw;
+                            font-size: clamp(3px, 2vw, 16px)
+                        }
+
+                        .numberQuoteRight {
+                            display: flex;
+                            flex-direction: column;
+                            width: 50%;
+                            height: 8vw;
+                            background-color: rgb(242, 242, 242, 0.800);
+                            border: solid 1px;
+                            padding-left: 0.5vw;
+                            padding-top: 1vw;
+                            gap: 1vw;
+                            font-size: clamp(2px, 2vw, 16px)
+                        }
+
+                    }
+                }
+
+                .infoUserQuote {
+                    width: 65%;
+
+                    display: flex;
+
+
+                    &__name {
+                        padding: 1.5vw;
+                        display: flex;
+                        flex-direction: column;
+                        width: 25%;
+                        background-color: rgb(244, 240, 240, 0.800);
+                        gap: 0.75vw;
+                        border: solid 1px;
+                        font-size: clamp(3px, 2vw, 16px)
+                    }
+
+                    &__data {
+                        border: solid 1px;
+                        padding: 1.5vw;
+                        display: flex;
+                        flex-direction: column;
+                        width: 75%;
+                        background-color: rgb(244, 240, 240, 0.800);
+                        gap: 0.75vw;
+                        font-size: clamp(3px, 2vw, 16px)
+                    }
+                }
+            }
+
+            table {
+                margin-top: 5vw;
+                background-color: #f0f0f0;
+                width: 100%;
+                font-size: clamp(3px, 2.5vw, 16px);
+
+                tbody {
+                    tr {
+                        td {
+
+                            border: 1px solid #a0a0a0;
+                            text-align: center;
+
+                        }
+
+                        &:last-child {
+                            margin-top: 3vw;
+                        }
+                    }
+
+                    .totalmyQuote {
+                        td {
+                            background-color: #e6dbe4;
+                            /* Color representativo para la fila del Total */
+                            font-weight: bold;
+                            /* Puedes aplicar negrita al texto si lo deseas */
+                            color: #000000;
+                            /* Color de texto para que sea visible en el fondo rojo */
+                        }
+                    }
+                }
+
+
+                th {
+                    background-color: #d0d0d0;
+                    border: 1px solid #a0a0a0;
+                }
+
+                td {
+                    background-color: #ffffff;
+                    border: 1px solid #a0a0a0;
+                }
+
+                // Establecer el alineamiento del texto y el relleno de las celdas
+                th,
+                td {
+                    text-align: center;
+                    padding: auto;
+                }
+
+
+
+
+
+
+            }
+
+
+        }
+
+        .container__btns {
+            display: flex;
+            justify-content: space-around;
+            align-items: center;
+            width: 100%;
+            .container__btns__calendar{
+                width: 50%;
+                .btn__scheduleDate{
+                    border: none;
+                    border-radius: 5px;
+                    background-color: $color-black; 
+                    color: white;
+                    font-family: $Letter-body;
+                    height: 3rem;
+                    cursor: pointer;
+                    padding: 13px;
+                    width: 50%;
+                    margin: 0;
+                }
+            }
+
+            .downloadQuote {
+                border: none;
+                border-radius: 5px;
+                background-color: $color-black;
+                color: white;
+                font-family: $Letter-body;
+                height: 3rem;
+                cursor: pointer;
+                padding: 13px;
+                width: 22%;
+
+                &:hover {
+                    background: #000000;
+                    padding-left: 2.2vw;
+                    padding-right: 2.2vw;
+                    padding-top: 1.2vw;
+                    padding-bottom: 1.2vw;
+                    border-radius: 1.2vw;
+                }
+            }
+
+        }
+    }
+
+
+
+
+}
