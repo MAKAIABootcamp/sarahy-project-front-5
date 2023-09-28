@@ -55,7 +55,7 @@
   }
 
   .slider__home {
-    height: 27rem;
+    height: 22rem;
     width: 100%;
     background-color: $color-cream;
 
@@ -98,9 +98,9 @@
             padding: 10px 40px;
 
             .main__title__home {
-                font-size: 70px;
                 font-family: $Letter-titles;
                 text-align: center;
+                color: aqua;
             }
 
             .main__subtitle {
@@ -158,25 +158,25 @@
       padding: 10px 40px;
 
       .main__title__home {
-        font-size: 70px;
         font-family: $Letter-titles;
         text-align: center;
+        font-size: 50px;
+        font-weight: bolder;
       }
 
       .main__subtitle {
-        font-size: 28px;
+        font-size: 30px;
         font-family: $Letter-subtitles;
         position: relative;
         left: 125px;
         bottom: 15px;
-        font-weight: 800;
         text-align: center;
       }
 
       .main__parrafo {
         font-family: $Letter-body;
         padding: 25px 0;
-        font-size: 23px;
+        font-size: 18px;
         text-align: justify;
       }
     }
@@ -246,7 +246,7 @@
       .description__title {
         width: 100%;
         font-size: 27px;
-        font-family: $Letter-body;
+        font-family: $Letter-subtitles;
         text-align: start;
       }
 

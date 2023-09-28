@@ -122,8 +122,8 @@ const Header = () => {
                 <nav className="header__navbar">
                     <ul className='header__navbar--lista'>
                         <li className='navbar__items' onClick={() => { navigate("/") }}>Inicio</li>
-                        <li className='navbar__items' onClick={() => { navigate("/sociales") }}>Eventos</li>
-                        <li className='navbar__items' onClick={() => { navigate("/empresariales") }}>Eventos</li>
+                        <li className='navbar__items' onClick={() => { navigate("/sociales") }}>Eventos Sociales</li>
+                        <li className='navbar__items' onClick={() => { navigate("/empresariales") }}>Eventos Empresariales</li>
                         <li className='navbar__items--logo'>{<img src={logo} className='logo__item--img' />}</li>
                         <li className='navbar__items' onClick={() => { navigate("/aliados") }}>Quienes somos</li>
                         <li className='navbar__items' >Contáctanos</li>
