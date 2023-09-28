@@ -427,26 +427,23 @@ console.log(datoUsuario.admi, "admi o no");
                                 <span className="span__title">Valor</span>
                                 <span className="span__title">Detalles</span>
                             </div>
-                            {
-                                dataEventos && dataEventos.length === 0 ? (
-                                    <div className="data__price">
-                                        <span className="span__data">No hay cotizaciones</span>
-                                    </div>
-                                ) : (
-                                    dataEventos.map((element, index) => (
-                                        <div className="data__price" key={index}>
-                                            <span className="span__data">{element.type__Event}</span>
-                                            <span className="span__data">{element.date}</span>
-                                            <span className="span__data">$ {element.total}</span>
-                                            <span className="material-symbols-outlined verMas" onClick={() => openModal(element)}>
-                                                open_in_new
-                                            </span>
-                                            <ModalDetalle isOpen={modal} onRequestClose={closeModal} data={selectedElement} />
-                                        </div>
-                                    ))
-                                )
-                            }
-
+                            {dataEventos && dataEventos.length > 0 ? (
+  dataEventos.map((element, index) => (
+    <div className="data__price" key={index}>
+      <span className="span__data">{element.type__Event}</span>
+      <span className="span__data">{element.date}</span>
+      <span className="span__data">$ {element.total}</span>
+      <span className="material-symbols-outlined verMas" onClick={() => openModal(element)}>
+        open_in_new
+      </span>
+      <ModalDetalle isOpen={modal} onRequestClose={closeModal} data={selectedElement} />
+    </div>
+  ))
+) : (
+  <div className="data__price">
+    <span className="span__data">No hay cotizaciones</span>
+  </div>
+)}
                         </section>
                     )}
                     {sectionSeleccionada === "Citas" && (
