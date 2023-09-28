@@ -2,7 +2,7 @@ import React, { useEffect, useState } from "react";
 import "./profile.scss";
 import arrowRight from "../../assets/image/flechaDerecha.png";
 import iconEdit from "../../assets/image/Edit.png";
-import perfil from "../../assets/image/perfilDefault.jpg";
+// import perfil from "../../assets/image/perfilDefault.jpg";
 import { useDispatch, useSelector } from "react-redux";
 import { set, useForm } from "react-hook-form";
 import { getAuth, updateProfile } from "firebase/auth";
@@ -13,6 +13,8 @@ import { useNavigate } from "react-router-dom";
 import Swal from "sweetalert2";
 import ModalDetalle from "../modalDetalle/ModalDetalle";
 import uploadFile from "../../services/upLoadfile";
+
+const perfil = "https://ceslava.s3-accelerate.amazonaws.com/2016/04/mistery-man-gravatar-wordpress-avatar-persona-misteriosa-510x510.png"
 
 
 const Profile = () => {

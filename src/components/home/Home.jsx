@@ -357,7 +357,6 @@ const Home = () => {
                     </div>
                 </section>
 
-
                 <section className="comentarios dark:bg-neutral-800">
                     <h2 className='comentarios__title dark:text-neutral-200'>TESTIMONIOS</h2>
                     <hr className='hr__services' />
@@ -381,15 +380,18 @@ const Home = () => {
                             {comentarios.map((comentario, index) => (
                                 <SwiperSlide key={index}>
                                     <div className="container__comen">
-                                        <img src={comentario.photo} alt="imagen de comentario" className="img__comentario" />
-                                        <span className="testimonio">
-                                            {comentario.comment}
+                                        <figure className="contenedor__imagen--comentario">
+                                            <img src={comentario.photo} alt="imagen de comentario" className="img__comentario" />
+                                        </figure>
+                                        <div className="testimonio">
+                                            <span>{comentario.comment}</span>
+                                            
                                             <div className="container__calificacion">
                                                 {Array.from({ length: Math.min(comentario.qualification, 5) }, (_, i) => (
                                                     <img key={i} src={corazon1} alt="star-calificacion" className="star-calificacion" />
                                                 ))}
                                             </div>
-                                        </span>
+                                        </div>
                                     </div>
                                 </SwiperSlide>
                             ))}
