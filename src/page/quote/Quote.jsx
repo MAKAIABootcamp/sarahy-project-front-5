@@ -8,6 +8,7 @@ import 'swiper/css';
 import 'swiper/css/pagination';
 import 'swiper/css/navigation';
 import { Autoplay, Pagination, Navigation } from 'swiper/modules';
+import { useNavigate } from "react-router-dom";
 
 const Quote = () => {
     const { register, handleSubmit, watch, formState: { errors } } = useForm();
@@ -82,6 +83,12 @@ const Quote = () => {
 
         // otros servicios y opciones con sus precios
     };
+
+    const navigate = useNavigate()
+
+    
+
+   
     const [total, setTotal] = useState(0);
     useEffect(() => {
         let total = 0;
@@ -473,27 +480,8 @@ const Quote = () => {
                             </SwiperSlide> 
                         </Swiper>
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-                        <button type="submit" className="generation">Generar Cotización</button>
+                        <button type="submit" className="generation" onClick={() => navigate("/Cotizacion")}>Generar Cotización</button>
+                        
                     </form>
 
 

@@ -2,7 +2,7 @@ import React, { useEffect, useState } from "react";
 import "./profile.scss";
 import arrowRight from "../../assets/image/flechaDerecha.png";
 import iconEdit from "../../assets/image/Edit.png";
-import perfil from "../../assets/image/perfilDefault.jpg";
+// import perfil from "../../assets/image/perfilDefault.jpg";
 import { useDispatch, useSelector } from "react-redux";
 import { set, useForm } from "react-hook-form";
 import { getAuth, updateProfile } from "firebase/auth";
@@ -13,6 +13,8 @@ import { useNavigate } from "react-router-dom";
 import Swal from "sweetalert2";
 import ModalDetalle from "../modalDetalle/ModalDetalle";
 import uploadFile from "../../services/upLoadfile";
+
+const perfil = "https://ceslava.s3-accelerate.amazonaws.com/2016/04/mistery-man-gravatar-wordpress-avatar-persona-misteriosa-510x510.png"
 
 
 const Profile = () => {
@@ -425,26 +427,23 @@ console.log(datoUsuario.admi, "admi o no");
                                 <span className="span__title">Valor</span>
                                 <span className="span__title">Detalles</span>
                             </div>
-                            {
-                                dataEventos.length === 0 ? (
-                                    <div className="data__price">
-                                        <span className="span__data">No hay cotizaciones</span>
-                                    </div>
-                                ) : (
-                                    dataEventos.map((element, index) => (
-                                        <div className="data__price" key={index}>
-                                            <span className="span__data">{element.type__Event}</span>
-                                            <span className="span__data">{element.date}</span>
-                                            <span className="span__data">$ {element.total}</span>
-                                            <span className="material-symbols-outlined verMas" onClick={() => openModal(element)}>
-                                                open_in_new
-                                            </span>
-                                            <ModalDetalle isOpen={modal} onRequestClose={closeModal} data={selectedElement} />
-                                        </div>
-                                    ))
-                                )
-                            }
-
+                            {dataEventos && dataEventos.length > 0 ? (
+  dataEventos.map((element, index) => (
+    <div className="data__price" key={index}>
+      <span className="span__data">{element.type__Event}</span>
+      <span className="span__data">{element.date}</span>
+      <span className="span__data">$ {element.total}</span>
+      <span className="material-symbols-outlined verMas" onClick={() => openModal(element)}>
+        open_in_new
+      </span>
+      <ModalDetalle isOpen={modal} onRequestClose={closeModal} data={selectedElement} />
+    </div>
+  ))
+) : (
+  <div className="data__price">
+    <span className="span__data">No hay cotizaciones</span>
+  </div>
+)}
                         </section>
                     )}
                     {sectionSeleccionada === "Citas" && (

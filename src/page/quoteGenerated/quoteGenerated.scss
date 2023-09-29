@@ -1,11 +1,18 @@
-.containerQuote
-{
+@import "../../assets/reset.scss";
+@import "../../assets/variables.scss";
 
+
+.containerQuote {
 
     background-color: #F3F3F3;
     overflow: hidden;
-    .dataQuote
-    {
+
+    .dataQuote {
+        .backGroundHeader {
+            width: 100%;
+            height: 24rem;
+        }
+
         overflow: hidden;
 
         margin-top: 5vw;
@@ -19,9 +26,8 @@
         display: flex;
         flex-direction: column;
 
-        .infoQuote
-        {
-            
+        .infoQuote {
+
             width: 90%;
             height: 90%;
             margin: 5%;
@@ -30,24 +36,22 @@
             padding: 8vw;
             overflow: hidden;
 
-            .introductionQuoteDate
-            {
+            .introductionQuoteDate {
                 overflow: hidden;
 
                 display: flex;
                 flex-direction: column;
                 margin-bottom: 2vw;
                 gap: 0.35vw;
-                .titleQuoteGenerate
-                {
+
+                .titleQuoteGenerate {
                     font-family: 'Montserrat', sans-serif;
                     font-size: clamp(7px, 3vw, 25px);
                     overflow: hidden;
 
                 }
 
-                p
-                {
+                p {
                     font-size: clamp(5px, 1.5vw, 1.5vw);
                     overflow: hidden;
 
@@ -55,44 +59,38 @@
 
             }
 
-            .dateUserQuote
-            {
+            .dateUserQuote {
 
                 display: flex;
                 justify-content: space-between;
 
 
 
-                .dateQuoteGenerate
-                {
+                .dateQuoteGenerate {
                     width: 30%;
                     height: 100%;
 
 
-                    .billTitleQuote
-                    {
-                        
+                    .billTitleQuote {
 
-                        p
-                        {
+
+                        p {
                             background-color: rgba(228, 228, 228, 0.800);
                             text-align: center;
                             padding-top: 5%;
                             padding-bottom: 5%;
                             border: solid 1px;
                             font-size: clamp(4px, 3vw, 24px)
-
+                        
                         }
                     }
 
-                    div
-                    {
+                    div {
                         display: flex;
-
                         width: 100%;
                         height: 80%;
-                        .numberQuoteLeft
-                        {
+
+                        .numberQuoteLeft {
                             display: flex;
                             flex-direction: column;
                             padding-left: 0.5vw;
@@ -103,11 +101,9 @@
                             padding-top: 1vw;
                             gap: 1vw;
                             font-size: clamp(3px, 2vw, 16px)
-
                         }
 
-                        .numberQuoteRight
-                        {
+                        .numberQuoteRight {
                             display: flex;
                             flex-direction: column;
                             width: 50%;
@@ -118,21 +114,18 @@
                             padding-top: 1vw;
                             gap: 1vw;
                             font-size: clamp(2px, 2vw, 16px)
-
                         }
-                        
+
                     }
                 }
 
-                .infoUserQuote
-                {
+                .infoUserQuote {
                     width: 65%;
 
                     display: flex;
 
-                    
-                    &__name 
-                    {
+
+                    &__name {
                         padding: 1.5vw;
                         display: flex;
                         flex-direction: column;
@@ -141,11 +134,9 @@
                         gap: 0.75vw;
                         border: solid 1px;
                         font-size: clamp(3px, 2vw, 16px)
-
                     }
 
-                    &__data
-                    {
+                    &__data {
                         border: solid 1px;
                         padding: 1.5vw;
                         display: flex;
@@ -154,13 +145,11 @@
                         background-color: rgb(244, 240, 240, 0.800);
                         gap: 0.75vw;
                         font-size: clamp(3px, 2vw, 16px)
-
                     }
                 }
             }
 
-            table 
-            {
+            table {
                 margin-top: 5vw;
                 background-color: #f0f0f0;
                 width: 100%;
@@ -168,42 +157,44 @@
 
                 tbody {
                     tr {
-                      td {
+                        td {
 
-                        border: 1px solid #a0a0a0;
-                        text-align: center;
+                            border: 1px solid #a0a0a0;
+                            text-align: center;
 
-                      }
-                      &:last-child {
-                        margin-top: 3vw;
-                      }
+                        }
+
+                        &:last-child {
+                            margin-top: 3vw;
+                        }
                     }
-                
+
                     .totalmyQuote {
-                      td {
-                        background-color: #e6dbe4; /* Color representativo para la fila del Total */
-                        font-weight: bold; /* Puedes aplicar negrita al texto si lo deseas */
-                        color: #000000; /* Color de texto para que sea visible en el fondo rojo */
-                      }
+                        td {
+                            background-color: #e6dbe4;
+                            /* Color representativo para la fila del Total */
+                            font-weight: bold;
+                            /* Puedes aplicar negrita al texto si lo deseas */
+                            color: #000000;
+                            /* Color de texto para que sea visible en el fondo rojo */
+                        }
                     }
-                  }
-                
+                }
 
-                th 
-                {
+
+                th {
                     background-color: #d0d0d0;
                     border: 1px solid #a0a0a0;
                 }
 
-                td 
-                {
+                td {
                     background-color: #ffffff;
                     border: 1px solid #a0a0a0;
                 }
 
                 // Establecer el alineamiento del texto y el relleno de las celdas
-                th, td 
-                {
+                th,
+                td {
                     text-align: center;
                     padding: auto;
                 }
@@ -214,37 +205,56 @@
 
 
             }
+
+
         }
 
-        .downloadQuote
-        {
-            align-self: center;
-            width: 20vw;
-            padding-left: 2vw;
-            padding-right: 2vw;
-            padding-top: 1vw;
-            padding-bottom: 1vw;
-            border-radius: 1vw;
-            background: #343434;
-            color: #FFF;
-            font-family: 'Montserrat', sans-serif;
-            cursor: pointer;
-            font-size: 2vw;
-            &:hover
-            {
-                background: #000000;
-                padding-left: 2.2vw;
-                padding-right: 2.2vw;
-                padding-top: 1.2vw;
-                padding-bottom: 1.2vw;
-                border-radius: 1.2vw;
+        .container__btns {
+            display: flex;
+            justify-content: space-around;
+            align-items: center;
+            width: 100%;
+            .container__btns__calendar{
+                width: 50%;
+                .btn__scheduleDate{
+                    border: none;
+                    border-radius: 5px;
+                    background-color: $color-black; 
+                    color: white;
+                    font-family: $Letter-body;
+                    height: 3rem;
+                    cursor: pointer;
+                    padding: 13px;
+                    width: 50%;
+                    margin: 0;
+                }
             }
+
+            .downloadQuote {
+                border: none;
+                border-radius: 5px;
+                background-color: $color-black;
+                color: white;
+                font-family: $Letter-body;
+                height: 3rem;
+                cursor: pointer;
+                padding: 13px;
+                width: 22%;
+
+                &:hover {
+                    background: #000000;
+                    padding-left: 2.2vw;
+                    padding-right: 2.2vw;
+                    padding-top: 1.2vw;
+                    padding-bottom: 1.2vw;
+                    border-radius: 1.2vw;
+                }
+            }
+
         }
     }
 
+
+
+
 }
-
-
-
-
-

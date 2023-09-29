@@ -2,6 +2,7 @@
 import React from 'react';
 import { useSelector } from 'react-redux';
 import { Navigate, Outlet } from 'react-router-dom';
+import PanelAdmi from '../components/panelAdmi/panelAdmi';
 
 const PrivateRoutes = () => {
   const userLogged = useSelector((state) => state.userLogged);
@@ -12,7 +13,7 @@ const PrivateRoutes = () => {
     return (
       <>
       {/* rutas para administradores  */}
-      <Route path="/trabajemos" element={<WorkWhithUs />} />
+      <Route path="/administrador" element={<PanelAdmi />} />
       </>
     );
   } else {

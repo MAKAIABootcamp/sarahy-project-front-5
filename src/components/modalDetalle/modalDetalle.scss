@@ -29,18 +29,31 @@
     .sectionQuote {
         background-color: #f3f3f3;
         flex-direction: column;
+        height: 46rem;
+        width: 100%;
+
+        .infoQuote {
+            display: flex;
+            flex-direction: column;
+            gap: 30px;
+            background: bisque;
+            height: 20rem;
+        }
     }
 
     .containerQuote {
-        background: url("https://i.ibb.co/sFSLdg9/image-79.png");
-        background-size: auto;
-        background-position: center;
-        flex-direction: column;
-        margin: 5vw;
+        display: flex;
+        flex-direction: column-reverse;
+        text-align: center;
+        background: aqua;
+        height: 100%;
+        width: 100%;
+        max-width: 1500px;
+        min-width: 300px;
+        justify-content: space-around;
     }
 
     .textQuote {
-        background-color: #fff;
         text-align: start;
         padding: 2rem;
         /* Cambiado de 8vw a 2rem */

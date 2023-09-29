@@ -5,29 +5,31 @@ import { useNavigate } from 'react-router-dom'
 import logo from "../../assets/image/logo-blanco.png";
 import './header.scss';
 import { useForm } from 'react-hook-form';
-
+import { useSelector } from 'react-redux';
 
 const Header = () => {
-  const navigate = useNavigate()
+    const dataUser = useSelector(state => state.aunthentication.isLogged)
+    console.log(dataUser);
+    const navigate = useNavigate()
     const [theme, setTheme] = useState(() => {
         if (window.matchMedia("(prefers-color-scheme: dark)").matches) {
-          return "dark";
+            return "dark";
         }
-    
+
         return "light";
-      });
-    
-      useEffect(() => {
+    });
+
+    useEffect(() => {
         if (theme === "dark") {
-          document.querySelector("html").classList.add("dark");
+            document.querySelector("html").classList.add("dark");
         } else {
-          document.querySelector("html").classList.remove("dark");
+            document.querySelector("html").classList.remove("dark");
         }
-      }, [theme]);
-    
-      const handleChangeTheme = () => {
+    }, [theme]);
+
+    const handleChangeTheme = () => {
         setTheme((prevTheme) => (prevTheme === "light" ? "dark" : "light"));
-      };
+    };
     const [search, setSearch] = useState(true);
 
 
@@ -51,8 +53,7 @@ const Header = () => {
         setSearchValue(""); // Limpiar el valor del input
     };
 
-    const navigatePage = (ruta) =>
-    {
+    const navigatePage = (ruta) => {
         setSearch(!search);
         navigate(`/${ruta}`);
         closeSearch();
@@ -61,24 +62,24 @@ const Header = () => {
     const goToCommentsSection = () => {
         navigate('/'); // Navega a la página principal
         setTimeout(() => {
-          // Espera un breve momento para que la página cargue completamente
-          const commentsSection = document.getElementById('comentarios');
-          if (commentsSection) {
-            commentsSection.scrollIntoView({ behavior: 'smooth' });
-          }
+            // Espera un breve momento para que la página cargue completamente
+            const commentsSection = document.getElementById('comentarios');
+            if (commentsSection) {
+                commentsSection.scrollIntoView({ behavior: 'smooth' });
+            }
         }, 100);
-      }
+    }
 
     return (
-        <header className="header__home">
+        <header className="header__home " id='miHeader'>
             <div className='header__info'>
-                <span  className='slogan'>Tu momento, nuestra pasión</span>
+                <span className='slogan'>Tu momento, nuestra pasión</span>
                 <div className='header__icons'>
-                    {/* <img src={lupa} alt="icono buscar" onClick={() => navigate('/perfil')} className='buscar' /> */}
-                    {/* <img src={perfil1} alt="icono perfil" onClick={() => navigate('/ingresar')} className='perfil' /> */}
+                    {/* <img src={lupa} alt="icono buscar" onClick={() => navigate('/perfil')} className='buscar' /> 
+                    <img src={perfil1} alt="icono perfil" onClick={() => navigate('/ingresar')} className='perfil' /> */}
 
                     <label className="switchBtn" >
-                        <input type="checkbox" name="" id="" onClick={handleChangeTheme}/>
+                        <input type="checkbox" name="" id="" onClick={handleChangeTheme} />
                         <div className="slide">light On</div>
                     </label>
 
@@ -109,19 +110,23 @@ const Header = () => {
                             </div>
                         </span>
                     )}
-                    <img src={perfil1} alt="icono perfil" onClick={() => navigate('/ingresar')} className='perfil' />
+                    {dataUser ? (
+                        <img src={perfil1} alt="icono perfil" onClick={() => navigate('/perfil')} className='perfil' />
+                    ) : (
+                        <img src={perfil1} alt="icono perfil" onClick={() => navigate('/ingresar')} className='perfil' />
+                    )}
                 </div>
             </div>
             <div className="header__transparent">
                 <nav className="header__navbar">
                     <ul className='header__navbar--lista'>
                         <li className='navbar__items' onClick={() => { navigate("/") }}>Inicio</li>
-                        <li className='navbar__items' >Eventos sociales</li>
-                        <li className='navbar__items'>Eventos empresariales</li>
+                        <li className='navbar__items' onClick={() => { navigate("/sociales") }}>Eventos Sociales</li>
+                        <li className='navbar__items' onClick={() => { navigate("/empresariales") }}>Eventos Empresariales</li>
                         <li className='navbar__items--logo'>{<img src={logo} className='logo__item--img' />}</li>
-                        <li className='navbar__items'>Seamos aliados</li>
-                        <li className='navbar__items'>Contáctanos</li>
-                        <li className='navbar__items'>Cotiza aquí</li>
+                        <li className='navbar__items' onClick={() => { navigate("/aliados") }}>Quienes somos</li>
+                        <li className='navbar__items' >Contáctanos</li>
+                        <li className='navbar__items' onClick={() => { navigate("/quote") }}>Cotiza Aqui</li>
                     </ul>
                 </nav>
             </div>
