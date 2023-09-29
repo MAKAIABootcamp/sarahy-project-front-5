@@ -4,23 +4,35 @@
 .row {
     .galeria {
         display: flex;
-        width: 29.563rem;
-        height: 19.938rem;
+        width: 100%;
+        height: auto;
         flex-wrap: wrap;
     }
 
-    .imagenes__iniciales {
-        width: 14.375rem;
-        height: 9.969rem;
-        margin-left: 4px;
+    .galeria__ancora1{
+        width: 50%;
+        margin-bottom: 4px;
+        display: flex;
+    }
+
+    .imagenes__iniciales1 {
+        width: 98.5%;
+        height: 10rem;
         cursor: pointer;
+        object-fit: cover;
+    }
+
+    .galeria__ancora2{
+        width: 33.3%;
+        display: flex;
+        margin-bottom: 4px;
     }
 
     .imagenes__iniciales2 {
-        width: 9.5rem;
-        height: 9.969rem;
+        width: 98%;
+        height: 10rem;
         cursor: pointer;
-        margin-left: 4px;
+        object-fit: cover;
     }
 
     .galeria__grande {
@@ -43,14 +55,15 @@
     }
 
     .galeria__grande img {
-        width: 75vw;
-        height: 70vh;
+        width: 70%;
+        object-fit: cover;
+        height: 90%;
     }
 
     .close {
         display: block;
         position: absolute;
-        top: 40px;
+        top: 20px;
         right: 40px;
         color: #343434;
         width: 40px;

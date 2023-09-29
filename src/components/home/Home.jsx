@@ -145,7 +145,7 @@ const Home = () => {
                         <h1 className='main__title__home dark:text-neutral-100'>Bienvenido a</h1>
                         <h4 className='main__subtitle dark:text-neutral-300' >Celebraciones Sarahy</h4>
                         <p className="main__parrafo dark:text-neutral-300">
-                            Somos expertos en hacer eventos memorables. Con una pasión por la perfección y una atención meticulosa a cada detalle, nuestro objetivo es convertir tu boda en un día inolvidable. Desde la elección del lugar hasta la decoración, la gastronomía y la música, nos enorgullece crear experiencias únicas que reflejen tus sueños y deseos. Confía en nosotros para convertir tu día especial en un recuerdo que atesorarás para toda la vida.
+                        Únete a nosotros en Celebraciones Sarahy y haz de tus eventos una experiencia excepcional. ¡Déjanos hacer realidad tus celebraciones de ensueño y transformar cada detalle en un recuerdo inolvidable que perdurará para siempre!
                         </p>
 
                     </div>
@@ -160,10 +160,10 @@ const Home = () => {
                             Bodas
                         </button>
                         <button className={`btn__event ${eventoSeleccionado === "Quinces" ? "selected" : ""}`} onClick={() => handleEventoClick("Quinces")}>
-                            Quinces
+                            Quince Años
                         </button>
                         <button className={`btn__event ${eventoSeleccionado === "Cumpleaños" ? "selected" : ""}`} onClick={() => handleEventoClick("Cumpleaños")}>
-                            Cumpleaños
+                            Aniversarios
                         </button>
                         <button className={`btn__event ${eventoSeleccionado === "Empresariales" ? "selected" : ""}`} onClick={() => handleEventoClick("Empresariales")}>
                             Empresariales
@@ -187,7 +187,7 @@ const Home = () => {
                 </section>
 
                 <section className="services dark:bg-neutral-700">
-                    <h2 className='services__title dark:text-neutral-300' >CONOCE NUESTROS SERVICIOS</h2>
+                    <h2 className='services__title dark:text-neutral-300' >Conoce nuestros servicios</h2>
 
                     <div className='container__cards--services'>
 
@@ -205,11 +205,11 @@ const Home = () => {
 
                             <SwiperSlide className=' swiperCard dark:bg-neutral-400'>
                                 <div className="card__services dark:bg-neutral-300">
-                                    <h3 className='card__services--title'>FOTOGRAFÍA</h3>
+                                    <h3 className='card__services--title'>CATERING</h3>
                                     <img src={servicios1} alt="Imagen del servicio ofrecido" className='img__services' />
-                                    <span className='card__services--span'>
+                                    {/* <span className='card__services--span'>
                                         Guardar los mejores momentos de tu evento con fotografías y videos de la mejor calidad.
-                                    </span>
+                                    </span> */}
                                     
                                 </div>
                             </SwiperSlide>
@@ -219,9 +219,9 @@ const Home = () => {
                                 <div className="card__services dark:bg-neutral-300">
                                     <h3 className='card__services--title '>DECORACIÓN</h3>
                                     <img src={servicios2} alt="Imagen del servicio ofrecido" className='img__services' />
-                                    <span className='card__services--span'>
+                                    {/* <span className='card__services--span'>
                                         Transformamos espacios en escenarios de ensueño con nuestra decoración experta
-                                    </span>
+                                    </span> */}
                                     {/* <button className="service__btn">Ver más</button> */}
                                 </div>
                             </SwiperSlide>
@@ -229,31 +229,41 @@ const Home = () => {
                             {/* Slide 3 */}
                             <SwiperSlide>
                                 <div className="card__services dark:bg-neutral-300">
-                                    <h3 className='card__services--title '>CATERING</h3>
+                                    <h3 className='card__services--title '>FOTOGRAFÍA</h3>
                                     <img src={servicios3} alt="Imagen del servicio ofrecido" className='img__services' />
-                                    <span className='card__services--span'>
+                                    {/* <span className='card__services--span'>
                                         Deléitate con nuestro exquisito servicio de catering y saborea el éxito de tu evento
-                                    </span>
+                                    </span> */}
                                     {/* <button className="service__btn">Ver más</button> */}
                                 </div>
                             </SwiperSlide>
                             <SwiperSlide>
                                 <div className="card__services dark:bg-neutral-300">
-                                    <h3 className='card__services--title '>CATERING</h3>
+                                    <h3 className='card__services--title '>ANIMACIÓN</h3>
                                     <img src={servicios3} alt="Imagen del servicio ofrecido" className='img__services' />
-                                    <span className='card__services--span'>
+                                    {/* <span className='card__services--span'>
                                         Deléitate con nuestro exquisito servicio de catering y saborea el éxito de tu evento
-                                    </span>
+                                    </span> */}
                                     {/* <button className="service__btn">Ver más</button> */}
                                 </div>
                             </SwiperSlide>
                             <SwiperSlide>
                                 <div className="card__services dark:bg-neutral-300">
-                                    <h3 className='card__services--title '>CATERING</h3>
+                                    <h3 className='card__services--title '>MÚSICA Y DJS</h3>
                                     <img src={servicios3} alt="Imagen del servicio ofrecido" className='img__services' />
-                                    <span className='card__services--span'>
+                                    {/* <span className='card__services--span'>
                                         Deléitate con nuestro exquisito servicio de catering y saborea el éxito de tu evento
-                                    </span>
+                                    </span> */}
+                                    {/* <button className="service__btn">Ver más</button> */}
+                                </div>
+                            </SwiperSlide>
+                            <SwiperSlide>
+                                <div className="card__services dark:bg-neutral-300">
+                                    <h3 className='card__services--title '>ILUMINACIÓN</h3>
+                                    <img src={servicios3} alt="Imagen del servicio ofrecido" className='img__services' />
+                                    {/* <span className='card__services--span'>
+                                        Deléitate con nuestro exquisito servicio de catering y saborea el éxito de tu evento
+                                    </span> */}
                                     {/* <button className="service__btn">Ver más</button> */}
                                 </div>
                             </SwiperSlide>
@@ -280,7 +290,7 @@ const Home = () => {
                 </section>
 
                 <section className='beneficios dark:bg-neutral-800'>
-                    <h1 className='beneficios__title dark:text-neutral-200'>BENEFICIOS DE REALIZAR TU EVENTO CON NOSOTROS</h1>
+                    <h1 className='beneficios__title dark:text-neutral-200'>Beneficios de realizar tu evento con Celebraciones Sarahy</h1>
                     <div className="container__beneficios">
                         <div className='beneficio__card card__beneficio--1'>
                             <img src={marrano} alt="" className="icnono__beneficios" />

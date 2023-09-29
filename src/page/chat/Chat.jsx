@@ -2,11 +2,33 @@ import React, { useState, useEffect, useRef } from 'react';
 import './chat.scss';
 import { useNavigate } from 'react-router-dom';
 import { addAdminMessageToChat } from '../../services/addMessage';
+import { addMessageToExistingChat } from '../../services/addMessageToExistingChat ';
 
 const Chat = () => {
+    const [customChatId, setCustomChatId] = useState('');
+    const [statuChat, setStatuChat] = useState(false);
+    const generateRandomChatId = () => {
+        // Genera un ID único, puedes usar una lógica específica si lo deseas
+        return Math.random().toString(36).substring(2, 15) + Math.random().toString(36).substring(2, 15);
+      };
+    useEffect(() => {
+        // Genera un idChat personalizado cuando el componente se monta y guárdalo en el estado
+        const generatedChatId = generateRandomChatId();
+        setCustomChatId(generatedChatId);
+      }, []);
     const addMessager = async (message) =>
     {
-      await addAdminMessageToChat(message);
+        if (statuChat)
+        {
+            await addMessageToExistingChat(customChatId, message);
+        }
+        else
+        {
+
+            await addAdminMessageToChat(customChatId, message);
+            setStatuChat(true);
+
+        }
     }
     const defaultMessage = {text: 'Si tienes más dudas, recuerda: ', option1: '\n1. Duda de Evento', option2: '\n2. Duda de Servicio',  option3: '\n3. Duda de Ubicación',  option4: '\n4. Duda de Cotización', action: '/wedding'};
     const messagesContainerRef = useRef(null); // Ref para el contenedor de mensajes

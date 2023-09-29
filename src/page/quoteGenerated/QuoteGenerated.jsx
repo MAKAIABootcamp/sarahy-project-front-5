@@ -12,6 +12,14 @@ import CalendarGoogle from '../../components/calendarGoogle/calendarGoogle';
 
 const QuoteGenerated = () => {
 
+  // useEffect(() => 
+  // {
+
+  //   const addMessager = async () =>
+  //   {
+  //     await addMessageToExistingChat('rp17lp3q3x2s426z4m8fo', 'NUEVA XXXXXX PRUEBAAAAAAAAAA');
+  //   }
+  //   addMessager();
   const [modal, setModal] = useState(false);
 
   const openModal = () => {
@@ -187,5 +195,6 @@ const QuoteGenerated = () => {
     </section>
   )
 }
+
 
 export default QuoteGenerated;

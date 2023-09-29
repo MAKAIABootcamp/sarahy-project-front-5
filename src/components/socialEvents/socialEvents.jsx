@@ -21,6 +21,7 @@ import { typEvent } from "./hookTypEvent";
 const SocialEvents = () => {
   return (
     <main className="main__home">
+  
     <img src={socialesPrincipal} alt="" className="imgSocial__intro" />
     <section className="main__info">
       <img src={logoIzquierda} alt="" className="logoIzquierda" />

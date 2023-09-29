@@ -118,6 +118,7 @@ const Login = () => {
         </div>
 
         {/* <button className='outSalir' onClick={salir}>Salir</button> */}
+
       </section>
     </main>
   );

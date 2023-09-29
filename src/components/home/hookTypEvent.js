@@ -8,33 +8,33 @@ import sliderAniversarios from '../../assets/image/bufet.jpg'
 
 export const typEvent = {
     Bodas: {
-      title: 'LA BODA DE TUS SUEÑOS',
+      title: 'La boda de tus sueños',
       description:
-      "Expertos en hacer tu boda perfecta en todos los detalles, desde la elección del lugar hasta la decoración y el menú, para que sea inolvidable.",
+      "Expertos en hacer tu boda perfecta en todos los detalles para que sea inolvidable.",
       imagenes: [sliderBodas, sliderAniversarios, sliderCumpleaños, sliderBufet, sliderGrados]
     },
     Quinces: {
-      title: 'LA FIESTA DE CUMPLEAÑOS PERFECTA',
+      title: 'Tus quince años inolvidables',
       description:
-        'Celebra tu cumpleaños de una manera inolvidable. Ofrecemos decoraciones temáticas, entretenimiento y deliciosos pasteles para hacer que tu día especial sea aún más especial.',
-      imagenes: [sliderCumpleaños, sliderBodas, sliderCumpleaños, sliderEmpresariales, sliderBufet ]
+        'Celebra tus quince años con temáticas excepcionales y entretenimiento inolvidable.',
+      imagenes: [sliderBodas, sliderAniversarios, sliderCumpleaños, sliderBufet, sliderGrados]
     },
     Cumpleaños: {
-      title: 'CELEBRA TU ANIVERSARIO CON NOSOTROS',
+      title: 'Celebra tu aniversario',
       description:
-        'Hacemos que tus momentos de aniversario sean memorables. Ofrecemos servicios de decoración y catering para que puedas celebrar el amor y la unión.',
+        'Hacemos tus aniversarios memorables con decoración y catering para celebrar el amor y la unión.',
       imagenes: [sliderAniversarios, sliderCumpleaños, sliderBodas, sliderEmpresariales, sliderBufet]
     },
     Empresariales: {
-      title: 'EVENTOS EMPRESARIALES DE ÉXITO',
+      title: 'Eventos empresariales exitosos',
       description:
-        'Organizamos eventos empresariales exitosos. Proporcionamos servicios de planificación y logística para garantizar que su evento corporativo sea un éxito.',
+        'Garantizamos el éxito de sus eventos empresariales con servicios de planificación y logística de primera calidad.',
       imagenes: [sliderEmpresariales, sliderAniversarios, sliderCumpleaños, sliderBodas, sliderBufet]
     },
     Educativos: {
-      title: 'EVENTOS EDUCATIVOS INNOVADORES',
+      title: 'Eventos educativos innovadores',
       description:
-        'Impulsamos la educación a través de eventos innovadores. Ofrecemos soluciones tecnológicas para eventos educativos y conferencias.',
+        'Únete a nosotros y transforma la educación en experiencias extraordinarias que inspiran y potencian el aprendizaje. ',
       imagenes: [sliderBufet, sliderEmpresariales, sliderAniversarios, sliderAniversarios, sliderBufet]
     },
   };

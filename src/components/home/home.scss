@@ -55,7 +55,7 @@
   }
 
   .slider__home {
-    height: 27rem;
+    height: 22rem;
     width: 100%;
     background-color: $color-cream;
 
@@ -89,18 +89,18 @@
         align-items: center;
 
         .logoIzquierda {
-            width: 8rem;
-            height: 8rem;
+            width: 7rem;
+            height: 7rem;
         }
-
+// BORRAR, REPETIDO
         .container__intro {
-            width: 70%;
+            width: 80%;
             padding: 10px 40px;
 
             .main__title__home {
-                font-size: 70px;
                 font-family: $Letter-titles;
                 text-align: center;
+                color: aqua;
             }
 
             .main__subtitle {
@@ -118,17 +118,17 @@
                 padding: 25px 0;
                 font-size: 20px;
                 line-height: 23px;
-                text-align: justify;
+                text-align: center;
             }
 
         }
 
         .logoDerecha {
-            width: 8rem;
-            height: 8rem;
+            width: 7rem;
+            height: 7rem;
         }
     }
-
+// HASTA ACA
     .swiper-button-next,
     .swiper-button-prev {
       color: $color-cream;
@@ -149,8 +149,8 @@
     align-items: center;
 
     .logoIzquierda {
-      width: 8rem;
-      height: 8rem;
+      width: 7rem;
+      height: 7rem;
     }
 
     .container__intro {
@@ -158,32 +158,33 @@
       padding: 10px 40px;
 
       .main__title__home {
-        font-size: 70px;
         font-family: $Letter-titles;
         text-align: center;
+        font-size: 50px;
+        font-weight: bolder;
+        margin-right: 5rem;
       }
 
       .main__subtitle {
-        font-size: 28px;
+        font-size: 30px;
         font-family: $Letter-subtitles;
         position: relative;
         left: 125px;
         bottom: 15px;
-        font-weight: 800;
         text-align: center;
       }
 
       .main__parrafo {
         font-family: $Letter-body;
-        padding: 25px 0;
-        font-size: 23px;
+        padding: 10px 0;
+        font-size: 18px;
         text-align: justify;
       }
     }
 
     .logoDerecha {
-      width: 8rem;
-      height: 8rem;
+      width: 7rem;
+      height: 7rem;
     }
   }
 }
@@ -200,30 +201,30 @@
     justify-content: center;
     width: 80%;
     gap: 30px;
-    padding-bottom: 60px;
+    padding-bottom: 40px;
     justify-content: space-between;
 
     .btn__event {
-      width: 14%;
+      width: 15%;
       height: 50px;
       border-radius: 12px;
-      border: 3px solid $color-black;
+      border: 2px solid $color-black;
       padding: 8px;
       font-size: 18px;
-      font-weight: 500;
+      font-weight: 400;
       background-color: white;
     }
 
     .btn__event:hover {
       background-color: $color-white;
       cursor: pointer;
-      font-weight: 800;
+      font-weight: 700;
     }
 
     .selected {
-      background-color: $color-cream;
+      background-color: $color-white;
       color: $color-black;
-      font-weight: 800;
+      font-weight: 700;
     }
   }
 
@@ -238,33 +239,35 @@
       display: flex;
       flex-direction: column;
       height: 100%;
-      width: 50%;
-      gap: 30px;
+      width: 35%;
+      gap: 1rem;
       position: relative;
       align-items: center;
 
       .description__title {
         width: 100%;
-        font-size: 27px;
-        font-family: $Letter-body;
-        text-align: start;
+        font-size: 25px;
+        font-family: $Letter-subtitles;
+        text-align: center;
       }
 
       .description__parrafo {
-        font-size: 21px;
+        font-size: 16px;
         font-family: $Letter-body;
         text-align: start;
-        text-align: justify;
+        text-align: center;
+        line-height: 18px;
       }
 
       .description__btn {
-        width: 35%;
-        height: 50px;
+        width: auto;
+        height: auto;
         border-radius: 10px;
         background-color: #343434;
         color: white;
-        margin-top: 40px;
-        font-size: 19px;
+        margin-top: 1.5rem;
+        font-size: 18px;
+        padding: 3% 5%;
       }
 
       .description__btn:hover {
@@ -274,7 +277,7 @@
     }
 
     .event__collage {
-      width: 60%;
+      width: 75%;
 
       .description__img {
         width: 100%;
@@ -299,20 +302,20 @@
     padding-bottom: 20px;
     font-size: 25px;
     width: 80%;
-    padding-bottom: 40px;
+    padding-bottom: 30px;
     font-family: $Letter-subtitles;
   }
 
   .container__cards--services {
     display: flex;
-    gap: 40px;
+    gap: 1rem;
     width: 80%;
     justify-content: space-between;
     padding-bottom: 40px;
 
     .swiper-horizontal {
       touch-action: pan-y;
-      height: 30rem;
+      height: auto;
 
       .swiper-scrollbar {
         display: none;
@@ -340,12 +343,12 @@
     .card__services {
       display: flex;
       flex-direction: column;
-      padding: 25px;
+      padding: 0.8rem;
       gap: 20px;
       border-radius: 5px;
       align-items: center;
-      margin-top: 35px;
-      margin-bottom: 30px;
+      // margin-top: 35px;
+      // margin-bottom: 30px;
 
       .swiperCard {
         text-align: center;
@@ -402,13 +405,16 @@
 
 .encantados {
   display: flex;
-  width: 100%;
+  width: 80%;
   background-color: white;
-  padding: 20px 80px;
-  justify-content: flex-end;
+  padding: 0px 5%;
+  align-items: center;
+  justify-content: center; 
+  gap: 2rem;
 
   .gota {
-    width: 30%;
+    width: 20%;
+    object-fit: cover;
 
     .gota__img {
       width: 100%;
@@ -418,36 +424,37 @@
   }
 
   .encatados__info {
-    width: 60%;
+    width: 70%;
     display: flex;
     flex-direction: column;
     gap: 20px;
 
     .encantados__title {
-      font-size: 55px;
+      font-size: 30px;
       font-family: $Letter-titles;
     }
 
     .logo__subtitulo {
       display: flex;
-      gap: 20px;
+      gap: 0.5rem;
       align-items: center;
-      width: 50%;
+      width: 100%;
 
       .encantado__subtitulo--img {
-        width: 50px;
+        width: 2rem;
+        height: 2rem;
       }
 
       .encantado__subtitulo {
-        font-size: 30px;
+        font-size: 22px;
         font-family: $Letter-subtitles;
       }
     }
   }
 
   .encantados__descripcion {
-    width: 60%;
-    font-size: 20px;
+    width: 100%;
+    font-size: 18px;
     font-family: $Letter-body;
   }
 }
@@ -692,11 +699,10 @@
   display: flex;
   flex-direction: column;
   padding: 0px 80px;
-  padding-bottom: 50px;
+  padding-bottom: 40px;
 
   .beneficios__title {
-    padding-top: 50px;
-    padding-bottom: 20px;
+    padding-top: 40px;
     font-size: 25px;
     font-family: $Letter-subtitles;
     text-align: center;
@@ -729,12 +735,12 @@
       }
 
       .card__beneficio--title {
-        font-size: 20px;
+        font-size: 19px;
         font-family: $Letter-subtitles;
       }
 
       .card__beneficios--p {
-        font-size: 18px;
+        font-size: 16px;
         font-family: $Letter-body;
         width: 70%;
         text-align: center;
@@ -1020,13 +1026,13 @@
     display: flex;
     flex-direction: column;
     align-items: center;
-
+    
     .gota {
       width: 40%;
 
       .gota__img {
         width: 100%;
-        height: 17rem;
+        height: 20%;
         -o-object-fit: contain;
         object-fit: contain;
       }
