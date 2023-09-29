@@ -2,9 +2,13 @@
 @import "../../assets/variables.scss";
 
 .header__home {
+    overflow: hidden;
+
     display: flex;
     flex-direction: column;
     .header__info {
+        overflow: hidden;
+
         width: 100%;
         height: 3rem;
         padding: 10px 30px;
@@ -15,7 +19,7 @@
         .slogan {
             color: black;
             width: 100%;
-            text-align: center;
+            
             font-size: 23px;
         }
 
@@ -84,6 +88,57 @@
                 border-radius: 50%;
             }
 
+            .newSearch
+            {
+                position: relative;
+                &__input
+                {
+                    display: flex;
+                }
+                display: flex;
+                flex-direction: column;
+                .resultDown
+                {
+                    
+                    background-color: rgba(185, 185, 196, 0.835);
+                    position: absolute;
+                    top: 30px;
+                    right: 0px;
+                    z-index: 10;
+                    width: 20vw;
+                    border-radius: 5px 5px 0px 0px;
+
+                    p
+                    {
+                        padding: 2vw;
+
+                    }
+                }
+                align-items: center;
+                align-content: center;
+                text-align: center;
+                .buscar {
+                    cursor: pointer;
+                    margin-right: 10px; // Espacio entre la lupa y el input
+                  }
+              
+                  input[type="text"] {
+                    align-items: center;
+                    align-self: center;
+                    align-content: center;
+                    border: none; // Quitar el borde del input
+                    padding: 5px 10px; // Espaciado dentro del input
+                    border-radius: 5px; // Bordes redondeados
+                    font-size: 16px; // Tamaño de fuente
+                    background-color: rgb(224, 224, 224); // Color de fondo
+                    color:rgb(61, 59, 59); // Color del texto
+                    transition: width 0.4s; // Efecto de transición para el ancho
+                    width: 20vw;
+                    &:focus {
+                      width:20vw; // Ancho cuando el input tiene foco
+                    }
+                  }
+            }
         }
     }
     .header__transparent {

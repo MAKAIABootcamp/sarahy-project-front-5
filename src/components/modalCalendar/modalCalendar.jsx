@@ -17,7 +17,6 @@ const ModalCalendar = () => {
   return (
     <div>
         <button className='btn__scheduleDate' onClick={openModal}>Agendar cita</button>
-        
         <CalendarGoogle isOpen={modal} onRequestCloset={closeModal} />
     </div>
     

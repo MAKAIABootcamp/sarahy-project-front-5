@@ -11,16 +11,6 @@
     overflow: hidden;
     overflow-x: hidden;
 
-    
-
-    .img__introBodas{
-        width: 100%; 
-        height: 22rem;
-        object-fit: cover;
-        filter: brightness(70%);
-    }
-
-    
 
     .introduction
     {
@@ -199,7 +189,7 @@
     .galleryWedding
     {
         width: 100vw;
-        height: 110vh;
+
         background-color: rgb(255, 255, 255);
         box-shadow: 5px 5px 10px gray;
         display: flex;
@@ -212,18 +202,28 @@
 
         &__list
         {
-            width: 70vw;
-            height: 100vh;
+            width: 90vw;
+
+ 
             margin: 5vw;
             box-shadow: 5px 5px 10px gray;
 
-            figure 
+            .mySwiper
             {
-                margin-top: 3vw;
-                img
+                &.swipeWedding
                 {
-                    width: 75vw;
-                    height: 55vh;
+                    height: 60vw;
+
+                    .weddingSwiperSlider
+                    {
+                        height: 60vw;
+
+                        .imageSliderGallery
+                        {
+                            width: 85vw;
+                            height: 50vw;
+                        }
+                    }
                 }
             }
 
@@ -244,49 +244,17 @@
 
 
 
-.imageSliderGallery
+
+.backGroundHeader
 {
-    width: 65vw;
-    height: 100vh;
-    margin-bottom: 4vw;
+    width: 100%;
+    height: 30vw;
+    object-fit: cover;
+    filter: brightness(80%);
 }
 
-.header__transparent {
-    width: 100%;
-    padding: 15px 30px;
-    z-index: 3;
-    position: absolute;
-    width: 100%;
-    background: linear-gradient(to right, rgb(255 255 255 / 10%), rgb(255 255 255 / 10%));
+.swiper-slide
+{
 
-    .header__navbar {
-        width: 100%;
-    }
 
-    .header__navbar--lista {
-        display: flex;
-        justify-content: space-evenly;
-        align-items: center;
-
-        .navbar__items {
-            list-style: none;
-            font-size: 22px;
-            color: white;
-        }
-
-        .navbar__items {
-            cursor: pointer;
-            color: #ffffff;
-        }
-
-        .navbar__items--logo {
-            list-style: none;
-            font-size: 22px;
-            cursor: pointer;
-
-            .logo__item--img {
-                width: 10rem
-            }
-        }
-    }
 }

@@ -15,21 +15,8 @@ const WeddingPage = () => {
   return (
     <main className='weddingPage '>
 
-<div className="header__transparent">
-                    <nav clasName="header__navbar">
-                        <ul className='header__navbar--lista'>
-                            <li className='navbar__items' onClick={() => {navigate("/")}}>Incio</li>
-                            <li className='navbar__items' >Eventos sociales</li>
-                            <li className='navbar__items'>Eventos empresariales</li>
-                            <li className='navbar__items--logo'>{<img src={logo} className='logo__item--img' />}</li>
-                            <li className='navbar__items'>Seamos aliados</li>
-                            <li className='navbar__items'>Contáctanos</li>
-                            <li className='navbar__items' onClick={()=>{navigate("/quote")}}>Cotiza aquí</li>
-                        </ul>
-                    </nav>
-                </div>
-                <img src={sliderBodas} alt="imagen de bodas" className="img__introBodas"/>
 
+        <img className= 'backGroundHeader' src="https://images.unsplash.com/photo-1595407753234-0882f1e77954?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1470&q=80" alt="Fondo de Wedding" />
 
         <section className='introduction'>
             <figure className='decorWedding'>
@@ -139,7 +126,7 @@ const WeddingPage = () => {
             <section className = 'galleryWedding__list'>
 
 
-            <section className='slider__home'>
+            
                     <Swiper
                         spaceBetween={30}
                         centeredSlides={true}
@@ -152,18 +139,18 @@ const WeddingPage = () => {
                         }}
                         navigation={true}
                         modules={[Autoplay, Pagination, Navigation]}
-                        className="mySwiper" >
+                        className="mySwiper swipeWedding" >
 
 
-                        <SwiperSlide><img className='imageSliderGallery' src="https://i.ibb.co/Kbtck8g/image-124.png" alt="imagen de bodas" /> </SwiperSlide>
+                        <SwiperSlide className = "weddingSwiperSlider"><img className='imageSliderGallery' src="https://i.ibb.co/Kbtck8g/image-124.png" alt="imagen de bodas" /> </SwiperSlide>
 
-                        <SwiperSlide><img className='imageSliderGallery' src="https://images.unsplash.com/photo-1595407753234-0882f1e77954?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1470&q=80" alt="imagen de bodas" /></SwiperSlide>
-                        <SwiperSlide><img className='imageSliderGallery' src="https://images.unsplash.com/photo-1550005809-91ad75fb315f?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1469&q=80" alt="imagen de bodas" /></SwiperSlide>
-                        <SwiperSlide><img className='imageSliderGallery' src="https://images.unsplash.com/photo-1511285560929-80b456fea0bc?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1469&q=80" alt="imagen de bodas" /></SwiperSlide>
-                        <SwiperSlide><img className='imageSliderGallery' src="https://images.unsplash.com/photo-1508905309331-76b1d900af31?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1388&q=80" alt="imagen de bodas" /></SwiperSlide>
-                        <SwiperSlide><img className='imageSliderGallery' src="https://images.unsplash.com/photo-1511285560929-80b456fea0bc?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1469&q=80" alt="imagen de bodas" /></SwiperSlide>
+                        <SwiperSlide  className = "weddingSwiperSlider"><img className='imageSliderGallery' src="https://images.unsplash.com/photo-1595407753234-0882f1e77954?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1470&q=80" alt="imagen de bodas" /></SwiperSlide>
+                        <SwiperSlide  className = "weddingSwiperSlider"><img className='imageSliderGallery' src="https://images.unsplash.com/photo-1550005809-91ad75fb315f?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1469&q=80" alt="imagen de bodas" /></SwiperSlide>
+                        <SwiperSlide  className = "weddingSwiperSlider"><img className='imageSliderGallery' src="https://images.unsplash.com/photo-1511285560929-80b456fea0bc?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1469&q=80" alt="imagen de bodas" /></SwiperSlide>
+                        <SwiperSlide  className = "weddingSwiperSlider"><img className='imageSliderGallery' src="https://images.unsplash.com/photo-1508905309331-76b1d900af31?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1388&q=80" alt="imagen de bodas" /></SwiperSlide>
+                        <SwiperSlide  className = "weddingSwiperSlider"><img className='imageSliderGallery' src="https://images.unsplash.com/photo-1511285560929-80b456fea0bc?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1469&q=80" alt="imagen de bodas" /></SwiperSlide>
                     </Swiper>
-                </section>
+ 
                 <span>Galería</span>
             </section>
 

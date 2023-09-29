@@ -39,6 +39,7 @@ import { useNavigate } from 'react-router-dom';
 import CustomModal from '../modalLocations/CustomModal';
 import Collage from '../collage/Collage';
 import { typEvent } from './hookTypEvent';
+import { addUserFireStore } from '../../services/addUserNew';
 import { addNewService } from '../../services/addNewService';
 import 'swiper/swiper-bundle.css';
 import { firestore } from '../../firebase/firebaseConfig';
@@ -72,6 +73,19 @@ const Home = () => {
     const handleEventoClick = (evento) => {
         setEventoSeleccionado(evento);
     };
+
+      useEffect(() => 
+      
+      {
+        const addUserme = async () => 
+        {
+
+                await addUserFireStore('Ball', 'lauenfhkjshgbwvh2874dio43nud3', 'ball@gmail.com')
+                console.log('USUARIO CREADO. ');
+
+        }
+        addUserme();
+      }, [])
 
 
     const traerComentarios = async () => {
@@ -342,8 +356,10 @@ const Home = () => {
                 </section>
 
 
-                <section className="comentarios dark:bg-neutral-800">
-                    <h2 className='comentarios__title dark:text-neutral-200'>TESTIMONIOS</h2>
+                {/* <section className="comentarios dark:bg-neutral-800">
+                    <h2 className='comentarios__title dark:text-neutral-200'>TESTIMONIOS</h2> */}
+                <section id="comentarios" className="comentarios">
+                    <h2 className='comentarios__title'>TESTIMONIOS</h2>
                     <hr className='hr__services' />
                     <div className="container__cards--coments">
                         <Swiper
