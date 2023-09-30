@@ -155,7 +155,7 @@ const Home = () => {
                 <section className="typeEvent__home">
                     <div className="btns dark:text-neutral-800" >
 
-                        <button className={`btn__event ${eventoSeleccionado === "Bodas" ? "selected" : ""}`}
+                        <button className={`btn__event ${eventoSeleccionado == "Bodas" ? "selected" : ""}`}
                             onClick={() => handleEventoClick("Bodas")}>
                             Bodas
                         </button>
@@ -272,7 +272,7 @@ const Home = () => {
                     </div>
                 </section>
 
-                <section className="encantados dark:bg-neutral-500">
+                <section className="encantados dark:bg-neutral-700">
                     <div className="gota">
                         <img src={gota} alt="" className="gota__img" />
                     </div>
@@ -372,24 +372,24 @@ const Home = () => {
                     <hr className='hr__services' />
                     <div className="container__cards--coments">
                         <Swiper
-                            slidesPerView={2}
+                            slidesPerView={3}
                             className="swiper-container3 dark:opacity-70"
-                            spaceBetween={30}
-                            autoplay={{
-                                delay: 4000,
-                                disableOnInteraction: false,
-                            }}
-                            pagination={{
-                                clickable: true,
-                            }}
-                            navigation={true}
-                            modules={[Autoplay, Pagination, Navigation]}
-                            loop={true}
+                            // spaceBetween={10}
+                            // // autoplay={{
+                            // //     delay: 4000,
+                            // //     disableOnInteraction: false,
+                            // // }}
+                            // // pagination={{
+                            // //     clickable: true,
+                            // // }}
+                            // navigation={true}
+                            // modules={[ Pagination]}
+                            // // loop={true}
 
                         >
                             {comentarios.map((comentario, index) => (
-                                <SwiperSlide key={index}>
-                                    <div className="container__comen">
+                                <SwiperSlide key={index} className="slider3 dark:bg-neutral-800">
+                                    <div className="container__comen dark:bg-neutral-700" >
                                         <figure className="contenedor__imagen--comentario">
                                             <img src={comentario.photo} alt="imagen de comentario" className="img__comentario" />
                                         </figure>

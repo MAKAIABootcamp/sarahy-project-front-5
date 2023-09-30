@@ -622,7 +622,8 @@
     height: 100%;
 
     .swiper-container3 {
-      height: auto;
+      height: 20rem;
+      
       .swiper-pagination {
         display: none;
       }
@@ -631,6 +632,10 @@
       .swiper-button-prev {
         color: $color-black;
         width: 10px;
+      }
+      .slider3{
+        border-radius: 5px;
+        background-color: aqua;
       }
     }
 
@@ -642,7 +647,7 @@
       max-width: 1500px;
       min-width: 300px;
       width: 90%;
-      background-color: $color-white;
+      background-color: burlywood;
       .contenedor__imagen--comentario {
         max-width: 1500px;
         min-width: 300px;

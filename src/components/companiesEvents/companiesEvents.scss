@@ -61,7 +61,6 @@
     }
 
     .data__events {
-        background-color: $color-white;
         width: 100%;
         padding-top: 40px;
         padding-bottom: 40px;
@@ -124,7 +123,7 @@
 
     .galery{
         display: flex;
-        background-color: white;
+        // background-color: white;
         padding: 30px 10%;
         justify-content: center; 
         align-items: center;
@@ -146,7 +145,6 @@
             .span{
                 font-family: $Letter-titles;
                 font-size: 45px;
-                color: $color-black;
             }
             .button__companies{
                 width: 80%;

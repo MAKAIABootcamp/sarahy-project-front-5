@@ -29,15 +29,15 @@ const Register = () => {
   };
 
   return (
-    <main className="login">
+    <main className="login dark:bg-neutral-800">
       <section className="login__container register">
-        <div className="loginDown register">
+        <div className="loginDown register dark:bg-neutral-800">
           <h1 className="loginDown__title">
-            <b>Registro</b>
+            <b className="dark:text-neutral-300">Registro</b>
           </h1>
 
           <form onSubmit={handleSubmit(onSubmit)} className="loginDown__form">
-            <span className="loginLabel">Nombre</span>
+            <span className="dark:text-neutral-300">Nombre</span>
             <input
               type="text"
               // id="name"
@@ -46,12 +46,12 @@ const Register = () => {
               className="loginDown__input"
             />
             {errors.name && (
-              <span className="loginDown__error">
+              <span className="loginDown__error dark:text-neutral-300">
                 Este campo es obligatorio
               </span>
             )}
             
-            <span className="loginLabel">Contacto</span>
+            <span className="loginLabel dark:text-neutral-300">Contacto</span>
             <input
               type="number"
               // id="number"
@@ -60,53 +60,53 @@ const Register = () => {
               className="loginDown__input"
             />
             {errors.number && (
-              <span className="loginDown__error">
+              <span className="loginDown__error dark:text-neutral-300">
                 Este campo es obligatorio
               </span>
             )}
 
             
             
-            <span className="loginLabel">E-mail</span>
+            <span className="loginLabel dark:text-neutral-300">E-mail</span>
             <input
               type="email"
               // id="email"
               {...register("email", { required: true })}
               placeholder="ejemplo@tuemail.com"
-              className="loginDown__input"
+              className="loginDown__input dark:text-neutral-300"
             />
             {errors.email && (
-              <span className="loginDown__error">
+              <span className="loginDown__error dark:text-neutral-300">
                 Este campo es obligatorio
               </span>
             )}
-            <span className="loginLabel">Contraseña</span>
+            <span className="loginLabel dark:text-neutral-300">Contraseña</span>
             <input
               type="password"
               // id="password"
               {...register("password", { required: true })}
               placeholder="**********"
-              className="loginDown__input"
+              className="loginDown__input dark:text-neutral-300"
             />
             {errors.password && (
               <span className="loginDown__error">
                 Este campo es obligatorio
               </span>
             )}
-            <span className="loginLabel">Verificar contraseña</span>
+            <span className="loginLabel dark:text-neutral-300">Verificar contraseña</span>
             <input
               type="password"
               // id="passwordtwo"
               {...register("passwordtwo", { required: true })}
               placeholder="**********"
-              className="loginDown__input"
+              className="loginDown__input dark:text-neutral-300"
             />
             {errors.passwordtwo && (
-              <span className="loginDown__error">
+              <span className="loginDown__error dark:text-neutral-300">
                 Este campo es obligatorio
               </span>
             )}
-            <button type="submit" className="loginDown__button" >
+            <button type="submit" className="loginDown__button dark:bg-neutral-300" >
               Registrarse
             </button>
           </form>

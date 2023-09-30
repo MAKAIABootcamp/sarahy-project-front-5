@@ -13,6 +13,7 @@ import { useNavigate } from "react-router-dom";
 import Swal from "sweetalert2";
 import ModalDetalle from "../modalDetalle/ModalDetalle";
 import uploadFile from "../../services/upLoadfile";
+import PanelAdmi from "../panelAdmi/panelAdmi";
 
 const perfil = "https://ceslava.s3-accelerate.amazonaws.com/2016/04/mistery-man-gravatar-wordpress-avatar-persona-misteriosa-510x510.png"
 
@@ -38,6 +39,7 @@ const Profile = () => {
     }, [])
 
     const dataEventos = datoUsuario.quote
+    console.log(dataEventos);
 
 
     const [sectionSeleccionada, setsectionSeleccionada] = useState("Editar perfil")
@@ -48,7 +50,7 @@ const Profile = () => {
         setsectionSeleccionada(evento)
         setSectiosPerfil(evento)
     }
-console.log(datoUsuario.admi, "admi o no");
+    console.log(datoUsuario.admi, "admi o no");
 
     const [citas, setCitas] = useState([])
     useEffect(() => {
@@ -62,16 +64,16 @@ console.log(datoUsuario.admi, "admi o no");
                 });
                 setCitas(citas1);
             });
-    
+
             return () => {
-                
+
                 unsubscribe();
             };
         }
     }, [datoUsuario.admi]);
 
     console.log(citas);
-    
+
 
     const [modal, setModal] = useState(false);
     const [selectedElement, setSelectedElement] = useState({});
@@ -86,10 +88,10 @@ console.log(datoUsuario.admi, "admi o no");
         setModal(false);
     };
 
-    
+
     const navigate = useNavigate()
 
-    const { register, reset, handleSubmit } = useForm()
+    const { register, reset, handleSubmit, formState: { errors }  } = useForm()
 
     const handleEditar = () => {
         setEditando(true);
@@ -201,35 +203,35 @@ console.log(datoUsuario.admi, "admi o no");
 
     return (
         <>
-            <section className="title__profile">
+            <section className="title__profile dark:bg-neutral-700">
                 <div className="div__header">
                 </div>
-                <h2 className="title">Perfil</h2>
-                <hr className="line__profile" />
+                <h2 className="title dark:text-neutral-100">Perfil</h2>
+
             </section>
 
-            <section className="main__profile">
-                <section className="container__profile">
-                    <section className="introduction__profile">
-                        <figure className="fig__profile">
+            <section className="main__profile ">
+                <section className="container__profile dark:bg-neutral-700  dark:rounded-none">
+                    <section className="introduction__profile dark:bg-neutral-700">
+                        <figure className="fig__profile dark:bg-neutral-700">
                             <img
                                 className="photProfile"
                                 src={datoUsuario && datoUsuario.photo ? datoUsuario.photo : perfil}
                                 alt="Foto perfil"
                             />
                         </figure>
-                        <div className="data__profile">
-                            <h4 className="name">{datoUsuario ? datoUsuario.name : datoUsuario.email}</h4>
-                            <span>{datoUsuario ? datoUsuario.email : datoUsuario.number}</span>
+                        <div className="data__profile ">
+                            <h4 className="name dark:text-neutral-100">{datoUsuario ? datoUsuario.name : datoUsuario.email}</h4>
+                            <span className="dark:text-neutral-200">{datoUsuario ? datoUsuario.email : datoUsuario.number}</span>
 
                         </div>
                     </section>
 
                     <section className="items__profile">
-                        <div className={`item ${sectionPerfil === "Editar perfil" ? "active" : ""}`}
+                        <div className={`item ${sectionPerfil === "Editar perfil" ? "active dark:!text-neutral-900" : ""}`}
                             onClick={() => handleSeleccion("Editar perfil")}
                         >
-                            <span>Editar perfil</span>
+                            <span className="dark:text-neutral-100">Editar perfil</span>
                             <img src={arrowRight} alt="" />
                         </div>
 
@@ -238,61 +240,70 @@ console.log(datoUsuario.admi, "admi o no");
                                 className={`item ${sectionPerfil === "Ver cotizaciones" ? "active" : ""}`}
                                 onClick={() => handleSeleccion("Ver cotizaciones")}
                             >
-                                <span>Ver cotizaciones</span>
+                                <span className="dark:text-neutral-100">Ver cotizaciones</span>
                                 <img src={arrowRight} alt="" />
                             </div>
                         )}
-
-                        <div className={`item ${sectionPerfil === "Comentarios" ? "active" : ""}`}
-                            onClick={() => handleSeleccion("Comentarios")}
-                        >
-                            <span>Comentarios</span>
-                            <img src={arrowRight} alt="" />
-                        </div>
+                        {!datoUsuario.admi && (
+                            <div className={`item ${sectionPerfil === "Comentarios" ? "active" : ""}`}
+                                onClick={() => handleSeleccion("Comentarios")}
+                            >
+                                <span className="dark:text-neutral-100">Comentarios</span>
+                                <img src={arrowRight} alt="" />
+                            </div>
+                        )}
 
                         {datoUsuario.admi && (
                             <div
                                 className={`item ${sectionPerfil === "Citas" ? "active" : ""}`}
                                 onClick={() => handleSeleccion("Citas")}
                             >
-                                <span>Citas</span>
+                                <span className="dark:text-neutral-100">Citas</span>
+                                <img src={arrowRight} alt="" />
+                            </div>
+                        )}
+                        {datoUsuario.admi && (
+                            <div
+                                className={`item ${sectionPerfil === "configuracion" ? "active" : ""}`}
+                                onClick={() => handleSeleccion("configuracion")}
+                            >
+                                <span className="dark:text-neutral-100">Configuracion</span>
                                 <img src={arrowRight} alt="" />
                             </div>
                         )}
                         <div className="item item__cerrar"
                             onClick={salir}
                         >
-                            <span>Cerrar sesión</span>
+                            <span className="dark:text-neutral-100">Cerrar sesión</span>
                             <img src={arrowRight} alt="" />
                         </div>
                     </section>
                 </section>
 
-                <section className="container__details">
+                <section className="container__details dark:bg-neutral-700">
 
                     {
                         sectionSeleccionada === "Editar perfil" && (
                             <form className="edit__profile" onSubmit={handleSubmit(onSubmit)}>
-                                <span className="title">Datos personales</span>
+                                <span className="title dark:text-neutral-100">Datos personales</span>
 
                                 <div className="edit__item">
-                                    <label className="span">Nombre</label>
+                                    <label className="span dark:text-neutral-100">Nombre</label>
                                     {editando ? (
                                         <input
                                             type="text"
-                                            placeholder="juan perez"
+                                            placeholder={datoUsuario ? datoUsuario.name : "Pepito Perez"}
                                             {...register("name")}
                                             className="input__profile"
                                             autoFocus
-                                            focus
                                         />
                                     ) : (
-                                        <span className="span">{datoUsuario ? datoUsuario.name : datoUsuario.email}</span>
+                                        <span className="span dark:text-neutral-100">{datoUsuario ? datoUsuario.name : datoUsuario.email}</span>
                                     )}
                                     <img
                                         src={iconEdit}
                                         alt=""
-                                        className="editar__name"
+                                        className="editar__name dark:bg-neutral-100 dark:p-1 dark:rounded-md"
                                         onClick={handleEditar}
                                     />
                                 </div>
@@ -300,23 +311,23 @@ console.log(datoUsuario.admi, "admi o no");
                                 <hr className="line__profile" />
 
                                 <div className="edit__item">
-                                    <label className="span">Contacto</label>
+                                    <label className="span dark:text-neutral-100">Contacto</label>
                                     {
                                         editando ? (
                                             <input
                                                 type="number"
-                                                placeholder=""
+                                                placeholder={datoUsuario ? datoUsuario.number : "3114587843"}
                                                 {...register("number")}
                                                 className="input__profile"
                                             />
                                         ) : (
-                                            <span className="span">{datoUsuario && datoUsuario.number ? datoUsuario.number : datoUsuario.email}</span>
+                                            <span className="span dark:text-neutral-100">{datoUsuario && datoUsuario.number ? datoUsuario.number : datoUsuario.email}</span>
                                         )
                                     }
                                     <img
                                         src={iconEdit}
                                         alt=""
-                                        className="editar__contacto"
+                                        className="editar__contacto dark:bg-neutral-100 dark:p-1 dark:rounded-md"
                                         onClick={handleEditar}
                                     />
                                 </div>
@@ -325,23 +336,23 @@ console.log(datoUsuario.admi, "admi o no");
 
                                 <div className="edit__item">
 
-                                    <label className="span">Edad</label>
+                                    <label className="span dark:text-neutral-100">Edad</label>
                                     {editando ? (
                                         <input
                                             type="number"
-                                            placeholder=""
+                                            placeholder={datoUsuario ? datoUsuario.age : "31"}
                                             {...register("Edad")}
                                             className="input__profile"
 
                                         />
                                     ) : (
-                                        <span className="span">{datoUsuario ? datoUsuario.age : ""}</span>
+                                        <span className="span dark:text-neutral-100">{datoUsuario ? datoUsuario.age : ""}</span>
                                     )
                                     }
                                     <img
                                         src={iconEdit}
                                         alt=""
-                                        className="editar__edad"
+                                        className="editar__edad dark:bg-neutral-100 dark:p-1 dark:rounded-md"
                                         onClick={handleEditar}
                                     />
 
@@ -349,78 +360,78 @@ console.log(datoUsuario.admi, "admi o no");
 
                                 <hr className="line__profile" />
                                 <div className="edit__item">
-                                    <label className="span">Ciudad</label>
+                                    <label className="span dark:text-neutral-100">Ciudad</label>
 
                                     {editando ? (
                                         <input
                                             type="text"
-                                            placeholder=""
+                                            placeholder={datoUsuario ? datoUsuario.city : "Medellín"}
                                             {...register("ciudad")}
                                             className="input__profile"
                                         />
                                     ) : (
-                                        <span className="span">{datoUsuario ? datoUsuario.city : ""}</span>
+                                        <span className="span dark:text-neutral-100">{datoUsuario ? datoUsuario.city : ""}</span>
                                     )
                                     }
                                     <img
                                         src={iconEdit}
                                         alt=""
-                                        className="editar__ciudad"
+                                        className="editar__ciudad dark:bg-neutral-100 dark:p-1 dark:rounded-md"
                                         onClick={handleEditar}
                                     />
                                 </div>
                                 <hr className="line__profile" />
                                 <div className="edit__item">
-                                    <label className="span">Dirección</label>
+                                    <label className="span dark:text-neutral-100">Dirección</label>
                                     {editando ? (
                                         <input
                                             type="text"
-                                            placeholder=""
+                                            placeholder={datoUsuario ? datoUsuario.address : "cra 25 # 13-20"}
                                             {...register("Direccion")}
                                             className="input__profile"
                                         />
                                     ) : (
-                                        <span className="span"> {datoUsuario ? datoUsuario.address : ""}</span>
+                                        <span className="span dark:text-neutral-100"> {datoUsuario ? datoUsuario.address : ""}</span>
                                     )
                                     }
                                     <img
                                         src={iconEdit}
                                         alt=""
-                                        className="editar__direccion"
+                                        className="editar__direccion dark:bg-neutral-100 dark:p-1 dark:rounded-md"
                                         onClick={handleEditar}
                                     />
                                 </div>
                                 <hr className="line__profile" />
 
                                 <div className="edit__item">
-                                    <label className="span">Foto</label>
+                                    <label className="span dark:text-neutral-100">Foto</label>
                                     {editando ? (
                                         <input
                                             type="file"
-                                            placeholder=""
+                                            placeholder={datoUsuario ? datoUsuario.foto : ""}
                                             {...register("foto")}
                                             className="input__profile"
                                         />
                                     ) : (
-                                        <span className="span">Imagen</span>
+                                        <span className="span dark:text-neutral-100">Imagen</span>
                                     )
                                     }
                                     <img
                                         src={iconEdit}
                                         alt=""
-                                        className="editar__direccion"
+                                        className="editar__direccion dark:bg-neutral-100 dark:p-1 dark:rounded-md"
                                         onClick={handleEditar}
                                     />
                                 </div>
                                 <hr className="line__profile" />
-                                <button className="actualizar">Actualizar</button>
+                                <button className="actualizar dark:!text-neutral-900 dark:!bg-crema dark:hover-bg-neutral-500">Actualizar</button>
                             </form>
 
                         )}
 
                     {sectionSeleccionada === "Ver cotizaciones" && (
                         <section className="show__price">
-                            <span className="title">Cotizaciones</span>
+                            <span className="title dark:text-neutral-100">Cotizaciones</span>
                             <div className="titles__price">
                                 <span className="span__title">Evento</span>
                                 <span className="span__title">Fecha</span>
@@ -428,27 +439,27 @@ console.log(datoUsuario.admi, "admi o no");
                                 <span className="span__title">Detalles</span>
                             </div>
                             {dataEventos && dataEventos.length > 0 ? (
-  dataEventos.map((element, index) => (
-    <div className="data__price" key={index}>
-      <span className="span__data">{element.type__Event}</span>
-      <span className="span__data">{element.date}</span>
-      <span className="span__data">$ {element.total}</span>
-      <span className="material-symbols-outlined verMas" onClick={() => openModal(element)}>
-        open_in_new
-      </span>
-      <ModalDetalle isOpen={modal} onRequestClose={closeModal} data={selectedElement} />
-    </div>
-  ))
-) : (
-  <div className="data__price">
-    <span className="span__data">No hay cotizaciones</span>
-  </div>
-)}
+                                dataEventos.map((element, index) => (
+                                    <div className="data__price" key={index}>
+                                        <span className="span__data">{element.type__Event}</span>
+                                        <span className="span__data">{element.date}</span>
+                                        <span className="span__data">$ {element.total}</span>
+                                        <span className="material-symbols-outlined verMas" onClick={() => openModal(element)}>
+                                            open_in_new
+                                        </span>
+                                        <ModalDetalle isOpen={modal} onRequestClose={closeModal} data={selectedElement} />
+                                    </div>
+                                ))
+                            ) : (
+                                <div className="data__price">
+                                    <span className="span__data">No hay cotizaciones</span>
+                                </div>
+                            )}
                         </section>
                     )}
                     {sectionSeleccionada === "Citas" && (
                         <section className="show__price">
-                            <span className="title">Citas</span>
+                            <span className="title dark:text-neutral-100">Citas</span>
                             <div className="titles__price">
                                 <span className="span__title">Nombre</span>
                                 <span className="span__title">Fecha</span>
@@ -472,40 +483,45 @@ console.log(datoUsuario.admi, "admi o no");
 
                         </section>
                     )}
+                    {sectionSeleccionada === "configuracion" && (
+                        <section className="show__price">
+                            <span className="title dark:text-neutral-100">Configuracion</span>
+                            <PanelAdmi />
+
+                        </section>
+                    )}
 
                     {sectionSeleccionada === "Comentarios" && (
                         <section className="show__comments">
-                            <span className="title">Déjanos tus comentarios</span>
-                            <form action="" className="form__comments" onSubmit={handleSubmit(comentarios)}>
+                            <span className="title dark:text-neutral-100">Déjanos tus comentarios</span>
+                            <form action="" className="form__comments dark:!bg-neutral-600" onSubmit={handleSubmit(comentarios)}>
+  <article className="article__form">
+    <label htmlFor="" className="label__evento">Evento:</label>
+    <input type="text" placeholder="Ingresa el tipo de evento" className="input" {...register("evento")} />
+  </article>
 
+  <article className="article__form">
+    <label htmlFor="" className="label__evento">Comentario:</label>
+    <input type="text" placeholder="Escribe tu comentario" className="input" {...register("comentario", { required: true })} />
+    {errors.comentario && <p className="text-red-500">Debes incluir un comentario</p>}
+  </article>
 
-                                <article className="article__form">
-                                    <label htmlFor="" className="label__evento" >Evento:</label>
-                                    <input type="text" placeholder="Ingresa el tipo de evento" className="input" {...register("evento")} />
-                                </article>
+  <article className="article__form calificacion__form">
+    <label htmlFor="calificacion" className="label">
+      <strong>Calificación: </strong>¿Qué tan bueno fue el servicio?
+    </label>
+    <select name="Calificacion" id="calificacion" {...register("calificacion", { required: true })}>
+      <option value="1">Poco</option>
+      <option value="2">Algo</option>
+      <option value="3">Moderado</option>
+      <option value="4">Bastante</option>
+      <option value="5">Mucho</option>
+    </select>
+    {errors.calificacion && <p className="text-red-500">Debes calificar el servicio</p>}
+  </article>
 
-                                <article className="article__form">
-                                    <label htmlFor="" className="label">Comentario:</label>
-                                    <input type="text" placeholder="Escribe tu comentario" className="input" {...register("comentario")} />
-                                </article>
-
-                                <article className="article__form">
-                                    <label htmlFor="calificacion" className="label">
-                                        Calificación:
-                                        ¿que tan bueno fue el servicio?
-                                    </label>
-                                    <select name="Calificacion" id="calificacion" {...register("calificacion")}>
-                                        <option value="1">Poco</option>
-                                        <option value="2">Algo</option>
-                                        <option value="3">Moderado</option>
-                                        <option value="4">Bastante</option>
-                                        <option value="5">Mucho</option>
-                                    </select>
-                                </article>
-
-                                <button className="btn__comments">Enviar comentario</button>
-
-                            </form>
+  <button className="btn__comments">Enviar comentario</button>
+</form>
                         </section>
                     )}
 
