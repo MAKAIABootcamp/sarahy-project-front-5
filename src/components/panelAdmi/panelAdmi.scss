@@ -7,8 +7,6 @@
 // }
 .section__panelAdmi {
     width: 100%;
-    padding-left: 10%;
-    padding-right: 10%;
     display: flex;
     flex-direction: column;
     margin-top: 2rem;
@@ -38,8 +36,10 @@
     .form__selectService {
         font-family: $Letter-body;
         display: flex;
-        gap: 3.6rem;
+        gap: 48px;
         margin-bottom: 20px;
+        width: 100%;
+        cursor: pointer;
 
         .form {
             width: 20%;
@@ -49,18 +49,19 @@
                 border: none;
                 border-radius: 10px;
                 background-color: $color-white;
-                padding-left: 4%;
-                height: 2rem;
+                padding: 10px;
+
+                cursor: pointer;
             }
         }
 
         .btn__create {
-            font-family: $Letter-body;
+            font-family: "Montserrat", sans-serif;
             border: none;
             border-radius: 10px;
             background-color: rgb(154, 224, 154);
             cursor: pointer;
-            padding: 2px;
+            padding: 4px 9px;
         }
     }
 
@@ -306,4 +307,61 @@
 
     }
 
+}
+
+
+@media (max-width: 1200px) {
+    .form__selectService{
+        display: flex;
+        flex-direction: column;
+        gap: 50px;
+        .btn__create{
+            padding: 10px !important;
+            width: 35%;
+        }
+
+
+        
+    }
+}
+@media (max-width: 600px) {
+    .section__panelAdmi{
+        .logo__title{
+            display: flex;
+            justify-content: center;
+            margin: 0;
+            .title{
+
+            }
+        }
+        .form__selectService{
+            gap: 20px;
+            display: flex;
+            flex-direction: row;
+            flex-wrap: wrap;
+            justify-content: center;
+            .span{
+                width: 100%;
+                text-align: center;
+            }
+            .form{
+                display: flex;
+                flex-wrap: wrap;
+                width: 100%;
+                justify-content: center;
+                .select{
+               
+                }
+                .btn__create{
+                    width: 40%;
+                }
+            }
+        }
+        .div__findServices{
+            display: none;
+        }
+        .modal__newService{
+            width: 100%;
+        }
+    }
 }

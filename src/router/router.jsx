@@ -19,6 +19,7 @@ import QuoteGenerated from '../page/quoteGenerated/QuoteGenerated';
 import DownloadQuote from '../page/downloadQuotePDF/DownloadQuotePDF';
 import Chat from '../page/chat/Chat';
 import ModalCalendar from '../components/modalCalendar/modalCalendar';
+import WeddingPage from '../page/wedding/WeddingPage';
 
 const Router = () => {
   let userLogged = null;
@@ -50,7 +51,7 @@ const Router = () => {
         {/* <Route path="/administrador" element={<PanelAdmi />} /> */}
         <Route path="/citas" element={<ModalCalendar />} />
 
-        {/* <Route path="/wedding" element={<WeddingPage />} /> */}
+        <Route path="/detalles" element={<WeddingPage />} />
         { userLogged &&   <Route path="/aliados" element={<Allies />} />}        
         { !isLogged && <Route path="/ingresar" element={<Login />} />}
         <Route path="/quote" element={<Quote />} />

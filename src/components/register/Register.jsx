@@ -33,11 +33,11 @@ const Register = () => {
       <section className="login__container register">
         <div className="loginDown register dark:bg-neutral-800">
           <h1 className="loginDown__title">
-            <b className="dark:text-neutral-300">Registro</b>
+            <b className="dark:text-neutral-100">Registro</b>
           </h1>
 
           <form onSubmit={handleSubmit(onSubmit)} className="loginDown__form">
-            <span className="dark:text-neutral-300">Nombre</span>
+            <span className="loginLabel dark:text-neutral-300">Nombre</span>
             <input
               type="text"
               // id="name"
@@ -106,7 +106,7 @@ const Register = () => {
                 Este campo es obligatorio
               </span>
             )}
-            <button type="submit" className="loginDown__button dark:bg-neutral-300" >
+            <button type="submit" className="loginDown__button dark:!bg-neutral-300 dark:!text-neutral-900" >
               Registrarse
             </button>
           </form>

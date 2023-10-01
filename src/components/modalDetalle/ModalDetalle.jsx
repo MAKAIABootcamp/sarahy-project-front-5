@@ -25,7 +25,7 @@ const ModalDetalle = ({ isOpen, onRequestClose, data }) => {
 
     return (
         <Modal isOpen={isOpen} onRequestClose={onRequestClose} className="modal__detalles">
-            <div className='equis2' onClick={onRequestClose}>X</div>
+            <div className='equis2 dark:text-neutral-100' onClick={onRequestClose}>X</div>
 
 
             <Document>

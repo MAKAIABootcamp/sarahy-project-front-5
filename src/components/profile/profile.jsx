@@ -288,7 +288,7 @@ const Profile = () => {
                                 <span className="title dark:text-neutral-100">Datos personales</span>
 
                                 <div className="edit__item">
-                                    <label className="span dark:text-neutral-100">Nombre</label>
+                                    <label className="span dark:text-neutral-100">Nombre:</label>
                                     {editando ? (
                                         <input
                                             type="text"
@@ -311,7 +311,7 @@ const Profile = () => {
                                 <hr className="line__profile" />
 
                                 <div className="edit__item">
-                                    <label className="span dark:text-neutral-100">Contacto</label>
+                                    <label className="span dark:text-neutral-100">Contacto:</label>
                                     {
                                         editando ? (
                                             <input
@@ -336,7 +336,7 @@ const Profile = () => {
 
                                 <div className="edit__item">
 
-                                    <label className="span dark:text-neutral-100">Edad</label>
+                                    <label className="span dark:text-neutral-100">Edad:</label>
                                     {editando ? (
                                         <input
                                             type="number"
@@ -360,7 +360,7 @@ const Profile = () => {
 
                                 <hr className="line__profile" />
                                 <div className="edit__item">
-                                    <label className="span dark:text-neutral-100">Ciudad</label>
+                                    <label className="span dark:text-neutral-100">Ciudad:</label>
 
                                     {editando ? (
                                         <input
@@ -382,7 +382,7 @@ const Profile = () => {
                                 </div>
                                 <hr className="line__profile" />
                                 <div className="edit__item">
-                                    <label className="span dark:text-neutral-100">Dirección</label>
+                                    <label className="span dark:text-neutral-100">Dirección:</label>
                                     {editando ? (
                                         <input
                                             type="text"
@@ -404,7 +404,7 @@ const Profile = () => {
                                 <hr className="line__profile" />
 
                                 <div className="edit__item">
-                                    <label className="span dark:text-neutral-100">Foto</label>
+                                    <label className="span dark:text-neutral-100">Foto:</label>
                                     {editando ? (
                                         <input
                                             type="file"
