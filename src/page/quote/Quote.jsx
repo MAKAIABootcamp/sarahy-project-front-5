@@ -12,7 +12,7 @@ import { useNavigate } from "react-router-dom";
 import { updateQuoteData } from "../../redux/store/auth/authReducer";
 import { useDispatch, useSelector } from "react-redux";
 import { getService } from "../../services/getServices";
-import { number } from "yup";
+// import { number } from "yup";
 
 const Quote = () => {
   const dataUser = useSelector(state => state.aunthentication.userLogged);
