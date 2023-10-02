@@ -78,10 +78,11 @@
       display: flex;
       justify-content: center;
       align-items: center;
-      .imagen__home--principal{
-        filter: brightness(60%);
-      }
+      // .imagen__home--principal{
+      //   filter: brightness(60%);
+      // }
       
+      filter: brightness(50%);
     }
 
     .main__info {

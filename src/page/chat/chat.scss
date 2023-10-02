@@ -27,7 +27,7 @@
       align-items: center;
       padding: 10px;
       border-bottom: 1px solid #ccc;
-      background-color: #3498db;
+      background-color: #E9DCBE;
       color: #fff;
   
       .chat-avatar {
@@ -78,14 +78,14 @@
 
             .optionClick
             {
-                color: #3498db;
+                color: #E9DCBE;
                 font-weight: bold;
                 cursor: pointer;
             }
         }
   
         &.user {
-          background-color: #3498db;
+          background-color: #E9DCBE;
           color: #fff;
           align-self: flex-end;
           text-align: justify;
@@ -114,7 +114,7 @@
           outline: none;
         }
         button {
-          background-color: #3498db;
+          background-color: #E9DCBE;
           color: #fff;
           border: none;
           padding: 5px 10px;
