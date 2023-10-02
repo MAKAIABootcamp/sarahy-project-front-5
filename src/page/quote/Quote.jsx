@@ -480,7 +480,7 @@ const Quote = () => {
                             </SwiperSlide> 
                         </Swiper>
 
-                        <button type="submit" className="generation" onClick={() => navigate("/Cotizacion")}>Generar Cotización</button>
+                        <button type="submit" className="generation" onClick={() => { navigate("/Cotizacion"); document.getElementById("miHeader").scrollIntoView()}}>Generar Cotización</button>
                         
                     </form>
 

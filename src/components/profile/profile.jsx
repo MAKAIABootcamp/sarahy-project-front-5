@@ -13,9 +13,28 @@ import { useNavigate } from "react-router-dom";
 import Swal from "sweetalert2";
 import ModalDetalle from "../modalDetalle/ModalDetalle";
 import uploadFile from "../../services/upLoadfile";
+import { object } from "yup";
+import ApiCalendar from "react-google-calendar-api";
+import { Link } from 'react-router-dom';
+import { editDate } from "../../services/editDate";
 
 const perfil = "https://ceslava.s3-accelerate.amazonaws.com/2016/04/mistery-man-gravatar-wordpress-avatar-persona-misteriosa-510x510.png"
 
+const CLIENT_ID =
+  "85285569975-pvlm6k6ug2gsmtdisoq601q8vdj80te1.apps.googleusercontent.com";
+const API_KEY = "AIzaSyDv_prhIf6PiTY5BllrgxTK5mhhvs_gIis";
+
+const config = {
+  clientId: CLIENT_ID,
+  apiKey: API_KEY,
+  scope: "https://www.googleapis.com/auth/calendar",
+  discoveryDocs: [
+    "https://www.googleapis.com/discovery/v1/apis/calendar/v3/rest",
+  ],
+};
+
+
+const apiCalendar = new ApiCalendar(config);
 
 const Profile = () => {
 
@@ -24,6 +43,7 @@ const Profile = () => {
 
 
     const [datoUsuario, setdatoUsuario] = useState({})
+    const [stateCita, setStateCita] = useState([])
 
     const dispatch = useDispatch()
 
@@ -55,14 +75,11 @@ console.log(datoUsuario.admi, "admi o no");
         if (datoUsuario.admi) {
             const citasRef = collection(firestore, "dates");
             const unsubscribe = onSnapshot(citasRef, (querySnapshot) => {
-                const citas1 = [];
                 querySnapshot.forEach((doc) => {
                     const citasData = doc.data();
-                    citas1.push(citasData);
+                    setCitas(Object.values(citasData)); 
                 });
-                setCitas(citas1);
             });
-    
             return () => {
                 
                 unsubscribe();
@@ -70,8 +87,6 @@ console.log(datoUsuario.admi, "admi o no");
         }
     }, [datoUsuario.admi]);
 
-    console.log(citas);
-    
 
     const [modal, setModal] = useState(false);
     const [selectedElement, setSelectedElement] = useState({});
@@ -198,6 +213,104 @@ console.log(datoUsuario.admi, "admi o no");
             console.error(error.message);
         }
     }
+
+       //Crear evento
+       const createAnEvent = async (dataInicial, dataFinal, correo) => {
+        try {
+          // Define los detalles del evento
+          const event = {
+            summary: "Reunión con Celebraciones Sarahy",
+            description: "Reunión con asesor comercial",
+            start: {
+              dateTime: dataInicial,
+              timeZone: "America/Los_Angeles",
+            },
+            end: {
+              dateTime: dataFinal,
+              timeZone: "America/Los_Angeles",
+            },
+            attendees: [{ email: "mariapaulinap0531@gmail.com", email: correo}],
+          };
+          const response = await apiCalendar.createEvent(event);
+          console.log(response)
+          
+          console.log("hasta aqui da response")
+        //   const infoDate = response.result.start.dateTime;
+        const link = response.result.htmlLink
+        return link 
+        //   window.open(response.result.htmlLink);
+        
+        } catch (error) {
+          console.log(error);
+        }
+      };
+
+      
+
+const handleItemClick = async (name, element) => {
+    if (name === "sign-in") {
+        const fecha = element.fecha; 
+        const hora = element.hora; 
+        const email = element.email; 
+        const name = element.name; 
+        const contact = element.contact; 
+
+        const formatoFechaInicial = fecha + "T" + hora + ":00";
+        const formatoFechaFinal = fecha + "T" + hora + ":00";
+        const fechaHoraInicial = new Date(formatoFechaInicial);
+        const fechaHoraFinal = new Date(formatoFechaFinal);
+        fechaHoraInicial.setHours(fechaHoraInicial.getHours());
+        fechaHoraFinal.setHours(fechaHoraFinal.getHours());
+        const formatoFechaInicialRestada = fechaHoraInicial.toISOString();
+        const formatoFechaFinalRestada = fechaHoraFinal.toISOString();
+    
+      const response = await apiCalendar.handleAuthClick();
+     
+      try {
+        const urlCalendar = await createAnEvent(
+            formatoFechaInicialRestada,
+            formatoFechaFinalRestada, email
+            )
+
+            // const updatedStateCita = [...stateCita];
+            // const index = citas.indexOf(element);
+            // updatedStateCita[index] = true; 
+            // setStateCita(updatedStateCita);
+            
+            Swal.fire({
+                icon: 'success',
+                title: 'Cita agendada en Google calendar exitosamente',
+                footer: '<a target="_blank" href="'+ urlCalendar +'">Ir a Google Calendar</a>'
+            })
+
+            const editDatesState = async () => {
+                const serviceId = "datesCalendar";
+                const newDate = {
+                    name: name,
+                    contact: contact,
+                    email: email, 
+                    fecha: fecha,
+                    hora: hora,
+                    state: true, 
+                }
+                const service = await editDate(serviceId, name, newDate );
+
+                return service;
+              };
+
+            editDatesState()
+        
+
+      } catch (error) {
+        console.log(error)
+      }
+      
+     
+    } else if (name === "sign-out") {
+      const response = apiCalendar.handleSignoutClick();
+      console.log(response);
+    }
+  };
 
     return (
         <>
@@ -454,6 +567,9 @@ console.log(datoUsuario.admi, "admi o no");
                                 <span className="span__title">Fecha</span>
                                 <span className="span__title">Hora</span>
                                 <span className="span__title">Contacto</span>
+                                <span className="span__title">Estado</span>
+                                
+
                             </div>
                             {citas && citas.length === 0 ? (
                                 <div className="data__price">
@@ -462,10 +578,22 @@ console.log(datoUsuario.admi, "admi o no");
                             ) : (
                                 citas.map((element, index) => (
                                     <div className="data__price" key={index}>
-                                        <span className="span__data">{element.name}</span>
-                                        <span className="span__data">{element.fecha}</span>
-                                        <span className="span__data">$ {element.hora}</span>
-                                        <span className="span__data">$ {element.contact}</span>
+                                        <span className="span__data"> {element.name}</span>
+                                        <span className="span__data"> {element.fecha}</span>
+                                        <span className="span__data"> {element.hora}</span>
+                                        <span className="span__data">{element.contact}</span>
+                                       
+                                       {(element.state === true )? (
+                                        <button className="span__title" >Confirmada <span class="material-symbols-outlined">
+                                        check
+                                        </span></button>
+
+                                       ): (
+                                        <button className="span__title" onClick={() => handleItemClick("sign-in", element)}>Confirmación pendiente<span class="material-symbols-outlined">
+                                        priority_high
+                                        </span></button>
+                                       )}
+                                       
                                     </div>
                                 ))
                             )}

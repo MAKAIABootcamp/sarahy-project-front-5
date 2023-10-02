@@ -1,4 +1,4 @@
-import React from 'react'
+import React, { useEffect, useState } from 'react'
 import logo from "../../assets/image/logo-blanco.png";
 import logoIzquierda from "../../assets/image/gotaIzquierda.png";
 import logoDerecha from "../../assets/image/gotaDerecha.png";
@@ -17,8 +17,38 @@ import testimonio3 from '../../assets/image/testimonio3.png'
 import corazon1 from '../../assets/image/corazon1.png'
 import CollageEvents from '../collageEvents/Collage';
 import { typEvent } from "./hookTypEvent";
+import { Swiper, SwiperSlide } from 'swiper/react';
+import 'swiper/css';
+import 'swiper/css/pagination';
+import 'swiper/css/navigation';
+import 'swiper/swiper-bundle.css';
+import { Autoplay, Pagination, Navigation, FreeMode } from 'swiper/modules';
+import { collection, getDocs } from "firebase/firestore";
+import { firestore } from '../../firebase/firebaseConfig';
 
 const SocialEvents = () => {
+  const [comentarios, setComentarios] = useState([]);
+
+  const traerComentarios = async () => {
+    try {
+        const comentarios = [];
+        const querySnapshot = await getDocs(collection(firestore, "comments"));
+
+        querySnapshot.forEach((doc) => {
+            const comentarioData = doc.data();
+            comentarios.push(comentarioData);
+        });
+
+        setComentarios(comentarios);
+    } catch (error) {
+        console.error("Error al traer comentarios:", error);
+    }
+}
+
+useEffect(() => {
+    traerComentarios();
+}, []);
+
   return (
     <main className="main__home">
   
@@ -27,7 +57,7 @@ const SocialEvents = () => {
       <img src={logoIzquierda} alt="" className="logoIzquierda" />
       <div className="container__intro">
         <h1 className="main__title__home">Eventos Sociales</h1>
-        <p className="main__parrafo">Celebra tus momentos especiales con Celebraciones Sarahy, donde nos encargamos de todos los detalles para crear experiencias inolvidables en eventos sociales. Desde bodas hasta fiestas, nuestro equipo profesional hará que tus sueños se hagan realidad. ¡Haz tu evento social extraordinario con nosotros!
+        <p className="main__parrafo">Celebraciones Sarahy organiza eventos sociales memorables, desde bodas hasta fiestas, cuidando cada detalle. Nuestro equipo profesional hará realidad tus sueños, haciendo tu evento extraordinario.
         </p>
       </div>
       <img src={logoDerecha} alt="" className="logoDerecha" />
@@ -75,7 +105,7 @@ const SocialEvents = () => {
             </figure>
             <span className="span">Esperiencia personalizada</span>
           </article>
-          <p className="paragraph"> Celebraciones Sarahy se destaca al adaptar cada evento social a los gustos y necesidades individuales, asegurando que cada celebración sea única y significativa.
+          <p className="paragraph">Celebraciones Sarahy personaliza cada evento social para que sea único y significativo.
           
           </p>
         </div>
@@ -88,7 +118,7 @@ const SocialEvents = () => {
             <span className="span">Profesionalismo y creatividad</span>
           </article>
           <p className="paragraph">
-          El equipo combina profesionalismo con creatividad excepcional para ofrecer eventos sorprendentes y memorables que destacan entre la multitud.
+          El equipo combina profesionalismo con creatividad excepcional para ofrecer eventos memorables. 
           </p>
         </div>
 
@@ -100,7 +130,7 @@ const SocialEvents = () => {
             <span className="span">Atención a los detalles</span>
           </article>
           <p className="paragraph">
-          Celebraciones Sarahy se enfoca en la atención meticulosa a cada detalle, desde la decoración hasta la logística, garantizando la ejecución sin problemas de cada evento social.
+          Celebraciones Sarahy cuida cada detalle para garantizar eventos sociales sin problemas y perfectamente ejecutados.
           </p>
         </div>
       </div>
@@ -122,6 +152,49 @@ const SocialEvents = () => {
           <img src={prueba} alt="" className="img" />
           </figure> */}
     </section>
+
+    <section className="comentarios dark:bg-neutral-800">
+                    <h2 className='comentarios__title dark:text-neutral-200'>Testimonios</h2>
+                    <hr className='hr__services' />
+                    <div className="container__cards--coments">
+                        <Swiper
+                            slidesPerView={3}
+                            className="swiper-container3 dark:opacity-70"
+                            spaceBetween={30}
+                            autoplay={{
+                                delay: 4000,
+                                disableOnInteraction: false,
+                            }}
+                            pagination={{
+                                clickable: true,
+                            }}
+                            navigation={true}
+                            modules={[Autoplay, Pagination, Navigation]}
+                            loop={true}
+
+                        >
+                            {comentarios.map((comentario, index) => (
+                                <SwiperSlide key={index}>
+                                    <div className="container__comen">
+                                        <figure className="contenedor__imagen--comentario">
+                                            <img src={comentario.photo} alt="imagen de comentario" className="img__comentario" />
+                                        </figure>
+                                        <div className="testimonio">
+                                            <span className='span' >{comentario.comment}</span>
+                                            
+                                            <div className="container__calificacion">
+                                                {Array.from({ length: Math.min(comentario.qualification, 5) }, (_, i) => (
+                                                    <img key={i} src={corazon1} alt="star-calificacion" className="star-calificacion" />
+                                                ))}
+                                            </div>
+                                        </div>
+                                    </div>
+                                </SwiperSlide>
+                            ))}
+                        </Swiper>
+                    </div>
+
+                </section>
 
     {/* <section className="comentarios">
                     <h2 className='comentarios__title'>TESTIMONIOS</h2>

@@ -61,7 +61,6 @@ const Router = () => {
         <Route path="/*" element={<Register />} />
         <Route path="/citas" element={<ModalCalendar />} />
 
-       
       </Routes>
       <Footer />
     </BrowserRouter>

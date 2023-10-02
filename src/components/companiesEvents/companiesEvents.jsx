@@ -39,38 +39,38 @@ const CompaniesEvents = () => {
       </section>
 
       <section className="tipe__events">
-        <span className="title__events">TODOS LOS EVENTOS EMPRESARIALES PARA TI</span>
+        <span className="title__events">Todos los eventos empresariales para ti</span>
         <div className="cards__events">
           <article className="details__event">
             <figure className="fig">
               <img src={empresasFiestas} alt="" className="img" />
             </figure>
-            <span className="span">FIESTAS EMPRESARIALES</span>
+            <span className="span">Fiestas empresariales</span>
           </article>
           <article className="details__event">
             <figure className="fig">
               <img src={empresasLanzamiento} alt="" className="img" />
             </figure>
-            <span className="span">LANZAMIENTO DE MARCA</span>
+            <span className="span">Lanzamiento de marca</span>
           </article>
           <article className="details__event">
             <figure className="fig">
               <img src={empresasCapacitaciones} alt="" className="img" />
             </figure>
-            <span className="span">CAPACITACIONES</span>
+            <span className="span">Capacitaciones</span>
           </article>
           <article className="details__event">
             <figure className="fig">
               <img src={empresasGraduaciones} alt="" className="img" />
             </figure>
-            <span className="span">GRADUACIONES</span>
+            <span className="span">Graduaciones</span>
           </article>
         </div>
       </section>
 
       <section className="data__events">
         <span className="title__data">
-          ¿CÓMO CELEBRACIONES SARAHY HACE ESPECIAL Y UNICO TU EVENTO?
+          ¿Cómo Celebraciones Sarahy hace especial y unico tu evento?
         </span>
         <div className="div__events">
           <div className="div__data">
@@ -81,9 +81,7 @@ const CompaniesEvents = () => {
               <span className="span">Esperiencia personalizada</span>
             </article>
             <p className="paragraph">
-              Nuestros eventos empresariales se distinguen por su enfoque
-              personalizado, diseñados para satisfacer las necesidades y
-              objetivos específicos de cada cliente.
+            Nuestros eventos empresariales son personalizados para cumplir con los objetivos de cada cliente.
             </p>
           </div>
 
@@ -95,10 +93,7 @@ const CompaniesEvents = () => {
               <span className="span">Red de expertos</span>
             </article>
             <p className="paragraph">
-              Celebraciones Sarahy se enorgullece de contar con una red de
-              expertos de élite en diversas áreas empresariales, asegurando que
-              cada evento esté impregnado de conocimiento actualizado y
-              perspectivas innovadoras.
+            Celebraciones Sarahy se apoya en una red de expertos empresariales para eventos innovadores y actualizados.
             </p>
           </div>
 
@@ -110,9 +105,7 @@ const CompaniesEvents = () => {
               <span className="span">Elemento de Celebración</span>
             </article>
             <p className="paragraph">
-              Nuestros eventos incorporan momentos de celebración y networking,
-              creando un ambiente propicio para fortalecer las relaciones
-              profesionales y motivar a los participantes a alcanzar sus metas.
+            Nuestros eventos fomentan la celebración, el networking y la motivación para lograr metas profesionales.
             </p>
           </div>
         </div>
@@ -136,7 +129,7 @@ const CompaniesEvents = () => {
       </section>
 
       <section className="others__companies">
-        <span className="title__companies">EMPRESAS QUE HAN VIVIDO LA EXPERIENCIA SARAHY</span>
+        <span className="title__companies">Empresas que han vivido la experiencia Sarahy</span>
         <div className="img__companies">
         <figure className="fig">
             <img src={empresa1} alt=""  className="img"/>
