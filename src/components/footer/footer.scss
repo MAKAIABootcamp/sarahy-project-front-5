@@ -66,3 +66,89 @@
 
     }
 }
+
+@media (max-width: 550px) {
+    .footer{
+        display: flex;
+        flex-direction: column-reverse;
+        position: relative;
+        padding: 10px;
+        width: 100%;
+        display: none;
+        .followme{
+            width: 100%;
+            margin: 0;
+            h5{
+                display: none;
+            }
+            .fig__logo{
+                width: 100%;
+                align-items: center;
+                display: flex;
+                justify-content: center;
+                .img__logo{
+                    padding: 0;
+                    margin: 0;
+                    margin-bottom: 15px;
+                }
+            }
+            .networks{
+                width: 100%;
+                margin: 0;
+                padding: 0;
+                margin-bottom: 30px;
+            }
+        }
+        .footer__information{
+            display: flex;
+            flex-direction: row;
+            justify-content: space-evenly;
+            margin: 0;
+            flex-wrap: wrap;
+            .titulo__sec--footer{
+                width: 100%;
+                display: none;
+            }
+            .span__footer1{
+                width: 50%;
+                font-size: 15px;
+                text-align: center;
+
+            }
+            .span__footer2{
+                width: 50%;
+                display: none;
+            }
+            .span__footer3{
+                width: 50%;
+                display: none;
+            }
+            .span__footer4{
+                width: 50%;
+                display: none;
+            }
+            .span__footer5{
+                width: 50%;
+                display: none;
+            }
+            .span__footer6{
+                width: 50%;
+                text-align: center;
+                margin-bottom: 10px;
+            }
+            .span__footer7{
+                width: 50%;
+                text-align: center;
+            }
+            .span__footer8{
+                text-align: center;
+                width: 100%;
+                margin-bottom: 15px;
+                border-bottom: 1px solid $color-cream;
+            }
+        }
+
+    }
+   
+}
+

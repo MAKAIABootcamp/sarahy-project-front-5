@@ -109,7 +109,7 @@ const Home = () => {
 
     return (
         <>
-            <main className="main__home dark:bg-neutral-800" >
+            <main className="main__home dark:bg-neutral-700" >
                 <Chat />
                 <section className='slider__home'>
                     <Swiper
@@ -151,9 +151,9 @@ const Home = () => {
                 </section>
 
                 <section className="typeEvent__home">
-                    <div className="btns dark:text-neutral-800" >
+                    <div className="btns dark:text-neutral-700" >
 
-                        <button className={`btn__event ${eventoSeleccionado === "Bodas" ? "selected" : ""}`}
+                        <button className={`btn__event ${eventoSeleccionado == "Bodas" ? "selected" : ""}`}
                             onClick={() => handleEventoClick("Bodas")}>
                             Bodas
                         </button>
@@ -171,7 +171,7 @@ const Home = () => {
                         </button>
                     </div>
                     {eventoSeleccionado && (
-                        <div className="event__info">
+                        <div className="event__info dark:!bg-neutral-700">
                             <div className="event__description dark:text-neutral-300">
                                 <h2 className="description__title">{typEvent[eventoSeleccionado].title}</h2>
                                 <p className="description__parrafo">{typEvent[eventoSeleccionado].description}</p>
@@ -209,7 +209,7 @@ const Home = () => {
 
                         >
 
-                            <SwiperSlide className=' swiperCard dark:bg-neutral-400'>
+                            <SwiperSlide className=' swiperCard dark:bg-neutral-700'>
                                 <div className="card__services dark:bg-neutral-300">
                                     <h3 className='card__services--title'>CATERING</h3>
                                     <img src={servicios1} alt="Imagen del servicio ofrecido" className='img__services' />
@@ -278,7 +278,7 @@ const Home = () => {
                     </div>
                 </section>
 
-                <section className="encantados dark:bg-neutral-500">
+                <section className="encantados dark:bg-neutral-700">
                     <div className="gota">
                         <img src={gota} alt="" className="gota__img" />
                     </div>
@@ -295,7 +295,7 @@ const Home = () => {
 
                 </section>
 
-                <section className='beneficios dark:bg-neutral-800'>
+                <section className='beneficios dark:bg-neutral-700'>
                     <h1 className='beneficios__title dark:text-neutral-200'>Beneficios de realizar tu evento con Celebraciones Sarahy</h1>
                     <div className="container__beneficios">
                         <div className='beneficio__card card__beneficio--1'>
@@ -380,22 +380,22 @@ Somos una empresa especializada en la organización de diversos eventos, como cu
                         <Swiper
                             slidesPerView={3}
                             className="swiper-container3 dark:opacity-70"
-                            spaceBetween={30}
-                            autoplay={{
-                                delay: 4000,
-                                disableOnInteraction: false,
-                            }}
-                            pagination={{
-                                clickable: true,
-                            }}
-                            navigation={true}
-                            modules={[Autoplay, Pagination, Navigation]}
-                            loop={true}
+                            // spaceBetween={10}
+                            // // autoplay={{
+                            // //     delay: 4000,
+                            // //     disableOnInteraction: false,
+                            // // }}
+                            // // pagination={{
+                            // //     clickable: true,
+                            // // }}
+                            // navigation={true}
+                            // modules={[ Pagination]}
+                            // // loop={true}
 
                         >
                             {comentarios.map((comentario, index) => (
-                                <SwiperSlide key={index}>
-                                    <div className="container__comen">
+                                <SwiperSlide key={index} className="slider3 dark:bg-neutral-800">
+                                    <div className="container__comen dark:bg-neutral-700" >
                                         <figure className="contenedor__imagen--comentario">
                                             <img src={comentario.photo} alt="imagen de comentario" className="img__comentario" />
                                         </figure>

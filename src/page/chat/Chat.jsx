@@ -61,13 +61,13 @@ const Chat = () => {
         // Creamos una función que se ejecuta cada vez que se hace scroll en la página
         window.addEventListener('scroll', () => {
             var ratio = getVisibleHeightRatio("miHeader");
-            console.log(ratio * headerHeight);
+            // console.log(ratio * headerHeight);
             const chat = document.querySelector('.chat');
             const chatHeight = chat.clientHeight;
             const tH = ratio * headerHeight + 200;
             const topH = window.innerHeight - chatHeight;
             var hF = getVisibleHeightRatio("miFooter");
-            console.log(ratio * headerHeight);
+            // console.log(ratio * headerHeight);
             const tF = hF * headerHeight + 50;
             if (ratio * headerHeight + chatHeight >= window.innerHeight) {
                 // Cambia a 'position: absolute' cuando la altura del encabezado más la altura de .chat supera la altura de la ventana
@@ -86,12 +86,12 @@ const Chat = () => {
                 }
                 else
                 {
-                    console.log('Sí existeee.')
+                    // console.log('Sí existeee.')
                     
                         // Cambia a 'position: absolute' cuando la altura del encabezado más la altura de .chat supera la altura de la ventana
                         chat.style.position = 'fixed';
                         chat.style.top = `${topH-hF * footerHeight-5}px`;                        // chat.style.bottom = `${hF * footerHeight}px`; // Puedes ajustar esto según tus necesidades
-                        console.log('Bottom de: ', hF * footerHeight)
+                        // console.log('Bottom de: ', hF * footerHeight)
                         chat.style.right = '0';  // Puedes ajustar esto según tus necesidades
                      
                 }

@@ -50,62 +50,63 @@ useEffect(() => {
 }, []);
 
   return (
-    <main className="main__home">
+    <main className="main__home " >
   
     <img src={socialesPrincipal} alt="" className="imgSocial__intro" />
-    <section className="main__info">
+    <section className="main__info dark:bg-neutral-800">
       <img src={logoIzquierda} alt="" className="logoIzquierda" />
       <div className="container__intro">
-        <h1 className="main__title__home">Eventos Sociales</h1>
-        <p className="main__parrafo">Celebraciones Sarahy organiza eventos sociales memorables, desde bodas hasta fiestas, cuidando cada detalle. Nuestro equipo profesional hará realidad tus sueños, haciendo tu evento extraordinario.
+        <h1 className="main__title__home dark:text-neutral-200">Eventos Sociales</h1>
+        <p className="main__parrafo dark:text-neutral-300">Celebraciones Sarahy organiza eventos sociales memorables, desde bodas hasta fiestas, cuidando cada detalle. Nuestro equipo profesional hará realidad tus sueños, haciendo tu evento extraordinario.
+
         </p>
       </div>
       <img src={logoDerecha} alt="" className="logoDerecha" />
     </section>
 
-    <section className="tipe__events">
-      <span className="title__events">TODOS LOS EVENTOS SOCIALES PARA TI</span>
+    <section className="tipe__events dark:bg-neutral-600">
+      <span className="title__events dark:text-neutral-300">TODOS LOS EVENTOS SOCIALES PARA TI</span>
       <div className="cards__events">
         <article className="details__event">
           <figure className="fig">
             <img src={boda} alt="" className="img" />
           </figure>
-          <span className="span">BODAS</span>
+          <span className="span dark:text-neutral-200">BODAS</span>
         </article>
         <article className="details__event">
           <figure className="fig">
             <img src={quinceAños} alt="" className="img" />
           </figure>
-          <span className="span">QUINCE AÑOS</span>
+          <span className="span dark:text-neutral-200">QUINCE AÑOS</span>
         </article>
         <article className="details__event">
           <figure className="fig">
             <img src={primeraComunion} alt="" className="img" />
           </figure>
-          <span className="span">PRIMERA COMUNIÓN</span>
+          <span className="span dark:text-neutral-200">PRIMERA COMUNIÓN</span>
         </article>
         <article className="details__event">
           <figure className="fig">
             <img src={babyShower} alt="" className="img" />
           </figure>
-          <span className="span">BABY SHOWER</span>
+          <span className="span dark:text-neutral-200">BABY SHOWER</span>
         </article>
       </div>
     </section>
 
-    <section className="data__events">
-      <span className="title__data">
+    <section className="data__events dark:bg-neutral-800">
+      <span className="title__data dark:text-neutral-200">
         ¿CÓMO CELEBRACIONES SARAHY HACE ESPECIAL Y UNICO TU EVENTO?
       </span>
       <div className="div__events">
         <div className="div__data">
           <article className="logo__title">
             <figure className="fig">
-              <img src={logoNegro} alt="" className="img" />
+              <img src={logoNegro} alt="" className="img dark:bg-neutral-100" />
             </figure>
-            <span className="span">Esperiencia personalizada</span>
+            <span className="span dark:text-neutral-300">Esperiencia personalizada</span>
           </article>
-          <p className="paragraph">Celebraciones Sarahy personaliza cada evento social para que sea único y significativo.
+          <p className="paragraph dark:text-neutral-300">Celebraciones Sarahy personaliza cada evento social para que sea único y significativo.
           
           </p>
         </div>
@@ -113,11 +114,11 @@ useEffect(() => {
         <div className="div__data">
           <article className="logo__title">
             <figure className="fig">
-              <img src={logoNegro} alt="" className="img" />
+              <img src={logoNegro} alt="" className="img dark:bg-neutral-100" />
             </figure>
-            <span className="span">Profesionalismo y creatividad</span>
+            <span className="span dark:text-neutral-300">Profesionalismo y creatividad</span>
           </article>
-          <p className="paragraph">
+          <p className="paragraph dark:text-neutral-300">
           El equipo combina profesionalismo con creatividad excepcional para ofrecer eventos memorables. 
           </p>
         </div>
@@ -125,24 +126,24 @@ useEffect(() => {
         <div className="div__data">
           <article className="logo__title">
             <figure className="fig">
-              <img src={logoNegro} alt="" className="img" />
+              <img src={logoNegro} alt="" className="img dark:bg-neutral-100" />
             </figure>
-            <span className="span">Atención a los detalles</span>
+            <span className="span dark:text-neutral-300">Atención a los detalles</span>
           </article>
-          <p className="paragraph">
+          <p className="paragraph dark:text-neutral-300">
           Celebraciones Sarahy cuida cada detalle para garantizar eventos sociales sin problemas y perfectamente ejecutados.
           </p>
         </div>
       </div>
     </section>
 
-    <section className="galery">
+    <section className="galery dark:bg-neutral-800">
           <div className="logo__titleGalery">
           <figure className="fig">
-              <img src={logoNegro} alt="" className="img" />
+              <img src={logoNegro} alt="" className="img dark:bg-neutral-100  dark:rounded-lg " />
           </figure>
-          <span className="span">Galería</span>
-          <button className="button__companies">Haz tu cotización </button>
+          <span className="span dark:text-neutral-200">Galería</span>
+          <button className="button__companies dark:bg-neutral-100 dark:text-neutral-800">Haz tu cotización </button>
           </div>
           <div className="event__collagePlus">
               <CollageEvents imagenes={typEvent} className="description__img" />

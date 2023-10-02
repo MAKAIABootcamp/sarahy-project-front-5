@@ -122,11 +122,11 @@ const PanelAdmi = () => {
         <figure className="fig">
           <img className="img" src={logoSarahy} alt="" />
         </figure>
-        <h2 className="title">Administra tus servicios</h2>
+        <h2 className="title dark:text-neutral-200">Administra tus servicios</h2>
       </div>
 
       <div className="form__selectService">
-      <span className="span">Selecciona que tipo de servicio quieres ver</span>
+      <span className="span dark:text-neutral-200">Selecciona que tipo de servicio quieres ver</span>
       <form onChange={handleSelectService} className="form">
               <label>
                 <select
@@ -147,16 +147,16 @@ const PanelAdmi = () => {
           
             {/* <button type="submit">Agregar servicio</button> */}
           </form>
-
-      </div>
-
-      <div className="create__service">
-        {!newService && (
+          {!newService && (
           <button className="btn__create" onClick={newDataServices}>
             Agregar servicio
           </button>
         )}
       </div>
+{/* 
+      <div className="create__service">
+       
+      </div> */}
 
       {filteredServices.length ===0 ? (
         <div className="div__findServices">
@@ -175,8 +175,8 @@ const PanelAdmi = () => {
 
       {filteredServices.map((objeto, index) => (
         <div key={index} className="data__table">
-          <p className="span">{objeto.name}</p>
-          <p className="span">{objeto.description}</p>
+          <p className="span__title-service">{objeto.name}</p>
+          <p className="span__des">{objeto.description}</p>
           <p className="span">${objeto.price}</p>
           <button
             onClick={() => {

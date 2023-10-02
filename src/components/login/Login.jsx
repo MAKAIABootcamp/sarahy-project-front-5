@@ -56,41 +56,41 @@ const Login = () => {
     <main className="login">
       {/* <img src='https://res.cloudinary.com/dibw7aluj/image/upload/v1694414835/Vector_v5muay.png' alt="Back" className="login__back" />  */}
       <section className="login__container">
-        <div className="loginDown">
+        <div className="loginDown dark:bg-neutral-800">
           <h1 className="loginDown__title">
-            <b>Inicio de sesión</b>
+            <b className="dark:text-neutral-300">Inicio de sesión</b>
           </h1>
 
           <form onSubmit={handleSubmit(onSubmit)} className="loginDown__form">
-            <span className="loginLabel">Email</span>
+            <span className="loginLabel dark:text-neutral-300" >Email</span>
             <input
               type="email"
               id="email"
               {...register("email", { required: true })}
               placeholder="ejemplo@tuemail.com"
-              className="loginDown__input"
+              className="loginDown__input dark:border-inherit"
             />
             {errors.email && (
               <span className="loginDown__error">
                 Este campo es obligatorio
               </span>
             )}
-            <span className="loginLabel">Contraseña</span>
+            <span className="loginLabel dark:text-neutral-300">Contraseña</span>
             <input
               type="password"
               id="password"
               {...register("password", { required: true })}
               placeholder="**********"
-              className="loginDown__input"
+              className="loginDown__input dark:text-neutral-300"
             />
             {errors.password && (
-              <span className="loginDown__error">
+              <span className="loginDown__error dark:text-neutral-300">
                 Este campo es obligatorio
               </span>
             )}
             <button
               type="submit"
-              className="loginDown__button"
+              className="loginDown__button dark:!bg-neutral-100 dark:!text-neutral-900"
             >
               Iniciar sesión
             </button>
@@ -102,15 +102,10 @@ const Login = () => {
               alt="Google"
               onClick={intro}
             />
-            <img
-              src="https://upload.wikimedia.org/wikipedia/commons/thumb/5/51/Facebook_f_logo_%282019%29.svg/2048px-Facebook_f_logo_%282019%29.svg.png"
-              alt="Facebook"
-              onClick={introFacebook}
-            />
           </span>
           <a
             href="#"
-            className="loginDown__register"
+            className="loginDown__register dark:text-neutral-300"
             onClick={() => navigate("/registro")}
           >
             ¿No tienes una cuenta? Regístrate aquí
