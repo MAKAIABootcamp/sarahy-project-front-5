@@ -10,11 +10,14 @@ import 'swiper/css/navigation';
 import { Autoplay, Pagination, Navigation } from 'swiper/modules';
 import { useNavigate } from "react-router-dom";
 import { updateQuoteData } from "../../redux/store/auth/authReducer";
-import { useDispatch } from "react-redux";
+import { useDispatch, useSelector } from "react-redux";
 import { getService } from "../../services/getServices";
+import { number } from "yup";
 
 const Quote = () => {
-  const [arregloGlobal, setArregloGlobal] = useState([]);
+  const dataUser = useSelector(state => state.aunthentication.userLogged);
+    console.log('USEEEER', dataUser);
+    const [arregloGlobal, setArregloGlobal] = useState([]);
     const [newTotal, setNewTotal] = useState(0);
     const [ourServices, setOurServices] = useState({});
     const [as, setAs] = useState(0);
@@ -302,38 +305,13 @@ const Quote = () => {
 
     useEffect(() => console.log('INVITADOS: ', attendees), [attendees])
     const dispatch = useDispatch();
-    const onSubmit = (data) => {
-        data.total = totalQuote;
-        data.catering = cateringServices; // Actualiza el campo "catering" con el arreglo de objetos.
-        data.music = musicServices;
-        data.animacion = animationServices;
-        data.decoracion = decorServices;
-        data.fotografia = photograpyServices;
-        data.ilumination = iluminationServices;
-        console.log(data);
-        dispatch(updateQuoteData(data));
-
-        console.log('Valores OBTENIDOS: ', updateQuoteData);
-        const saveQuote = async () => 
-        {
-            await addNewQuote('JlQjLzQgnyNH27JozbhUv28atw22', data);
-        }
-
-        saveQuote();
-
-
-        if (serviceCatering.length > 1) {
-            console.log('AHORA SÍ.')
-            
-        }
-    };
-
+    
     
 // Creamos una función que recibe los estados del watch y los estados de los arrays como parámetros, y devuelve el arreglo global con los datos de las selecciones del usuario
 const crearArregloGlobal = (attendeesValue, cateringValue, photograpyValue, decorValue, iluminationValue, animationValue, musicValue) => {
   // Creamos una variable que almacene el arreglo global vacío
   let arreglo = [];
-
+  let myTotal = 0;
 
   // Usamos un if para verificar si el usuario ha seleccionado algún subservicio de catering
   if (cateringValue.length > 0) {
@@ -349,6 +327,7 @@ const crearArregloGlobal = (attendeesValue, cateringValue, photograpyValue, deco
         // Usamos un if para comparar si el valor del array cateringValue coincide con el nombre del objeto del array serviceCatering
         if (cateringValue[i] === serviceCatering[j].name) {
           // Si coinciden, creamos una variable que almacene un objeto con el nombre y el precio del subservicio seleccionado
+          myTotal += Number(serviceCatering[j].price)*attendeesValue;
           let subobjeto = {
             nameService: serviceCatering[j].name, // Asignamos la propiedad name del objeto del array serviceCatering
             price: serviceCatering[j].price, // Asignamos la propiedad price del objeto del array serviceCatering
@@ -382,6 +361,7 @@ const crearArregloGlobal = (attendeesValue, cateringValue, photograpyValue, deco
         // Usamos un if para comparar si el valor del array photograpyValue coincide con el nombre del objeto del array serviceFoto
         if (photograpyValue[i] === serviceFoto[j].name) {
           // Si coinciden, creamos una variable que almacene un objeto con el nombre y el precio del subservicio seleccionado
+          myTotal += Number(serviceFoto[j].price);
           let subobjeto = {
             nameService: serviceFoto[j].name, // Asignamos la propiedad name del objeto del array serviceFoto
             price: serviceFoto[j].price, // Asignamos la propiedad price del objeto del array serviceFoto
@@ -412,6 +392,8 @@ const crearArregloGlobal = (attendeesValue, cateringValue, photograpyValue, deco
         // Usamos un if para comparar si el valor del array photograpyValue coincide con el nombre del objeto del array serviceFoto
         if (decorValue[i] === serviceDecor[j].name) {
           // Si coinciden, creamos una variable que almacene un objeto con el nombre y el precio del subservicio seleccionado
+          myTotal += Number(serviceDecor[j].price)
+
           let subobjeto = {
             nameService: serviceDecor[j].name, // Asignamos la propiedad name del objeto del array serviceFoto
             price: serviceDecor[j].price, // Asignamos la propiedad price del objeto del array serviceFoto
@@ -445,6 +427,8 @@ const crearArregloGlobal = (attendeesValue, cateringValue, photograpyValue, deco
         console.log(' Y este: ', serviceIlumination[j].name)
         if (iluminationValue[i] === serviceIlumination[j].name) {
           // Si coinciden, creamos una variable que almacene un objeto con el nombre y el precio del subservicio seleccionado
+          myTotal += Number(serviceIlumination[j].price)
+          
           let subobjeto = {
             nameService: serviceIlumination[j].name, // Asignamos la propiedad name del objeto del array serviceFoto
             price: serviceIlumination[j].price, // Asignamos la propiedad price del objeto del array serviceFoto
@@ -477,6 +461,7 @@ const crearArregloGlobal = (attendeesValue, cateringValue, photograpyValue, deco
         // Usamos un if para comparar si el valor del array photograpyValue coincide con el nombre del objeto del array serviceFoto
         if (animationValue[i] === serviceAnimation[j].name) {
           // Si coinciden, creamos una variable que almacene un objeto con el nombre y el precio del subservicio seleccionado
+          myTotal += Number(serviceAnimation[j].price)
           let subobjeto = {
             nameService: serviceAnimation[j].name, // Asignamos la propiedad name del objeto del array serviceFoto
             price: serviceAnimation[j].price, // Asignamos la propiedad price del objeto del array serviceFoto
@@ -508,6 +493,7 @@ const crearArregloGlobal = (attendeesValue, cateringValue, photograpyValue, deco
         // Usamos un if para comparar si el valor del array photograpyValue coincide con el nombre del objeto del array serviceFoto
         if (musicValue[i] === serviceMusic[j].name) {
           // Si coinciden, creamos una variable que almacene un objeto con el nombre y el precio del subservicio seleccionado
+          myTotal += Number(serviceMusic[j].price)
           let subobjeto = {
             nameService: serviceMusic[j].name, // Asignamos la propiedad name del objeto del array serviceFoto
             price: serviceMusic[j].price, // Asignamos la propiedad price del objeto del array serviceFoto
@@ -528,19 +514,21 @@ const crearArregloGlobal = (attendeesValue, cateringValue, photograpyValue, deco
 
 
   // Repetimos este proceso para los demás tipos de servicio, usando los arrays correspondientes
-
+  
   // Devolvemos el arreglo global con los datos de las selecciones del usuario
   console.log('El ARREGLO DEVUELTO ES: ', arreglo);
+  console.log('Para un Total de: ', myTotal);
+  setTotalQuote(myTotal);
   return arreglo;
 }
 
-let arregloQ = [];
+const [arregloQ, setArregloQ] = useState([]);
 // Usamos un useEffect que dependa de los estados del watch para llamar a la función crearArregloGlobal y actualizar el estado del arreglo global con el resultado de la función
 useEffect(() => {
   
-   console.log('AQUÍ SE PUEDE PONER LÓGICA QUE DEPENDA DEL CAMBIO DE ALGÚN INPUT DE SERVICIO');
+  console.log('AQUÍ SE PUEDE PONER LÓGICA QUE DEPENDA DEL CAMBIO DE ALGÚN INPUT DE SERVICIO');
    // Llamamos a la función crearArregloGlobal con los estados del watch y los estados de los arrays como parámetros
-   arregloQ = crearArregloGlobal(attendees, catering, photograpy, decor, ilumination, animation, music);
+   setArregloQ(crearArregloGlobal(attendees, catering, photograpy, decor, ilumination, animation, music));
    // Usamos el seteador del estado arregloGlobal para actualizarlo con el valor de la variable arreglo
 
   }
@@ -556,7 +544,35 @@ useEffect(() => {
     {
       console.log('MI ARREGO GLOBAL: ', arregloGlobal);
     }, [arregloGlobal])
+    
 
+    const onSubmit = (data) => {
+      
+        data.total = totalQuote;
+        data.selectedServices = arregloQ;
+        console.log(data);
+        dispatch(updateQuoteData(data));
+  
+        console.log('Valores OBTENIDOS: ', updateQuoteData);
+  
+        if (dataUser) 
+        {
+          const saveQuote = async () => 
+          {
+              await addNewQuote(dataUser.id, data);
+          }
+  
+          saveQuote(); 
+        }
+  
+  
+        
+  
+        if (serviceCatering.length > 1) {
+            console.log('AHORA SÍ.')
+            
+        }
+    };
 
     return (
         <section className="sectionQuote">

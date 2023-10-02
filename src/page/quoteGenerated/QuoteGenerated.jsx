@@ -13,6 +13,14 @@ import { useSelector } from 'react-redux';
 
 const QuoteGenerated = () => {
 
+  const currentDate = new Date();
+  const year = currentDate.getFullYear();
+  const month = currentDate.getMonth() + 1; // Los meses empiezan desde 0
+  const day = currentDate.getDate();
+
+  const formattedDate = `${year}-${month < 10 ? '0' : ''}${month}-${day < 10 ? '0' : ''}${day}`;
+
+
   const quoteInfo = useSelector(state => state.aunthentication.quoteData);
 
   console.log(quoteInfo);
@@ -47,46 +55,78 @@ const QuoteGenerated = () => {
   }, [])
 
   let total = 0;
-  const data = [
-    { servicio: 'Catering', description: 'Llena tu mesa de la mejor comida.', quantity: 1, price: 25000 },
-    { servicio: 'Photography', description: 'Llena tu fiesta con los mejores recuerdos.', quantity: 5, price: 50000 },
-    { servicio: 'Music', description: 'Llena tu fiesta con la mejor Músic.', quantity: 1, price: 125000 },
-    { servicio: 'Decor', description: 'Llena tu Fiesta de la mejor decoración.', quantity: 1, price: 200000 },
-  ];
+  const data = quoteInfo.selectedServices;
 
   const generatePDF = () => {
     const doc = new jsPDF();
-
-
-    doc.text(55, 20, 'Tu cotización con Celebraciones Sarahy ');
-    const columns = ['Servicio', 'Descripción', 'Cantidad', 'Valor'];
-
+  
+    doc.text(55, 20, "Tu cotización con Celebraciones Sarahy ");
+    const columns = ["Servicio", "Detalle", "Descripción", "Valor"];
+  
     // Crear un array con los datos de cada fila
-    const bodyData = data.map((item) => {
-      // Calcular el valor total para este servicio
-      const itemTotal = item.quantity * item.price;
-
-      return [item.servicio, item.description, item.quantity, `$${itemTotal.toFixed(2)}`];
+    const bodyData = [];
+  
+    data.forEach((item) => {
+      // Agregar una fila para el servicio principal
+      bodyData.push([
+        item.name,
+        item.services[0].nameService,
+        item.services[0].description,
+        `$${item.services[0].price}`,
+      ]);
+  
+      // Agregar filas adicionales para los subservicios si los hay
+      for (let i = 1; i < item.services.length; i++) {
+        bodyData.push(["", item.services[i].nameService, item.services[i].description, `$${item.services[i].price}`]);
+      }
     });
-
+  
     // Agregar una fila final con el total general
-    bodyData.push(['', '', '', '']);
-    bodyData.push(['Total', '', '', `$${total.toFixed(2)}`]);
-
+    bodyData.push(["", "", "Total", `$${quoteInfo.total}`]);
+  
     doc.autoTable({
       startY: 30,
       head: [columns],
       body: bodyData,
     });
-
-
-
-    doc.text(55, 80, 'Nombre del Usuario. ');
-
-
-
-    doc.save('cotizacion.pdf');
+  
+  
+    doc.save("cotizacion.pdf");
   };
+
+  const serviceRows = [];
+
+  data.forEach((item, index) => {
+    // Agregar una fila para el servicio principal
+    const serviceRow = (
+      <tr key={index}>
+        <td rowSpan={item.services.length}>{item.name}</td>
+        <td>{item.services[0].nameService}</td>
+        <td>{item.services[0].description}</td>
+        <td>{item.services[0].price}</td>
+      </tr>
+    );
+
+    serviceRows.push(serviceRow);
+
+    // Agregar filas adicionales para los subservicios si los hay
+    for (let i = 1; i < item.services.length; i++) {
+      const subServiceRow = (
+        <tr key={`${index}-${i}`}>
+          <td>{item.services[i].nameService}</td>
+          <td>{item.services[i].description}</td>
+          <td className="price">
+            <span className="money">$</span>
+            {Number(item.services[i].price).toLocaleString('en-US', { minimumFractionDigits: 2, maximumFractionDigits: 2 })} {/* Formatea el precio con comas para unidades de mil */}
+          </td>
+        </tr>
+      );
+
+      serviceRows.push(subServiceRow);
+    }
+  });
+
+
 
   return (
     <section className="sectionQuote">
@@ -124,7 +164,7 @@ const QuoteGenerated = () => {
 
                   <span className='numberQuoteRight'>
                     <p>23F0165</p>
-                    <p>22/09/2023</p>
+                    <p>{formattedDate}</p>
                   </span>
                 </div>
               </div>
@@ -132,16 +172,16 @@ const QuoteGenerated = () => {
               <div className='infoUserQuote'>
                 <span className='infoUserQuote__name'>
                   <b>Nombre: </b>
-                  <b>Dirección</b>
-                  <b>C.P. y Ciudad</b>
+                  <b>Dirección: </b>
+                  <b>Contacto: </b>
                   <b>NIF: </b>
                 </span>
 
                 <span className='infoUserQuote__data'>
-                  <p>Paula Muñoz</p>
+                  <p>{quoteInfo.name}</p>
                   <p>C.C. Medellín local 01</p>
-                  <p> 3102912026-</p>
-                  <p>22 de septiembre</p>
+                  <p>{quoteInfo.contacto}</p>
+                  <p>***</p>
                 </span>
               </div>
 
@@ -151,30 +191,17 @@ const QuoteGenerated = () => {
               <thead>
                 <tr>
                   <th>Servicio</th>
+                  <th>Detalle</th>
                   <th>Descripción</th>
-                  <th>Cantidad</th>
                   <th>Valor</th>
                 </tr>
               </thead>
               <tbody>
-                {data.map((item, index) => {
-                  // Calcula el valor total para este servicio
-                  const itemTotal = item.quantity * item.price;
-                  // Agrega el valor total al total general
-                  total += itemTotal;
 
-                  return (
-                    <tr key={index}>
-                      <td>{item.servicio}</td>
-                      <td>{item.description}</td>
-                      <td>{item.quantity}</td>
-                      <td>${itemTotal.toFixed(2)}</td>
-                    </tr>
-                  );
-                })}
+                {serviceRows}
                 <tr className='totalmyQuote'>
                   <td className='totalQuote' colSpan="3">Total</td>
-                  <td className='totalValueQuote'>${total.toFixed(2)}</td>
+                  <td className='totalValueQuote'>${Number(quoteInfo.total).toLocaleString('en-US', { minimumFractionDigits: 2, maximumFractionDigits: 2 })}</td>
                 </tr>
               </tbody>
             </table>
@@ -186,12 +213,14 @@ const QuoteGenerated = () => {
 
           </article>
           <div className='container__btns'>
-
-          <span className='downloadQuote' onClick={() => generatePDF()}>Descargar cotización </span>
-          <div className='container__btns__calendar'>
-            <button className='btn__scheduleDate' onClick={openModal}>Agendar cita</button>
-            <CalendarGoogle isOpen={modal} onRequestCloset={closeModal} className="modal" />
-          </div>
+          <span className='containerUpDown'>
+            
+          </span>
+            <span className='downloadQuote' onClick={() => generatePDF()}>Descargar cotización </span>
+            <div className='container__btns__calendar'>
+              <button className='btn__scheduleDate' onClick={openModal}>Agendar cita</button>
+              <CalendarGoogle isOpen={modal} onRequestCloset={closeModal} className="modal" />
+            </div>
           </div>
 
         </section>
