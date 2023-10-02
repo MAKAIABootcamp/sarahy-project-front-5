@@ -6,124 +6,246 @@
     flex-direction: column;
     max-width: 60%;
     margin: 7% auto;
-    height: 48rem;
+    height: auto;
     box-sizing: border-box;
     border-radius: 15px;
     border: 3px solid;
     background-color: #ccc9c9;
     transition: 1s ease-in-out;
     justify-content: center;
-    align-items: center;
-    margin-top: 9rem;
 
     .equis2 {
         position: absolute;
-        top: 10rem;
-        right: 10rem;
+        top: 1rem;
+        right: 6rem;
         font-size: 25px;
         font-family: cursive;
         font-weight: bold;
         cursor: pointer;
+        color: #e6dbe4;
     }
 
     .sectionQuote {
         background-color: #f3f3f3;
         flex-direction: column;
-        height: 46rem;
+        height: auto;
         width: 100%;
 
         .infoQuote {
             display: flex;
             flex-direction: column;
-            gap: 30px;
-            background: bisque;
-            height: 20rem;
+            gap: 50px;
+            height: auto;
+            justify-content: space-evenly;
+
+            .introductionQuoteDate {
+                display: flex;
+                flex-direction: column;
+                align-items: flex-start;
+
+                .titleQuoteGenerate {
+                    font-family: Montserrat;
+                    font-size: 25px;
+                    font-weight: bold;
+                }
+            }
+        }
+
+        .containerQuote {
+            display: flex;
+            text-align: center;
+            height: 100%;
+            width: 100%;
+            max-width: 1500px;
+            min-width: 300px;
+            justify-content: space-around;
+            flex-direction: column-reverse !important;
+            padding: 0px 10px;
+            justify-content: flex-end;
+            padding: 30px;
+            .textQuote {
+                text-align: start;
+                padding: 2rem;
+                width: 90%;
+                height: auto;
+                margin: 25px 0;
+                text-align: center;
+            }
+
+            .dateUserQuote {
+                display: flex;
+                flex-wrap: wrap;
+                justify-content: space-between;
+
+                .infoUserQuote {
+                    display: flex;
+                    flex-wrap: wrap;
+                    width: 60%;
+
+                    .infoUserQuote__name {
+                        width: 30%;
+                        display: flex;
+                        flex-direction: column;
+                        gap: 4px;
+                        font-weight: bold;
+                        border: 1px solid;
+                    }
+
+                    .infoUserQuote__data1 {
+                        border: 1px solid;
+                        width: 70%;
+                        display: flex;
+                        flex-direction: column;
+                        gap: 4px;
+                        text-align: start;
+                        padding: 0 10px;
+                    }
+
+                }
+                .dateUserQuote{
+
+                    .table{
+                        margin: 20px 0;
+                        background-color: aqua;
+                    }
+                }
+
+                .dateQuoteGenerate {
+                    display: flex;
+                    width: 35%;
+                    flex-wrap: wrap;
+
+                    .billTitleQuote {
+                        background-color: gray;
+                        width: 100%;
+                        text-align: center;
+                        padding-top: 1rem;
+                        padding-bottom: 1rem;
+                        border: 1px solid;
+                        font-size: 21px;
+                    }
+
+                    .numberQuoteRight {
+                        width: 50%;
+                        display: flex;
+                        flex-direction: column;
+                        justify-content: space-evenly;
+                        border: 1px solid;
+                    }
+
+                    .numberQuoteLeft {
+                        border: 1px solid;
+                        width: 50%;
+                        display: flex;
+                        flex-direction: column;
+                        justify-content: space-evenly;
+                        font-weight: bold;
+                    }
+                }
+
+               
+            }
+        }
+
+        .totalmyQuote {
+            background-color: #e6dbe4;
+            font-weight: bold;
+            color: #000;
+        }
+
+        .downloadQuote {
+            position: absolute;
+            background: #efeaea;
+            color: black;
+            font-weight: bold;
+            padding: 10px;
+            border-radius: 17px;
+            bottom: 20%;
+            right: 40%;
+            cursor: pointer;
+        }
+
+        .downloadQuote:hover {
+            background-color: rgb(199, 197, 165);
+            color: rgb(30, 28, 28);
+            cursor: pointer;
         }
     }
 
-    .containerQuote {
-        display: flex;
-        flex-direction: column-reverse;
-        text-align: center;
-        background: aqua;
-        height: 100%;
-        width: 100%;
-        max-width: 1500px;
-        min-width: 300px;
-        justify-content: space-around;
-    }
+}
 
-    .textQuote {
-        text-align: start;
-        padding: 2rem;
-        /* Cambiado de 8vw a 2rem */
+@media (max-width: 600px) {
+    .modal__detalles {
         width: 90%;
-        height: auto;
-        /* Cambiado de 90% a auto */
+        height: 35rem;
+        max-width: 100%;
+
+        .equis2 {
+            color: rgb(247, 244, 244);
+            position: relative;
+            top: 8px;
+        }
+
+        .titleQuoteGenerate {
+            margin-bottom: 30px;
+        }
+
+        .sectionQuote {
+            .infoQuote {
+                height: auto;
+            }
+
+            .containerQuote {
+                padding: 0 10px;
+
+                .dateUserQuote {
+                    display: flex;
+                    flex-direction: column;
+                    gap: 20px;
+                    align-items: center;
+
+                    .dateQuoteGenerate {
+                        width: 100%;
+                    }
+
+                    .infoUserQuote {
+                        width: 100%;
+
+                        .infoUserQuote__data1 {
+                            width: 50%;
+                        }
+
+                        .infoUserQuote__name {
+                            width: 50%;
+                        }
+                    }
+                }
+
+                .table {
+
+                    margin-bottom: 40px;
+
+                    .totalmyQuote {
+                        background-color: none;
+                        margin-top: 80px;
+                    }
+                }
+
+                .textQuote {
+                    width: 80%;
+                }
+
+            }
+
+            .downloadQuote {
+                position: absolute;
+                background: #c8c8c8;
+                color: black;
+                font-weight: bold;
+                padding: 10px;
+                right: 25%;
+            }
+        }
     }
 
-    .titleQuoteGenerate {
-        font-family: Montserrat;
-        font-size: 25px;
-    }
-
-    .billTitleQuote {
-        background-color: gray;
-        text-align: center;
-        padding-top: 1rem;
-        /* Cambiado de 5% a 1rem */
-        padding-bottom: 1rem;
-        /* Cambiado de 5% a 1rem */
-        border: 1px solid;
-        font-size: 24px;
-    }
-
-    .numberQuoteLeft,
-    .numberQuoteRight {
-        flex-direction: column;
-        width: 50%;
-        height: 8vw;
-        border: 1px solid;
-        gap: 1vw;
-        font-size: 16px;
-        padding: 1rem;
-        /* Agregado padding */
-    }
-
-    .numberQuoteRight {
-        background-color: rgb(235, 235, 235);
-        padding-left: 0.5vw;
-        padding-top: 1vw;
-    }
-
-    .infoUserQuote__name,
-    .infoUserQuote__data1 {
-        flex-direction: column;
-        width: 25%;
-        border: 1px solid;
-        gap: 0.75vw;
-        font-size: 16px;
-        padding: 1.5vw;
-    }
-
-    .infoUserQuote__name {
-        background-color: rgb(217, 211, 211);
-    }
-
-    .infoUserQuote__data1 {
-        background-color: rgb(240, 234, 234);
-        width: 75%;
-    }
-
-    .table {
-        background-color: #f0f0f0;
-        width: 100%;
-        font-size: 16px;
-    }
-
-    .totalmyQuote {
-        background-color: #e6dbe4;
-        font-weight: bold;
-        color: #000;
-    }
 }

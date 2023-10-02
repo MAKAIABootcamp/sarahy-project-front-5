@@ -2,8 +2,6 @@
 import React, { useEffect, useState } from 'react'
 import './home.scss';
 
-
-
 // swiper
 import { Swiper, SwiperSlide } from 'swiper/react';
 import 'swiper/css';
@@ -111,7 +109,7 @@ const Home = () => {
 
     return (
         <>
-            <main className="main__home dark:bg-neutral-800" >
+            <main className="main__home dark:bg-neutral-700" >
                 <Chat />
                 <section className='slider__home'>
                     <Swiper
@@ -153,9 +151,9 @@ const Home = () => {
                 </section>
 
                 <section className="typeEvent__home">
-                    <div className="btns dark:text-neutral-800" >
+                    <div className="btns dark:text-neutral-700" >
 
-                        <button className={`btn__event ${eventoSeleccionado === "Bodas" ? "selected" : ""}`}
+                        <button className={`btn__event ${eventoSeleccionado == "Bodas" ? "selected" : ""}`}
                             onClick={() => handleEventoClick("Bodas")}>
                             Bodas
                         </button>
@@ -173,7 +171,7 @@ const Home = () => {
                         </button>
                     </div>
                     {eventoSeleccionado && (
-                        <div className="event__info">
+                        <div className="event__info dark:!bg-neutral-700">
                             <div className="event__description dark:text-neutral-300">
                                 <h2 className="description__title">{typEvent[eventoSeleccionado].title}</h2>
                                 <p className="description__parrafo">{typEvent[eventoSeleccionado].description}</p>
@@ -189,21 +187,29 @@ const Home = () => {
                 <section className="services dark:bg-neutral-700">
                     <h2 className='services__title dark:text-neutral-300' >Conoce nuestros servicios</h2>
 
+
                     <div className='container__cards--services'>
 
 
                         <Swiper
                             className="my-swiper-2 dark:bg-neutral-100"
+                            slidesPerView={4}
                             spaceBetween={30}
-                            slidesPerView={3}
-                            navigation
-                            pagination={{ clickable: true }}
-                            scrollbar={{ draggable: true }}
-                            freeMode={true}
-                            loop={true}
+                            autoplay={{
+                                delay: 1000,
+                                disableOnInteraction: false,
+                            }}
+                            pagination={{
+                                clickable: true,
+                            }}
+                            navigation={true}
+                            modules={[Autoplay, Pagination, Navigation]}
+                            // loop={true}
+                           
+
                         >
 
-                            <SwiperSlide className=' swiperCard dark:bg-neutral-400'>
+                            <SwiperSlide className=' swiperCard dark:bg-neutral-700'>
                                 <div className="card__services dark:bg-neutral-300">
                                     <h3 className='card__services--title'>CATERING</h3>
                                     <img src={servicios1} alt="Imagen del servicio ofrecido" className='img__services' />
@@ -272,7 +278,7 @@ const Home = () => {
                     </div>
                 </section>
 
-                <section className="encantados dark:bg-neutral-500">
+                <section className="encantados dark:bg-neutral-700">
                     <div className="gota">
                         <img src={gota} alt="" className="gota__img" />
                     </div>
@@ -289,7 +295,7 @@ const Home = () => {
 
                 </section>
 
-                <section className='beneficios dark:bg-neutral-800'>
+                <section className='beneficios dark:bg-neutral-700'>
                     <h1 className='beneficios__title dark:text-neutral-200'>Beneficios de realizar tu evento con Celebraciones Sarahy</h1>
                     <div className="container__beneficios">
                         <div className='beneficio__card card__beneficio--1'>
@@ -298,7 +304,7 @@ const Home = () => {
                                 Descuentos
                             </span>
                             <p className="card__beneficios--p dark:text-neutral-400">
-                                Accede a descuentos exclusivos en servicios y productos relacionados con eventos a través de nuestras asociaciones con proveedores.
+                            Obtén descuentos exclusivos en servicios y productos para eventos con nuestros proveedores asociados. 
                             </p>
                         </div>
 
@@ -308,7 +314,7 @@ const Home = () => {
                                 Ahorro de Tiempo
                             </span>
                             <p className="card__beneficios--p dark:text-neutral-400">
-                                Ahorramos tiempo valioso al manejar todas las tareas de organización, desde la logística hasta la coordinación, para que puedas concentrarte en disfrutar de tu día.
+                            Te liberamos de preocupaciones organizativas para que disfrutes al máximo tu día.
                             </p>
                         </div>
 
@@ -318,7 +324,7 @@ const Home = () => {
                                 Innovación Tecnológica
                             </span>
                             <p className="card__beneficios--p dark:text-neutral-400">
-                                tilizamos las últimas tecnologías para brindarte soluciones modernas y eficientes en la gestión de eventos y seguimiento del proceso
+                            Empleamos tecnología de vanguardia para eficiencia en la gestión de eventos y seguimiento del proceso.
                             </p>
                         </div>
 
@@ -328,7 +334,7 @@ const Home = () => {
                 <section className="ubicacion dark:bg-neutral-800 dark:opacity-70">
                     <div className="ubicacion__transparencia">
                         <span className="ubicacion__title--transparencia">
-                            LOCACIONES
+                            Locaciones
                         </span>
                     </div>
 
@@ -339,7 +345,7 @@ const Home = () => {
                                     <img src={loguito} alt="" className="loguito__ubicacion" />
                                     <h3 className="nombre__ubicacion">{element.nombre}</h3>
                                 </div>
-                                <button className="verDetalles__ubicacion" onClick={() => openModal(element)}>VER DETALLES</button>
+                                <button className="verDetalles__ubicacion" onClick={() => openModal(element)}>Ver detalles</button>
                                 <CustomModal isOpen={modal} onRequestClose={closeModal} data={selectedElement} />
                             </div>
                         ))}
@@ -362,39 +368,39 @@ const Home = () => {
                         <img src={circulo} alt="" className="circulo__somos--img" />
                     </div>
                     <div className="descripcion dark:text-neutral-300">
-                        Somos una empresa creada para prestación de servicios a nivel regional especializada en la organización de todo tipo de eventos .
-                        Fiestas de cumpleaños, Bodas, Reuniones y eventos corporativos, Recepciones, Conferencias, Eventos deportivos; Ofrecemos planificación de eventos, diseño y producción. Sea lo que sea que necesite, disponemos de lo necesario para hacer que su evento sea inolvidable
+                        
+Somos una empresa especializada en la organización de diversos eventos, como cumpleaños, bodas, eventos corporativos, conferencias y más. Ofrecemos servicios completos de planificación, diseño y producción para hacer que su evento sea inolvidable.
                     </div>
                 </section>
 
                 <section className="comentarios dark:bg-neutral-800">
-                    <h2 className='comentarios__title dark:text-neutral-200'>TESTIMONIOS</h2>
+                    <h2 className='comentarios__title dark:text-neutral-200'>Testimonios</h2>
                     <hr className='hr__services' />
                     <div className="container__cards--coments">
                         <Swiper
-                            slidesPerView={2}
+                            slidesPerView={3}
                             className="swiper-container3 dark:opacity-70"
-                            spaceBetween={30}
-                            autoplay={{
-                                delay: 4000,
-                                disableOnInteraction: false,
-                            }}
-                            pagination={{
-                                clickable: true,
-                            }}
-                            navigation={true}
-                            modules={[Autoplay, Pagination, Navigation]}
-                            loop={true}
+                            // spaceBetween={10}
+                            // // autoplay={{
+                            // //     delay: 4000,
+                            // //     disableOnInteraction: false,
+                            // // }}
+                            // // pagination={{
+                            // //     clickable: true,
+                            // // }}
+                            // navigation={true}
+                            // modules={[ Pagination]}
+                            // // loop={true}
 
                         >
                             {comentarios.map((comentario, index) => (
-                                <SwiperSlide key={index}>
-                                    <div className="container__comen">
+                                <SwiperSlide key={index} className="slider3 dark:bg-neutral-800">
+                                    <div className="container__comen dark:bg-neutral-700" >
                                         <figure className="contenedor__imagen--comentario">
                                             <img src={comentario.photo} alt="imagen de comentario" className="img__comentario" />
                                         </figure>
                                         <div className="testimonio">
-                                            <span>{comentario.comment}</span>
+                                            <span className='span' >{comentario.comment}</span>
                                             
                                             <div className="container__calificacion">
                                                 {Array.from({ length: Math.min(comentario.qualification, 5) }, (_, i) => (

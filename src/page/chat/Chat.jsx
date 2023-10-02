@@ -48,13 +48,13 @@ const Chat = () => {
 
         window.addEventListener('scroll', () => {
             var ratio = getVisibleHeightRatio("miHeader");
-            console.log(ratio * headerHeight);
+            // console.log(ratio * headerHeight);
             const chat = document.querySelector('.chat');
             const chatHeight = chat.clientHeight;
             const tH = ratio * headerHeight + 200;
             const topH = window.innerHeight - chatHeight;
             var hF = getVisibleHeightRatio("miFooter");
-            console.log(ratio * headerHeight);
+            // console.log(ratio * headerHeight);
             const tF = hF * headerHeight + 50;
             if (ratio * headerHeight + chatHeight >= window.innerHeight) {
                 chat.style.position = 'absolute';
@@ -71,7 +71,7 @@ const Chat = () => {
                 }
                 else
                 {
-                    console.log('Sí existeee.')
+                    // console.log('Sí existeee.')
                     
                         chat.style.position = 'fixed';
                         chat.style.top = `${topH-hF * footerHeight-5}px`;                      

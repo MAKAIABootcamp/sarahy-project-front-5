@@ -575,14 +575,14 @@ useEffect(() => {
     };
 
     return (
-        <section className="sectionQuote">
+        <section className="sectionQuote dark:bg-neutral-700">
 
             <img className='backGroundHeader' src="https://i.ibb.co/fXLf97G/image-127.png" alt="Fondo de Wedding" />
 
-            <main className="containerQuote">
-                <span className="titleQuote">Cotización</span>
+            <main className="containerQuote dark:bg-neutral-800">
+                <span className="titleQuote dark:text-neutral-100">Cotización</span>
                 <span className="lineTitle"></span>
-                <p className="textQuote">
+                <p className="textQuote dark:text-neutral-300">
                     ¡Gracias por considerarnos para tu próximo evento! Por favor,
                     completa el siguiente formulario para obtener una cotización
                     personalizada que se adapte a tus necesidades y haga que tu ocasión
@@ -591,7 +591,7 @@ useEffect(() => {
 
                 <section className="formQuote">
 
-                    <form onSubmit={handleSubmit(onSubmit)} className="loginDown__form">
+                    <form onSubmit={handleSubmit(onSubmit)} className="loginDown__form dark:bg-neutral-400" >
 
                         <input type="text" id="empresa" {...register("name", { required: true })} placeholder="Nombre/Empresa" className="loginDown__input" />
                         {errors.name && <span className="loginDown__error">Este campo es obligatorio</span>}

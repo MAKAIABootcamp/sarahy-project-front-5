@@ -78,6 +78,7 @@
       display: flex;
       justify-content: center;
       align-items: center;
+      filter: brightness(50%);
     }
 
     .main__info {
@@ -205,11 +206,11 @@
     justify-content: space-between;
 
     .btn__event {
-      width: 15%;
+      // width: 15%;
       height: 50px;
       border-radius: 12px;
       border: 2px solid $color-black;
-      padding: 8px;
+      padding: 12px;
       font-size: 18px;
       font-weight: 400;
       background-color: white;
@@ -246,13 +247,13 @@
 
       .description__title {
         width: 100%;
-        font-size: 25px;
+        font-size: 24px;
         font-family: $Letter-subtitles;
         text-align: center;
       }
 
       .description__parrafo {
-        font-size: 16px;
+        font-size: 18px;
         font-family: $Letter-body;
         text-align: start;
         text-align: center;
@@ -309,13 +310,14 @@
   .container__cards--services {
     display: flex;
     gap: 1rem;
-    width: 80%;
+    width: 100%;
     justify-content: space-between;
     padding-bottom: 40px;
 
     .swiper-horizontal {
       touch-action: pan-y;
       height: auto;
+      width: 80%;  
 
       .swiper-scrollbar {
         display: none;
@@ -344,11 +346,13 @@
       display: flex;
       flex-direction: column;
       padding: 0.8rem;
-      gap: 20px;
+      // gap: 20px;
       border-radius: 5px;
       align-items: center;
       // margin-top: 35px;
       // margin-bottom: 30px;
+      width: 100%;
+      height: auto;
 
       .swiperCard {
         text-align: center;
@@ -357,19 +361,20 @@
       .card__services--title {
         background: #e9dcbe;
         transform: rotate(90deg);
-        position: absolute;
-        margin-left: 10rem;
-        margin-top: 2rem;
-        width: 50%;
-        text-align: center;
-        padding: 6px;
+        width:100% ;  
+        text-align: start;
+        padding: 6px 12px;
         font-size: 22px;
         font-family: "Montserrat", sans-serif;
+        position: absolute;
+        margin-left: 8rem;
+        margin-top: 4.5rem;
       }
 
       .img__services {
         width: 100%;
         height: 15rem;
+        object-fit: cover;
       }
 
       .card__services--span {
@@ -430,7 +435,7 @@
     gap: 20px;
 
     .encantados__title {
-      font-size: 30px;
+      font-size: 26px;
       font-family: $Letter-titles;
     }
 
@@ -446,7 +451,7 @@
       }
 
       .encantado__subtitulo {
-        font-size: 22px;
+        font-size: 20px;
         font-family: $Letter-subtitles;
       }
     }
@@ -465,51 +470,57 @@
   padding: 20px 80px;
   background-repeat: no-repeat;
   background-size: cover;
-  object-fit: contain;
+  background-position: bottom center;
   display: flex;
   flex-direction: column;
   align-items: center;
+  
 
   .ubicacion__transparencia {
-    background-color: rgba(255, 255, 255, 0.7);
+    background-color: rgba(255, 255, 255, 0.8);
     width: 100%;
     height: 3rem;
     text-align: center;
-    margin-bottom: 30px;
+
     padding: 14px;
-    margin-bottom: 50px;
+    margin-bottom: 2rem;
     font-size: 25px;
     font-family: $Letter-subtitles;
+    display: flex;
+    align-items: center;
+    justify-content: center;
   }
 
   .container__locaciones {
     display: flex;
-    width: 90%;
+    width: 80%;
     flex-wrap: wrap;
     justify-content: space-between;
 
     .card__ubicacion {
-      background-color: rgba(255, 255, 255, 0.7);
+      background-color: rgba(255, 255, 255, 0.8);
       display: flex;
       flex-direction: column;
       width: 28%;
-      gap: 10px;
+      gap: 0.5rem;
       align-items: center;
       margin-bottom: 2rem;
+      
 
       .card__separacion--ubicacion {
         display: flex;
-        gap: 20px;
+        gap: 0.6rem;
         align-items: center;
-        padding: 15px;
+        padding: 10px;
 
         .loguito__ubicacion {
-          width: 40px;
+          width: 1.7rem;
+          height: 1.7rem;
         }
 
         .nombre__ubicacion {
-          font-size: 20px;
-          font-family: $Letter-subtitles;
+          font-size: 21px;
+          font-family:  $Letter-body; 
         }
       }
 
@@ -519,7 +530,10 @@
         width: 50%;
         border-radius: 10px;
         margin-bottom: 15px;
-        border: 3px solid;
+        border: 1px solid;
+        font-family:  $Letter-body; 
+        font-size: 14px;
+        cursor: pointer;
       }
 
       .verDetalles__ubicacion:hover {
@@ -536,8 +550,8 @@
     flex-direction: column;
     align-items: center;
     gap: 10px;
-    background-color: rgba(255, 255, 255, 0.7);
-    width: 90%;
+    background-color: rgba(255, 255, 255, 0.8);
+    width: 80%;
 
     .container__barra {
       display: flex;
@@ -546,12 +560,13 @@
       justify-content: center;
 
       .loguito__ubicacion--barra {
-        width: 50px;
+        width: 1.7rem;
+        height: 1.7rem;
       }
 
       .ubicacion__barra {
-        font-size: 30px;
-        font-family: $Letter-subtitles;
+        font-size: 21px;
+        font-family:  $Letter-body; 
       }
     }
 
@@ -576,13 +591,13 @@
 .quieneSomos {
   display: flex;
   width: 100%;
-  padding: 50px 0px;
+  padding: 40px 0px;
   background-color: #f3f3f3;
   justify-content: center;
   align-items: center;
 
   .circuloSomos {
-    width: 30%;
+    width: 20%;
 
     .circulo__somos--img {
       width: 70%;
@@ -592,18 +607,19 @@
   .descripcion {
     width: 50%;
     text-align: justify;
-    font-size: 20px;
-    line-height: 30px;
+    font-size: 18px;
+    line-height: 25px;
+    font-family:  $Letter-body; 
   }
 }
 
 .comentarios {
   display: flex;
   flex-direction: column;
-  gap: 20px;
   width: 100%;
   align-items: center;
-  padding: 40px;
+  padding: 20px 40px;
+  height: min-content;
 
   .comentarios__title {
     font-size: 25px;
@@ -615,14 +631,13 @@
   .container__cards--coments {
     display: flex;
     justify-content: center;
-    gap: 10px;
     max-width: 1300px;
     min-width: 300px;
     width: 100%;
-    height: 100%;
+    height: 60%; 
 
     .swiper-container3 {
-      height: auto;
+      height: 18rem;
       .swiper-pagination {
         display: none;
       }
@@ -632,63 +647,80 @@
         color: $color-black;
         width: 10px;
       }
+      .slider3{
+        background-color: aqua;
+      }
     }
 
     .container__comen {
       display: flex;
       flex-direction: column;
       align-items: center;
-      height: 100%;
+      height: 100%; 
       max-width: 1500px;
       min-width: 300px;
       width: 90%;
-      background-color: $color-white;
+      // background-color: $color-white;
+      padding: 6% 4%;
+      gap: 1rem;
+      display: flex;
+
       .contenedor__imagen--comentario {
-        max-width: 1500px;
-        min-width: 300px;
+        // max-width: 1500px;
+        // min-width: 300px;
         width: 20%;
-        height: 60%;
-        padding: 20px;
+        height: 26%;
         display: flex;
         justify-content: center;
         .img__comentario {
           height: auto;
           object-fit: cover;
-          max-width: 1500px;
-          min-width: 300px;
+          // max-width: 1500px;
           width: 100%;
+          height: 100%;
+
           border-radius: 50%;
-          padding: 40px;
+        
         }
       }
 
       .testimonio {
-        width: 80%;
+        width: 100%;
         text-align: center;
-        padding-bottom: 30px;
+        // padding-bottom: 30px;
         font-size: 19px;
-        height: 45%;
+        height: 90%;
         display: flex;
         flex-direction: column;
         align-items: center;
-        justify-content: space-evenly;
-        .container__calificacion {
-          width: 70%;
-        }
-      }
+        gap: 2rem;
+        // justify-content: space-evenly;
+        // .container__calificacion {
+        //   width: 70%;
+        // }
 
+        .span{
+          width: 100%;
+          font-family:  $Letter-body; 
+          font-size: 15px;
+          text-align: center;
+          height: max-content;
+          align-self: center;
+        }
+        
       .container__calificacion {
         display: flex;
         gap: 10px;
-        height: 30px;
+        height: 20%;
         justify-content: center;
-        margin-top: 21px;
 
         .star-calificacion {
           width: 30px;
           height: 30px;
         }
       }
+      }
+
     }
   }
 }
@@ -735,7 +767,7 @@
       }
 
       .card__beneficio--title {
-        font-size: 19px;
+        font-size: 18px;
         font-family: $Letter-subtitles;
       }
 

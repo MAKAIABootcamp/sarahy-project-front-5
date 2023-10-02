@@ -24,11 +24,11 @@ const CompaniesEvents = () => {
     <main className="main__home">
      
       <img src={empresasPrincipal} alt="" className="imgCompanies__intro" />
-      <section className="main__info">
+      <section className="main__info dark:bg-neutral-800">
         <img src={logoIzquierda} alt="" className="logoIzquierda" />
         <div className="container__intro">
-          <h1 className="main__title__home">Eventos Empresariales</h1>
-          <p className="main__parrafo">
+          <h1 className="main__title__home dark:text-neutral-100">Eventos Empresariales</h1>
+          <p className="main__parrafo dark:text-neutral-300">
             Únete a Celebraciones Sarahy para eventos empresariales y educativos
             de éxito. Nuestra experiencia en planificación y ejecución garantiza
             inspiración, aprendizaje y conexiones valiosas. ¡Haz que tu próximo
@@ -38,92 +38,86 @@ const CompaniesEvents = () => {
         <img src={logoDerecha} alt="" className="logoDerecha" />
       </section>
 
-      <section className="tipe__events">
-        <span className="title__events">TODOS LOS EVENTOS EMPRESARIALES PARA TI</span>
+      <section className="tipe__events dark:bg-neutral-700">
+        <span className="title__events dark:text-neutral-300">Todos los eventos empresariales para ti</span>
+      
         <div className="cards__events">
           <article className="details__event">
             <figure className="fig">
               <img src={empresasFiestas} alt="" className="img" />
             </figure>
-            <span className="span">FIESTAS EMPRESARIALES</span>
+            <span className="span dark:text-neutral-300">Fiestas empresariales</span>
           </article>
           <article className="details__event">
             <figure className="fig">
               <img src={empresasLanzamiento} alt="" className="img" />
             </figure>
-            <span className="span">LANZAMIENTO DE MARCA</span>
+            <span className="span dark:text-neutral-300">Lanzamiento de marca</span>
           </article>
           <article className="details__event">
             <figure className="fig">
               <img src={empresasCapacitaciones} alt="" className="img" />
             </figure>
-            <span className="span">CAPACITACIONES</span>
+            <span className="span dark:text-neutral-300">Capacitaciones</span>
           </article>
           <article className="details__event">
             <figure className="fig">
               <img src={empresasGraduaciones} alt="" className="img" />
             </figure>
-            <span className="span">GRADUACIONES</span>
+            <span className="span dark:text-neutral-300">Graduaciones</span>
           </article>
         </div>
       </section>
 
-      <section className="data__events">
-        <span className="title__data">
-          ¿CÓMO CELEBRACIONES SARAHY HACE ESPECIAL Y UNICO TU EVENTO?
+      <section className="data__events dark:bg-neutral-800">
+        <span className="title__data dark:text-neutral-200">
+          ¿Cómo Celebraciones Sarahy hace especial y unico tu evento?
         </span>
         <div className="div__events">
           <div className="div__data">
             <article className="logo__title">
               <figure className="fig">
-                <img src={logoNegro} alt="" className="img" />
+                <img src={logoNegro} alt="" className="img dark:bg-neutral-300" />
               </figure>
-              <span className="span">Esperiencia personalizada</span>
+              <span className="span dark:text-neutral-300">Esperiencia personalizada</span>
             </article>
-            <p className="paragraph">
-              Nuestros eventos empresariales se distinguen por su enfoque
-              personalizado, diseñados para satisfacer las necesidades y
-              objetivos específicos de cada cliente.
+            <p className="paragraph dark:text-neutral-300">
+            Nuestros eventos empresariales son personalizados para cumplir con los objetivos de cada cliente.
             </p>
           </div>
 
           <div className="div__data">
             <article className="logo__title">
               <figure className="fig">
-                <img src={logoNegro} alt="" className="img" />
+                <img src={logoNegro} alt="" className="img dark:bg-neutral-300" />
               </figure>
-              <span className="span">Red de expertos</span>
+              <span className="span dark:text-neutral-300">Red de expertos</span>
             </article>
-            <p className="paragraph">
-              Celebraciones Sarahy se enorgullece de contar con una red de
-              expertos de élite en diversas áreas empresariales, asegurando que
-              cada evento esté impregnado de conocimiento actualizado y
-              perspectivas innovadoras.
+            <p className="paragraph dark:text-neutral-300">
+            Celebraciones Sarahy se apoya en una red de expertos empresariales para eventos innovadores y actualizados.
             </p>
           </div>
 
           <div className="div__data">
             <article className="logo__title">
               <figure className="fig">
-                <img src={logoNegro} alt="" className="img" />
+                <img src={logoNegro} alt="" className="img dark:bg-neutral-300" />
               </figure>
-              <span className="span">Elemento de Celebración</span>
+              <span className="span dark:text-neutral-300">Elemento de Celebración</span>
             </article>
-            <p className="paragraph">
-              Nuestros eventos incorporan momentos de celebración y networking,
-              creando un ambiente propicio para fortalecer las relaciones
-              profesionales y motivar a los participantes a alcanzar sus metas.
+            <p className="paragraph dark:text-neutral-300">
+            Nuestros eventos fomentan la celebración, el networking y la motivación para lograr metas profesionales.
             </p>
           </div>
         </div>
       </section>
 
-      <section className="galery">
+      <section className="galery dark:bg-neutral-700">
             <div className="logo__titleGalery">
             <figure className="fig">
-                <img src={logoNegro} alt="" className="img" />
+                <img src={logoNegro} alt="" className="img dark:bg-neutral-300" />
             </figure>
-            <span className="span">Galería</span>
+            <span className="span dark:text-neutral-300">Galería</span>
             <button className="button__companies">Haz tu cotización </button>
             </div>
             <div className="event__collagePlus">
@@ -135,8 +129,8 @@ const CompaniesEvents = () => {
             
       </section>
 
-      <section className="others__companies">
-        <span className="title__companies">EMPRESAS QUE HAN VIVIDO LA EXPERIENCIA SARAHY</span>
+      <section className="others__companies dark:bg-neutral-800">
+        <span className="title__companies dark:text-neutral-200">Empresas que han vivido la experiencia Sarahy</span>
         <div className="img__companies">
         <figure className="fig">
             <img src={empresa1} alt=""  className="img"/>
