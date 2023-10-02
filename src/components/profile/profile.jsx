@@ -13,7 +13,6 @@ import { useNavigate } from "react-router-dom";
 import Swal from "sweetalert2";
 import ModalDetalle from "../modalDetalle/ModalDetalle";
 import uploadFile from "../../services/upLoadfile";
-import { object } from "yup";
 import ApiCalendar from "react-google-calendar-api";
 import { Link } from 'react-router-dom';
 import { editDate } from "../../services/editDate";

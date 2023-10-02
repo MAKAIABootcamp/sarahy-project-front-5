@@ -17,7 +17,7 @@
   max-width: 1500px;
   width: 60%;
   margin: 4% auto;
-  height: 45rem;
+  height: 65%;
   min-width: 300px;
   box-sizing: border-box;
   border: none;
@@ -101,6 +101,7 @@
     display: flex;
     justify-content: center;
     align-items: center;
+    height: 50%;
 
     img {
       display: block;
@@ -118,6 +119,7 @@
   align-items: center;
   text-align: center;
   padding: 20px;
+  height: 40%;
 
   .informacion__modal--titulo {
     display: flex;

@@ -127,13 +127,13 @@ const Home = () => {
                         className="mySwiper" >
 
 
-                        <SwiperSlide className='dark:bg-neutral-400'><img src={sliderBodas} alt="imagen de bodas" /> </SwiperSlide>
+                        <SwiperSlide className='dark:bg-neutral-400'><img src={sliderBodas} alt="imagen de bodas" className='imagen__home--principal'/> </SwiperSlide>
 
-                        <SwiperSlide className='dark:bg-neutral-400'><img src={sliderCumpleaños} alt="imagen de bodas" /></SwiperSlide>
-                        <SwiperSlide className='dark:bg-neutral-400'><img src={sliderAniversarios} alt="imagen de bodas" /></SwiperSlide>
-                        <SwiperSlide className='dark:bg-neutral-400'><img src={sliderEmpresariales} alt="imagen de bodas" /></SwiperSlide>
-                        <SwiperSlide className='dark:bg-neutral-400'><img src={sliderGrados} alt="imagen de bodas" /></SwiperSlide>
-                        <SwiperSlide className='dark:bg-neutral-400'><img src={sliderBufet} alt="imagen de bodas" /></SwiperSlide>
+                        <SwiperSlide className='dark:bg-neutral-400'><img src={sliderCumpleaños} alt="imagen de bodas" className='imagen__home--principal'/></SwiperSlide>
+                        <SwiperSlide className='dark:bg-neutral-400'><img src={sliderAniversarios} alt="imagen de bodas" className='imagen__home--principal'/></SwiperSlide>
+                        <SwiperSlide className='dark:bg-neutral-400'><img src={sliderEmpresariales} alt="imagen de bodas" className='imagen__home--principal'/></SwiperSlide>
+                        <SwiperSlide className='dark:bg-neutral-400'><img src={sliderGrados} alt="imagen de bodas" className='imagen__home--principal'/></SwiperSlide>
+                        <SwiperSlide className='dark:bg-neutral-400'><img src={sliderBufet} alt="imagen de bodas" className='imagen__home--principal'/></SwiperSlide>
                     </Swiper>
                 </section>
 
@@ -380,17 +380,17 @@ Somos una empresa especializada en la organización de diversos eventos, como cu
                         <Swiper
                             slidesPerView={3}
                             className="swiper-container3 dark:opacity-70"
-                            // spaceBetween={10}
-                            // // autoplay={{
-                            // //     delay: 4000,
-                            // //     disableOnInteraction: false,
-                            // // }}
-                            // // pagination={{
-                            // //     clickable: true,
-                            // // }}
-                            // navigation={true}
-                            // modules={[ Pagination]}
-                            // // loop={true}
+                            spaceBetween={10}
+                            autoplay={{
+                                delay: 4000,
+                                disableOnInteraction: false,
+                            }}
+                            pagination={{
+                                clickable: true,
+                            }}
+                            navigation={true}
+                            modules={[ Autoplay, Pagination, Navigation]}
+                            loop={true}
 
                         >
                             {comentarios.map((comentario, index) => (
