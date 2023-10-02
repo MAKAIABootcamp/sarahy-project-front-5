@@ -22,13 +22,8 @@ const Register = () => {
   }
 
   const onSubmit = (data) => {
-<<<<<<< HEAD
-    console.log(data);
-    // dispatch(createAnUser(data));
-=======
     // console.log(data)
     dispatch(createAnUser(data));
->>>>>>> a668810acd83fe34b1fd69e19c1eb58c42623462
     console.log("funciona crear cuenta");
     navigateToLogin()
   };
@@ -45,11 +40,7 @@ const Register = () => {
             <span className="loginLabel">Nombre</span>
             <input
               type="text"
-<<<<<<< HEAD
-           
-=======
               // id="name"
->>>>>>> a668810acd83fe34b1fd69e19c1eb58c42623462
               {...register("name", { required: true })}
               placeholder="Ingresa tu nombre"
               className="loginDown__input"
@@ -115,11 +106,7 @@ const Register = () => {
                 Este campo es obligatorio
               </span>
             )}
-<<<<<<< HEAD
-            <button type="submit" className="loginDown__button">
-=======
             <button type="submit" className="loginDown__button" >
->>>>>>> a668810acd83fe34b1fd69e19c1eb58c42623462
               Registrarse
             </button>
           </form>

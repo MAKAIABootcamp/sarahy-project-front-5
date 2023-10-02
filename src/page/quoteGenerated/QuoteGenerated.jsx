@@ -9,8 +9,13 @@ import { addMessageToExistingChat } from '../../services/addMessageToExistingCha
 import ModalCalendar from '../../components/modalCalendar/modalCalendar';
 import { useNavigate } from 'react-router-dom';
 import CalendarGoogle from '../../components/calendarGoogle/calendarGoogle';
+import { useSelector } from 'react-redux';
 
 const QuoteGenerated = () => {
+
+  const quoteInfo = useSelector(state => state.aunthentication.quoteData);
+
+  console.log(quoteInfo);
 
   // useEffect(() => 
   // {

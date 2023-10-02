@@ -9,6 +9,7 @@
     .backGroundHeader{
         width: 100%;
         height: 24rem;
+        object-fit: cov;
     }
 
     .containerQuote 
@@ -129,8 +130,9 @@
 
                         &.swiperQuote
                         {
-                            height: 35vw;
+                            height: auto;
                             position: relative;
+                            
                             .swiper-button-next, .swiper-button-prev
                             {
                                 
@@ -163,7 +165,9 @@
 
                             .sliderForm
                             {
-                                
+                                display: flex;
+                                flex-direction: column;
+                                padding-top: 2vw;
                                 .imageSliderForm
                                 {
                                    width: 25vw;
@@ -176,7 +180,7 @@
                                     display: flex;
                                     flex-direction: column;
                                     background-color: #FFF;
-                                    
+                                    padding-bottom: 2vw;
                                     flex: 2;
                                 }
                             
@@ -193,13 +197,13 @@
                         flex-direction: column;
                         align-items: flex-start;
                         margin-left: 2vw;
-                        gap: 1px;
+                        gap: 5px;
                         span
                         {
                             display: flex;
                             gap: 10px;
                             align-items: center;
-                            height: 2.5vw;
+                            height: auto;
                             input
                             {
 
