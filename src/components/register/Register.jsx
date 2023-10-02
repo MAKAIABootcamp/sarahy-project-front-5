@@ -33,7 +33,7 @@ const Register = () => {
       <section className="login__container register">
         <div className="loginDown register dark:bg-neutral-800">
           <h1 className="loginDown__title">
-            <b className="dark:text-neutral-100">Registro</b>
+            Registro
           </h1>
 
           <form onSubmit={handleSubmit(onSubmit)} className="loginDown__form">

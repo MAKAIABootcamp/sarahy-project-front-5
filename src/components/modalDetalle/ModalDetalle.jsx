@@ -21,7 +21,7 @@ const ModalDetalle = ({ isOpen, onRequestClose, data }) => {
     }, [data]);
 
 
-
+console.log(elementoSeleccionado.name)
 
     return (
         <Modal isOpen={isOpen} onRequestClose={onRequestClose} className="modal__detalles">
@@ -32,7 +32,7 @@ const ModalDetalle = ({ isOpen, onRequestClose, data }) => {
                 <Page className="sectionQuote">
                     <View className="containerQuote">
                         <Text className="textQuote">
-                            Lorem ipsum dolor sit amet consectetur adipisicing elit. Numquam eaque quibusdam veritatis laudantium vitae corporis voluptates. Eveniet repudiandae dolorum similique quisquam quasi necessitatibus quia, enim deserunt quae nulla nemo mollitia.
+                        Una cotización es una estimación de costos que se proporciona para un producto o servicio, pero su precio final puede cambiar debido a diversos factores, como cambios en las especificaciones, la cantidad requerida, los impuestos y otros costos variables
                         </Text>
 
                         <View className="data1Quote">

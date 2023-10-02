@@ -17,7 +17,7 @@
 }
 
 .login {
-  height: 110vh;
+  height: auto;
   width: 100%;
   background-image: url('https://images.unsplash.com/photo-1525441273400-056e9c7517b3?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1470&q=80'); // la imagen de fondo que tienes con una opacidad del 30%
   padding: 0px;
@@ -139,6 +139,7 @@
 
       &.register {
         flex: 3;
+        
       }
 
       &__title {
@@ -252,17 +253,17 @@
 
 @media (max-width: 550px) {
   .login {
-    height: 0;
+    height: auto;
 
     .login__container {
       width: 100%;
+      height: auto;
 
       .loginDown {
         display: flex;
         height: 100vh;
         flex-direction: column;
         flex-wrap: nowrap;
-        position: fixed;
         top: 0%;
         width: 100%;
       }
