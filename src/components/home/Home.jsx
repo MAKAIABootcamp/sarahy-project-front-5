@@ -10,9 +10,14 @@ import 'swiper/css/navigation';
 import { Autoplay, Pagination, Navigation, FreeMode } from 'swiper/modules';
 
 // imagenes
-import servicios1 from '../../assets/image/servicios1.png'
-import servicios2 from '../../assets/image/decoracion.png'
-import servicios3 from '../../assets/image/catering.png'
+import service_catering from '../../assets/image/service_catering.jpg'
+import service_decoracion from '../../assets/image/service_decoracion.jpg'
+import service_fotos from '../../assets/image/service_fotos.jpg'
+import service_animacion from '../../assets/image/service_animacion.jpg'
+import service_musica from '../../assets/image/service_musica.jpg'
+import service_iluminacion from '../../assets/image/service_iluminacion.jpg'
+
+
 import corazon1 from '../../assets/image/corazon1.png'
 import loguito from '../../assets/image/loguito.png'
 import gota from '../../assets/image/gota.png'
@@ -26,7 +31,7 @@ import sliderBodas from '../../assets/image/boda.jpg'
 import sliderCumpleaños from '../../assets/image/cumpleaños.jpg'
 import sliderEmpresariales from '../../assets/image/empresariales1.jpg'
 import sliderGrados from '../../assets/image/grados.jpg'
-import sliderBufet from '../../assets/image/bufet.jpg'
+import sliderTipo1 from '../../assets/image/matrimonioAdorno.jpg'
 import sliderAniversarios from '../../assets/image/bufet.jpg'
 import { collection, getDocs } from "firebase/firestore";
 
@@ -128,12 +133,11 @@ const Home = () => {
 
 
                         <SwiperSlide className='dark:bg-neutral-400'><img src={sliderBodas} alt="imagen de bodas" /> </SwiperSlide>
-
                         <SwiperSlide className='dark:bg-neutral-400'><img src={sliderCumpleaños} alt="imagen de bodas" /></SwiperSlide>
                         <SwiperSlide className='dark:bg-neutral-400'><img src={sliderAniversarios} alt="imagen de bodas" /></SwiperSlide>
                         <SwiperSlide className='dark:bg-neutral-400'><img src={sliderEmpresariales} alt="imagen de bodas" /></SwiperSlide>
                         <SwiperSlide className='dark:bg-neutral-400'><img src={sliderGrados} alt="imagen de bodas" /></SwiperSlide>
-                        <SwiperSlide className='dark:bg-neutral-400'><img src={sliderBufet} alt="imagen de bodas" /></SwiperSlide>
+                        <SwiperSlide className='dark:bg-neutral-400'><img src={sliderTipo1} alt="imagen de bodas" /></SwiperSlide>
                     </Swiper>
                 </section>
 
@@ -212,7 +216,7 @@ const Home = () => {
                             <SwiperSlide className=' swiperCard dark:bg-neutral-700'>
                                 <div className="card__services dark:bg-neutral-300">
                                     <h3 className='card__services--title'>CATERING</h3>
-                                    <img src={servicios1} alt="Imagen del servicio ofrecido" className='img__services' />
+                                    <img src={service_catering} alt="Imagen del servicio ofrecido" className='img__services' />
                                     {/* <span className='card__services--span'>
                                         Guardar los mejores momentos de tu evento con fotografías y videos de la mejor calidad.
                                     </span> */}
@@ -224,7 +228,7 @@ const Home = () => {
                             <SwiperSlide>
                                 <div className="card__services dark:bg-neutral-300">
                                     <h3 className='card__services--title '>DECORACIÓN</h3>
-                                    <img src={servicios2} alt="Imagen del servicio ofrecido" className='img__services' />
+                                    <img src={service_decoracion} alt="Imagen del servicio ofrecido" className='img__services' />
                                     {/* <span className='card__services--span'>
                                         Transformamos espacios en escenarios de ensueño con nuestra decoración experta
                                     </span> */}
@@ -236,7 +240,7 @@ const Home = () => {
                             <SwiperSlide>
                                 <div className="card__services dark:bg-neutral-300">
                                     <h3 className='card__services--title '>FOTOGRAFÍA</h3>
-                                    <img src={servicios3} alt="Imagen del servicio ofrecido" className='img__services' />
+                                    <img src={service_fotos} alt="Imagen del servicio ofrecido" className='img__services' />
                                     {/* <span className='card__services--span'>
                                         Deléitate con nuestro exquisito servicio de catering y saborea el éxito de tu evento
                                     </span> */}
@@ -246,7 +250,7 @@ const Home = () => {
                             <SwiperSlide>
                                 <div className="card__services dark:bg-neutral-300">
                                     <h3 className='card__services--title '>ANIMACIÓN</h3>
-                                    <img src={servicios3} alt="Imagen del servicio ofrecido" className='img__services' />
+                                    <img src={service_animacion} alt="Imagen del servicio ofrecido" className='img__services' />
                                     {/* <span className='card__services--span'>
                                         Deléitate con nuestro exquisito servicio de catering y saborea el éxito de tu evento
                                     </span> */}
@@ -256,7 +260,7 @@ const Home = () => {
                             <SwiperSlide>
                                 <div className="card__services dark:bg-neutral-300">
                                     <h3 className='card__services--title '>MÚSICA Y DJS</h3>
-                                    <img src={servicios3} alt="Imagen del servicio ofrecido" className='img__services' />
+                                    <img src={service_musica} alt="Imagen del servicio ofrecido" className='img__services' />
                                     {/* <span className='card__services--span'>
                                         Deléitate con nuestro exquisito servicio de catering y saborea el éxito de tu evento
                                     </span> */}
@@ -266,7 +270,7 @@ const Home = () => {
                             <SwiperSlide>
                                 <div className="card__services dark:bg-neutral-300">
                                     <h3 className='card__services--title '>ILUMINACIÓN</h3>
-                                    <img src={servicios3} alt="Imagen del servicio ofrecido" className='img__services' />
+                                    <img src={service_iluminacion} alt="Imagen del servicio ofrecido" className='img__services' />
                                     {/* <span className='card__services--span'>
                                         Deléitate con nuestro exquisito servicio de catering y saborea el éxito de tu evento
                                     </span> */}
@@ -380,17 +384,17 @@ Somos una empresa especializada en la organización de diversos eventos, como cu
                         <Swiper
                             slidesPerView={3}
                             className="swiper-container3 dark:opacity-70"
-                            // spaceBetween={10}
-                            // // autoplay={{
-                            // //     delay: 4000,
-                            // //     disableOnInteraction: false,
-                            // // }}
-                            // // pagination={{
-                            // //     clickable: true,
-                            // // }}
-                            // navigation={true}
-                            // modules={[ Pagination]}
-                            // // loop={true}
+                            spaceBetween={10}
+                            autoplay={{
+                                delay: 3000,
+                                disableOnInteraction: false,
+                            }}
+                            pagination={{
+                                clickable: true,
+                            }}
+                            navigation={true}
+                            modules={[Autoplay, Pagination, Navigation]}
+                            loop={true}
 
                         >
                             {comentarios.map((comentario, index) => (

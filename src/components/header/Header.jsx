@@ -203,9 +203,6 @@ const Header = () => {
   <div className="header__transparent">
     <nav className="header__navbar">
       <ul className="header__navbar--lista">
-        <li className="navbar__items" onClick={() => navigate('/')}>
-          Inicio
-        </li>
         <li
           className="navbar__items"
           onClick={() => navigate('/sociales')}
@@ -219,15 +216,10 @@ const Header = () => {
           Eventos Empresariales
         </li>
         <li className="navbar__items--logo">
-          {<img src={logo} className="logo__item--img" />}
+          {<img src={logo} className="logo__item--img" onClick={() => navigate('/')} />}
         </li>
-        <li
-          className="navbar__items"
-          onClick={() => navigate('/aliados')}
-        >
-          Quienes somos
+        <li className="navbar__items">Contáctanos
         </li>
-        <li className="navbar__items">Contáctanos</li>
         <li className="navbar__items" onClick={() => navigate('/quote')}>
           Cotiza Aquí
         </li>

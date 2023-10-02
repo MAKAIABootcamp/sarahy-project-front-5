@@ -166,11 +166,18 @@
                 list-style: none;
                 font-size: 22px;
                 color: white;
+                width: 18%;
+                text-align: center;
             }
 
             .navbar__items {
                 cursor: pointer;
                 color: #ffffff;
+            }
+
+            .navbar__items:hover{
+              font-size: 23px;
+
             }
 
             .navbar__items--logo {
@@ -181,6 +188,7 @@
                 .logo__item--img {
                     width: 10rem
                 }
+
             }
         }
     }
