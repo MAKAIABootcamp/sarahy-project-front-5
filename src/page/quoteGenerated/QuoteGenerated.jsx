@@ -75,8 +75,11 @@ const QuoteGenerated = () => {
     });
 
 
-
-    doc.text(55, 80, 'Nombre del Usuario. ');
+       doc.text(50, 110, 'Nombre:. ')
+       doc.text(90, 110, 'sebastian. ')
+    
+    
+    
 
 
 

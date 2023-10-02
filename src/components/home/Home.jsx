@@ -111,7 +111,7 @@ const Home = () => {
 
     return (
         <>
-            <main className="main__home dark:bg-neutral-800" >
+            <main className="main__home dark:bg-neutral-700" >
                 <Chat />
                 <section className='slider__home'>
                     <Swiper
@@ -153,7 +153,7 @@ const Home = () => {
                 </section>
 
                 <section className="typeEvent__home">
-                    <div className="btns dark:text-neutral-800" >
+                    <div className="btns dark:text-neutral-700" >
 
                         <button className={`btn__event ${eventoSeleccionado == "Bodas" ? "selected" : ""}`}
                             onClick={() => handleEventoClick("Bodas")}>
@@ -173,7 +173,7 @@ const Home = () => {
                         </button>
                     </div>
                     {eventoSeleccionado && (
-                        <div className="event__info">
+                        <div className="event__info dark:!bg-neutral-700">
                             <div className="event__description dark:text-neutral-300">
                                 <h2 className="description__title">{typEvent[eventoSeleccionado].title}</h2>
                                 <p className="description__parrafo">{typEvent[eventoSeleccionado].description}</p>
@@ -203,7 +203,7 @@ const Home = () => {
                             loop={true}
                         >
 
-                            <SwiperSlide className=' swiperCard dark:bg-neutral-400'>
+                            <SwiperSlide className=' swiperCard dark:bg-neutral-700'>
                                 <div className="card__services dark:bg-neutral-300">
                                     <h3 className='card__services--title'>CATERING</h3>
                                     <img src={servicios1} alt="Imagen del servicio ofrecido" className='img__services' />
@@ -289,7 +289,7 @@ const Home = () => {
 
                 </section>
 
-                <section className='beneficios dark:bg-neutral-800'>
+                <section className='beneficios dark:bg-neutral-700'>
                     <h1 className='beneficios__title dark:text-neutral-200'>Beneficios de realizar tu evento con Celebraciones Sarahy</h1>
                     <div className="container__beneficios">
                         <div className='beneficio__card card__beneficio--1'>

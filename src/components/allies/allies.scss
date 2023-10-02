@@ -163,6 +163,8 @@
         .span__recomendaciones--aliados{
             font-family: $Letter-subtitles;
             font-size: 25px;
+            width: 100%;
+            text-align: center;
         }
 
         .recuadro__recomendaciones {
@@ -176,12 +178,12 @@
             justify-content: center;
 
             .tarjeta__recuadro {
-                width: 28%;
+                width: 31%;
                 display: flex;
                 flex-direction: column;
                 align-items: center;
                 gap: 15px;
-                padding: 40px;
+                padding: 30px;
 
                 .logo__recomendaciones {
                     width: 5rem;
@@ -200,7 +202,7 @@
 
                 .descripcion__tarjeta {
                     font-size: 17px;
-                    text-align: justify;
+                    text-align: center;
                 }
             }
         }
@@ -285,3 +287,27 @@
         }
     }
 }
+
+// @media (width: 600px) {
+//     .main__allies {
+//         .imagen__aliados {
+//             width: 100%;
+//             height: 20%;
+//             object-fit: cover;
+//         }
+//         .container__intro{
+//             .main__title__home{
+//                 font-size: 30px;
+//                 width: 90%;
+//                 text-align: center;
+//             }
+//         }
+//         .logoDerecha{
+//             display: none;
+//         }
+//         .logoIzquierda{
+//             display: none;
+//         }
+
+//     }
+// }

@@ -10,8 +10,6 @@ import Allies from '../components/allies/Allies';
 import WorkWhithUs from '../components/WorkWithUs/WorkWithUs';
 import CompaniesEvents from '../components/companiesEvents/companiesEvents';
 import SocialEvents from '../components/socialEvents/socialEvents';
-
-import PrivateRoutes from './privateRoutes';
 import { useSelector } from 'react-redux';
 import PanelAdmi from '../components/panelAdmi/panelAdmi';
 import Quote from '../page/quote/Quote';
@@ -61,6 +59,8 @@ const Router = () => {
         <Route path="/registro" element={<Register />} />
         <Route path="/*" element={<Register />} />
         <Route path="/citas" element={<ModalCalendar />} />
+        <Route path="/trabajemos" element={<WorkWhithUs />} />
+        <Route path="/aliados" element={<Allies  />} />
 
        
       </Routes>
