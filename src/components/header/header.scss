@@ -9,15 +9,25 @@
 
     .mobile-menu {
       position: fixed;
-      top: 0;
-      right: 0;
-      background-color: $color-cream;
-      z-index: 999;
-      padding: 10px;
-      border-bottom-left-radius: 5px;
-      box-shadow: 0 2px 5px rgba(0, 0, 0, 0.2);
-      display: none;
-      font-size: 40px;
+    top: 0;
+    right: 0;
+    background-color: #E9DCBE;
+    z-index: 999;
+    height: 50%;
+    width: 70%;
+    padding: 10px;
+    border-bottom-left-radius: 5px;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.2);
+    display: none;
+    font-size: 40px;
+
+    .menu__slogan{
+      font-size: 20px;
+      width: 70%;
+      position: relative;
+      bottom: 17px;
+      font-family: $Letter-body;
+    }
     
       &.show { 
         display: block !important;
@@ -25,15 +35,34 @@
     }
     .mobile-menu ul {
       list-style-type: none;
-      padding: 0;
+      padding: 0 10px;
     }
     
     .mobile-menu li {
       margin: 10px 0;
       cursor: pointer;
       font-size: 18px;
+      font-weight: 600;
+      border-bottom: 1px solid;
+    }
+    .mobile-menu li:hover {
+      color: #e14d48;
     }
     
+    .redes__header{
+      display: flex;
+      gap: 20px;
+      padding: 30px 0;
+      width: 100%;
+      justify-content: center;
+      .red__header{
+        cursor: pointer;
+        width: 30px;
+      }
+      .red__header:hover{
+        cursor: pointer;
+      }
+    }
 
     .menu-toggle {
       position: fixed;
@@ -41,6 +70,9 @@
       right: 10px;
       z-index: 1000;
       cursor: pointer;
+      .menu__h{
+        font-size: 40px;
+      }
     }
     .header__info {
         overflow: hidden;

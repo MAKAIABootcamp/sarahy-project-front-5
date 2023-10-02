@@ -2,6 +2,9 @@ import React, { useEffect, useState } from 'react';
 import { useNavigate } from 'react-router-dom';
 import { useForm } from 'react-hook-form';
 import { useSelector } from 'react-redux';
+import facebook from "../../assets/image/face.png";
+import instagram from "../../assets/image/ig.png";
+import whatsapp from "../../assets/image/wpp.png";
 import useScreenSize from '../../services/screen';
 import perfil1 from '../../assets/image/pefil1.png';
 import lupa from '../../assets/image/lupaBlack.png';
@@ -83,7 +86,7 @@ const Header = () => {
     <header className="header__home " id="miHeader">
       {width < 600 ? (
         <span className="menu-toggle" onClick={toggleMenu}>
-          <span className="material-symbols-outlined">menu</span>
+          <span className="material-symbols-outlined menu__h">menu</span>
         </span>
       ) : (
         <>
@@ -187,6 +190,7 @@ const Header = () => {
       )}
 
 <div className={`mobile-menu ${isOpen && width < 600 ? 'show' : ''}`}>
+  <span className='menu__slogan'>Tu momento nuestra pasión</span>
         <ul>
           <li onClick={() => navigate('/')}>Inicio</li>
           <li onClick={() => navigate('/sociales')}>Eventos Sociales</li>
@@ -195,6 +199,12 @@ const Header = () => {
           <li>Contáctanos</li>
           <li onClick={() => navigate('/quote')}>Cotiza Aquí</li>
         </ul>
+
+        <article className="redes__header">
+                    <img className="red__header" src="https://www.pngplay.com/wp-content/uploads/9/Facebook-Logo-PNG-Background.png" alt=""/>
+                    <img className="red__header" src="https://cdn-icons-png.flaticon.com/512/87/87390.png" alt="" />
+                    <img className="red__header" src="https://assets.stickpng.com/images/5a4e2ef62da5ad73df7efe6e.png" alt="" href="https://api.whatsapp.com/send?phone=33003003232&text=Hola%20bienvenido%20a%20Sarahy%20te%20asesoramos%20por%20whatsapp%20gestiona%20tu%20evento%20por%20este%20canal."/>
+                </article>
       </div>
     </header>
   );
