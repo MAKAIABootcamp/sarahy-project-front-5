@@ -16,7 +16,7 @@ export const deleteServiceField = async (serviceId, fieldPath) => {
         showConfirmButton: false,
         timer: 1500
       })
-      location.reload()
+      // location.reload()
     } catch (error) {
       console.error("Error al eliminar el campo:", error);
     }

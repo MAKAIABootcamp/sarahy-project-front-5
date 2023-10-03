@@ -10,9 +10,12 @@ import ModalCalendar from '../../components/modalCalendar/modalCalendar';
 import { useNavigate } from 'react-router-dom';
 import CalendarGoogle from '../../components/calendarGoogle/calendarGoogle';
 import { useSelector } from 'react-redux';
+import logoIzquierda from "../../assets/image/gotaIzquierda.png";
+import logoDerecha from "../../assets/image/gotaDerecha.png";
+import imgCotizacion from './cotizacion.jpg'
 
 const QuoteGenerated = () => {
-
+ 
   const currentDate = new Date();
   const year = currentDate.getFullYear();
   const month = currentDate.getMonth() + 1; // Los meses empiezan desde 0
@@ -129,18 +132,24 @@ const QuoteGenerated = () => {
 
 
   return (
+
+    <main className="main__home">
+    <img src={imgCotizacion} alt="" className="imgCompanies__intro" />
+    <section className="main__info dark:bg-neutral-800">
+      <img src={logoIzquierda} alt="" className="logoIzquierda" />
+      <div className="container__intro">
+        <h1 className="main__title__home dark:text-neutral-100">Cotización</h1>
+        <p className="main__parrafo dark:text-neutral-300">
+        Le invitamos a revisar detenidamente la cotización y, si tiene alguna pregunta, no dude en ponerse en contacto con Celebraciones Sarahy. Estamos aquí para ayudarle.
+        </p>
+      </div>
+      <img src={logoDerecha} alt="" className="logoDerecha" />
+    </section>
+
     <section className="sectionQuote">
       <Chat />
-      <img id='miHeader' className='backGroundHeader' src="https://i.ibb.co/fXLf97G/image-127.png" alt="Fondo de Wedding" />
-
-      <main className="containerQuote">
-        <span className="titleQuote">Tu cotización</span>
-        <span className="lineTitle"></span>
-        <p className="textQuote">
-          Lorem ipsum dolor sit amet consectetur adipisicing elit. Numquam eaque quibusdam veritatis laudantium vitae corporis voluptates. Eveniet repudiandae dolorum similique quisquam quasi necessitatibus quia, enim deserunt quae nulla nemo mollitia.
-        </p>
-
-
+      <div className="containerQuote">
+      
         <section className='dataQuote'>
 
           <article className='infoQuote'>
@@ -148,8 +157,7 @@ const QuoteGenerated = () => {
             <section className='introductionQuoteDate'>
               <span className='titleQuoteGenerate'>Megarecreación, Celebraciones Sarahy </span>
               <p>Cra. 50 C N. 64-62</p>
-              <p>3574755- 5827982-3163048505 Medellín</p>
-              <p>15373081-1</p>
+              <p>3574755 - 5827982 - 3163048505 - Medellín</p>
             </section>
 
             <section className='dateUserQuote'>
@@ -225,8 +233,14 @@ const QuoteGenerated = () => {
 
         </section>
 
-      </main>
+      </div>
     </section>
+
+
+
+    </main>
+
+    
   )
 }
 

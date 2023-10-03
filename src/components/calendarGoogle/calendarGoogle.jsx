@@ -8,11 +8,13 @@ import { addNewDate } from "../../services/addNewDate";
 import Swal from "sweetalert2";
 import "./calendarGoogle.scss";
 import logoSarahy from "./logoNegro.png";
+import { useNavigate } from "react-router-dom";
 
 Modal.setAppElement("#root");
 
 
 const CalendarGoogle = ({ isOpen, onRequestCloset }) => {
+  const navigate = useNavigate();
   const [isLoggedIn, setIsLoggedIn] = useState(false);
   const {
     register,
@@ -53,9 +55,20 @@ const CalendarGoogle = ({ isOpen, onRequestCloset }) => {
 
     };
     createNewDate("datesCalendar", newDate);
+    Swal.fire({
+      icon: 'success',
+      title: 'Solicitud de cita exitosa',
+      text: 'Espera la confimación de la cita',
+    })
     console.log('creado')
+    llevarHome()
 
   };
+
+  const llevarHome = () => {
+     navigate("/");
+    window.scrollTo(0, 0);
+  }
 
 
   return (

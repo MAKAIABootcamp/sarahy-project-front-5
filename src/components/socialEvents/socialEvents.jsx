@@ -65,38 +65,38 @@ useEffect(() => {
     </section>
 
     <section className="tipe__events dark:!bg-neutral-700">
-      <span className="title__events dark:text-neutral-300">TODOS LOS EVENTOS SOCIALES PARA TI</span>
+      <span className="title__events dark:text-neutral-300">Todos los eventos sociales para ti</span>
       <div className="cards__events dark:!bg-neutral-700">
         <article className="details__event">
           <figure className="fig">
             <img src={boda} alt="" className="img" />
           </figure>
-          <span className="span dark:text-neutral-200">BODAS</span>
+          <span className="span dark:text-neutral-200">Bodas</span>
         </article>
         <article className="details__event">
           <figure className="fig">
             <img src={quinceAños} alt="" className="img" />
           </figure>
-          <span className="span dark:text-neutral-200">QUINCE AÑOS</span>
+          <span className="span dark:text-neutral-200">Quince años</span>
         </article>
         <article className="details__event">
           <figure className="fig">
             <img src={primeraComunion} alt="" className="img" />
           </figure>
-          <span className="span dark:text-neutral-200">PRIMERA COMUNIÓN</span>
+          <span className="span dark:text-neutral-200">Primera comunión</span>
         </article>
         <article className="details__event">
           <figure className="fig">
             <img src={babyShower} alt="" className="img" />
           </figure>
-          <span className="span dark:text-neutral-200">BABY SHOWER</span>
+          <span className="span dark:text-neutral-200">Baby shower</span>
         </article>
       </div>
     </section>
 
     <section className="data__events dark:bg-neutral-700">
       <span className="title__data dark:text-neutral-200">
-        ¿CÓMO CELEBRACIONES SARAHY HACE ESPECIAL Y UNICO TU EVENTO?
+        ¿Cómo Celebraciones Sarahy hace especial y unico tu evento?
       </span>
       <div className="div__events">
         <div className="div__data">

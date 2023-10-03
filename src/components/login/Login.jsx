@@ -22,6 +22,7 @@ const Login = () => {
 
   const navigateToHome = () => {
     navigate("/");
+    window.scrollTo(0, 0);
   }
 
   const onSubmit = (data) => {
@@ -46,6 +47,7 @@ const Login = () => {
       timer: 1500
     })
     navigate("/");
+    window.scrollTo(0, 0);
   };
 
   const introFacebook = () => {
@@ -95,7 +97,6 @@ const Login = () => {
               Iniciar sesión
             </button>
           </form>
-
           <span className="red">
             <img
               src="https://assets.stickpng.com/images/5847f9cbcef1014c0b5e48c8.png"

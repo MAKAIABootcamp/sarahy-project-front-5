@@ -33,11 +33,12 @@
 
 
     .container__profile {
-        width: 35%;
+        width: 28%;
         background-color: rgb(255, 255, 255);
         padding: 2%;
         border: 1px solid $color-cream;
         border-radius: 10px;
+        margin: 2%;
 
         .introduction__profile {
             width: 100%;
@@ -52,8 +53,9 @@
 
                 .photProfile {
                     width: 100%;
-
+                    height: auto;
                     border-radius: 50%;
+                    object-fit: cover;
                 }
             }
 
@@ -113,7 +115,7 @@
             }
 
             .item__cerrar:hover {
-                background-color: rgb(181, 46, 46);
+                background-color: black;
                 font-weight: bold;
                 text-align: center;
                 color: $color-white;
@@ -163,10 +165,10 @@
             }
 
             .title {
-                font-family: "Montserrat", sans-serif;
-                margin-bottom: 2.5rem;
+                font-family: $Letter-body; 
+                margin-bottom: 1.5rem;
                 font-weight: bolder;
-                text-align: center;
+                text-align: start;
                 font-size: 21px;
             }
 
@@ -184,8 +186,11 @@
                 gap: 20px;
                 font-family: $Letter-body;
 
-                .span {
-                    width: 25%;
+                .spanL {
+                    width: 15%;
+                }
+                .spanI {
+                    width: 60%;
                 }
             }
         }
@@ -214,10 +219,10 @@
         padding: 15px 1.5rem;
 
         .title {
-            font-family: "Montserrat", sans-serif;
-            margin-bottom: 2.5rem;
+            font-family: $Letter-body;
+            margin-bottom: 1rem;
             font-weight: bolder;
-            text-align: center;
+            text-align: start;
             font-size: 21px;
         }
 
@@ -268,8 +273,8 @@
         margin-bottom: 2rem;
 
         .title {
-            font-family: "Montserrat", sans-serif;
-            margin-bottom: 2.5rem;
+            font-family: $Letter-body;
+            margin-bottom: 1rem;
             font-weight: bolder;
             text-align: center;
             font-size: 21px;

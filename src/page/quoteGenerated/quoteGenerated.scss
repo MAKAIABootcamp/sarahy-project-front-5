@@ -15,31 +15,27 @@
         }
 
         overflow: hidden;
-
-        margin-top: 5vw;
         width: 90%;
         background-size:auto;
         background-position: center;
         display: flex;
         margin-bottom: 5vw;
-        background-image: url('https://i.ibb.co/sFSLdg9/image-79.png');
-
         display: flex;
         flex-direction: column;
 
         .infoQuote {
-
             width: 90%;
             height: 90%;
-            margin: 5%;
+            margin: 2% 5%;
             background-color: #ffffff89;
             text-align: start;
-            padding: 8vw;
+            padding: 5%;
             overflow: hidden;
+            font-family: $Letter-body;
+
 
             .introductionQuoteDate {
                 overflow: hidden;
-
                 display: flex;
                 flex-direction: column;
                 margin-bottom: 2vw;
@@ -47,13 +43,13 @@
 
                 .titleQuoteGenerate {
                     font-family: 'Montserrat', sans-serif;
-                    font-size: clamp(7px, 3vw, 25px);
+                    font-size: clamp(7px, 3vw, 22px);
                     overflow: hidden;
 
                 }
 
                 p {
-                    font-size: clamp(5px, 1.5vw, 1.5vw);
+                    font-size: 16px; 
                     overflow: hidden;
 
                 }
@@ -81,7 +77,7 @@
                             padding-top: 5%;
                             padding-bottom: 5%;
                             border: solid 1px;
-                            font-size: clamp(4px, 3vw, 24px)
+                            font-size: clamp(4px, 3vw, 18px)
                         
                         }
                     }
@@ -122,9 +118,7 @@
 
                 .infoUserQuote {
                     width: 65%;
-
                     display: flex;
-
 
                     &__name {
                         padding: 1.5vw;
@@ -151,7 +145,7 @@
             }
 
             table {
-                margin-top: 5vw;
+                margin-top: 3vw;
                 background-color: #f0f0f0;
                 width: 100%;
                 font-size: clamp(3px, 2.5vw, 16px);
@@ -239,9 +233,10 @@
                     background-color: $color-black; 
                     color: white;
                     font-family: $Letter-body;
-                    width: 20vw;
                     height: 3vw;
                     cursor: pointer;
+                    width: max-content;
+                    padding: 4px 8px; 
 
                 }
             }
@@ -254,17 +249,15 @@
                 background-color: $color-black;
                 color: white;
                 font-family: $Letter-body;
-                
+                height: 3vw;
                 cursor: pointer;
-                padding-left: 4rem;
-                padding-right: 3rem;
-                padding-top: 0.5rem;
-                padding-bottom: 0.5rem;
+                width: max-content;
+                display: flex;
+                align-items: center; 
+                padding: 4px 8px; 
+                
+              
 
-                &:hover {
-                    background: #000000;
-                    border-radius: 1.2vw;
-                }
             }
 
         }
