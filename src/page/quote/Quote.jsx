@@ -139,7 +139,7 @@ const Quote = () => {
             className="titleOptionService"
             for={subobjeto.key}
           >
-            {subobjeto.name} (${subobjeto.price*attendees})
+            {subobjeto.name} (${subobjeto.price})
           </label>
         </span>
       ))
@@ -332,7 +332,7 @@ const Quote = () => {
             console.log('Valor del TOOOOOOTAAAAAAAAL: ', myTotal);
             let subobjeto = {
               nameService: serviceCatering[j].name, // Asignamos la propiedad name del objeto del array serviceCatering
-              price: ((serviceCatering[j].price)*attendees), // Asignamos la propiedad price del objeto del array serviceCatering
+              price: ((serviceCatering[j].price) * attendees), // Asignamos la propiedad price del objeto del array serviceCatering
               description: serviceCatering[j].description
             };
             // Usamos la función push para agregar el subobjeto al arreglo de servicios del objeto cateringObj
@@ -533,8 +533,7 @@ const Quote = () => {
     setTotalQuote(myTotal);
     return arreglo;
   }
-  useEffect(() => 
-  {
+  useEffect(() => {
     console.log('El Evento es: ', typeE);
   }, [typeE])
   const [arregloQ, setArregloQ] = useState([]);
@@ -562,24 +561,25 @@ const Quote = () => {
   const onSubmit = (data) => {
     const sumPrices = (arr) => {
       let total = 0;
-    
+
       arr.forEach((obj) => {
         if (Array.isArray(obj.services)) {
           total += sumPrices(obj.services); // Llamada recursiva para procesar los subarreglos
         }
-    
+
         if (typeof obj.price === 'number') {
           total += obj.price;
         }
       });
-    
+
       return total;
     }
-    data.total = sumPrices(arregloQ);
+    data.total = totalQuote;
     data.selectedServices = arregloQ;
     console.log(data);
     dispatch(updateQuoteData(data));
 
+    console.log('El total essssssssssssssss: ', data.total);
     console.log('Valores OBTENIDOS: ', updateQuoteData);
 
     if (dataUser) {
@@ -600,7 +600,7 @@ const Quote = () => {
 
   return (
     <>
-      <Chat headerImg={'imagenQuoteHeader'}/>
+      <Chat headerImg={'imagenQuoteHeader'} />
       <main className="main__home">
         <img src={imgCotizacion} alt="" id="imagenQuoteHeader" className="imgCompanies__intro" />
         <section className="main__info dark:bg-neutral-800">
@@ -640,7 +640,7 @@ const Quote = () => {
                 {errors.date && <span className="loginDown__error">Este campo es obligatorio</span>}
 
                 {/* <span className="loginLabel">Tipo de Evento</span> */}
-                <select id="type__Event" {...register("type__Event", { required: true })} className="loginDown__input"> <option value="">Seleccione el Tipo de Evento</option> <option value="birthDay">Cumpleaños</option> <option value="boda">Boda</option> <option value="graduation">Graduación</option> <option value="empresarial">Evento Empresarial</option> <option value="Evento Social">Evento Social</option> </select> 
+                <select id="type__Event" {...register("type__Event", { required: true })} className="loginDown__input"> <option value="">Seleccione el Tipo de Evento</option> <option value="birthDay">Cumpleaños</option> <option value="boda">Boda</option> <option value="graduation">Graduación</option> <option value="empresarial">Evento Empresarial</option> <option value="Evento Social">Evento Social</option> </select>
 
                 {/* <span className="loginLabel">Número Estimado de Asistentes al Evento</span> */}
                 <input type="number" onChange={(e) => {
@@ -653,8 +653,17 @@ const Quote = () => {
 
 
                 {/* <span className="loginLabel">Seleccionar Ubicación</span>  */}
-                <select id="location" {...register("location", { required: true })} className="loginDown__input"> <option value="">Ubicación</option> <option value="bogota">Bogotá</option> <option value="medellin">Medellín</option> <option value="cali">Cali</option> <option value="cartagena">Cartagena</option> </select> {errors.location && <span className="loginDown__error">Este campo es obligatorio</span>}
+                <select id="location" {...register("location", { required: true })} className="loginDown__input"> <option value="">Ubicación</option> <option value="buenosAires">Salón Buenos Aires
+                </option> <option value="boston">Salón Bostón</option> <option value="laures">Salón Laures
+                  </option> <option value="martin">Salón San Martín
+                  </option> 
+                  <option value="copacabana">Finca Copacabana
 
+                </option> 
+                <option value="itagui">Finca Itagui
+                </option> 
+                {errors.location && <span className="loginDown__error">Este campo es obligatorio</span>}
+                </select> 
                 <span className="selectServices">Selecciona los servicios que deseas en el evento</span>
 
 

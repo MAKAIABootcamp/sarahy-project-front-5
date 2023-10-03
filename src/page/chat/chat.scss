@@ -79,9 +79,14 @@
 
             .optionClick
             {
-                color: #E9DCBE;
+                color: #000000;
                 font-weight: bold;
                 cursor: pointer;
+
+                &:hover
+                {
+                  font-size: 20px;
+                }
             }
         }
   
@@ -115,7 +120,7 @@
           outline: none;
         }
         button {
-          background-color: #E9DCBE;
+          background-color: #040404db;
           color: #fff;
           border: none;
           padding: 5px 10px;
