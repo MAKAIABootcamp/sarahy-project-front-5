@@ -2,7 +2,6 @@ import React, { useEffect, useState } from 'react';
 import Header from '../header/Header';
 import './modal.scss';
 import capacidad from '../../assets/image/personasCapacidad.png';
-import Map from '../map/Map';
 
 import { Swiper, SwiperSlide } from "swiper/react";
 import { Autoplay, Pagination, Navigation, FreeMode } from 'swiper/modules';
@@ -12,6 +11,7 @@ import sliderBufet from '../../assets/image/bufet.jpg';
 
 import Modal from "react-modal";
 import { set } from 'lodash';
+import Maps from '../map/Maps';
 
 
 
@@ -61,9 +61,10 @@ const CustomModal = ({ isOpen, onRequestClose, data }) => {
             {elemento ? elemento.capacidad : ''}
           </span>
         </div>
-        <iframe className='informacion__modal--mapa' src={elemento ? elemento.html : ''} >
+        {/* <iframe className='informacion__modal--mapa' src={elemento ? elemento.html : ''} >
 
-        </iframe>
+        </iframe> */}
+        <Maps elemento={elemento} />
       </section>
     </Modal>
   )
