@@ -245,6 +245,11 @@
                 text-align: center;
             }
 
+            .navbar__items:hover{
+              font-size: 23px;
+
+            }
+
             .navbar__items--logo {
                 list-style: none;
                 font-size: 22px;
@@ -253,6 +258,7 @@
                 .logo__item--img {
                     width: 10rem
                 }
+
             }
         }
     }
