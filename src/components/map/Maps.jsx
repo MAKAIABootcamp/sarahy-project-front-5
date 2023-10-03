@@ -1,13 +1,12 @@
-import React from 'react'
+import React, { useEffect, useState } from "react";
 import { GoogleMap, useJsApiLoader, Marker, InfoWindow } from '@react-google-maps/api';
 
 const containerStyle = {
     width: '400px',
-    height: '400px'
+    height: '280px',
+    marginBottom: '100px', // Corrección: Usar 'marginBottom' en lugar de 'margin-botton'
+    borderRadius: '9px'   // Corrección: Usar 'borderRadius' en lugar de 'border-radius'
 };
-
-
-
 
 const initialMarkers = [
     {
@@ -36,15 +35,33 @@ const initialMarkers = [
     },
 ];
 
-function Maps({elemento}) {
+function Maps({ elemento }) {
+    const [dataLocation, setdataLocation] = useState(null);
+
+
+
+    useEffect(() => {
+        if (elemento) {
+            setdataLocation(elemento);
+        } else {
+            setdataLocation({}); // Puedes establecerlo en un objeto vacío u otro valor predeterminado
+        }
+    }, [elemento]);
+
+    const latitud = dataLocation && dataLocation.coordenadas ? dataLocation.coordenadas.lat : 0;
+    const longitud = dataLocation && dataLocation.coordenadas ? dataLocation.coordenadas.ing : 0;
+    console.log(dataLocation, "locacion");
+    // const center = {
+    //     lat: -3.745,
+    //     lng: -38.523
+    // };
 
     const center = {
-        lat: -3.745,
-        lng: -38.523
-    };
-   
-    console.log(elemento);
-    // console.log(elemento.coordenadas.lat);
+        lat: latitud,
+        lng: longitud
+    }
+
+
     const { isLoaded } = useJsApiLoader({
         id: 'google-map-script',
         googleMapsApiKey: "AIzaSyAMd047JkkjhxDswT9CsIGo27NNn7_nTWo"
@@ -83,13 +100,13 @@ function Maps({elemento}) {
         <GoogleMap
             mapContainerStyle={containerStyle}
             center={center}
-            zoom={15}
+            zoom={14}
             onLoad={onLoad}
             onUnmount={onUnmount}
             onClick={mapClicked}
         >
             { /* Child components, such as markers, info windows, etc. */}
-            
+
             {markers.map((marker, index) => (
                 <Marker
                     key={index}
