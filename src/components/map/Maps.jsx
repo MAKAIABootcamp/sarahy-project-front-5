@@ -6,13 +6,6 @@ const containerStyle = {
     height: '400px'
 };
 
-// const center = {
-//     lat: -3.745,
-//     lng: -38.523
-// };
-
-
-
 
 
 
@@ -44,11 +37,14 @@ const initialMarkers = [
 ];
 
 function Maps({elemento}) {
+
     const center = {
-     
-    }
+        lat: -3.745,
+        lng: -38.523
+    };
+   
     console.log(elemento);
-    console.log(elemento.coordenadas.lat);
+    // console.log(elemento.coordenadas.lat);
     const { isLoaded } = useJsApiLoader({
         id: 'google-map-script',
         googleMapsApiKey: "AIzaSyAMd047JkkjhxDswT9CsIGo27NNn7_nTWo"
