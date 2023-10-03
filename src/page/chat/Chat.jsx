@@ -108,7 +108,7 @@ const Chat = () => {
     });
 
     const [mode, setMode] = useState('auto'); 
-    const [minimized, setMinimized] = useState(false);
+    const [minimized, setMinimized] = useState(true);
     const [inputMessage, setInputMessage] = useState('');
     const [initialMessageSent, setInitialMessageSent] = useState(false);
 

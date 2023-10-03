@@ -10,11 +10,21 @@ import perfil1 from '../../assets/image/pefil1.png';
 import lupa from '../../assets/image/lupaBlack.png';
 import logo from '../../assets/image/logo-blanco.png';
 import './header.scss';
+import ModalContactanos from '../modalContactanos/modalContactanos';
 
 const Header = () => {
   const dataUser = useSelector((state) => state.aunthentication.isLogged);
   const navigate = useNavigate();
   const { register, setValue } = useForm();
+  const [modal, setModal] = useState(false);
+
+  const openModal = () => {
+    setModal(true);
+  };
+
+  const closeModal = () => {
+    setModal(false);
+  };
 
   const elementsSearch = [
     'Boda',
@@ -176,7 +186,12 @@ const Header = () => {
                 <li className="navbar__items--logo">
                   {<img src={logo} className="logo__item--img" onClick={() => navigate('/')}/>}
                 </li>
-                <li className="navbar__items">Contáctanos</li>
+                <div>
+                <li className="navbar__items" onClick={openModal}>Contáctanos</li>
+                <ModalContactanos isOpen={modal} onRequestCloset={closeModal} />
+                </div>
+
+               
                 <li
                   className="navbar__items"
                   onClick={() => navigate('/quote')}

@@ -321,7 +321,7 @@ const handleItemClick = async (name, element) => {
             <section className="title__profile dark:bg-neutral-700">
                 <div className="div__header">
                 </div>
-                <h2 className="title dark:text-neutral-100">Perfil</h2>
+                {/* <h2 className="title dark:text-neutral-100">Perfil</h2> */}
 
             </section>
 
@@ -382,7 +382,7 @@ const handleItemClick = async (name, element) => {
                                 className={`item ${sectionPerfil === "configuracion" ? "active" : ""}`}
                                 onClick={() => handleSeleccion("configuracion")}
                             >
-                                <span className="dark:text-neutral-100">Configuracion</span>
+                                <span className="dark:text-neutral-100">Servicios</span>
                                 <img src={arrowRight} alt="" />
                             </div>
                         )}
@@ -403,7 +403,7 @@ const handleItemClick = async (name, element) => {
                                 <span className="title dark:text-neutral-100">Datos personales</span>
 
                                 <div className="edit__item">
-                                    <label className="span dark:text-neutral-100">Nombre:</label>
+                                    <label className="spanL dark:text-neutral-100">Nombre:</label>
                                     {editando ? (
                                         <input
                                             type="text"
@@ -413,7 +413,7 @@ const handleItemClick = async (name, element) => {
                                             autoFocus
                                         />
                                     ) : (
-                                        <span className="span dark:text-neutral-100">{datoUsuario ? datoUsuario.name : datoUsuario.email}</span>
+                                        <span className="spanI dark:text-neutral-100">{datoUsuario ? datoUsuario.name : datoUsuario.email}</span>
                                     )}
                                     <img
                                         src={iconEdit}
@@ -426,7 +426,7 @@ const handleItemClick = async (name, element) => {
                                 <hr className="line__profile" />
 
                                 <div className="edit__item">
-                                    <label className="span dark:text-neutral-100">Contacto:</label>
+                                    <label className="spanL dark:text-neutral-100">Contacto:</label>
                                     {
                                         editando ? (
                                             <input
@@ -436,7 +436,7 @@ const handleItemClick = async (name, element) => {
                                                 className="input__profile"
                                             />
                                         ) : (
-                                            <span className="span dark:text-neutral-100">{datoUsuario && datoUsuario.number ? datoUsuario.number : datoUsuario.email}</span>
+                                            <span className="spanI dark:text-neutral-100">{datoUsuario && datoUsuario.number ? datoUsuario.number : datoUsuario.email}</span>
                                         )
                                     }
                                     <img
@@ -451,7 +451,7 @@ const handleItemClick = async (name, element) => {
 
                                 <div className="edit__item">
 
-                                    <label className="span dark:text-neutral-100">Edad:</label>
+                                    <label className="spanL dark:text-neutral-100">Edad:</label>
                                     {editando ? (
                                         <input
                                             type="number"
@@ -461,7 +461,7 @@ const handleItemClick = async (name, element) => {
 
                                         />
                                     ) : (
-                                        <span className="span dark:text-neutral-100">{datoUsuario ? datoUsuario.age : ""}</span>
+                                        <span className="spanI dark:text-neutral-100">{datoUsuario ? datoUsuario.age : ""}</span>
                                     )
                                     }
                                     <img
@@ -475,7 +475,7 @@ const handleItemClick = async (name, element) => {
 
                                 <hr className="line__profile" />
                                 <div className="edit__item">
-                                    <label className="span dark:text-neutral-100">Ciudad:</label>
+                                    <label className="spanL dark:text-neutral-100">Ciudad:</label>
 
                                     {editando ? (
                                         <input
@@ -485,7 +485,7 @@ const handleItemClick = async (name, element) => {
                                             className="input__profile"
                                         />
                                     ) : (
-                                        <span className="span dark:text-neutral-100">{datoUsuario ? datoUsuario.city : ""}</span>
+                                        <span className="spanI dark:text-neutral-100">{datoUsuario ? datoUsuario.city : ""}</span>
                                     )
                                     }
                                     <img
@@ -497,7 +497,7 @@ const handleItemClick = async (name, element) => {
                                 </div>
                                 <hr className="line__profile" />
                                 <div className="edit__item">
-                                    <label className="span dark:text-neutral-100">Dirección:</label>
+                                    <label className="spanL dark:text-neutral-100">Dirección:</label>
                                     {editando ? (
                                         <input
                                             type="text"
@@ -506,7 +506,7 @@ const handleItemClick = async (name, element) => {
                                             className="input__profile"
                                         />
                                     ) : (
-                                        <span className="span dark:text-neutral-100"> {datoUsuario ? datoUsuario.address : ""}</span>
+                                        <span className="spanI dark:text-neutral-100"> {datoUsuario ? datoUsuario.address : ""}</span>
                                     )
                                     }
                                     <img
@@ -519,7 +519,7 @@ const handleItemClick = async (name, element) => {
                                 <hr className="line__profile" />
 
                                 <div className="edit__item">
-                                    <label className="span dark:text-neutral-100">Foto:</label>
+                                    <label className="spanL dark:text-neutral-100">Foto:</label>
                                     {editando ? (
                                         <input
                                             type="file"
@@ -528,7 +528,7 @@ const handleItemClick = async (name, element) => {
                                             className="input__profile"
                                         />
                                     ) : (
-                                        <span className="span dark:text-neutral-100">Imagen</span>
+                                        <span className="spanI dark:text-neutral-100">Imagen</span>
                                     )
                                     }
                                     <img
@@ -574,7 +574,7 @@ const handleItemClick = async (name, element) => {
                     )}
                     {sectionSeleccionada === "Citas" && (
                         <section className="show__price">
-                            <span className="title dark:text-neutral-100">Citas</span>
+                            <span className="title dark:text-neutral-100">Administra tus citas</span>
                             <div className="titles__price">
                                 <span className="span__title">Nombre</span>
                                 <span className="span__title">Fecha</span>
@@ -615,7 +615,7 @@ const handleItemClick = async (name, element) => {
                     )}
                     {sectionSeleccionada === "configuracion" && (
                         <section className="show__price">
-                            <span className="title dark:text-neutral-100">Configuracion</span>
+                            <span className="title dark:text-neutral-100">Administra tus servicios</span>
                             <PanelAdmi />
 
                         </section>

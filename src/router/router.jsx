@@ -40,6 +40,7 @@ const Router = () => {
   return (
     <BrowserRouter>
       <Header />
+      <Chat/>
       <Routes>
 
         { isLogged &&  <Route path="/perfil" element={<Profile />} />}       
@@ -57,7 +58,7 @@ const Router = () => {
         <Route path="/PDF" element={<DownloadQuote />} />
         <Route path="/bot" element={<Chat />} />
         <Route path="/registro" element={<Register />} />
-        <Route path="/*" element={<Register />} />
+        <Route path="/*" element={<Home />} />
         <Route path="/citas" element={<ModalCalendar />} />
         <Route path="/trabajemos" element={<WorkWhithUs />} />
         <Route path="/aliados" element={<Allies  />} />

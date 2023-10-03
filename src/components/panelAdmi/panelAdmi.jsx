@@ -119,10 +119,10 @@ const PanelAdmi = () => {
     </div>
     <section className="section__panelAdmi">
       <div className="logo__title">
-        <figure className="fig">
+        {/* <figure className="fig">
           <img className="img" src={logoSarahy} alt="" />
         </figure>
-        <h2 className="title dark:text-neutral-200">Administra tus servicios</h2>
+        <h2 className="title dark:text-neutral-200">Administra tus servicios</h2> */}
       </div>
 
       <div className="form__selectService">

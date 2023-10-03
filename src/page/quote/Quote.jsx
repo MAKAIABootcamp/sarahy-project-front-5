@@ -12,6 +12,10 @@ import { useNavigate } from "react-router-dom";
 import { updateQuoteData } from "../../redux/store/auth/authReducer";
 import { useDispatch, useSelector } from "react-redux";
 import { getService } from "../../services/getServices";
+import logoIzquierda from "../../assets/image/gotaIzquierda.png";
+import logoDerecha from "../../assets/image/gotaDerecha.png";
+import imgCotizacion from './cotizacion.jpg'
+
 // import { number } from "yup";
 
 const Quote = () => {
@@ -547,7 +551,6 @@ useEffect(() => {
     
 
     const onSubmit = (data) => {
-      
         data.total = totalQuote;
         data.selectedServices = arregloQ;
         console.log(data);
@@ -561,34 +564,39 @@ useEffect(() => {
           {
               await addNewQuote(dataUser.id, data);
           }
-  
           saveQuote(); 
         }
   
-  
-        
-  
         if (serviceCatering.length > 1) {
             console.log('AHORA SÍ.')
-            
         }
+        navigate('/Cotizacion')
+        window.scrollTo(0, 0);
+
     };
 
     return (
-        <section className="sectionQuote dark:bg-neutral-700">
+      <>
+         <main className="main__home">
+      <img src={imgCotizacion} alt="" className="imgCompanies__intro" />
+      <section className="main__info dark:bg-neutral-800">
+        <img src={logoIzquierda} alt="" className="logoIzquierda" />
+        <div className="container__intro">
+          <h1 className="main__title__home dark:text-neutral-100">Cotización</h1>
+          <p className="main__parrafo dark:text-neutral-300">
+          ¡Gracias por considerarnos para tu próximo evento! Por favor,
+                   completa el siguiente formulario para obtener una cotización
+                   personalizada que se adapte a tus necesidades y haga que tu ocasión
+                  sea inolvidable!
+          </p>
+        </div>
+        <img src={logoDerecha} alt="" className="logoDerecha" />
+      </section>
 
-            <img className='backGroundHeader' src="https://i.ibb.co/fXLf97G/image-127.png" alt="Fondo de Wedding" />
-
-            <main className="containerQuote dark:bg-neutral-800">
-                <span className="titleQuote dark:text-neutral-100">Cotización</span>
-                <span className="lineTitle"></span>
-                <p className="textQuote dark:text-neutral-300">
-                    ¡Gracias por considerarnos para tu próximo evento! Por favor,
-                    completa el siguiente formulario para obtener una cotización
-                    personalizada que se adapte a tus necesidades y haga que tu ocasión
-                    sea inolvidable!
-                </p>
-
+      <section className="sectionQuote dark:bg-neutral-700">
+           
+            <div className="containerQuote dark:bg-neutral-800">
+                
                 <section className="formQuote">
 
                     <form onSubmit={handleSubmit(onSubmit)} className="loginDown__form dark:bg-neutral-400" >
@@ -624,7 +632,7 @@ useEffect(() => {
                         {/* <span className="loginLabel">Seleccionar Ubicación</span>  */}
                         <select id="location" {...register("location", { required: true })} className="loginDown__input"> <option value="">Ubicación</option> <option value="bogota">Bogotá</option> <option value="medellin">Medellín</option> <option value="cali">Cali</option> <option value="cartagena">Cartagena</option> </select> {errors.location && <span className="loginDown__error">Este campo es obligatorio</span>}
 
-                        <span className="selectServices">SELECCIONA LOS SERVICIOS QUE DESEAS EN EL EVENTO</span>
+                        <span className="selectServices">Selecciona los servicios que deseas en el evento</span>
 
 
                         <Swiper
@@ -650,9 +658,8 @@ useEffect(() => {
                                             {cateringHTML}
                                         </div>
 
-
-
                                     </div>
+
                                 </section>
                                 
                             </SwiperSlide>
@@ -687,8 +694,6 @@ useEffect(() => {
 
                             <SwiperSlide className="sliderForm">
                                 <img className='imageSliderForm' src="https://images.unsplash.com/photo-1438762398043-ac196c2fa1e7?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1374&q=80" alt="imagen de bodas" />
-
-
 
                                 <section className="optionsSliderForm">
                                     <span className="loginLabel" onClick={() => setFour(!four)}>Animación</span>
@@ -726,13 +731,182 @@ useEffect(() => {
                         </Swiper>
 
                         <button type="submit" className="generation">Generar Cotización</button>
-                            <span onClick={() => navigate('/cotizacion')} className="generation"> IR A PDF </span>
+                        
                     </form>
 
 
                 </section>
-            </main>
+            </div>
         </section>
+
+      
+
+      
+
+
+
+      </main>
+      </>
+
+
+
+        // <section className="sectionQuote dark:bg-neutral-700">
+        //     <img className='backGroundHeader' src="https://i.ibb.co/fXLf97G/image-127.png" alt="Fondo de Wedding" />
+
+        //     <div className="containerQuote dark:bg-neutral-800">
+        //         <span className="titleQuote dark:text-neutral-100">Cotización</span>
+        //         <span className="lineTitle"></span>
+        //         <p className="textQuote dark:text-neutral-300">
+        //             ¡Gracias por considerarnos para tu próximo evento! Por favor,
+        //             completa el siguiente formulario para obtener una cotización
+        //             personalizada que se adapte a tus necesidades y haga que tu ocasión
+        //             sea inolvidable!
+        //         </p>
+
+        //         <section className="formQuote">
+
+        //             <form onSubmit={handleSubmit(onSubmit)} className="loginDown__form dark:bg-neutral-400" >
+
+        //                 <input type="text" id="empresa" {...register("name", { required: true })} placeholder="Nombre/Empresa" className="loginDown__input" />
+        //                 {errors.name && <span className="loginDown__error">Este campo es obligatorio</span>}
+        //                 <input type="number" id="contacto" {...register("contacto", { required: true })} placeholder="Contacto" className="loginDown__input" />
+        //                 {errors.contacto && <span className="loginDown__error">Este campo es obligatorio</span>}
+
+        //                 {/* <span className="loginLabel">Email</span> */}
+        //                 <input type="email" id="contacto" {...register("email", { required: true })} placeholder="Email" className="loginDown__input" />
+        //                 {errors.email && <span className="loginDown__error">Este campo es obligatorio</span>}
+
+
+        //                 {/* <span className="loginLabel">Fecha del Evento</span> */}
+        //                 <input type="date" id="date" {...register("date", { required: true })} placeholder="Fecha del Evento" className="loginDown__input" />
+        //                 {errors.date && <span className="loginDown__error">Este campo es obligatorio</span>}
+
+        //                 {/* <span className="loginLabel">Tipo de Evento</span> */}
+        //                 <input type="text" id="type__Event" {...register("type__Event", { required: true })} placeholder="Tipo de Evento" className="loginDown__input" />
+        //                 {errors.type__Event && <span className="loginDown__error">Este campo es obligatorio</span>}
+
+        //                 {/* <span className="loginLabel">Número Estimado de Asistentes al Evento</span> */}
+        //                 <input type="number" onChange={(e) => {
+        //                     console.log('Input value changed:', e.target.value);
+        //                     handleAttendeesChange(e);
+        //                 }} id="attendees" {...register("attendees", { required: true })} placeholder="Número Estimado de Asistentes al Evento" className="loginDown__input" />
+        //                 {errors.attendees && <span className="loginDown__error">Este campo es obligatorio</span>}
+
+
+
+
+        //                 {/* <span className="loginLabel">Seleccionar Ubicación</span>  */}
+        //                 <select id="location" {...register("location", { required: true })} className="loginDown__input"> <option value="">Ubicación</option> <option value="bogota">Bogotá</option> <option value="medellin">Medellín</option> <option value="cali">Cali</option> <option value="cartagena">Cartagena</option> </select> {errors.location && <span className="loginDown__error">Este campo es obligatorio</span>}
+
+        //                 <span className="selectServices">SELECCIONA LOS SERVICIOS QUE DESEAS EN EL EVENTO</span>
+
+
+        //                 <Swiper
+        //                     spaceBetween={30}
+        //                     centeredSlides={true}
+
+        //                     pagination={{
+        //                         clickable: true,
+        //                     }}
+        //                     navigation={true}
+        //                     modules={[Autoplay, Pagination, Navigation]}
+        //                     className="mySwiper swiperQuote" >
+
+
+        //                     <SwiperSlide className="sliderForm">
+        //                         <img className='imageSliderForm' src="https://i.ibb.co/g9j4DKT/image-128.png" alt="imagen de bodas" />
+
+        //                         <section className="optionsSliderForm">
+        //                             <span className="loginLabel"> Catering </span>
+
+        //                             <div className="service">
+        //                                 <div className="service__options">
+        //                                     {cateringHTML}
+        //                                 </div>
+
+
+
+        //                             </div>
+        //                         </section>
+                                
+        //                     </SwiperSlide>
+
+        //                     <SwiperSlide className="sliderForm">
+
+        //                         <img className='imageSliderForm' src="https://images.unsplash.com/photo-1495745966610-2a67f2297e5e?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1374&q=80" alt="imagen de bodas" />
+
+        //                         <section className="optionsSliderForm">
+        //                             <span className="loginLabel">Fotografía</span>
+        //                             <div className="service__options">
+        //                                 {fotoHTML}
+        //                             </div>
+        //                         </section>
+        //                     </SwiperSlide>
+
+        //                     <SwiperSlide className="sliderForm">
+        //                         <img className='imageSliderForm' src="https://images.unsplash.com/photo-1554778414-74925d96d495?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1376&q=80" alt="imagen de bodas" />
+
+        //                         <section className="optionsSliderForm">
+        //                             <span className="loginLabel">Decoración</span>
+
+        //                                 <div className="service__options">
+        //                                     {decorHTML}
+        //                                 </div>
+
+                                 
+
+        //                         </section>
+        //                     </SwiperSlide>
+
+
+        //                     <SwiperSlide className="sliderForm">
+        //                         <img className='imageSliderForm' src="https://images.unsplash.com/photo-1438762398043-ac196c2fa1e7?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1374&q=80" alt="imagen de bodas" />
+
+
+
+        //                         <section className="optionsSliderForm">
+        //                             <span className="loginLabel" onClick={() => setFour(!four)}>Animación</span>
+        //                             <div className="service__options">
+        //                                 {animationHTML}
+        //                             </div>
+        //                         </section>
+        //                     </SwiperSlide>
+
+
+        //                     <SwiperSlide className="sliderForm">
+        //                         <img className='imageSliderForm' src="https://images.unsplash.com/photo-1562575214-da9fcf59b907?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1372&q=80" alt="imagen de bodas" />
+
+        //                         <section className="optionsSliderForm">
+        //                             <span className="loginLabel"> Iluminación </span>
+
+        //                             <div className="service__options">
+        //                                 {iluminationgHTML}
+        //                             </div>
+
+        //                         </section>
+        //                     </SwiperSlide>
+
+        //                     <SwiperSlide className="sliderForm">
+        //                         <img className='imageSliderForm' src="https://plus.unsplash.com/premium_photo-1682391039360-01afb6ffc72f?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxzZWFyY2h8MXx8ZGp8ZW58MHx8MHx8fDA%3D&auto=format&fit=crop&w=500&q=60" alt="imagen de bodas" />
+
+        //                         <section className="optionsSliderForm">
+        //                             <span className="loginLabel"> Música y Dj </span>
+
+        //                             <div className="service__options">
+        //                                 {musicHTML}
+        //                             </div>
+        //                         </section>
+        //                     </SwiperSlide>
+        //                 </Swiper>
+
+        //                 <button type="submit" className="generation">Generar Cotización</button>
+        //                     <span onClick={() => navigate('/cotizacion')} className="generation"> IR A PDF </span>
+        //             </form>
+
+
+        //         </section>
+        //     </div>
+        // </section>
     );
 };
 

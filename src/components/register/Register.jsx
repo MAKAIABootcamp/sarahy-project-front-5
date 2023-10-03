@@ -19,6 +19,7 @@ const Register = () => {
 
   const navigateToLogin = () => {
     navigate("/ingresar");
+    window.scrollTo(0, 0);
   }
 
   const onSubmit = (data) => {

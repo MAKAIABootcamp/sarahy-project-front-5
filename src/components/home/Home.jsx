@@ -115,7 +115,7 @@ const Home = () => {
     return (
         <>
             <main className="main__home dark:bg-neutral-700" >
-                <Chat />
+                {/* <Chat /> */}
                 <section className='slider__home'>
                     <Swiper
                         spaceBetween={30}
