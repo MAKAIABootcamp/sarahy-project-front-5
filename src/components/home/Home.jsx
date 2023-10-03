@@ -116,7 +116,9 @@ const Home = () => {
         <>
             <main className="main__home dark:bg-neutral-700" >
                 {/* <Chat /> */}
-                <section className='slider__home'>
+                <Chat headerImg={'homeIMG'}/>
+
+                <section id='homeIMG' className='slider__home'>
                     <Swiper
                         spaceBetween={30}
                         centeredSlides={true}

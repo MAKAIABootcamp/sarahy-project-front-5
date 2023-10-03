@@ -25,6 +25,7 @@ import 'swiper/swiper-bundle.css';
 import { Autoplay, Pagination, Navigation, FreeMode } from 'swiper/modules';
 import { collection, getDocs } from "firebase/firestore";
 import { firestore } from '../../firebase/firebaseConfig';
+import Chat from '../../page/chat/Chat';
 
 const SocialEvents = () => {
   const [comentarios, setComentarios] = useState([]);
@@ -51,8 +52,9 @@ useEffect(() => {
 
   return (
     <main className="main__home dark:!bg-neutral-700" >
-  
-    <img src={socialesPrincipal} alt="" className="imgSocial__intro" />
+                              <Chat headerImg={'idEvents'}/>
+
+    <img id='idEvents' src={socialesPrincipal} alt="" className="imgSocial__intro" />
     <section className="main__info dark:bg-neutral-700">
       <img src={logoIzquierda} alt="" className="logoIzquierda" />
       <div className="container__intro">

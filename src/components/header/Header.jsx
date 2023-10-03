@@ -27,12 +27,13 @@ const Header = () => {
   };
 
   const elementsSearch = [
-    'Boda',
-    'Cumpleaños',
-    'Quinceañeros',
-    'San Valentín',
-    'Graduación',
-    'Comentarios',
+    { name: 'Boda', ruta: '/detalles' },
+    { name: 'Cotizar', ruta: '/quote' },
+    { name: 'Trabajemos', ruta: '/trabajemos' },
+    { name: 'San Valentín', ruta: '/sanvalentin' },
+    { name: 'Graduación', ruta: '/graduacion' },
+    { name: 'Comentarios', ruta: '/' },
+    {name: 'Eventos Sociales', ruta: '/sociales'}
   ];
   const [searchValue, setSearchValue] = useState('');
   const [theme, setTheme] = useState(() => {
@@ -59,8 +60,8 @@ const Header = () => {
   };
 
   const filteredResults = elementsSearch.filter((result) =>
-    result.toLowerCase().includes(searchValue.toLowerCase())
-  );
+  result.name.toLowerCase().includes(searchValue.toLowerCase())
+);
 
   const closeSearch = () => {
     setSearch(!search);
@@ -73,14 +74,19 @@ const Header = () => {
     closeSearch();
   };
 
-  const goToCommentsSection = () => {
-    navigate('/');
-    setTimeout(() => {
-      const commentsSection = document.getElementById('comentarios');
-      if (commentsSection) {
-        commentsSection.scrollIntoView({ behavior: 'smooth' });
-      }
-    }, 100);
+  // const goToCommentsSection = () => {
+  //   navigate('/');
+  //   setTimeout(() => {
+  //     const commentsSection = document.getElementById('comentarios');
+  //     if (commentsSection) {
+  //       commentsSection.scrollIntoView({ behavior: 'smooth' });
+  //     }
+  //   }, 100);
+  // };
+
+  const goToResultPage = (ruta) => {
+    navigate(ruta);
+    closeSearch();
   };
 
   const { width, height } = useScreenSize();
@@ -140,8 +146,8 @@ const Header = () => {
                     {searchValue ? (
                       filteredResults.length > 0 ? (
                         filteredResults.map((result, index) => (
-                          <p onClick={() => goToCommentsSection()} key={index}>
-                            {result}
+                          <p onClick={() => goToResultPage(result.ruta)} key={index}>
+                            {result.name}
                           </p>
                         ))
                       ) : (
@@ -184,14 +190,14 @@ const Header = () => {
                   Eventos Empresariales
                 </li>
                 <li className="navbar__items--logo">
-                  {<img src={logo} className="logo__item--img" onClick={() => navigate('/')}/>}
+                  {<img src={logo} className="logo__item--img" onClick={() => navigate('/')} />}
                 </li>
                 <div>
-                <li className="navbar__items" onClick={openModal}>Contáctanos</li>
-                <ModalContactanos isOpen={modal} onRequestCloset={closeModal} />
+                  <li className="navbar__items" onClick={openModal}>Contáctanos</li>
+                  <ModalContactanos isOpen={modal} onRequestCloset={closeModal} />
                 </div>
 
-               
+
                 <li
                   className="navbar__items"
                   onClick={() => navigate('/quote')}
@@ -204,8 +210,8 @@ const Header = () => {
         </>
       )}
 
-<div className={`mobile-menu ${isOpen && width < 600 ? 'show' : ''}`}>
-  <span className='menu__slogan'>Tu momento nuestra pasión</span>
+      <div className={`mobile-menu ${isOpen && width < 600 ? 'show' : ''}`}>
+        <span className='menu__slogan'>Tu momento nuestra pasión</span>
         <ul>
           <li onClick={() => navigate('/')}>Inicio</li>
           <li onClick={() => navigate('/sociales')}>Eventos Sociales</li>
@@ -216,10 +222,10 @@ const Header = () => {
         </ul>
 
         <article className="redes__header">
-                    <img className="red__header" src="https://www.pngplay.com/wp-content/uploads/9/Facebook-Logo-PNG-Background.png" alt=""/>
-                    <img className="red__header" src="https://cdn-icons-png.flaticon.com/512/87/87390.png" alt="" />
-                    <img className="red__header" src="https://assets.stickpng.com/images/5a4e2ef62da5ad73df7efe6e.png" alt="" href="https://api.whatsapp.com/send?phone=33003003232&text=Hola%20bienvenido%20a%20Sarahy%20te%20asesoramos%20por%20whatsapp%20gestiona%20tu%20evento%20por%20este%20canal."/>
-                </article>
+          <img className="red__header" src="https://www.pngplay.com/wp-content/uploads/9/Facebook-Logo-PNG-Background.png" alt="" />
+          <img className="red__header" src="https://cdn-icons-png.flaticon.com/512/87/87390.png" alt="" />
+          <img className="red__header" src="https://assets.stickpng.com/images/5a4e2ef62da5ad73df7efe6e.png" alt="" href="https://api.whatsapp.com/send?phone=33003003232&text=Hola%20bienvenido%20a%20Sarahy%20te%20asesoramos%20por%20whatsapp%20gestiona%20tu%20evento%20por%20este%20canal." />
+        </article>
       </div>
     </header>
   );

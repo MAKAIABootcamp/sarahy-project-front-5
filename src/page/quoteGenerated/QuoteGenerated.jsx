@@ -134,6 +134,8 @@ const QuoteGenerated = () => {
   return (
 
     <main className="main__home">
+            <Chat headerImg={'imgCompanies__intro'}/>
+
     <img src={imgCotizacion} alt="" className="imgCompanies__intro" />
     <section className="main__info dark:bg-neutral-800">
       <img src={logoIzquierda} alt="" className="logoIzquierda" />

@@ -4,7 +4,78 @@ import { useNavigate } from 'react-router-dom';
 import { addAdminMessageToChat } from '../../services/addMessage';
 import { addMessageToExistingChat } from '../../services/addMessageToExistingChat ';
 
-const Chat = () => {
+const Chat = ({headerImg}) => {
+
+    function getVisibleHeightRatio(id) {
+         
+        let element = document.getElementById(id);
+        let totalHeight = element.clientHeight;
+        let top = element.getBoundingClientRect().top;
+        let bottom = element.getBoundingClientRect().bottom;
+        let visibleHeight = Math.min(bottom, window.innerHeight) - Math.max(top, 0);
+     
+        let ratio = visibleHeight / totalHeight;
+       
+        return ratio;
+    }
+    const handleUpdatePosition = () => 
+    {
+        {
+            const header = document.getElementById(headerImg);
+            const footer = document.getElementById('miFooter'); 
+            const componente = document.querySelector('.chat');
+
+            const headerHeight = header ? header.clientHeight : 0;
+            const footerHeight = footer ? footer.clientHeight : 0;
+            var ratio = getVisibleHeightRatio(headerImg);
+            // console.log(ratio * headerHeight);
+            const chat = document.querySelector('.chat');
+            const chatHeight = chat.clientHeight;
+            const tH = ratio * headerHeight + 120;
+            const topH = window.innerHeight - chatHeight;
+            var hF = getVisibleHeightRatio("miFooter");
+            // console.log(ratio * headerHeight);
+            const tF = hF * headerHeight + 50;
+            console.log('ESTA ES LA ALTURA CHAT: ', chatHeight);
+            console.log('ESTE ES EL ALTURA RATIO: ', ratio);
+            console.log('ESTE ES EL ALTURA HEADER: ', headerHeight);
+            console.log('ESTA ES LA SUMA: ', (ratio * headerHeight + chatHeight));
+            console.log('ESTE ES EL TOTAL QUE DEBE DAR: ', window.innerHeight)
+            if (ratio * headerHeight + chatHeight >= window.innerHeight) {
+                chat.style.position = 'absolute';
+                chat.style.top = `${tH}px`; 
+                chat.style.right = '0';  
+                console.log('AHORAAAAAAAAAAAAA ++++');
+            } else {
+
+                if (hF <0) {
+
+                    chat.style.position = 'fixed';
+                    chat.style.bottom = '10px';
+                    chat.style.right = '0px';
+                    chat.style.top = `${topH}px`; 
+                }
+                else
+                {
+                    // console.log('Sí existeee.')
+                    
+                        chat.style.position = 'fixed';
+                        chat.style.top = `${window.innerHeight-hF*footerHeight-25-chatHeight}px`;                      
+                        console.log('Bottom de: ', hF * footerHeight)
+                        chat.style.right = '0';  
+                     
+                }
+                
+            }
+
+
+
+
+
+
+
+        }
+    }
     const [customChatId, setCustomChatId] = useState('');
     const [statuChat, setStatuChat] = useState(false);
     const generateRandomChatId = () => {
@@ -32,7 +103,7 @@ const Chat = () => {
     const messagesContainerRef = useRef(null);
     const navigate = useNavigate();
     window.addEventListener('load', () => {
-        const header = document.getElementById('miHeader');
+        const header = document.getElementById('imagenQuoteHeader');
         const footer = document.getElementById('miFooter'); 
 
         const headerHeight = header ? header.clientHeight : 0;
@@ -46,62 +117,13 @@ const Chat = () => {
         const limiteSuperior = parseInt(componente.style.top);
         const limiteInferior = parseInt(componente.style.bottom);
 
-        window.addEventListener('scroll', () => {
-            var ratio = getVisibleHeightRatio("miHeader");
-            // console.log(ratio * headerHeight);
-            const chat = document.querySelector('.chat');
-            const chatHeight = chat.clientHeight;
-            const tH = ratio * headerHeight + 200;
-            const topH = window.innerHeight - chatHeight;
-            var hF = getVisibleHeightRatio("miFooter");
-            // console.log(ratio * headerHeight);
-            const tF = hF * headerHeight + 50;
-            if (ratio * headerHeight + chatHeight >= window.innerHeight) {
-                chat.style.position = 'absolute';
-                chat.style.top = `${tH}px`; 
-                chat.style.right = '0';  
-            } else {
-
-                if (hF <0) {
-
-                    chat.style.position = 'fixed';
-                    chat.style.bottom = '0px';
-                    chat.style.right = '0px';
-                    chat.style.top = `${topH}px`; 
-                }
-                else
-                {
-                    // console.log('Sí existeee.')
-                    
-                        chat.style.position = 'fixed';
-                        chat.style.top = `${topH-hF * footerHeight-5}px`;                      
-                        console.log('Bottom de: ', hF * footerHeight)
-                        chat.style.right = '0';  
-                     
-                }
-                
-            }
+        console.log('LA ALTURA DEL HEADER ES: ', headerHeight);
+        console.log('La Altura del Footer ES: ', footerHeight);
 
 
+        window.addEventListener('scroll', () => handleUpdatePosition());
 
 
-
-
-
-        });
-
-        function getVisibleHeightRatio(id) {
-         
-            let element = document.getElementById(id);
-            let totalHeight = element.clientHeight;
-            let top = element.getBoundingClientRect().top;
-            let bottom = element.getBoundingClientRect().bottom;
-            let visibleHeight = Math.min(bottom, window.innerHeight) - Math.max(top, 0);
-         
-            let ratio = visibleHeight / totalHeight;
-           
-            return ratio;
-        }
 
 
 
@@ -132,6 +154,7 @@ const Chat = () => {
 
     const handleMinimize = () => {
         setMinimized(!minimized);
+
     };
 
     const handleSubmit = (e) => {
@@ -183,6 +206,7 @@ const Chat = () => {
             return 'No entiendo tu elección. Por favor, elige una opción válida:';
         }
     };
+
 
     return (
         <div className={`chat ${minimized ? 'minimized' : ''}`}>

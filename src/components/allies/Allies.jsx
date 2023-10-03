@@ -8,6 +8,7 @@ import logoDerecha from '../../assets/image/gotaDerecha.png'
 import logoRecomendaciones from '../../assets/image/logoIdentificador.png'
 import imagenContactanos from '../../assets/image/imagenContactanos.png'
 import { useForm  } from 'react-hook-form';
+import Chat from '../../page/chat/Chat';
 
 const Allies = () => {
     const {register, reset, handleSubmit } = useForm()
@@ -20,7 +21,8 @@ const Allies = () => {
 
     return (
         <main className='main__allies dark:!bg-neutral-700'>
-            <img src={fondo} alt="" className='imagen__aliados' />
+                            <Chat headerImg={'idAliados'}/>
+            <img id='idAliados' src={fondo} alt="" className='imagen__aliados' />
            
 
             <section className='main__info dark:!bg-neutral-700'>
