@@ -105,18 +105,18 @@
             }
 
             .item__cerrar {
-                background-color: rgb(200, 83, 83);
+                background-color: $color-black;
                 font-weight: bold;
                 text-align: center;
+                color: $color-white;
 
             }
 
             .item__cerrar:hover {
-                background-color: $color-black;
+                background-color: rgb(181, 46, 46);
                 font-weight: bold;
                 text-align: center;
-                color: white;
-                font-size: 16px;
+                color: $color-white;
             }
         }
     }
@@ -129,7 +129,7 @@
             display: flex;
             flex-direction: column;
             margin: 0.5rem;
-            gap: 1.2rem;
+            gap: 11px;
             padding: 15px 1.5rem;
 
             .editar__name {

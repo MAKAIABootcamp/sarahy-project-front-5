@@ -12,7 +12,7 @@ import { Autoplay, Pagination, Navigation, FreeMode } from 'swiper/modules';
 // imagenes
 import service_catering from '../../assets/image/service_catering.jpg'
 import service_decoracion from '../../assets/image/service_decoracion.jpg'
-import service_fotos from '../../assets/image/service_fotos.jpg'
+import service_fotos from '../../assets/image/service_foto.jpg'
 import service_animacion from '../../assets/image/service_animacion.jpg'
 import service_musica from '../../assets/image/service_musica.jpg'
 import service_iluminacion from '../../assets/image/service_iluminacion.jpg'
@@ -200,7 +200,7 @@ const Home = () => {
                             slidesPerView={4}
                             spaceBetween={30}
                             autoplay={{
-                                delay: 1000,
+                                delay: 3000,
                                 disableOnInteraction: false,
                             }}
                             pagination={{

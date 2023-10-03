@@ -50,10 +50,10 @@ useEffect(() => {
 }, []);
 
   return (
-    <main className="main__home " >
+    <main className="main__home dark:!bg-neutral-700" >
   
     <img src={socialesPrincipal} alt="" className="imgSocial__intro" />
-    <section className="main__info dark:bg-neutral-800">
+    <section className="main__info dark:bg-neutral-700">
       <img src={logoIzquierda} alt="" className="logoIzquierda" />
       <div className="container__intro">
         <h1 className="main__title__home dark:text-neutral-200">Eventos Sociales</h1>
@@ -64,9 +64,9 @@ useEffect(() => {
       <img src={logoDerecha} alt="" className="logoDerecha" />
     </section>
 
-    <section className="tipe__events dark:bg-neutral-600">
+    <section className="tipe__events dark:!bg-neutral-700">
       <span className="title__events dark:text-neutral-300">TODOS LOS EVENTOS SOCIALES PARA TI</span>
-      <div className="cards__events">
+      <div className="cards__events dark:!bg-neutral-700">
         <article className="details__event">
           <figure className="fig">
             <img src={boda} alt="" className="img" />
@@ -94,7 +94,7 @@ useEffect(() => {
       </div>
     </section>
 
-    <section className="data__events dark:bg-neutral-800">
+    <section className="data__events dark:bg-neutral-700">
       <span className="title__data dark:text-neutral-200">
         ¿CÓMO CELEBRACIONES SARAHY HACE ESPECIAL Y UNICO TU EVENTO?
       </span>
@@ -111,7 +111,7 @@ useEffect(() => {
           </p>
         </div>
 
-        <div className="div__data">
+        <div className="div__data dark:!bg-neutral-700">
           <article className="logo__title">
             <figure className="fig">
               <img src={logoNegro} alt="" className="img dark:bg-neutral-100" />
@@ -123,7 +123,7 @@ useEffect(() => {
           </p>
         </div>
 
-        <div className="div__data">
+        <div className="div__data dark:!bg-neutral-700">
           <article className="logo__title">
             <figure className="fig">
               <img src={logoNegro} alt="" className="img dark:bg-neutral-100" />
@@ -137,13 +137,13 @@ useEffect(() => {
       </div>
     </section>
 
-    <section className="galery dark:bg-neutral-800">
+    <section className="galery dark:bg-neutral-700">
           <div className="logo__titleGalery">
           <figure className="fig">
               <img src={logoNegro} alt="" className="img dark:bg-neutral-100  dark:rounded-lg " />
           </figure>
           <span className="span dark:text-neutral-200">Galería</span>
-          <button className="button__companies dark:bg-neutral-100 dark:text-neutral-800">Haz tu cotización </button>
+          <button className="button__companies dark:!bg-neutral-100 dark:!text-neutral-800">Haz tu cotización </button>
           </div>
           <div className="event__collagePlus">
               <CollageEvents imagenes={typEvent} className="description__img" />
@@ -154,7 +154,7 @@ useEffect(() => {
           </figure> */}
     </section>
 
-    <section className="comentarios dark:bg-neutral-800">
+    <section className="comentarios dark:bg-neutral-700">
                     <h2 className='comentarios__title dark:text-neutral-200'>Testimonios</h2>
                     <hr className='hr__services' />
                     <div className="container__cards--coments">
@@ -175,13 +175,13 @@ useEffect(() => {
 
                         >
                             {comentarios.map((comentario, index) => (
-                                <SwiperSlide key={index}>
-                                    <div className="container__comen">
-                                        <figure className="contenedor__imagen--comentario">
+                                <SwiperSlide key={index} className='dark:!bg-neutral-700'>
+                                    <div className="container__comen dark:!bg-neutral-700">
+                                        <figure className="contenedor__imagen--comentario dark:!bg-neutral-800">
                                             <img src={comentario.photo} alt="imagen de comentario" className="img__comentario" />
                                         </figure>
                                         <div className="testimonio">
-                                            <span className='span' >{comentario.comment}</span>
+                                            <span className='span dark:!text-neutral-200' >{comentario.comment}</span>
                                             
                                             <div className="container__calificacion">
                                                 {Array.from({ length: Math.min(comentario.qualification, 5) }, (_, i) => (
