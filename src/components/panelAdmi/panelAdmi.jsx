@@ -8,6 +8,7 @@ import { editServiceField } from "../../services/editServicesFild";
 import logoSarahy from "./logoNegro.png";
 import "./panelAdmi.scss";
 import Swal from "sweetalert2";
+import { useNavigate } from "react-router-dom";
 
 const PanelAdmi = () => {
   const [serviceData, setServiceData] = useState([]);
@@ -16,6 +17,7 @@ const PanelAdmi = () => {
   const [btnIndex, setBtnIndex] = useState("");
   const [selectedService, setSelectedService] = useState('');
   const [filteredServices, setFilteredServices] = useState([]);
+  const navigate = useNavigate()
 
   const {
     register,
@@ -55,6 +57,8 @@ const PanelAdmi = () => {
       showConfirmButton: false,
       timer: 1500
     })
+    navigate('/')
+    window.scrollTo(0, 0);
 
   };
 
@@ -65,6 +69,8 @@ const PanelAdmi = () => {
 
   const deleteServices = async (serviceName) => {
     const deleteService = await deleteServiceField("photography", serviceName);
+    navigate('/')
+    window.scrollTo(0, 0);
     return deleteService;
   };
 
@@ -89,6 +95,8 @@ const PanelAdmi = () => {
       showConfirmButton: false,
       timer: 1500
     })
+    navigate('/')
+    window.scrollTo(0, 0);
   };
 
   const editServices = async (serviceId, fieldPath, newValue) => {

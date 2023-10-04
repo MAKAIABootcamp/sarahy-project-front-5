@@ -1,17 +1,17 @@
 @import "../../assets/reset.scss";
 @import "../../assets/variables.scss";
 
-
 .main__allies {
     display: flex;
     flex-direction: column;
     width: 100%;
 
     .imagen__aliados {
-        height: 30rem;
         width: 100%;
-        object-fit: fill;
-
+        height: 22rem;
+        object-fit: cover;
+        object-position: 50% 20%;
+        filter: brightness(60%);
     }
 
     .header__transparent {
@@ -63,20 +63,20 @@
         align-items: center;
 
         .logoIzquierda {
-            width: 8rem;
-            height: 8rem;
+            width: 7rem;
+            height: 7rem;
         }
 
         .container__intro {
-            width: 70%;
+            width: 80%;
             padding: 10px 40px;
 
             .main__title__home {
                 color: $color-black;
-                font-size: 70px;
+                font-size: 50px;
                 font-family: $Letter-titles;
                 text-align: center;
-
+                font-weight: bolder;
             }
 
             .main__subtitle {
@@ -92,15 +92,15 @@
             .main__parrafo {
                 font-family: $Letter-body;
                 padding: 25px 0;
-                font-size: 23px;
+                font-size: 18px;
                 text-align: justify;
             }
 
         }
 
         .logoDerecha {
-            width: 8rem;
-            height: 8rem;
+            width: 7rem;
+            height: 7rem;
         }
     }
 
@@ -162,7 +162,7 @@
 
         .span__recomendaciones--aliados{
             font-family: $Letter-subtitles;
-            font-size: 25px;
+            font-size: 24px;
             width: 100%;
             text-align: center;
         }
@@ -170,9 +170,9 @@
         .recuadro__recomendaciones {
             width: 100%;
             display: flex;
-            gap: 20px;
+            gap: 5px;
             flex-wrap: wrap;
-            background-color: $color-white;
+            background-color: white;
             border-radius: 8px;
             margin-bottom: 0;
             justify-content: center;
@@ -186,7 +186,7 @@
                 padding: 30px;
 
                 .logo__recomendaciones {
-                    width: 5rem;
+                    width: 4rem;
                 }
 
                 .numero__tarjeta {
@@ -203,6 +203,7 @@
                 .descripcion__tarjeta {
                     font-size: 17px;
                     text-align: center;
+                    font-family: $Letter-body;
                 }
             }
         }
@@ -279,7 +280,7 @@
                     font-size: 18px;
                 }
                 .btn__form--enviar:hover{
-                 background-color: $color-cream;
+                 background-color: green;
                  color: black;
                  cursor: pointer;
                 }
