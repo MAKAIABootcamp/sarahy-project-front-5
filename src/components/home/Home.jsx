@@ -54,42 +54,39 @@ import Chat from '../../page/chat/Chat';
 
 
 const Home = () => {
-    
+
     const [comentarios, setComentarios] = useState([]);
     const [modal, setModal] = useState(false);
-    const [selectedElement, setSelectedElement] = useState({}); 
-  
+    const [selectedElement, setSelectedElement] = useState({});
+
     const openModal = (element) => {
-      setSelectedElement(element); 
-      setModal(true);
+        setSelectedElement(element);
+        setModal(true);
     };
-  
+
     const closeModal = () => {
-      setSelectedElement(null);
-      setModal(false);
+        setSelectedElement(null);
+        setModal(false);
     };
 
     const navigate = useNavigate()
 
-    
+
     const [eventoSeleccionado, setEventoSeleccionado] = useState("Bodas")
 
     const handleEventoClick = (evento) => {
         setEventoSeleccionado(evento);
     };
 
-      useEffect(() => 
-      
-      {
-        const addUserme = async () => 
-        {
+    useEffect(() => {
+        const addUserme = async () => {
 
-                await addUserFireStore('Ball', 'lauenfhkjshgbwvh2874dio43nud3', 'ball@gmail.com')
-                console.log('USUARIO CREADO. ');
+            await addUserFireStore('Ball', 'lauenfhkjshgbwvh2874dio43nud3', 'ball@gmail.com')
+            console.log('USUARIO CREADO. ');
 
         }
         addUserme();
-      }, [])
+    }, [])
 
 
     const traerComentarios = async () => {
@@ -116,22 +113,23 @@ const Home = () => {
         <>
             <main className="main__home dark:bg-neutral-700" >
                 {/* <Chat /> */}
-                <Chat headerImg={'homeIMG'}/>
-
-                <section id='homeIMG' className='slider__home'>
+                <Chat headerImg={'homeIMG'} />
+                <div className='imagen__home--res'>
+                </div>
+                <section id='homeIMG' className='slider__home dark:!bg-neutral-700'>
                     <Swiper
                         spaceBetween={30}
                         centeredSlides={true}
                         autoplay={{
                             delay: 5000,
                             disableOnInteraction: false,
-                        }}  
+                        }}
                         pagination={{
                             clickable: true,
                         }}
                         navigation={true}
                         modules={[Autoplay, Pagination, Navigation]}
-                        className="mySwiper" >
+                        className="mySwiper dark:!bg-neutral-700" >
 
 
                         <SwiperSlide className='dark:bg-neutral-400'><img src={sliderBodas} alt="imagen de bodas" /> </SwiperSlide>
@@ -149,30 +147,55 @@ const Home = () => {
                         <h1 className='main__title__home dark:text-neutral-100'>Bienvenido a</h1>
                         <h4 className='main__subtitle dark:text-neutral-300' >Celebraciones Sarahy</h4>
                         <p className="main__parrafo dark:text-neutral-300">
-                        Únete a nosotros en Celebraciones Sarahy y haz de tus eventos una experiencia excepcional. ¡Déjanos hacer realidad tus celebraciones de ensueño y transformar cada detalle en un recuerdo inolvidable que perdurará para siempre!
+                            Únete a nosotros en Celebraciones Sarahy y haz de tus eventos una experiencia excepcional. ¡Déjanos hacer realidad tus celebraciones de ensueño y transformar cada detalle en un recuerdo inolvidable que perdurará para siempre!
                         </p>
 
                     </div>
                     <img src={logoDerecha} alt="" className='logoDerecha' />
                 </section>
-
+                    <section className="eventos__mobile">
+                        <div className="container__card--mobile">
+                            <img src="https://www.zankyou.com.mx/images/mag-card-c/ad8/8ade/878/623/-/mx/wp-content/uploads/2018/05/antonio-saucedo.jpg" alt="" className="card__mobile" />
+                            <span className="span__evento--mobile">
+                                Bodas
+                            </span>
+                        </div>
+                        <div className="container__card--mobile">
+                            <img src="https://primicia.com.ve/wp-content/uploads/2022/09/xv_-anos_chicas_tips_eventos.jpg" alt="" className="card__mobile" />
+                            <span className="span__evento--mobile">
+                                Quince años
+                            </span>
+                        </div>
+                        <div className="container__card--mobile">
+                            <img src="https://www.esneca.com/wp-content/uploads/eventos-sociales.jpg" alt="" className="card__mobile" />
+                            <span className="span__evento--mobile">
+                                Eventos sociales
+                            </span>
+                        </div>
+                        <div className="container__card--mobile">
+                            <img src="https://creativando.es/wp-content/uploads/2018/08/tipos-de-eventos-4.jpg" alt="" className="card__mobile" />
+                            <span className="span__evento--mobile">
+                                Eventos empresariales
+                            </span>
+                        </div>
+                    </section>
                 <section className="typeEvent__home">
                     <div className="btns dark:text-neutral-700" >
 
-                        <button className={`btn__event ${eventoSeleccionado == "Bodas" ? "selected" : ""}`}
+                        <button className={`btn__event dark:!bg-neutral-400 dark:!text-neutral-900 ${eventoSeleccionado == "Bodas" ? "selected" : ""}`}
                             onClick={() => handleEventoClick("Bodas")}>
                             Bodas
                         </button>
-                        <button className={`btn__event ${eventoSeleccionado === "Quinces" ? "selected" : ""}`} onClick={() => handleEventoClick("Quinces")}>
+                        <button className={`btn__event dark:!bg-neutral-400 dark:!text-neutral-900 ${eventoSeleccionado === "Quinces" ? "selected" : ""}`} onClick={() => handleEventoClick("Quinces")}>
                             Quince Años
                         </button>
-                        <button className={`btn__event ${eventoSeleccionado === "Cumpleaños" ? "selected" : ""}`} onClick={() => handleEventoClick("Cumpleaños")}>
+                        <button className={`btn__event dark:!bg-neutral-400 dark:!text-neutral-900 ${eventoSeleccionado === "Cumpleaños" ? "selected" : ""}`} onClick={() => handleEventoClick("Cumpleaños")}>
                             Aniversarios
                         </button>
-                        <button className={`btn__event ${eventoSeleccionado === "Empresariales" ? "selected" : ""}`} onClick={() => handleEventoClick("Empresariales")}>
+                        <button className={`btn__event dark:!bg-neutral-400 dark:!text-neutral-900 ${eventoSeleccionado === "Empresariales" ? "selected" : ""}`} onClick={() => handleEventoClick("Empresariales")}>
                             Empresariales
                         </button>
-                        <button className={`btn__event ${eventoSeleccionado === "Educativos" ? "selected" : ""}`} onClick={() => handleEventoClick("Educativos")}>
+                        <button className={`btn__event dark:!bg-neutral-400 dark:!text-neutral-900 ${eventoSeleccionado === "Educativos" ? "selected" : ""}`} onClick={() => handleEventoClick("Educativos")}>
                             Educativos
                         </button>
                     </div>
@@ -181,7 +204,7 @@ const Home = () => {
                             <div className="event__description dark:text-neutral-300">
                                 <h2 className="description__title">{typEvent[eventoSeleccionado].title}</h2>
                                 <p className="description__parrafo">{typEvent[eventoSeleccionado].description}</p>
-                                <button className="description__btn dark:bg-neutral-500 dark:text-neutral-100" onClick={() => navigate("/quote")}>Haz tu cotización</button>
+                                <button className="description__btn dark:!bg-neutral-400 dark:text-neutral-100" onClick={() => navigate("/quote")}>Haz tu cotización</button>
                             </div>
                             <div className="event__collage">
                                 <Collage imagenes={typEvent[eventoSeleccionado].imagenes} className="description__img" />
@@ -198,7 +221,7 @@ const Home = () => {
 
 
                         <Swiper
-                            className="my-swiper-2 dark:bg-neutral-100"
+                            className="my-swiper-2 dark:bg-neutral-700"
                             slidesPerView={4}
                             spaceBetween={30}
                             autoplay={{
@@ -210,25 +233,25 @@ const Home = () => {
                             }}
                             navigation={true}
                             modules={[Autoplay, Pagination, Navigation]}
-                            // loop={true}
-                           
+                        // loop={true}
+
 
                         >
 
-                            <SwiperSlide className=' swiperCard dark:bg-neutral-700'>
-                                <div className="card__services dark:bg-neutral-300">
-                                    <h3 className='card__services--title'>CATERING</h3>
+                            <SwiperSlide className=' swiperCard dark:!bg-neutral-700'>
+                                <div className="card__services dark:!bg-neutral-300">
+                                    <h3 className='card__services--title '>CATERING</h3>
                                     <img src={service_catering} alt="Imagen del servicio ofrecido" className='img__services' />
                                     {/* <span className='card__services--span'>
                                         Guardar los mejores momentos de tu evento con fotografías y videos de la mejor calidad.
                                     </span> */}
-                                    
+
                                 </div>
                             </SwiperSlide>
 
                             {/* Slide 2 */}
                             <SwiperSlide>
-                                <div className="card__services dark:bg-neutral-300">
+                                <div className="card__services dark:!bg-neutral-300">
                                     <h3 className='card__services--title '>DECORACIÓN</h3>
                                     <img src={service_decoracion} alt="Imagen del servicio ofrecido" className='img__services' />
                                     {/* <span className='card__services--span'>
@@ -310,7 +333,7 @@ const Home = () => {
                                 Descuentos
                             </span>
                             <p className="card__beneficios--p dark:text-neutral-400">
-                            Obtén descuentos exclusivos en servicios y productos para eventos con nuestros proveedores asociados. 
+                                Obtén descuentos exclusivos en servicios y productos para eventos con nuestros proveedores asociados.
                             </p>
                         </div>
 
@@ -320,17 +343,17 @@ const Home = () => {
                                 Ahorro de Tiempo
                             </span>
                             <p className="card__beneficios--p dark:text-neutral-400">
-                            Te liberamos de preocupaciones organizativas para que disfrutes al máximo tu día.
+                                Te liberamos de preocupaciones organizativas para que disfrutes al máximo tu día.
                             </p>
                         </div>
 
                         <div className='beneficio__card'>
-                            <img src={relojArena} alt="" className="icnono__beneficios" />
+                            <img src={relojArena} alt="" className="icnono__beneficios " />
                             <span className='card__beneficio--title dark:text-neutral-300'>
                                 Innovación Tecnológica
                             </span>
                             <p className="card__beneficios--p dark:text-neutral-400">
-                            Empleamos tecnología de vanguardia para eficiencia en la gestión de eventos y seguimiento del proceso.
+                                Empleamos tecnología de vanguardia para eficiencia en la gestión de eventos y seguimiento del proceso.
                             </p>
                         </div>
 
@@ -345,7 +368,7 @@ const Home = () => {
                     </div>
 
                     <div className="container__locaciones">
-                        {ubicaciones.map((element, index ) => (
+                        {ubicaciones.map((element, index) => (
                             <div className="card__ubicacion" key={index}>
                                 <div className='card__separacion--ubicacion'>
                                     <img src={loguito} alt="" className="loguito__ubicacion" />
@@ -365,8 +388,6 @@ const Home = () => {
                             </h3>
                         </div>
                     </div>
-
-
                 </section>
 
                 <section className="quieneSomos dark:bg-neutral-700">
@@ -374,12 +395,11 @@ const Home = () => {
                         <img src={circulo} alt="" className="circulo__somos--img" />
                     </div>
                     <div className="descripcion dark:text-neutral-300">
-                        
-Somos una empresa especializada en la organización de diversos eventos, como cumpleaños, bodas, eventos corporativos, conferencias y más. Ofrecemos servicios completos de planificación, diseño y producción para hacer que su evento sea inolvidable.
+                        Somos una empresa especializada en la organización de diversos eventos, como cumpleaños, bodas, eventos corporativos, conferencias y más. Ofrecemos servicios completos de planificación, diseño y producción para hacer que su evento sea inolvidable.
                     </div>
                 </section>
 
-                <section className="comentarios dark:bg-neutral-800">
+                <section className="comentarios dark:bg-neutral-700">
                     <h2 className='comentarios__title dark:text-neutral-200'>Testimonios</h2>
                     <hr className='hr__services' />
                     <div className="container__cards--coments">
@@ -400,14 +420,14 @@ Somos una empresa especializada en la organización de diversos eventos, como cu
 
                         >
                             {comentarios.map((comentario, index) => (
-                                <SwiperSlide key={index} className="slider3 dark:bg-neutral-800">
+                                <SwiperSlide key={index} className="slider3 dark:!bg-neutral-700">
                                     <div className="container__comen dark:bg-neutral-700" >
                                         <figure className="contenedor__imagen--comentario">
                                             <img src={comentario.photo} alt="imagen de comentario" className="img__comentario" />
                                         </figure>
                                         <div className="testimonio">
                                             <span className='span' >{comentario.comment}</span>
-                                            
+
                                             <div className="container__calificacion">
                                                 {Array.from({ length: Math.min(comentario.qualification, 5) }, (_, i) => (
                                                     <img key={i} src={corazon1} alt="star-calificacion" className="star-calificacion" />

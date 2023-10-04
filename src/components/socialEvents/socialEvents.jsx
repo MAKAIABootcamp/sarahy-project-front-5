@@ -144,7 +144,7 @@ useEffect(() => {
           <figure className="fig">
               <img src={logoNegro} alt="" className="img dark:bg-neutral-100  dark:rounded-lg " />
           </figure>
-          <span className="span dark:text-neutral-200">Galería</span>
+          <span className="span dark:!text-neutral-200">Galería</span>
           <button className="button__companies dark:!bg-neutral-100 dark:!text-neutral-800">Haz tu cotización </button>
           </div>
           <div className="event__collagePlus">

@@ -9,17 +9,19 @@
   width: 100%;
   overflow: hidden;
 
+  .imagen__home--res {
+    display: none;
+  }
+
   .header__transparent {
     width: 100%;
     padding: 15px 30px;
     z-index: 3;
     position: absolute;
     width: 100%;
-    background: linear-gradient(
-      to right,
-      rgb(255 255 255 / 10%),
-      rgb(255 255 255 / 10%)
-    );
+    background: linear-gradient(to right,
+        rgb(255 255 255 / 10%),
+        rgb(255 255 255 / 10%));
 
     .header__navbar {
       width: 100%;
@@ -82,59 +84,61 @@
       // .imagen__home--principal{
       //   filter: brightness(60%);
       // }
-      
+
       filter: brightness(50%);
     }
 
     .main__info {
-        display: flex;
-        width: 100%;
-        padding: 20px 30px;
-        background-color: $color-white;
-        justify-content: space-evenly;
-        align-items: center;
+      display: flex;
+      width: 100%;
+      padding: 20px 30px;
+      background-color: $color-white;
+      justify-content: space-evenly;
+      align-items: center;
 
-        .logoIzquierda {
-            width: 7rem;
-            height: 7rem;
-        }
-// BORRAR, REPETIDO
-        .container__intro {
-            width: 80%;
-            padding: 10px 40px;
+      .logoIzquierda {
+        width: 7rem;
+        height: 7rem;
+      }
 
-            .main__title__home {
-                font-family: $Letter-titles;
-                text-align: center;
-                color: aqua;
-            }
+      // BORRAR, REPETIDO
+      .container__intro {
+        width: 80%;
+        padding: 10px 40px;
 
-            .main__subtitle {
-                font-size: 28px;
-                font-family: $Letter-subtitles;
-                position: relative;
-                left: 125px;
-                bottom: 15px;
-                font-weight: 800;
-                text-align: center;
-            }
-
-            .main__parrafo {
-                font-family: $Letter-body;
-                padding: 25px 0;
-                font-size: 20px;
-                line-height: 23px;
-                text-align: center;
-            }
-
+        .main__title__home {
+          font-family: $Letter-titles;
+          text-align: center;
+          color: aqua;
         }
 
-        .logoDerecha {
-            width: 7rem;
-            height: 7rem;
+        .main__subtitle {
+          font-size: 28px;
+          font-family: $Letter-subtitles;
+          position: relative;
+          left: 125px;
+          bottom: 15px;
+          font-weight: 800;
+          text-align: center;
         }
+
+        .main__parrafo {
+          font-family: $Letter-body;
+          padding: 25px 0;
+          font-size: 20px;
+          line-height: 23px;
+          text-align: center;
+        }
+
+      }
+
+      .logoDerecha {
+        width: 7rem;
+        height: 7rem;
+      }
     }
-// HASTA ACA
+
+    // HASTA ACA
     .swiper-button-next,
     .swiper-button-prev {
       color: $color-cream;
@@ -193,6 +197,10 @@
       height: 7rem;
     }
   }
+}
+
+.eventos__mobile {
+  display: none;
 }
 
 .typeEvent__home {
@@ -322,7 +330,7 @@
     .swiper-horizontal {
       touch-action: pan-y;
       height: auto;
-      width: 80%;  
+      width: 80%;
       height: 90%;
 
       .swiper-scrollbar {
@@ -351,7 +359,7 @@
     .card__services {
       display: flex;
       flex-direction: column;
-      padding: 0.8rem; 
+      padding: 0.8rem;
       border-radius: 5px;
       align-items: center;
       width: 100%;
@@ -364,7 +372,7 @@
       .card__services--title {
         background: #e9dcbe;
         transform: rotate(90deg);
-        width:100% ;  
+        width: 100%;
         text-align: start;
         padding: 6px 12px;
         font-size: 22px;
@@ -376,7 +384,7 @@
 
       .img__services {
         width: 100%;
-        height: 80%; 
+        height: 80%;
         object-fit: cover;
       }
 
@@ -417,7 +425,7 @@
   background-color: white;
   padding: 0px 5%;
   align-items: center;
-  justify-content: center; 
+  justify-content: center;
   gap: 2rem;
 
   .gota {
@@ -477,7 +485,7 @@
   display: flex;
   flex-direction: column;
   align-items: center;
-  
+
 
   .ubicacion__transparencia {
     background-color: rgba(255, 255, 255, 0.8);
@@ -508,7 +516,7 @@
       gap: 0.5rem;
       align-items: center;
       margin-bottom: 2rem;
-      
+
 
       .card__separacion--ubicacion {
         display: flex;
@@ -523,7 +531,7 @@
 
         .nombre__ubicacion {
           font-size: 21px;
-          font-family:  $Letter-body; 
+          font-family: $Letter-body;
         }
       }
 
@@ -534,7 +542,7 @@
         border-radius: 10px;
         margin-bottom: 15px;
         border: 1px solid;
-        font-family:  $Letter-body; 
+        font-family: $Letter-body;
         font-size: 14px;
         cursor: pointer;
       }
@@ -569,7 +577,7 @@
 
       .ubicacion__barra {
         font-size: 21px;
-        font-family:  $Letter-body; 
+        font-family: $Letter-body;
       }
     }
 
@@ -612,7 +620,7 @@
     text-align: justify;
     font-size: 18px;
     line-height: 25px;
-    font-family:  $Letter-body; 
+    font-family: $Letter-body;
   }
 }
 
@@ -637,10 +645,11 @@
     max-width: 1300px;
     min-width: 300px;
     width: 100%;
-    height: 60%; 
+    height: 60%;
 
     .swiper-container3 {
       height: 18rem;
+
       .swiper-pagination {
         display: none;
       }
@@ -650,7 +659,8 @@
         color: $color-black;
         width: 10px;
       }
-      .slider3{
+
+      .slider3 {
         background-color: rgb(255, 255, 255);
         height: min-content;
       }
@@ -660,7 +670,7 @@
       display: flex;
       flex-direction: column;
       align-items: center;
-      height: 100%; 
+      height: 100%;
       max-width: 1500px;
       min-width: 300px;
       width: 90%;
@@ -675,6 +685,7 @@
         height: 2.5rem;
         display: flex;
         justify-content: center;
+
         .img__comentario {
           height: auto;
           object-fit: cover;
@@ -683,7 +694,7 @@
           height: 100%;
 
           border-radius: 50%;
-        
+
         }
       }
 
@@ -702,26 +713,26 @@
         //   width: 70%;
         // }
 
-        .span{
+        .span {
           width: 100%;
-          font-family:  $Letter-body; 
+          font-family: $Letter-body;
           font-size: 15px;
           text-align: center;
           height: max-content;
           align-self: center;
         }
-        
-      .container__calificacion {
-        display: flex;
-        gap: 10px;
-        height: 20%;
-        justify-content: center;
 
-        .star-calificacion {
-          width: 30px;
-          height: 30px;
+        .container__calificacion {
+          display: flex;
+          gap: 10px;
+          height: 20%;
+          justify-content: center;
+
+          .star-calificacion {
+            width: 30px;
+            height: 30px;
+          }
         }
-      }
       }
 
     }
@@ -788,6 +799,10 @@
 
 @media (max-width: 999px) {
   .main__home {
+    .imagen__home--res {
+      display: none;
+    }
+
     .main__info {
       .logoDerecha {
         width: 4rem;
@@ -804,6 +819,10 @@
           font-size: 18px;
         }
       }
+    }
+
+    .eventos__mobile {
+      display: none;
     }
 
     .typeEvent__home {
@@ -891,10 +910,21 @@
 
 @media (max-width: 550px) {
   .main__home {
-    height: 15rem;
+    height: auto;
     width: 100%;
+    background-color: #f3f3f3 !important;
+
+    .imagen__home--res {
+      background-image: url("https://dosarroyos.mx/wp-content/uploads/2021/03/Eventos-sociales_elegancia-en-banquetes-1.jpg");
+      height: 18rem;
+      width: 100%;
+      display: flex;
+      object-fit: cover;
+    }
 
     .slider__home {
+      display: none;
+
       .swiper-slide img {
         object-fit: contain;
       }
@@ -914,7 +944,7 @@
     }
 
     .main__info {
-      position: absolute;
+      background-color: #f3f3f3 !important;
 
       .logoDerecha {
         width: 4rem;
@@ -956,9 +986,36 @@
       }
     }
 
-    .typeEvent__home {
-      position: absolute;
+    .eventos__mobile {
       display: flex;
+      flex-direction: column;
+      width: 85%;
+
+      .container__card--mobile {
+        display: flex;
+        flex-direction: column;
+        gap: 15px;
+        width: 100%;
+
+        .card__mobile {
+          width: 100%;
+          height: auto;
+        }
+
+        .span__evento--mobile {
+          font-size: 20px;
+          font-family: $Letter-subtitles;
+          font-weight: 100;
+          text-align: center;
+          width: 100%;
+          margin-bottom: 10px;
+        }
+
+      }
+    }
+
+    .typeEvent__home {
+      display: none;
       flex-direction: column;
       top: 49rem;
       align-items: center;
@@ -1014,7 +1071,6 @@
   }
 
   .services {
-    position: absolute;
     top: 135rem;
 
     .services__title {
@@ -1024,44 +1080,25 @@
     }
 
     .container__cards--services {
-      width: 95%;
+      width: auto;
 
-      .card__services {
-        margin: 0;
-        height: 15rem;
-        padding: 10px;
-
-        .card__services--title {
-          transform: rotate(26deg);
-          right: 0rem;
-          top: -1rem;
-          width: 10rem;
-          font-size: 14px;
-          width: 101%;
+      .swiper-wrapper {
+        width: 100%;
+        .swiper-slide{
+          width: 20rem !important;
         }
-
-        .card__services--span {
-          text-align: center;
-          width: 100%;
-          font-size: 15px;
-        }
-      }
-
-      .swiper-horizontal {
-        height: 18rem;
       }
     }
   }
 
   .encantados {
-    position: absolute;
     top: 168rem;
     padding: 20px 20px;
     width: 100%;
     display: flex;
     flex-direction: column;
     align-items: center;
-    
+
     .gota {
       width: 40%;
 
@@ -1104,7 +1141,7 @@
   }
 
   .beneficios {
-    position: absolute;
+
     top: 204rem;
     padding: 0;
 
@@ -1132,7 +1169,6 @@
   }
 
   .ubicacion {
-    position: absolute;
     width: 100%;
     top: 276rem;
     padding: 0;
@@ -1153,7 +1189,6 @@
   }
 
   .quieneSomos {
-    position: absolute;
     top: 353rem;
     display: flex;
     flex-direction: column;
@@ -1168,7 +1203,7 @@
   }
 
   .comentarios {
-    position: absolute;
+
     top: 380rem;
     display: none;
 
@@ -1176,8 +1211,8 @@
     .container__cards--coments {
       padding: 0;
 
-      .swiper-container3{
-        .slider3{
+      .swiper-container3 {
+        .slider3 {
           background-color: white;
         }
       }
@@ -1189,6 +1224,7 @@
           width: 6rem;
           height: 6rem;
         }
+
         .testimonio {
           font-size: 16px;
           width: 100%;

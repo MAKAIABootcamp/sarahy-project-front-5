@@ -26,6 +26,8 @@ const Header = () => {
     setModal(false);
   };
 
+  
+
   const elementsSearch = [
     { name: 'Boda', ruta: '/detalles' },
     { name: 'Cotizar', ruta: '/quote' },
