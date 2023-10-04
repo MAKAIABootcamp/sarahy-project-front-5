@@ -36,11 +36,11 @@ const Chat = ({headerImg}) => {
             var hF = getVisibleHeightRatio("miFooter");
             // console.log(ratio * headerHeight);
             const tF = hF * headerHeight + 50;
-            console.log('ESTA ES LA ALTURA CHAT: ', chatHeight);
-            console.log('ESTE ES EL ALTURA RATIO: ', ratio);
-            console.log('ESTE ES EL ALTURA HEADER: ', headerHeight);
-            console.log('ESTA ES LA SUMA: ', (ratio * headerHeight + chatHeight));
-            console.log('ESTE ES EL TOTAL QUE DEBE DAR: ', window.innerHeight)
+            // console.log('ESTA ES LA ALTURA CHAT: ', chatHeight);
+            // console.log('ESTE ES EL ALTURA RATIO: ', ratio);
+            // console.log('ESTE ES EL ALTURA HEADER: ', headerHeight);
+            // console.log('ESTA ES LA SUMA: ', (ratio * headerHeight + chatHeight));
+            // console.log('ESTE ES EL TOTAL QUE DEBE DAR: ', window.innerHeight)
             if (ratio * headerHeight + chatHeight >= window.innerHeight) {
                 chat.style.position = 'absolute';
                 chat.style.top = `${tH}px`; 

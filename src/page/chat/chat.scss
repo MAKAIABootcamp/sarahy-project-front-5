@@ -137,3 +137,9 @@
     width: 10px;
     height: 10px;
   }
+
+  @media (max-width:600px){
+    .chat{
+      display: none;
+    }
+  }

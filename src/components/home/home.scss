@@ -804,14 +804,25 @@
     }
 
     .main__info {
+      .container__intro {
+        width: 95%;
+
+        .main__parrafo {
+          text-align: center;
+        }
+
+      }
+
       .logoDerecha {
         width: 4rem;
         height: 4rem;
+        display: none;
       }
 
       .logoIzquierda {
         width: 4rem;
         height: 4rem;
+        display: none;
       }
 
       .container__intro {
@@ -865,6 +876,7 @@
       padding: 10px 0;
 
       .container__cards--services {
+        padding: 0;
         .card__services {
           margin: auto;
           height: 24rem;
@@ -882,6 +894,7 @@
 
         .swiper-horizontal {
           height: 23rem;
+          width: 100%;
         }
       }
     }
@@ -905,7 +918,37 @@
         }
       }
     }
+
+    .beneficios {
+      padding: 20px;
+      .container__beneficios {
+
+        .beneficio__card {
+          .card__beneficios--p {
+            text-align: center;
+          }
+
+        }
+      }
+    }
   }
+  .ubicacion{
+    padding: 20px 0;
+    .nombre__ubicacion{
+      font-size: 16px !important;
+    }
+    .container__locaciones{
+      width: 95%;
+    }
+  }
+  .quieneSomos{
+    .descripcion{
+      font-size: 18px;
+      text-align: center;
+      width: 60%;
+    }
+  }
+
 }
 
 @media (max-width: 550px) {
@@ -915,7 +958,7 @@
     background-color: #f3f3f3 !important;
 
     .imagen__home--res {
-      background-image: url("https://dosarroyos.mx/wp-content/uploads/2021/03/Eventos-sociales_elegancia-en-banquetes-1.jpg");
+      background-image: url("https://images.unsplash.com/photo-1511795409834-ef04bbd61622?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxleHBsb3JlLWZlZWR8NXx8fGVufDB8fHx8fA%3D%3D&w=1000&q=80");
       height: 18rem;
       width: 100%;
       display: flex;
@@ -982,6 +1025,7 @@
 
         .main__title__home {
           font-size: 25px;
+          margin: 0;
         }
       }
     }
@@ -994,7 +1038,7 @@
       .container__card--mobile {
         display: flex;
         flex-direction: column;
-        gap: 15px;
+        gap: 10px;
         width: 100%;
 
         .card__mobile {
@@ -1003,12 +1047,12 @@
         }
 
         .span__evento--mobile {
-          font-size: 20px;
+          font-size: 17px;
           font-family: $Letter-subtitles;
           font-weight: 100;
           text-align: center;
           width: 100%;
-          margin-bottom: 10px;
+          margin-bottom: 30px;
         }
 
       }
@@ -1074,7 +1118,7 @@
     top: 135rem;
 
     .services__title {
-      font-size: 22px;
+      font-size: 23px;
       padding: 20px;
       width: 100%;
     }
@@ -1082,9 +1126,16 @@
     .container__cards--services {
       width: auto;
 
+      .card__services{
+        height: auto;
+        .img__services{
+          height: auto;
+        }
+      }
       .swiper-wrapper {
         width: 100%;
-        .swiper-slide{
+
+        .swiper-slide {
           width: 20rem !important;
         }
       }
@@ -1100,7 +1151,7 @@
     align-items: center;
 
     .gota {
-      width: 40%;
+      width: 30%;
 
       .gota__img {
         width: 100%;
@@ -1118,7 +1169,7 @@
       align-items: center;
 
       .encantados__title {
-        font-size: 24px;
+        font-size: 23px !important;
       }
 
       .logo__subtitulo {
@@ -1127,7 +1178,7 @@
         align-items: center;
 
         .encantado__subtitulo {
-          font-size: 16px;
+          font-size: 20px !important;
         }
       }
 
@@ -1146,7 +1197,8 @@
     padding: 0;
 
     .beneficios__title {
-      font-size: 19px;
+      font-size: 23px;
+      margin-top: 30px;
     }
 
     .container__beneficios {
@@ -1157,6 +1209,11 @@
       gap: 51px;
       justify-content: space-between;
       align-items: center;
+
+      .card__beneficios--p {
+        width: 100% !important;
+        text-align: center !important;
+      }
 
       .card__beneficio--1 {
         border-right: none;
@@ -1170,21 +1227,35 @@
 
   .ubicacion {
     width: 100%;
-    top: 276rem;
+    margin-top: 50px;
     padding: 0;
+    display: flex;
+    flex-wrap: wrap;
 
     .container__locaciones {
       display: flex;
-      flex-direction: column;
       align-items: center;
+      flex-wrap: wrap;
+      width: 100%;
+      padding: 0 10px;
 
       .card__ubicacion {
-        width: 90%;
+        width: 48%;
+        height: 7rem;
+
+        .card__separacion--ubicacion {
+          .nombre__ubicacion {
+            font-size: 17px;
+          }
+        }
       }
     }
 
     .barra__grande--ubicacion {
       padding: 10px;
+      width: 95%;
+      text-align: center;
+      margin-bottom: 20px;
     }
   }
 
@@ -1194,11 +1265,19 @@
     flex-direction: column;
     width: 100%;
     padding: 10px;
+    margin-bottom: 20px;
     gap: 20px;
 
     .descripcion {
-      font-size: 17px;
+      font-size: 18px;
       width: 90%;
+      text-align: center;
+    }
+
+    .circuloSomos {
+      width: 35%;
+      left: 30px;
+      position: relative;
     }
   }
 

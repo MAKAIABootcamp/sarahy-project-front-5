@@ -65,18 +65,21 @@
         }
 
     }
+    .footer-mobile{
+        display: none;
+    }
 }
 
 @media (max-width: 550px) {
     .footer{
         display: flex;
-        flex-direction: column-reverse;
         position: relative;
         padding: 10px;
         width: 100%;
         .followme{
             width: 100%;
             margin: 0;
+            display: none;
             h5{
                 display: none;
             }
@@ -104,6 +107,7 @@
             justify-content: space-evenly;
             margin: 0;
             flex-wrap: wrap;
+            display: none;
             .titulo__sec--footer{
                 width: 100%;
                 display: none;
@@ -146,7 +150,61 @@
                 border-bottom: 1px solid $color-cream;
             }
         }
-
+        .footer-mobile{
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            width: 100%;
+            .logo--mobile{
+                position: relative;
+                width: 45%;
+                left: 9px;
+                margin-bottom: 20px;
+            }
+            .networks{
+                display: flex;
+                gap: 20px;
+                margin-bottom: 25px;
+                .img__network{
+                    height: 25px;
+                }
+            }
+            .contacto__footer{
+                display: flex;
+                flex-direction: column;
+                align-items: center;
+                margin-bottom: 20px;
+                .contacto__footer--mobile{
+                    padding-bottom: 10px;
+                    font-size: 18px;
+                }
+                .span__footer--mobile{
+                    font-size: 14px;
+                }
+            }
+            .footer__information--mobile{
+                display: flex;
+                flex-direction: column;
+                margin-bottom: 25px;
+                align-items: center;
+                .titulo__sec--footer{
+                    font-size: 18px;
+                    padding-bottom: 10px;
+                }
+                .span__footer--mobile{
+                    font-size: 14px;
+                }
+            }
+            .linea__footer{
+                width: 100%;
+                color:$color-cream;
+            }
+            .span__footer--mobile{
+                font-size: 15px;
+                width: 100%;
+                text-align: center;
+            }
+        }
     }
    
 }

@@ -9,6 +9,7 @@ import useScreenSize from '../../services/screen';
 import perfil1 from '../../assets/image/pefil1.png';
 import lupa from '../../assets/image/lupaBlack.png';
 import logo from '../../assets/image/logo-blanco.png';
+import logo2 from '../../assets/image/logo.png';
 import './header.scss';
 import ModalContactanos from '../modalContactanos/modalContactanos';
 
@@ -98,6 +99,10 @@ const Header = () => {
 
   const toggleMenu = () => {
     setIsOpen(!isOpen);
+  };
+
+  const closeMobileMenu = () => {
+    setIsOpen(false);
   };
 
   return (
@@ -215,12 +220,13 @@ const Header = () => {
       <div className={`mobile-menu ${isOpen && width < 600 ? 'show' : ''}`}>
         <span className='menu__slogan'>Tu momento nuestra pasión</span>
         <ul>
-          <li onClick={() => navigate('/')}>Inicio</li>
-          <li onClick={() => navigate('/sociales')}>Eventos Sociales</li>
-          <li onClick={() => navigate('/empresariales')}>Eventos Empresariales</li>
-          <li onClick={() => navigate('/contactanos')}>Contactanos</li>
-          <li>Contáctanos</li>
-          <li onClick={() => navigate('/quote')}>Cotiza Aquí</li>
+        <li onClick={() => { navigate('/'); closeMobileMenu(); }}>Inicio</li>
+          <li onClick={() => {navigate('/perfil'); closeMobileMenu(); }}>Perfil</li>
+          <li onClick={() => {navigate('/registro'); closeMobileMenu(); }}>Registro</li>
+          <li onClick={() => {navigate('/sociales'); closeMobileMenu(); }}>Eventos Sociales</li>
+          <li onClick={() => {navigate('/empresariales'); closeMobileMenu(); }}>Eventos Empresariales</li>
+          <li onClick={() => {navigate('/contactanos'); closeMobileMenu(); }}>Contactanos</li>
+          <li onClick={() => {navigate('/quote'); closeMobileMenu(); }}>Cotiza Aquí</li>
         </ul>
 
         <article className="redes__header">
@@ -228,6 +234,7 @@ const Header = () => {
           <img className="red__header" src="https://cdn-icons-png.flaticon.com/512/87/87390.png" alt="" />
           <img className="red__header" src="https://assets.stickpng.com/images/5a4e2ef62da5ad73df7efe6e.png" alt="" href="https://api.whatsapp.com/send?phone=33003003232&text=Hola%20bienvenido%20a%20Sarahy%20te%20asesoramos%20por%20whatsapp%20gestiona%20tu%20evento%20por%20este%20canal." />
         </article>
+        <img src={logo2} alt="" className='logo2black' />
       </div>
     </header>
   );

@@ -13,7 +13,7 @@
     right: 0;
     background-color: #E9DCBE;
     z-index: 999;
-    height: 50%;
+    height: auto;
     width: 70%;
     padding: 10px;
     border-bottom-left-radius: 5px;
@@ -22,7 +22,7 @@
     font-size: 40px;
 
     .menu__slogan{
-      font-size: 18px;
+      font-size: 15px;
       width: 70%;
       position: relative;
       bottom: 17px;
@@ -35,14 +35,12 @@
     }
     .mobile-menu ul {
       list-style-type: none;
-      padding: 0 10px;
     }
     
     .mobile-menu li {
       margin: 10px 0;
       cursor: pointer;
       font-size: 18px;
-      font-weight: 600;
       border-bottom: 1px solid;
     }
     .mobile-menu li:hover {
@@ -62,6 +60,10 @@
       .red__header:hover{
         cursor: pointer;
       }
+    }
+
+    .logo2black{
+      margin: 0 30%;
     }
 
     .menu-toggle {
