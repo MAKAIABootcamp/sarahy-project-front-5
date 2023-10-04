@@ -113,20 +113,25 @@ const CompaniesEvents = () => {
 
       <section className="galery dark:bg-neutral-700">
             <div className="logo__titleGalery">
-            <figure className="fig">
-                <img src={logoNegro} alt="" className="img dark:bg-neutral-300" />
-            </figure>
-            <span className="span dark:text-neutral-300">Galería</span>
-            <button className="button__companies">Haz tu cotización </button>
+              <figure className="fig">
+                  <img src={logoNegro} alt="" className="img dark:bg-neutral-300" />
+              </figure>
+              <span className="span dark:text-neutral-300">Galería</span>
+              <button className="button__companies">Haz tu cotización </button>
             </div>
             <div className="event__collagePlus">
               <CollageEvents imagenes={typEvent} className="description__img" />
             </div>
+          
             {/* <figure className="collage__galery">
             <img src={prueba} alt="" className="img" />
             </figure> */}
-            
       </section>
+     
+      <section className='btn__mobile'>
+    <button className="button__companiesMobile">Haz tu cotización </button>
+    </section>
+
 
       <section className="others__companies dark:bg-neutral-800">
         <span className="title__companies dark:text-neutral-200">Empresas que han vivido la experiencia Sarahy</span>

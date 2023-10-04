@@ -150,11 +150,12 @@ useEffect(() => {
           <div className="event__collagePlus">
               <CollageEvents imagenes={typEvent} className="description__img" />
             </div>
-
-          {/* <figure className="collage__galery">
-          <img src={prueba} alt="" className="img" />
-          </figure> */}
     </section>
+
+    <section className='btn__mobile'>
+    <button className="button__companiesMobile">Haz tu cotización </button>
+    </section>
+    
 
     <section className="comentarios dark:bg-neutral-700">
                     <h2 className='comentarios__title dark:text-neutral-200'>Testimonios</h2>

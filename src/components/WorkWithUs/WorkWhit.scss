@@ -2,15 +2,17 @@
 @import "../../assets/variables.scss";
 
 
-.main__allies {
+.main__workUs {
     display: flex;
     flex-direction: column;
     width: 100%;
 
     .imagen__aliados {
         width: 100%;
-        object-fit: cover; /* Cambia fill por cover */
-        max-height: 100vh; /* Añade esta línea para asegurarte de que la imagen no se desborde verticalmente */
+        height: 22rem;
+        object-fit: cover;
+        object-position: 50% 20%;
+        filter: brightness(60%); /* Añade esta línea para asegurarte de que la imagen no se desborde verticalmente */
     }
 
     .header__transparent {
@@ -62,8 +64,8 @@
         align-items: center;
 
         .logoIzquierda {
-            width: 8rem;
-            height: 8rem;
+            width: 7rem;
+            height: 7rem;
         }
 
         .container__intro {
@@ -72,10 +74,10 @@
 
             .main__title__home {
                 color: $color-black;
-                font-size: 52px;
+                font-size: 50px;
                 font-family: $Letter-titles;
                 text-align: center;
-
+                font-weight: bolder;
             }
 
             .main__subtitle {
@@ -98,8 +100,8 @@
         }
 
         .logoDerecha {
-            width: 8rem;
-            height: 8rem;
+            width: 7rem;
+            height: 7rem;
         }
     }
 
@@ -157,11 +159,11 @@
         flex-direction: column;
         width: 100%;
         align-items: center;
-        padding: 13px;
+        padding: 20px 40px;
 
         .span__recomendaciones--aliados{
             font-family: $Letter-subtitles;
-            font-size: 25px;
+            font-size: 24px;
             padding-top: 15px;
         }
 
@@ -170,7 +172,7 @@
             display: flex;
             gap: 20px;
             flex-wrap: wrap;
-            background-color: $color-white;
+            background-color: white;
             border-radius: 8px;
             margin-bottom: 0;
             justify-content: center;
@@ -181,10 +183,10 @@
                 flex-direction: column;
                 align-items: center;
                 gap: 15px;
-                padding: 30px 10px;
+                padding: 30px 30px;
 
                 .logo__recomendaciones {
-                    width: 5rem;
+                    width: 4rem;
                 }
 
                 .numero__tarjeta {
@@ -209,17 +211,18 @@
     .form__contactar{
         display: flex;
         width: 100%;
-        height: 35rem;
+        height: 30rem;
         .imagen__visible{
-            width: 40%;
+            width: 45%;
             height: 100%;
             .img__form--contacto{
                 width: 100%;
-                height: 100%;        
+                height: 100%;     
+                object-fit: cover;       
             }
         }
         .info__form{
-            width: 60%;
+            width: 55%;
             padding: 15px;
             background-color: $color-cream;
             .form__contacto--cliente{
@@ -234,39 +237,45 @@
                     font-family: $Letter-titles;
                     font-size: 25px;
                     margin-bottom: 20px;
+                    font-weight: bolder;
                 }
                 .input__form--nombre{
+                    font-family: $Letter-body;
                     height: 3rem;
                     padding: 5px 10px;
-                    font-size: 20px;
+                    font-size: 18px;
                     border: 1px solid black;
                     border-radius: 5px;
                     margin-bottom: 20px;
                 }
                 .input__form--celular{
+                    font-family: $Letter-body;
                     height: 3rem;
                     padding: 5px 10px;
-                    font-size: 20px;
+                    font-size: 18px;
                     border: 1px solid black;
                     border-radius: 5px;
                     margin-bottom: 20px;
                 }
                 .input__form--email{
+                    font-family: $Letter-body;
                     height: 3rem;
                     padding: 5px 10px;
-                    font-size: 20px;
+                    font-size: 18px;
                     border: 1px solid black;
                     border-radius: 5px;
                     margin-bottom: 20px;
                 }
                 .input__form--textarea{
+                    font-family: $Letter-body;
                     padding: 5px 10px;
-                    font-size: 20px;
+                    font-size: 18px;
                     border: 1px solid black;
                     border-radius: 5px;
                     margin-bottom: 35px;
                 }
                 .btn__form--enviar{
+                    font-family: $Letter-body;
                     width: 15%;
                     background-color: $color-black;
                     padding: 10px;

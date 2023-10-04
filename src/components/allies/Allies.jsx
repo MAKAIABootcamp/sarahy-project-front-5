@@ -45,7 +45,7 @@ const Allies = () => {
                     <div className="tarjeta__recuadro">
                         <img src={logoRecomendaciones} alt="logo" className='logo__recomendaciones' />
                         <span className="descripcion__tarjeta dark:!text-neutral-300">
-                        Contamos con un historial probado de éxitos en la planificación y ejecución de eventos excepcionales. Nuestra experiencia garantiza que tu evento se realice sin problemas y de manera memorable.
+                        Celebraciones Sarahy es experta en eventos, beneficiando a empresas que desean eventos excepcionales para clientes o empleados.
                         </span>
                     </div>
                     <div className="tarjeta__recuadro dark:!bg-neutral-700">
@@ -53,14 +53,14 @@ const Allies = () => {
 
                         <span className="descripcion__tarjeta dark:!text-neutral-300">
 
-                        Adaptamos cada detalle de tu evento a tus necesidades específicas. Desde el diseño hasta la logística, todo se hace a medida para que tu visión se haga realidad.
+                        Celebraciones Sarahy se destaca por personalizar eventos a medida según las necesidades de los clientes, atrayendo así a otras empresas en busca de soluciones únicas.
                         </span>
                     </div>
                     <div className="tarjeta__recuadro dark:!bg-neutral-700">
                         <img src={logoRecomendaciones} alt="logo" className='logo__recomendaciones' />
 
                         <span className="descripcion__tarjeta dark:!text-neutral-300">
-                        Al asociarte con nosotros, te liberamos de la carga de la planificación y organización del evento. Puedes concentrarte en tu negocio mientras nosotros nos encargamos de todo, lo que te ahorra tiempo y reduce el estrés.
+                        La colaboración con Celebraciones Sarahy permite a otras empresas externalizar la planificación de eventos, ahorrando tiempo y recursos para enfocarse en su negocio principal.
                         </span>
                     </div>
                 </div>
@@ -73,7 +73,7 @@ const Allies = () => {
                 </figure>
                 <div className="info__form dark:!bg-neutral-700">
                     <form action="" className="form__contacto--cliente dark:!bg-neutral-700" onSubmit={handleSubmit(onSubmit)}>
-                        <h1 className="form__titulo dark:!text-neutral-200">Contactanos</h1>
+                        <h1 className="form__titulo dark:!text-neutral-200">Contáctanos</h1>
                         <input type="text" className="input__form--nombre" placeholder='Nombre y apellidos' name='nombre '{...register("nombre")}/>
                         <input type="number" className="input__form--celular" placeholder='Celular' {...register("celular")}/>
                         <input type="email" className="input__form--email" placeholder='E-mail' {...register("email")}/>

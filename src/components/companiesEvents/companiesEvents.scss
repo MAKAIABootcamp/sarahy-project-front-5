@@ -174,7 +174,17 @@
                 height: auto;
             }
         }
+        .button__companiesMobile{
+            display: none;
+        }
     }
+    .btn__mobile{
+        display: none;
+        .button__companiesMobile{
+            display: none;
+        }
+    }
+
     .others__companies{
         display: flex;
         flex-direction: column;
@@ -204,7 +214,7 @@
 @media(max-width: 850px) and (min-width: 600px){
     .main__home {
         .imgCompanies__intro {
-            height: 14rem;
+            height: 16rem;
         }
     
         .tipe__events {
@@ -227,8 +237,8 @@
         }
     
         .data__events {
-            padding-top: 30px;
-            padding-bottom: 30px;
+            padding-top: 15px;
+            padding-bottom: 15px;
     
             .title__data {
                 font-size: 20px;
@@ -258,14 +268,14 @@
                         }
     
                         .span {
-                            font-size: 20px;
-                            line-height: 22px;
+                            font-size: 18px;
+                            line-height: 20px;
                         }
                     }
     
                     .paragraph {
-                        font-size: 18px;
-                        line-height: 20px;
+                        font-size: 16px;
+                        line-height: 18px;
                     }
                 }
             }
@@ -302,6 +312,14 @@
                 }
             }
         }
+
+        .btn__mobile{
+            display: none;
+            .button__companiesMobile{
+                display: none;
+            }
+        }
+        
         .others__companies{
             padding: 30px 0;
             .title__companies{
@@ -313,33 +331,41 @@
     }
 }
 
-@media(max-width: 660px) {
+@media(max-width: 600px) {
     .main__home {
+        display: flex;
+        flex-direction: column;
         
         .imgCompanies__intro {
             height: 10rem;
         }
     
         .tipe__events {
-            width: 90%;
+            width: 100%;
             padding-top: 20px;
             padding-bottom: 20px;
+            padding-left: 5%;
+            padding-right: 5%;
+            background-color: white;
     
             .title__events {
                 align-self: center;
                 margin-bottom: 20px;
-                font-size: 15px;
+                font-size: 17px;
             }
     
             .cards__events {
                 display: flex;
-                flex-wrap: wrap;
+                flex-direction: column;
                 justify-content: space-evenly; 
                 gap: 0.8rem;
     
                 .details__event {
-                    width: 40%;
+                    width: 100%;
+                    display: flex;
+                    flex-direction: column;
                     font-size: 12px;
+                    margin-bottom: 0.5rem;
     
                     .fig {
                         width: 80%;
@@ -349,6 +375,11 @@
                             width: 100%;
                         }
                     }
+                    .span {
+                        text-align: center;
+                        font-size: 16px;
+                        line-height: 20px;
+                    }
     
                 }
             }
@@ -357,11 +388,12 @@
         .data__events {
             width: 100%;
             padding-top: 20px;
-            padding-bottom: 20px;
+            padding-bottom: 2px;
+
     
             .title__data {
                 margin-bottom: 20px;
-                font-size: 18px;
+                font-size: 17px;
                 width: 80%;
                 text-align: center;
             }
@@ -372,6 +404,7 @@
                 flex-direction: column;
                 justify-content: center;
                 justify-content: space-between; 
+               
     
                 .div__data {
                     display: flex;
@@ -379,7 +412,8 @@
                     gap: 1rem;
                     width: 100%;
                     align-self: center; 
-                    margin-bottom: 1rem;
+                    margin-bottom: 2rem;
+                    align-items: center;
     
                     .logo__title {
                         display: flex;
@@ -405,7 +439,7 @@
                         text-align: justify;
                         font-size: 15px;
                         line-height: 18px;
-                        width: 100%;
+                        width: 80%;
                     }
                 }
             }
@@ -416,10 +450,12 @@
             flex-direction: column;
             padding: 20px 3%;
             gap: 1rem;
+            background-color: white;
             
             .logo__titleGalery{
                 display: flex;
-                flex-direction: column;
+                flex-direction: row; 
+                justify-content: center; 
                 width: 50%;
                 gap: 0.5rem;
     
@@ -434,12 +470,7 @@
                     font-size: 22px;
                 }
                 .button__companies{
-                    width: 60%;
-                    height: auto;
-                    margin-top: 5px;
-                    font-size: 15px;
-                    padding-top: 1%;
-                    padding-bottom: 1%;
+                    display: none !important; 
                 }
     
             }
@@ -451,18 +482,47 @@
             }
             .event__collagePlus {
                 width: 100%;
+                display: flex;
+                flex-direction: column;
     
                 .description__img {
                     width: 100%;
                     height: auto;
                 }
             }
+            
         }
+
+        .btn__mobile{
+            display: flex;
+            width: 100%;
+            background-color: rgb(255, 255, 255);
+            height: 2rem;
+            justify-content: center;
+    
+            .button__companiesMobile{
+                display: flex;
+                align-items: center; 
+                justify-content: center;
+                height: auto;
+                width: 40%;
+                font-size: 15px;
+                padding: 3% 0;
+                background-color: $color-black;
+                border-radius: 10px;
+                font-family: $Letter-body;
+                color: white;
+                
+            }
+        }
+      
         .others__companies{
             display: flex;
             flex-direction: column;
-            width: 95%;
-            padding: 10px 0;
+            width: 100%;
+            padding: 10px 10px;
+            padding-top: 2rem;
+            background-color: white;
             .title__companies{
                 margin-bottom: 5px;
                 font-size: 15px;
@@ -473,7 +533,7 @@
                 justify-content: space-between; 
                 align-items: center; 
                 .fig{
-                    width: 14%;
+                    width: 33%;
                     .img{
                         width: 80%;
                     }
