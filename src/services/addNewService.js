@@ -13,7 +13,7 @@ export const addNewService = async (serviceId, newService) => {
 
     await updateDoc(serviceRef, updateObject); 
     console.log("Nuevo servicio agregado con éxito.");
-    location.reload()
+    // location.reload()
   } catch (error) {
     console.error("Error al agregar el nuevo servicio:", error);
   }

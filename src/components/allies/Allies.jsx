@@ -2,7 +2,7 @@ import React from 'react';
 import aliados from '../../assets/image/aliados.png';
 import './allies.scss'
 import logo from "../../assets/image/logo-blanco.png";
-import fondo from "../../assets/image/fondoAliados.png";
+import fondo from "../../assets/image/aliados2.jpg";
 import logoIzquierda from '../../assets/image/gotaIzquierda.png'
 import logoDerecha from '../../assets/image/gotaDerecha.png'
 import logoRecomendaciones from '../../assets/image/logoIdentificador.png'
@@ -30,7 +30,7 @@ const Allies = () => {
                 <div className="container__intro dark:!bg-neutral-700">
                     <h1 className='main__title__home dark:!text-neutral-100'>Seamos aliados</h1>
                     <p className="main__parrafo dark:!text-neutral-200">
-                    En Sarahy Celebraciones, entendemos que las pequeñas microempresas a menudo operan con recursos limitados y enfrentan desafíos especiales al planificar eventos. Nuestra alianza es la clave para superar esos obstáculos y llevar tus eventos al siguiente nivel. Te ofrecemos acceso a nuestra experiencia y recursos en la planificación de eventos de alta calidad, lo que te permite competir en igualdad de condiciones con empresas más grandes. Completa el formulario y nos contactaremos contigo
+                    En Sarahy Celebraciones, ayudamos a las microempresas a superar desafíos en la planificación de eventos al brindarles acceso a nuestra experiencia y recursos. Nuestra alianza te permite elevar la calidad de tus eventos. Completa el formulario para que podamos contactarte.
                     </p>
 
                 </div>

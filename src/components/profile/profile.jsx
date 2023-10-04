@@ -176,6 +176,7 @@ const Profile = () => {
                 'success'
             )
             navigate("/");
+            window.scrollTo(0, 0);
         } catch (error) {
             console.error("Error al actualizar el perfil:", error);
             console.error(error.code);
@@ -190,6 +191,7 @@ const Profile = () => {
         )
         dispatch(userLogged(false));
         navigate("/");
+        window.scrollTo(0, 0);
     }
 
     const comentarios = async (data) => {
