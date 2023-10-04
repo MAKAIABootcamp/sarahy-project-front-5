@@ -11,13 +11,13 @@ const CollageEvents = ({ imagenes }) => {
             <img src={imagenes[0]} alt="" className="imagenes1" />
           </a>
           <a href="#imagen2">
-            <img src={imagenes[1]} alt="" className="imagenes1" />
+            <img src={imagenes[1]} alt="" className="imagenes2" />
           </a>
           <a href="#imagen3">
-            <img src={imagenes[2]} alt="" className="imagenes1" />
+            <img src={imagenes[2]} alt="" className="imagenes3" />
           </a>
           <a href="#imagen4">
-            <img src={imagenes[3]} alt="" className="imagenes1" />
+            <img src={imagenes[3]} alt="" className="imagenes4" />
           </a>
         </div>
 
@@ -26,16 +26,27 @@ const CollageEvents = ({ imagenes }) => {
             <img src={imagenes[4]} alt="" className="imagenes1" />
           </a>
           <a href="#imagen6">
-            <img src={imagenes[5]} alt="" className="imagenes1" />
+            <img src={imagenes[5]} alt="" className="imagenes2" />
           </a>
           <a href="#imagen7">
-            <img src={imagenes[6]} alt="" className="imagenes1" />
+            <img src={imagenes[6]} alt="" className="imagenes3" />
           </a>
           <a href="#imagen8">
-            <img src={imagenes[7]} alt="" className="imagenes1" />
+            <img src={imagenes[7]} alt="" className="imagenes4" />
           </a>
           <a href="#imagen9">
-            <img src={imagenes[8]} alt="" className="imagenes1" />
+            <img src={imagenes[8]} alt="" className="imagenes5" />
+          </a>
+        </div>
+
+
+        
+        <div className="line3">
+          <a href="#imagen8">
+            <img src={imagenes[7]} alt="" className="imagenes4" />
+          </a>
+          <a href="#imagen9">
+            <img src={imagenes[8]} alt="" className="imagenes5" />
           </a>
         </div>
 

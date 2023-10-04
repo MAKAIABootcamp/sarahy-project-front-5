@@ -158,7 +158,7 @@
         flex-direction: column;
         width: 100%;
         align-items: center;
-        padding: 40px;
+        padding: 20px 40px;
 
         .span__recomendaciones--aliados{
             font-family: $Letter-subtitles;
@@ -172,7 +172,7 @@
             display: flex;
             gap: 5px;
             flex-wrap: wrap;
-            background-color: white;
+            background-color: rgb(255, 255, 255);
             border-radius: 8px;
             margin-bottom: 0;
             justify-content: center;
@@ -183,7 +183,7 @@
                 flex-direction: column;
                 align-items: center;
                 gap: 15px;
-                padding: 30px;
+                padding: 20px 30px;
 
                 .logo__recomendaciones {
                     width: 4rem;
@@ -212,17 +212,18 @@
     .form__contactar{
         display: flex;
         width: 100%;
-        height: 35rem;
+        height: 30rem;
         .imagen__visible{
-            width: 40%;
+            width: 45%;
             height: 100%;
             .img__form--contacto{
                 width: 100%;
-                height: 100%;        
+                height: 100%;  
+                object-fit: cover;      
             }
         }
         .info__form{
-            width: 60%;
+            width: 55%;
             padding: 15px;
             background-color: $color-cream;
             .form__contacto--cliente{
@@ -233,43 +234,50 @@
                 height: 100%;
                 background-color: #ffffff;
                 border-radius: 10px;
+                
                 .form__titulo{
                     font-family: $Letter-titles;
-                    font-size: 25px;
+                    font-size: 22px;
                     margin-bottom: 20px;
+                    font-weight: bolder;
                 }
                 .input__form--nombre{
+                    font-family: $Letter-body;
                     height: 3rem;
                     padding: 5px 10px;
-                    font-size: 20px;
+                    font-size: 18px;
                     border: 1px solid black;
                     border-radius: 5px;
                     margin-bottom: 20px;
                 }
                 .input__form--celular{
+                    font-family: $Letter-body;
                     height: 3rem;
                     padding: 5px 10px;
-                    font-size: 20px;
+                    font-size: 18px;
                     border: 1px solid black;
                     border-radius: 5px;
                     margin-bottom: 20px;
                 }
                 .input__form--email{
+                    font-family: $Letter-body;
                     height: 3rem;
                     padding: 5px 10px;
-                    font-size: 20px;
+                    font-size: 18px;
                     border: 1px solid black;
                     border-radius: 5px;
                     margin-bottom: 20px;
                 }
                 .input__form--textarea{
+                    font-family: $Letter-body;
                     padding: 5px 10px;
-                    font-size: 20px;
+                    font-size: 18px;
                     border: 1px solid black;
                     border-radius: 5px;
                     margin-bottom: 35px;
                 }
                 .btn__form--enviar{
+                    font-family: $Letter-body;
                     width: 15%;
                     background-color: $color-black;
                     padding: 10px;
@@ -280,7 +288,7 @@
                     font-size: 18px;
                 }
                 .btn__form--enviar:hover{
-                 background-color: green;
+                 background-color: $color-cream;
                  color: black;
                  cursor: pointer;
                 }
