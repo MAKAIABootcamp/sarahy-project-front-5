@@ -605,8 +605,8 @@ const Quote = () => {
         <img src={imgCotizacion} alt="" id="imagenQuoteHeader" className="imgCompanies__intro" />
         <section className="main__info dark:bg-neutral-800">
           <img src={logoIzquierda} alt="" className="logoIzquierda" />
-          <div className="container__intro">
-            <h1 className="main__title__home dark:text-neutral-100">Cotización</h1>
+          <div id="containerTitleQuoteImportant" className="container__intro">
+            <h1 id="titleQuoteImportant" className="main__title__home dark:text-neutral-100">Cotización</h1>
             <p className="main__parrafo dark:text-neutral-300">
               ¡Gracias por considerarnos para tu próximo evento! Por favor,
               completa el siguiente formulario para obtener una cotización
