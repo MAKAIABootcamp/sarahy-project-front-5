@@ -16,6 +16,7 @@ import logoIzquierda from "../../assets/image/gotaIzquierda.png";
 import logoDerecha from "../../assets/image/gotaDerecha.png";
 import imgCotizacion from './cotizacion.jpg'
 import Chat from "../chat/Chat";
+import { data } from "autoprefixer";
 
 // import { number } from "yup";
 
@@ -603,6 +604,7 @@ const Quote = () => {
 
   };
 
+
   return (
     <>
       <Chat headerImg={'imagenQuoteHeader'} />
@@ -628,15 +630,18 @@ const Quote = () => {
 
             <section className="formQuote">
 
-              <form onSubmit={handleSubmit(onSubmit)} className="loginDown__form dark:bg-neutral-400" >
+              <form onSubmit={handleSubmit(onSubmit)} className="loginDown__form dark:!bg-neutral-400" >
 
-                <input type="text" id="empresa" {...register("name", { required: true })} placeholder="Nombre/Empresa" className="loginDown__input" />
+             { dataUser ? (dataUser.user?  <input type="text" id="empresa" value={dataUser.user.name} {...register("name", { required: true })} placeholder="Nombre/Empresa" className="loginDown__input" />:<input type="text" id="empresa" value={dataUser.name} {...register("name", { required: true })} placeholder="Nombre/Empresa" className="loginDown__input" /> ): <input type="text" id="empresa"  {...register("name", { required: true })} placeholder="Nombre/Empresa" className="loginDown__input"/> } 
+
+             
+
                 {errors.name && <span className="loginDown__error">Este campo es obligatorio</span>}
                 <input type="number" id="contacto" {...register("contacto", { required: true })} placeholder="Contacto" className="loginDown__input" />
                 {errors.contacto && <span className="loginDown__error">Este campo es obligatorio</span>}
 
                 {/* <span className="loginLabel">Email</span> */}
-                <input type="email" id="contacto" {...register("email", { required: true })} placeholder="Email" className="loginDown__input" />
+               { dataUser?(dataUser.user? <input type="email" id="contacto"  value={dataUser.user.email}{...register("email", { required: true })} placeholder="Email" className="loginDown__input" /> : <input type="email" id="contacto"  value={dataUser.email}{...register("email", { required: true })} placeholder="Email" className="loginDown__input" />):  <input type="email" id="contacto"  {...register("email", { required: true })} placeholder="Email" className="loginDown__input" />  }
                 {errors.email && <span className="loginDown__error">Este campo es obligatorio</span>}
 
 

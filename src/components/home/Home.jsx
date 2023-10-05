@@ -179,7 +179,7 @@ const Home = () => {
                             </span>
                         </div>
                     </section>
-                <section className="typeEvent__home">
+                <section className="typeEvent__home" id='Tipos-Eventos'>
                     <div className="btns dark:text-neutral-700" >
 
                         <button className={`btn__event dark:!bg-neutral-400 dark:!text-neutral-900 ${eventoSeleccionado == "Bodas" ? "selected" : ""}`}

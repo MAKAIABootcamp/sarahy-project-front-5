@@ -1,6 +1,6 @@
 import React, { useEffect, useState } from 'react';
 import { useNavigate } from 'react-router-dom';
-import { useForm } from 'react-hook-form';
+import { set, useForm } from 'react-hook-form';
 import { useSelector } from 'react-redux';
 import facebook from "../../assets/image/face.png";
 import instagram from "../../assets/image/ig.png";
@@ -27,16 +27,33 @@ const Header = () => {
     setModal(false);
   };
 
+const goToSection = (ruta, idSection) => {
+  navigate(ruta)
+  setTimeout(() => {
+    const sectionGo = document.getElementById(idSection);
+    if (sectionGo) {
+      sectionGo.scrollIntoView({ behavior: 'smooth' });
+    }
 
+  })
+}
 
   const elementsSearch = [
-    { name: 'Boda', ruta: '/detalles' },
+    // { name: 'Boda', ruta: '/detalles' },
     { name: 'Cotizar', ruta: '/quote' },
     { name: 'Trabajemos', ruta: '/trabajemos' },
     { name: 'San Valentín', ruta: '/sanvalentin' },
     { name: 'Graduación', ruta: '/graduacion' },
     { name: 'Comentarios', ruta: '/' },
-    { name: 'Eventos Sociales', ruta: '/sociales' }
+    { name: 'Eventos Sociales', ruta: '/sociales' },
+    { name: 'Contactanos', ruta: '/contactanos' },
+    { name: 'Trabaja con nosotros', ruta: '/trabajemos' },
+    { name: 'Aliados', ruta: '/aliados' },
+    { name: 'Empresariales', ruta: '/empresariales' },
+    { name: 'Iniciar sesion', ruta: '/ingresar' },
+    { name: 'Registro', ruta: '/registro' },
+    { name: 'Inicio', ruta: '/' },
+    { name: 'Perfil', ruta: '/perfil' },
   ];
   const [searchValue, setSearchValue] = useState('');
   const [theme, setTheme] = useState(() => {
@@ -71,10 +88,18 @@ const Header = () => {
     setSearchValue('');
   };
 
-  const navigatePage = (ruta) => {
-    setSearch(!search);
-    navigate(`/${ruta}`);
-    closeSearch();
+  const navigatePage = (ruta, idSection) => {
+    if (!idSection) {
+      setSearch(!search);
+      navigate(`/${ruta}`);
+      closeSearch();
+
+    }else{
+      setSearch(!search);
+      goToSection(ruta, idSection)
+      closeSearch();
+
+    }
   };
 
   // const goToCommentsSection = () => {
