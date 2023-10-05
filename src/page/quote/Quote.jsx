@@ -21,7 +21,6 @@ import Chat from "../chat/Chat";
 
 const Quote = () => {
   const dataUser = useSelector(state => state.aunthentication.userLogged);
-  console.log('USEEEER', dataUser);
   const [arregloGlobal, setArregloGlobal] = useState([]);
   const [newTotal, setNewTotal] = useState(0);
   const [ourServices, setOurServices] = useState({});
@@ -628,7 +627,7 @@ const Quote = () => {
 
             <section className="formQuote">
 
-              <form onSubmit={handleSubmit(onSubmit)} className="loginDown__form dark:bg-neutral-400" >
+              <form onSubmit={handleSubmit(onSubmit)} className="loginDown__form dark:!bg-neutral-400" >
 
                 <input type="text" id="empresa" {...register("name", { required: true })} placeholder="Nombre/Empresa" className="loginDown__input" />
                 {errors.name && <span className="loginDown__error">Este campo es obligatorio</span>}

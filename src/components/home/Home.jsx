@@ -49,6 +49,7 @@ import { firestore } from '../../firebase/firebaseConfig';
 import { ubicaciones } from './hookUbicaciones';
 import { element } from 'prop-types';
 import Chat from '../../page/chat/Chat';
+import useScreenSize from '../../services/screen';
 
 
 
@@ -58,6 +59,7 @@ const Home = () => {
     const [comentarios, setComentarios] = useState([]);
     const [modal, setModal] = useState(false);
     const [selectedElement, setSelectedElement] = useState({});
+    const { width, height } = useScreenSize();
 
     const openModal = (element) => {
         setSelectedElement(element);
@@ -204,7 +206,7 @@ const Home = () => {
                             <div className="event__description dark:text-neutral-300">
                                 <h2 className="description__title">{typEvent[eventoSeleccionado].title}</h2>
                                 <p className="description__parrafo">{typEvent[eventoSeleccionado].description}</p>
-                                <button className="description__btn dark:!bg-neutral-400 dark:text-neutral-100" onClick={() => navigate("/quote")}>Haz tu cotización</button>
+                                <button className="description__btn dark:!bg-neutral-400 dark:text-neutral-100" onClick={() => {navigate("/quote"); window.scrollTo(0, 400);}}>Haz tu cotización</button>
                             </div>
                             <div className="event__collage">
                                 <Collage imagenes={typEvent[eventoSeleccionado].imagenes} className="description__img" />
@@ -216,10 +218,80 @@ const Home = () => {
                 <section className="services dark:bg-neutral-700">
                     <h2 className='services__title dark:text-neutral-300' >Conoce nuestros servicios</h2>
 
+                    {width < 600 ? (
+                        <div className='container__cards--services'>
+                        <Swiper
+                            className="my-swiper-2 dark:bg-neutral-700"
+                            slidesPerView={3}
+                            spaceBetween={10}
+                            // autoplay={{
+                            //     delay: 1000,
+                            //     disableOnInteraction: false,
+                            // }}
+                            pagination={{
+                                clickable: true,
+                            }}
+                            navigation={true}
+                            modules={[Pagination, Navigation]}
+                            // loop={true}
 
-                    <div className='container__cards--services'>
+                        >
+
+                            <SwiperSlide className=' swiperCard dark:!bg-neutral-700'>
+                                <div className="card__services dark:!bg-neutral-300">
+                                    <h3 className='card__services--title '>CATERING</h3>
+                                    <img src={service_catering} alt="Imagen del servicio ofrecido" className='img__services' />
+                                 
+
+                                </div>
+                            </SwiperSlide>
+
+                         
+                            <SwiperSlide>
+                                <div className="card__services dark:!bg-neutral-300">
+                                    <h3 className='card__services--title '>DECORACIÓN</h3>
+                                    <img src={service_decoracion} alt="Imagen del servicio ofrecido" className='img__services' />
+                                   
+                                </div>
+                            </SwiperSlide>
+
+            
+                            <SwiperSlide>
+                                <div className="card__services dark:bg-neutral-300">
+                                    <h3 className='card__services--title '>FOTOGRAFÍA</h3>
+                                    <img src={service_fotos} alt="Imagen del servicio ofrecido" className='img__services' />
+                                  
+                                </div>
+                            </SwiperSlide>
+                            <SwiperSlide>
+                                <div className="card__services dark:bg-neutral-300">
+                                    <h3 className='card__services--title '>ANIMACIÓN</h3>
+                                    <img src={service_animacion} alt="Imagen del servicio ofrecido" className='img__services' />
+                                   
+                                </div>
+                            </SwiperSlide>
+                            <SwiperSlide>
+                                <div className="card__services dark:bg-neutral-300">
+                                    <h3 className='card__services--title '>MÚSICA Y DJS</h3>
+                                    <img src={service_musica} alt="Imagen del servicio ofrecido" className='img__services' />
+                                  
+                                </div>
+                            </SwiperSlide>
+                            <SwiperSlide>
+                                <div className="card__services dark:bg-neutral-300">
+                                    <h3 className='card__services--title '>ILUMINACIÓN</h3>
+                                    <img src={service_iluminacion} alt="Imagen del servicio ofrecido" className='img__services' />
+    
+                                </div>
+                            </SwiperSlide>
+                        </Swiper>
 
 
+                        
+                    </div>
+
+                    ): (
+                        <div className='container__cards--services'>
                         <Swiper
                             className="my-swiper-2 dark:bg-neutral-700"
                             slidesPerView={4}
@@ -234,77 +306,63 @@ const Home = () => {
                             navigation={true}
                             modules={[Autoplay, Pagination, Navigation]}
                         // loop={true}
-
-
                         >
 
                             <SwiperSlide className=' swiperCard dark:!bg-neutral-700'>
                                 <div className="card__services dark:!bg-neutral-300">
                                     <h3 className='card__services--title '>CATERING</h3>
                                     <img src={service_catering} alt="Imagen del servicio ofrecido" className='img__services' />
-                                    {/* <span className='card__services--span'>
-                                        Guardar los mejores momentos de tu evento con fotografías y videos de la mejor calidad.
-                                    </span> */}
+                                 
 
                                 </div>
                             </SwiperSlide>
 
-                            {/* Slide 2 */}
+                         
                             <SwiperSlide>
                                 <div className="card__services dark:!bg-neutral-300">
                                     <h3 className='card__services--title '>DECORACIÓN</h3>
                                     <img src={service_decoracion} alt="Imagen del servicio ofrecido" className='img__services' />
-                                    {/* <span className='card__services--span'>
-                                        Transformamos espacios en escenarios de ensueño con nuestra decoración experta
-                                    </span> */}
-                                    {/* <button className="service__btn">Ver más</button> */}
+                                   
                                 </div>
                             </SwiperSlide>
 
-                            {/* Slide 3 */}
+            
                             <SwiperSlide>
                                 <div className="card__services dark:bg-neutral-300">
                                     <h3 className='card__services--title '>FOTOGRAFÍA</h3>
                                     <img src={service_fotos} alt="Imagen del servicio ofrecido" className='img__services' />
-                                    {/* <span className='card__services--span'>
-                                        Deléitate con nuestro exquisito servicio de catering y saborea el éxito de tu evento
-                                    </span> */}
-                                    {/* <button className="service__btn">Ver más</button> */}
+                                  
                                 </div>
                             </SwiperSlide>
                             <SwiperSlide>
                                 <div className="card__services dark:bg-neutral-300">
                                     <h3 className='card__services--title '>ANIMACIÓN</h3>
                                     <img src={service_animacion} alt="Imagen del servicio ofrecido" className='img__services' />
-                                    {/* <span className='card__services--span'>
-                                        Deléitate con nuestro exquisito servicio de catering y saborea el éxito de tu evento
-                                    </span> */}
-                                    {/* <button className="service__btn">Ver más</button> */}
+                                   
                                 </div>
                             </SwiperSlide>
                             <SwiperSlide>
                                 <div className="card__services dark:bg-neutral-300">
                                     <h3 className='card__services--title '>MÚSICA Y DJS</h3>
                                     <img src={service_musica} alt="Imagen del servicio ofrecido" className='img__services' />
-                                    {/* <span className='card__services--span'>
-                                        Deléitate con nuestro exquisito servicio de catering y saborea el éxito de tu evento
-                                    </span> */}
-                                    {/* <button className="service__btn">Ver más</button> */}
+                                  
                                 </div>
                             </SwiperSlide>
                             <SwiperSlide>
                                 <div className="card__services dark:bg-neutral-300">
                                     <h3 className='card__services--title '>ILUMINACIÓN</h3>
                                     <img src={service_iluminacion} alt="Imagen del servicio ofrecido" className='img__services' />
-                                    {/* <span className='card__services--span'>
-                                        Deléitate con nuestro exquisito servicio de catering y saborea el éxito de tu evento
-                                    </span> */}
-                                    {/* <button className="service__btn">Ver más</button> */}
+    
                                 </div>
                             </SwiperSlide>
                         </Swiper>
 
+
+                        
                     </div>
+
+                    )}
+                    
                 </section>
 
                 <section className="encantados dark:bg-neutral-700">

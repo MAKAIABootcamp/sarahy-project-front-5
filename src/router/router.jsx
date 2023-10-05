@@ -63,6 +63,7 @@ const Router = () => {
         <Route path="/trabajemos" element={<WorkWhithUs />} />
         <Route path="/aliados" element={<Allies  />} />
 
+
       </Routes>
       <Footer />
     </BrowserRouter>
