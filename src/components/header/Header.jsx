@@ -225,7 +225,12 @@ const Header = () => {
           <li onClick={() => {navigate('/registro'); closeMobileMenu(); }}>Registro</li>
           <li onClick={() => {navigate('/sociales'); closeMobileMenu(); }}>Eventos Sociales</li>
           <li onClick={() => {navigate('/empresariales'); closeMobileMenu(); }}>Eventos Empresariales</li>
-          <li onClick={() => {navigate('/contactanos'); closeMobileMenu(); }}>Contactanos</li>
+          <div>
+                  <li className="navbar__items" onClick={()=> {openModal(); closeMobileMenu()}}>Contáctanos</li>
+                  <ModalContactanos isOpen={modal} onRequestCloset={closeModal} />
+                </div>
+          
+          {/* <li onClick={() => {navigate('/contactanos'); closeMobileMenu(); }}>Contactanos</li> */}
           <li onClick={() => {navigate('/quote'); closeMobileMenu(); }}>Cotiza Aquí</li>
         </ul>
 

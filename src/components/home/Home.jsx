@@ -318,7 +318,7 @@ const Home = () => {
                             <h4 className='encantado__subtitulo'>En Sarahy encontrarás... </h4>
                         </div>
                         <p className="encantados__descripcion dark:text-neutral-300">
-                            Aqui podrás encontrar los mejores precios y productos de calidad para tus eventos especiales, somos los profesionales que buscabas.
+                            Aquí podrás encontrar los mejores precios y productos de calidad para tus eventos especiales, somos los profesionales que buscabas.
                         </p>
                     </div>
 

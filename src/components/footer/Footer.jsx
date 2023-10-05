@@ -17,7 +17,7 @@ const Footer = () => {
                 <h5 className='titulo__sec--footer'>CONTÁCTANOS</h5>
                 <span className='span__footer1'>Celebraciones Sarahy</span>
                 <span className='span__footer2'>Medellín-Colombia</span>
-                <span className='span__footer3'>CEL: 3003003232</span>
+                <span className='span__footer3'>CEL: 3163048505</span>
                 <span className='span__footer4'>E-MAIL:</span>
                 <span className='span__footer5'>celebracionessarahy@gmail.com</span>
             </div>
@@ -51,7 +51,7 @@ const Footer = () => {
                 <div className="contacto__footer">
                     <h5 className='contacto__footer--mobile'>CONTÁCTANOS</h5>
                     <span className='span__footer--mobile'>Medellín-Colombia</span>
-                    <span className='span__footer--mobile'>3003003232</span>
+                    <span className='span__footer--mobile'>3163048505</span>
                     <span className='span__footer--mobile'>celebracionessarahy@gmail.com</span>
                 </div>
 
