@@ -190,7 +190,7 @@ const Home = () => {
                             Quince Años
                         </button>
                         <button className={`btn__event dark:!bg-neutral-400 dark:!text-neutral-900 ${eventoSeleccionado === "Cumpleaños" ? "selected" : ""}`} onClick={() => handleEventoClick("Cumpleaños")}>
-                            Aniversarios
+                            Primeras comuniones
                         </button>
                         <button className={`btn__event dark:!bg-neutral-400 dark:!text-neutral-900 ${eventoSeleccionado === "Empresariales" ? "selected" : ""}`} onClick={() => handleEventoClick("Empresariales")}>
                             Empresariales
