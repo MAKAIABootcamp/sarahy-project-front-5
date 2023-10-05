@@ -1,0 +1,203 @@
+@import "../../assets/reset.scss";
+@import "../../assets/variables.scss";
+
+.row {
+    .galeria {
+        display: flex;
+        width: 100%;
+        height: auto;
+        flex-wrap: wrap;
+    }
+
+    .galeria__ancora1{
+        width: 50%;
+        margin-bottom: 4px;
+        display: flex;
+    }
+
+    .imagenes__iniciales1 {
+        width: 98.5%;
+        height: 10rem;
+        cursor: pointer;
+        object-fit: cover;
+    }
+
+    .galeria__ancora2{
+        width: 33.3%;
+        display: flex;
+        margin-bottom: 4px;
+    }
+
+    .imagenes__iniciales2 {
+        width: 98%;
+        height: 10rem;
+        cursor: pointer;
+        object-fit: cover;
+    }
+
+    .galeria__grande {
+        position: fixed;
+        top: 0;
+        left: 0;
+        background-color: rgba(0, 0, 0, 0.8);
+        width: 100%;
+        height: 100vh;
+        // transition: 1s ease-in-out;
+        z-index: 10;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        transform: scale(0);
+    }
+
+    .galeria__grande:target {
+        transform: scale(1);
+    }
+
+    .galeria__grande img {
+        width: 70%;
+        object-fit: cover;
+        height: 90%;
+    }
+
+    .close {
+        display: block;
+        position: absolute;
+        top: 20px;
+        right: 40px;
+        color: #343434;
+        width: 40px;
+        height: 40px;
+        text-align: center;
+        border-radius: 50%;
+        padding: 7px;
+        text-decoration: none;
+    }
+
+    .material-symbols-outlined {
+        font-size: 40px;
+        color: $color-cream;
+    }
+}
+
+@media (max-width: 999px) {
+    .row {
+        width: 100%;
+
+        .galeria {
+            display: flex;
+            flex-wrap: wrap;
+            width: 26rem;
+            justify-content: center;
+
+            .galeria__ancora2 {
+                width: 43%;
+
+                .imagenes__iniciales {
+                    width: 98%;
+                    margin-left: 4px;
+                    cursor: pointer;
+                }
+            }
+
+            .galeria__ancora {
+                width: 32%;
+
+                .imagenes__iniciales {
+                    width: 98%;
+                    margin-left: 4px;
+                    cursor: pointer;
+                }
+
+                .imagenes__iniciales2 {
+                    width: 98%;
+                    margin-left: 4px;
+                    cursor: pointer;
+                }
+            }
+        }
+    }
+}
+
+@media(max-width: 999px) and (min-width: 600px){
+    .row {
+        width: 100%;
+
+        .galeria {
+            display: flex;
+            flex-wrap: wrap;
+            width: 100%;
+            justify-content: center;
+
+            .galeria__ancora2 {
+                width: 33.3%;
+
+                .imagenes__iniciales {
+                    width: 98%;
+                    margin-left: 4px;
+                    cursor: pointer;
+                }
+            }
+
+            .galeria__ancora {
+                width: 15%;
+
+                .imagenes__iniciales {
+                    width: 98%;
+                    margin-left: 4px;
+                    cursor: pointer;
+                }
+
+                .imagenes__iniciales2 {
+                    width: 50%;
+                    margin-left: 4px;
+                    cursor: pointer;
+                }
+            }
+        }
+    }
+
+
+}
+
+@media (max-width: 600px) {
+    .row {
+        width: 100%;
+
+        .galeria {
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: center;
+            width: 100%;
+
+            .galeria__ancora2 {
+                width: 96%;
+                height: 51%
+            }
+
+            .galeria__ancora {
+                width: 96%;
+                height: 51%
+            }
+        }
+
+        .galeria__grande {
+            position: fixed;
+            top: 0;
+            left: 0;
+            background-color: rgba(0, 0, 0, 0.5);
+            width: auto;
+            height: 100vh;
+            transition: 1s ease-in-out;
+            z-index: 10;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            transform: scale(0);
+        }
+
+        .close {
+            top: 19px;
+        }
+    }
+}

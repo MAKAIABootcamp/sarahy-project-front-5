@@ -1,0 +1,437 @@
+@import "../../assets/reset.scss";
+@import "../../assets/variables.scss";
+
+.sectionQuote
+{
+    display: flex;
+    flex-direction: column;
+    text-align: center;
+
+
+
+
+    .backGroundHeader{
+        width: 100%;
+        height: 24rem;
+        object-fit: cov;
+    }
+
+
+    .containerQuote 
+    {
+        display: flex;
+        flex-direction: column;
+        text-align: center;
+        .titleQuote 
+        {
+            margin-top: 2vw;
+            margin-bottom: 0.5vw;
+            font-family: 'Pattaya', sans-serif;
+            font-size: clamp(15px, 3.6vw, 3.5vw);                      
+            text-shadow: 3px 3px 3px #999;
+            text-align: center;
+            
+        }
+
+        .lineTitle
+        {
+            text-align: center;
+            width: 22.5vw;
+            height: 2px;
+            background-color: #E9DCBE;
+            align-self: center;
+            margin-bottom: 5vw;
+        }
+
+        .textQuote
+        {
+            width: 45vw;
+            font-family: 'Catamaran', sans-serif;
+            font-size: clamp(7px, 1.2vw, 1.2vw);                      
+            text-align: justify;
+            align-self: center;
+        }
+
+        .formQuote
+        {
+            width: 100vw;
+            background-size:auto;
+            background-position: center;
+            display: flex;
+            margin-bottom: 3rem;
+            .loginDown__form
+            {
+                width: 60vw;
+                @media screen and (max-width: 2000px) 
+                {
+
+                        width: 80vw;
+                        margin-left: 10vw;
+                        margin-right: 10vw;
+                        
+                    
+                }
+
+                @media screen and (max-width: 650px) 
+                {
+                    width: 96vw;
+                    margin-left: 2vw;
+                    margin-right: 2vw;
+                }
+                display: flex;
+                flex-direction: column;
+                background-color: $color-cream;
+                padding: 3vw;
+                border-radius: 10px;
+                margin-top: 1vw;
+                margin-left: 20vw;
+                margin-right: 20vw;
+                margin-bottom: 4vw;
+                font-family: $Letter-body;
+                font-size: 18px;
+
+
+                    .loginLabel 
+                    {
+                        margin-left: 2vw;
+                        font-size: 16px;
+                        margin-bottom: 1vw;
+                        color: rgb(51, 51, 51);
+                        align-self: flex-start;
+                        font-size: 2vw;
+                    }
+
+                    .loginDown__input {
+                    border: 0px solid rgba(255, 255, 255, 0.034);
+                    font-size: 16px;
+                    padding: 10px;
+                    border-radius: 10px;
+                    background-color: white;
+                    margin-bottom: 25px;
+                    box-shadow: inset 0 0 5px rgba(0,0,0,0.1);
+                    outline: none;
+                    color: rgb(91, 82, 82);
+                    
+                    }
+
+                    &__error {
+                    font-size: 14px;
+                    color: red;
+                    margin-bottom: 10px;
+                    }
+
+                    &__button {
+                    font-size: 16px;
+                    padding: 10px;
+                    border-radius: 5px;
+                    border: none;
+                    background-color: rgb(255,153,0);
+                    color: white;
+                    cursor: pointer;
+                    }
+
+                    .selectServices
+                    {
+                        margin-bottom: 25px;
+                        margin-top: 0px;
+                        font-size: 18px; 
+
+                    }
+
+                    .mySwiper
+                    {
+                        width: 100%;
+                        height:auto;
+                        background-color: white;
+                        border-radius: 10px;
+                        .swiper-pagination-bullet{
+                            display: none;
+                          }
+                          .swiper-button-next{
+                            display: block;
+                          }
+                          .swiper-button-prev{
+                            display: block;
+                          }
+
+                        .swiper-button-next {
+                            display: block;
+                            background-color: rgb(141, 5, 5);
+                        }
+
+                        .swiper-wrapper {
+                            transform: translate3d(0px, 0, 0);
+                            height: auto;
+                            background-color: white;
+                            border-radius: 10px;
+
+                            .service__options
+                            {
+                                
+                                display: flex;
+                                flex-direction: column;
+                                align-items: flex-start;
+                                margin-left: 2vw;
+                                gap: 5px;
+                                font-size: 18px;
+                                span
+                                {
+                                    display: flex;
+                                    gap: 10px;
+                                    align-items: center;
+                                    width: 100%;
+                                   
+        
+                                    input
+                                    {
+                                        @media screen and (max-width: 750px) 
+                                        {
+                                            width: 2vw;
+                                            height: auto;
+                                        }
+                                    }
+                                    
+                                    label
+                                    {
+                                        text-align: justify;
+                                        margin-right: 1vw;
+                                        font-size: 16px;
+                                    }
+                                }
+                            }
+                        }
+
+                        &.swiperQuote
+                        {
+                            height: auto;
+                            position: relative;
+                            
+                            .swiper-button-next, .swiper-button-prev
+                            {
+                                
+                                &::after
+                                {
+                                    font-size: 4vw;
+                                }
+                            }
+
+                            .swiper-pagination
+                            {
+                                // display: flex;
+                                // position: absolute;
+                                // bottom: 20%;
+                                gap: 1vw;
+                                height: 2vw;
+                                // max-width: 12px;
+                                @media screen and (max-width:600px ) {
+                                    margin-bottom: 5px;
+                                }
+                                .swiper-pagination-bullet
+                                {
+                                   width: 2vw;
+                                   height: 2vw;
+                                   max-width: 12px;
+                                   max-height: 12px;
+
+                                }
+                            }
+
+                            .sliderForm
+                            {
+                                display: flex;
+                                height: auto;
+                                // padding: 4%;
+                                align-items: flex-start; 
+
+                                @media screen and (max-width: 600px) 
+                                {
+                                    flex-direction: column;
+                                    justify-content: center;
+                                    align-items: center;
+                                    align-content: center;
+
+                                    .imageSliderForm
+                                    {
+                                        width: 200px;
+                                        height: 400px;
+                                    }
+                                }
+
+                                .imageSliderForm
+                                {
+                                   width: 35%;
+                                   height: 100%;
+                                   object-fit: cover;
+                                //    border-radius: 50%;
+
+                                    @media screen and (max-width: 600px)
+                                    {
+                                        margin-top: 0;
+                                        width: 100%;
+                                        object-fit: cover;
+                                        height: 150px;
+                                        border-radius: 0;
+                                    }
+                                    
+                                }
+
+                                .optionsSliderForm
+                                {
+                                    display: flex;
+                                    flex-direction: column;
+                                    background-color: #FFF;
+                                    padding-bottom: 2vw;
+                                    flex: 2;
+                                    margin-top: 1rem;
+                                    margin-left: 0.5rem;
+                                    width: 90%;
+                                    padding-right: 3%;
+                                    // justify-content: center;
+                                    // align-items: center;
+
+                                    .loginLabel
+                                    {
+                                        display: flex;
+                                        justify-content: center;
+                                        align-self: center;
+                                        margin: 0.5rem;
+                                        font-size: 1.2rem;
+                                        width: 100%;
+
+                                    }
+
+                                    .service
+                                    {
+
+                                        &__options
+                                        {
+
+                                            gap: 0.5rem;
+            
+                                            @media screen and (max-width: 600px ) 
+                                            {
+                                                gap: 0.7rem;
+                                                margin-right: 1rem;
+                                                
+                                            }
+
+                                            span
+                                            {
+                                                @media screen and (max-width: 600px ) 
+                                                {
+                                                    input
+                                                    {
+                                                        width: 0.7rem;
+                                                        height: 0.7rem;
+                                                    }
+                                                }
+                                                
+                                                .titleOptionService
+                                                {
+                                                    display: flex;
+                                                    width: 100%;
+                                                    gap: 5px;
+                                                    justify-content: space-between;
+                                                
+                                                    
+                                                    .nameProductQuote
+                                                    {
+                                                        padding-right: 0;
+                                                    }
+
+                                                    .priceProductQuote
+                                                    {   display: flex;
+                                                        justify-content: flex-end;
+                                                        text-align: start;
+                                                    }
+                                                    @media screen and (max-width: 600px ) 
+                                                    {
+                                                        font-size: 0.7rem;    
+                                                    }
+                                                }
+                                            }
+
+                                        }
+                                    }
+                                }
+                            
+
+                            }
+                        }
+
+                    }
+
+                 
+
+                .generation
+                {
+                    border-radius: clamp(0px, 3vw, 5px); 
+                    box-shadow: 1px 1px 2px #999;
+                    align-self: center;
+                    color: #FFF;
+                    background-color: $color-black; 
+                    font-family: $Letter-body;                   
+                    text-align: center;
+                    padding: 2%;
+                    cursor: pointer;
+                    font-size: 18px;
+                    margin-top: 2rem;
+                }
+            }
+        }
+    }
+}
+
+
+.loginLabel
+{
+    img
+    {
+        width: 18px;
+        height: 18px;
+    }
+}
+
+
+
+
+
+
+
+
+
+.titleOptionService
+{
+    text-align: justify;
+    margin-right: 1vw;
+    font-size: 3.5vw;
+}
+
+
+#titleQuoteImportant
+{
+    margin: 0px;
+    @media screen and (max-width: 600px) 
+    {
+        display: flex;
+
+        align-items: center;
+        align-self: center;
+        align-content: center;
+        justify-content: center;
+        text-align: center;
+        margin: 0px;
+    }
+}
+
+
+#containerTitleQuoteImportant
+{
+    display: flex;
+    flex-direction: column;
+    text-align: center;
+    align-items: center;
+    align-content: center;
+    align-self: center;
+    justify-content: center;
+}

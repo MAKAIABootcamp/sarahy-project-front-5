@@ -1,0 +1,29 @@
+@import "../../assets/reset.scss";
+@import "../../assets/variables.scss";
+
+.main__home {
+    .imgSocial__intro {
+        width: 100%;
+        height: 22rem;
+        object-fit: cover;
+        object-position: 50% 82%;
+        filter: brightness(60%);
+    }
+}
+
+@media(max-width: 850px) and (min-width: 600px){
+    .main__home {
+        .imgSocial__intro {
+            height: 14rem;
+        }
+    }
+}
+
+@media(max-width: 660px) {
+    .main__home {
+        .imgSocial__intro {
+            height: 10rem;
+        }
+    }
+
+}

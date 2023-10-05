@@ -1,0 +1,322 @@
+@import "../../assets/reset.scss";
+@import "../../assets/variables.scss";
+
+.main__allies {
+    display: flex;
+    flex-direction: column;
+    width: 100%;
+
+    .imagen__aliados {
+        width: 100%;
+        height: 22rem;
+        object-fit: cover;
+        object-position: 50% 20%;
+        filter: brightness(60%);
+    }
+
+    .header__transparent {
+        width: 100%;
+        padding: 15px 30px;
+        z-index: 3;
+        position: absolute;
+        width: 100%;
+        background-color: #ffffff2d;
+
+        .header__navbar {
+            width: 100%;
+        }
+
+        .header__navbar--lista {
+            display: flex;
+            justify-content: space-evenly;
+            align-items: center;
+
+            .navbar__items {
+                list-style: none;
+                font-size: 22px;
+                color: white;
+            }
+
+            .navbar__items {
+                cursor: pointer;
+                color: #ffffff;
+            }
+
+            .navbar__items--logo {
+                list-style: none;
+                font-size: 22px;
+                cursor: pointer;
+
+                .logo__item--img {
+                    width: 10rem
+                }
+            }
+        }
+    }
+
+    .main__info {
+        display: flex;
+        width: 100%;
+        padding: 20px 30px;
+        background-color: $color-white;
+        justify-content: space-evenly;
+        align-items: center;
+
+        .logoIzquierda {
+            width: 7rem;
+            height: 7rem;
+        }
+
+        .container__intro {
+            width: 80%;
+            padding: 10px 40px;
+
+            .main__title__home {
+                color: $color-black;
+                font-size: 50px;
+                font-family: $Letter-titles;
+                text-align: center;
+                font-weight: bolder;
+            }
+
+            .main__subtitle {
+                font-size: 28px;
+                font-family: $Letter-subtitles;
+                position: relative;
+                left: 125px;
+                bottom: 15px;
+                font-weight: 800;
+                text-align: center;
+            }
+
+            .main__parrafo {
+                font-family: $Letter-body;
+                padding: 25px 0;
+                font-size: 18px;
+                text-align: justify;
+            }
+
+        }
+
+        .logoDerecha {
+            width: 7rem;
+            height: 7rem;
+        }
+    }
+
+    .main__allies--title {
+        padding-top: 40px;
+        padding-bottom: 10px;
+        font-size: 40px;
+    }
+
+    .linea__allies--title {
+        border: 1px solid $color-cream;
+        width: 15%;
+        margin-bottom: 30px;
+    }
+
+    .allies__principal {
+        width: 100%;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+
+        .img__aliados {
+            height: 650px;
+            width: 100%;
+        }
+
+        .span__aliados {
+            position: absolute;
+            color: white;
+            font-size: 28px;
+            bottom: 4%;
+            width: 100%;
+            text-align: center;
+        }
+
+        .p__aliados {
+
+            font-size: 20px;
+            text-align: center;
+            width: 70%;
+            padding-top: 50px;
+            padding-bottom: 20px;
+        }
+
+        .linea__allies {
+            border: 1px solid $color-cream;
+            width: 20%;
+            margin-bottom: 60px;
+        }
+    }
+
+    .recomendaciones {
+        background-color: white;
+        display: flex;
+        flex-direction: column;
+        width: 100%;
+        align-items: center;
+        padding: 20px 40px;
+
+        .span__recomendaciones--aliados{
+            font-family: $Letter-subtitles;
+            font-size: 24px;
+            width: 100%;
+            text-align: center;
+        }
+
+        .recuadro__recomendaciones {
+            width: 100%;
+            display: flex;
+            gap: 5px;
+            flex-wrap: wrap;
+            background-color: rgb(255, 255, 255);
+            border-radius: 8px;
+            margin-bottom: 0;
+            justify-content: center;
+
+            .tarjeta__recuadro {
+                width: 31%;
+                display: flex;
+                flex-direction: column;
+                align-items: center;
+                gap: 15px;
+                padding: 20px 30px;
+
+                .logo__recomendaciones {
+                    width: 4rem;
+                }
+
+                .numero__tarjeta {
+                    font-size: 40px;
+                    color: $color-cream;
+                }
+
+                .titulo__tarjeta {
+                    font-size: 22px;
+                    font-weight: bold;
+                    text-align: center;
+                }
+
+                .descripcion__tarjeta {
+                    font-size: 17px;
+                    text-align: center;
+                    font-family: $Letter-body;
+                }
+            }
+        }
+    }
+
+    .form__contactar{
+        display: flex;
+        width: 100%;
+        height: 30rem;
+        .imagen__visible{
+            width: 45%;
+            height: 100%;
+            .img__form--contacto{
+                width: 100%;
+                height: 100%;  
+                object-fit: cover;      
+            }
+        }
+        .info__form{
+            width: 55%;
+            padding: 15px;
+            background-color: $color-cream;
+            .form__contacto--cliente{
+                width: 100%;
+                padding: 25px;
+                display: flex;
+                flex-direction: column;
+                height: 100%;
+                background-color: #ffffff;
+                border-radius: 10px;
+                
+                .form__titulo{
+                    font-family: $Letter-titles;
+                    font-size: 22px;
+                    margin-bottom: 20px;
+                    font-weight: bolder;
+                }
+                .input__form--nombre{
+                    font-family: $Letter-body;
+                    height: 3rem;
+                    padding: 5px 10px;
+                    font-size: 18px;
+                    border: 1px solid black;
+                    border-radius: 5px;
+                    margin-bottom: 20px;
+                }
+                .input__form--celular{
+                    font-family: $Letter-body;
+                    height: 3rem;
+                    padding: 5px 10px;
+                    font-size: 18px;
+                    border: 1px solid black;
+                    border-radius: 5px;
+                    margin-bottom: 20px;
+                }
+                .input__form--email{
+                    font-family: $Letter-body;
+                    height: 3rem;
+                    padding: 5px 10px;
+                    font-size: 18px;
+                    border: 1px solid black;
+                    border-radius: 5px;
+                    margin-bottom: 20px;
+                }
+                .input__form--textarea{
+                    font-family: $Letter-body;
+                    padding: 5px 10px;
+                    font-size: 18px;
+                    border: 1px solid black;
+                    border-radius: 5px;
+                    margin-bottom: 35px;
+                }
+                .btn__form--enviar{
+                    font-family: $Letter-body;
+                    width: 15%;
+                    background-color: $color-black;
+                    padding: 10px;
+                    color: #ffffff;
+                    border-radius: 11px;
+                    align-self: center;
+                    border: none;
+                    font-size: 18px;
+                }
+                .btn__form--enviar:hover{
+                 background-color: $color-cream;
+                 color: black;
+                 cursor: pointer;
+                }
+            }
+        }
+    }
+}
+
+// @media (width: 600px) {
+//     .main__allies {
+//         .imagen__aliados {
+//             width: 100%;
+//             height: 20%;
+//             object-fit: cover;
+//         }
+//         .container__intro{
+//             .main__title__home{
+//                 font-size: 30px;
+//                 width: 90%;
+//                 text-align: center;
+//             }
+//         }
+//         .logoDerecha{
+//             display: none;
+//         }
+//         .logoIzquierda{
+//             display: none;
+//         }
+
+//     }
+// }

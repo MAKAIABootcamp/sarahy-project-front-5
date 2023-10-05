@@ -1,10 +1,11 @@
 import React from 'react'
-import Routes from '../routes/routes'
+import Router from '../router/router';
 
 function App() {
   return (
-    <Routes/>
+    <Router />
+
   )
 }
 
-export default App
+export default App;
