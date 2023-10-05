@@ -139,7 +139,7 @@ const Quote = () => {
             className="titleOptionService"
             for={subobjeto.key}
           >
-            {subobjeto.name} (${subobjeto.price})
+            <span className="nameProductQuote"> {subobjeto.name} </span> <span className="priceProductQuote"><b>${subobjeto.price}</b></span>
           </label>
         </span>
       ))
@@ -161,8 +161,7 @@ const Quote = () => {
             className="titleOptionService"
             for={subobjeto.key}
           >
-            {subobjeto.name} (${subobjeto.price})
-          </label>
+            <span className="nameProductQuote"> {subobjeto.name} </span> <span className="priceProductQuote"><b>${subobjeto.price}</b></span>          </label>
         </span>
       ))
     );
@@ -182,8 +181,7 @@ const Quote = () => {
             className="titleOptionService"
             for={subobjeto.key}
           >
-            {subobjeto.name} (${subobjeto.price})
-          </label>
+            <span className="nameProductQuote"> {subobjeto.name} </span> <span className="priceProductQuote"><b>${subobjeto.price}</b></span>          </label>
         </span>
       ))
     );
@@ -203,8 +201,7 @@ const Quote = () => {
             className="titleOptionService"
             for={subobjeto.key}
           >
-            {subobjeto.name} (${subobjeto.price})
-          </label>
+            <span className="nameProductQuote"> {subobjeto.name} </span> <span className="priceProductQuote"><b>${subobjeto.price}</b></span>          </label>
         </span>
       ))
     );
@@ -224,8 +221,7 @@ const Quote = () => {
             className="titleOptionService"
             for={subobjeto.key}
           >
-            {subobjeto.name} (${subobjeto.price})
-          </label>
+            <span className="nameProductQuote"> {subobjeto.name} </span> <span className="priceProductQuote"><b>${subobjeto.price}</b></span>          </label>
         </span>
       ))
     );
@@ -245,8 +241,7 @@ const Quote = () => {
             className="titleOptionService"
             for={subobjeto.key}
           >
-            {subobjeto.name} (${subobjeto.price})
-          </label>
+            <span className="nameProductQuote"> {subobjeto.name} </span> <span className="priceProductQuote"><b>${subobjeto.price}</b></span>          </label>
         </span>
       ))
     );
@@ -639,8 +634,12 @@ const Quote = () => {
                 <input type="date" id="date" {...register("date", { required: true })} placeholder="Fecha del Evento" className="loginDown__input" />
                 {errors.date && <span className="loginDown__error">Este campo es obligatorio</span>}
 
+
+                <input type="text" id="type__Event" {...register("type__Event", { required: true })} placeholder="Indique el tipo de evento..." className="loginDown__input" />
+                {errors.type__Event && <span className="loginDown__error">Este campo es obligatorio</span>}
+
                 {/* <span className="loginLabel">Tipo de Evento</span> */}
-                <select id="type__Event" {...register("type__Event", { required: true })} className="loginDown__input"> <option value="">Seleccione el Tipo de Evento</option> <option value="birthDay">Cumpleaños</option> <option value="boda">Boda</option> <option value="graduation">Graduación</option> <option value="empresarial">Evento Empresarial</option> <option value="Evento Social">Evento Social</option> </select>
+                {/* <select id="type__Event" {...register("type__Event", { required: true })} className="loginDown__input"> <option value="">Seleccione el Tipo de Evento</option> <option value="birthDay">Cumpleaños</option> <option value="boda">Boda</option> <option value="graduation">Graduación</option> <option value="empresarial">Evento Empresarial</option> <option value="Evento Social">Evento Social</option> </select> */}
 
                 {/* <span className="loginLabel">Número Estimado de Asistentes al Evento</span> */}
                 <input type="number" onChange={(e) => {
@@ -669,15 +668,17 @@ const Quote = () => {
 
                 <Swiper
                   spaceBetween={30}
+                  adaptiveHeight = 'true'
+                  autoHeight = 'true'
+                  watchSlidesVisibility = 'true'
+                  slidesPerView = 'auto'
                   centeredSlides={true}
-
                   pagination={{
                     clickable: true,
                   }}
                   navigation={true}
                   modules={[Autoplay, Pagination, Navigation]}
                   className="mySwiper swiperQuote" >
-
 
                   <SwiperSlide className="sliderForm">
                     <img className='imageSliderForm' src="https://i.ibb.co/g9j4DKT/image-128.png" alt="imagen de bodas" />
@@ -750,7 +751,7 @@ const Quote = () => {
                   </SwiperSlide>
 
                   <SwiperSlide className="sliderForm">
-                    <img className='imageSliderForm' src="https://plus.unsplash.com/premium_photo-1682391039360-01afb6ffc72f?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxzZWFyY2h8MXx8ZGp8ZW58MHx8MHx8fDA%3D&auto=format&fit=crop&w=500&q=60" alt="imagen de bodas" />
+                    <img className='imageSliderForm' src="https://i.ibb.co/MVVrMgz/f20ab1e4-6500-45cc-ab03-1c3536fd1d54.jpg" alt="imagen de bodas" />
 
                     <section className="optionsSliderForm">
                       <span className="loginLabel"> Música y Dj </span>

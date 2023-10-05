@@ -58,16 +58,17 @@
             background-size:auto;
             background-position: center;
             display: flex;
-            margin-bottom: 10rem;
+            margin-bottom: 3rem;
             .loginDown__form
             {
                 width: 60vw;
-                @media screen and (max-width: 1000px) 
+                @media screen and (max-width: 2000px) 
                 {
 
                         width: 80vw;
                         margin-left: 10vw;
                         margin-right: 10vw;
+                        
                     
                 }
 
@@ -140,7 +141,7 @@
                     .mySwiper
                     {
                         width: 100%;
-                        height: max-content;
+                        height:auto;
                         background-color: white;
                         border-radius: 10px;
 
@@ -245,6 +246,7 @@
                                 {
                                    width: 35%;
                                    height: 100%;
+                                   object-fit: cover;
                                 //    border-radius: 50%;
 
                                     @media screen and (max-width: 480px)
@@ -252,8 +254,10 @@
                                         margin-top: 2rem;
 
 
-                                        width: 150px;
+                                        width: 90%;
+                                        object-fit: cover;
                                         height: 300px;
+                                        border-radius: 2rem;
                                     }
                                     
                                 }
@@ -267,8 +271,8 @@
                                     flex: 2;
                                     margin-top: 1.5rem;
                                     margin-left: 0.5rem;
-                                    justify-content: center;
-                                    align-items: center;
+                                    // justify-content: center;
+                                    // align-items: center;
 
                                     .loginLabel
                                     {
@@ -285,6 +289,7 @@
                                         &__options
                                         {
 
+                                            gap: 3vw;
 
                                             @media screen and (max-width: 480px ) 
                                             {
@@ -306,7 +311,20 @@
                                                 
                                                 .titleOptionService
                                                 {
-                                                    gap: 100px;
+                                                    display: flex;
+                                                    width: 40vw;
+                                                    gap: 5px;
+                                                    justify-content: space-between;
+                                                    
+                                                    .nameProductQuote
+                                                    {
+                                                        padding-right: 10vw;
+                                                    }
+
+                                                    .priceProductQuote
+                                                    {
+                                                        text-align: start;
+                                                    }
                                                     @media screen and (max-width: 480px ) 
                                                     {
                                                         font-size: 0.7rem;    
