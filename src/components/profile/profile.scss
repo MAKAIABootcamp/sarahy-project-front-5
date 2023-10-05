@@ -234,6 +234,7 @@
             display: flex;
             align-items: baseline;
             justify-content: space-around;
+            gap: 80px;
 
 
             .span__title {
@@ -250,6 +251,17 @@
             display: flex;
             align-items: baseline;
             cursor: pointer;
+            align-items: center;
+
+            // botones confirmados
+            button.confirmed {
+                color: rgb(123, 225, 114); 
+            }
+            
+            // Botones pendientes
+            button.pending {
+                color: rgb(184, 86, 86); 
+            }
 
             .data__price:hover {
                 background-color: #d11919;

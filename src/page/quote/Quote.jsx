@@ -578,8 +578,13 @@ const Quote = () => {
     console.log('Valores OBTENIDOS: ', updateQuoteData);
 
     if (dataUser) {
+      console.log("Estos los daatos del ususario", dataUser);
       const saveQuote = async () => {
-        await addNewQuote(dataUser.id, data);
+        if (dataUser.user ) {
+          await addNewQuote(dataUser.user.id, data);
+        }else{
+          await addNewQuote(dataUser.id, data);
+        }
       }
       saveQuote();
     }

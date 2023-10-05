@@ -190,7 +190,7 @@ const Home = () => {
                             Quince Años
                         </button>
                         <button className={`btn__event dark:!bg-neutral-400 dark:!text-neutral-900 ${eventoSeleccionado === "Cumpleaños" ? "selected" : ""}`} onClick={() => handleEventoClick("Cumpleaños")}>
-                            Aniversarios
+                            Primeras comuniones
                         </button>
                         <button className={`btn__event dark:!bg-neutral-400 dark:!text-neutral-900 ${eventoSeleccionado === "Empresariales" ? "selected" : ""}`} onClick={() => handleEventoClick("Empresariales")}>
                             Empresariales
@@ -318,7 +318,7 @@ const Home = () => {
                             <h4 className='encantado__subtitulo'>En Sarahy encontrarás... </h4>
                         </div>
                         <p className="encantados__descripcion dark:text-neutral-300">
-                            Aqui podrás encontrar los mejores precios y productos de calidad para tus eventos especiales, somos los profesionales que buscabas.
+                            Aquí podrás encontrar los mejores precios y productos de calidad para tus eventos especiales, somos los profesionales que buscabas.
                         </p>
                     </div>
 

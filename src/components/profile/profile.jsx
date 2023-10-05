@@ -327,7 +327,7 @@ const handleItemClick = async (name, element) => {
 
             </section>
 
-            <section className="main__profile ">
+            <section className="main__profile dark:!bg-neutral-700">
                 <section className="container__profile dark:bg-neutral-700  dark:rounded-none">
                     <section className="introduction__profile dark:bg-neutral-700">
                         <figure className="fig__profile dark:bg-neutral-700">
@@ -599,12 +599,12 @@ const handleItemClick = async (name, element) => {
                                         <span className="span__data">{element.contact}</span>
                                        
                                        {(element.state === true )? (
-                                        <button className="span__title" >Confirmada <span class="material-symbols-outlined">
+                                        <button className="span__title confirmed" >Confirmada <span class="material-symbols-outlined">
                                         check
                                         </span></button>
 
                                        ): (
-                                        <button className="span__title" onClick={() => handleItemClick("sign-in", element)}>Confirmación pendiente<span class="material-symbols-outlined">
+                                        <button className="span__title pending" onClick={() => handleItemClick("sign-in", element)}> Pendiente<span class="material-symbols-outlined">
                                         priority_high
                                         </span></button>
                                        )}

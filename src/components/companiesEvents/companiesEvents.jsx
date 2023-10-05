@@ -14,6 +14,7 @@ import empresa2 from "./assets/empresa2.png";
 import empresa3 from "./assets/empresa3.jpg";
 import empresa4 from "./assets/empresa4.jpeg";
 import empresa5 from "./assets/empresa5.jpeg";
+import empresa6 from "./assets/empresa6.jpeg";
 import "./companiesEvents.scss";
 
 import { typEvent } from "./hookTypEvent";
@@ -21,7 +22,7 @@ import CollageEvents from "../collageEvents/Collage";
 
 const CompaniesEvents = () => {
   return (
-    <main className="main__home">
+    <main className="main__home dark:!bg-neutral-700">
       <img src={empresasPrincipal} alt="" className="imgCompanies__intro" />
       <section className="main__info dark:bg-neutral-800">
         <img src={logoIzquierda} alt="" className="logoIzquierda" />
@@ -149,8 +150,12 @@ const CompaniesEvents = () => {
             <img src={empresa4} alt="" className="img" />
         </figure>
         <figure className="fig">
+            <img src={empresa6} alt="" className="img" />
+        </figure>
+        <figure className="fig">
             <img src={empresa5} alt="" className="img" />
         </figure>
+        
         </div>
         
 
