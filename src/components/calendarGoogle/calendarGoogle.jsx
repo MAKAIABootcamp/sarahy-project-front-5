@@ -54,6 +54,8 @@ const CalendarGoogle = ({ isOpen, onRequestCloset }) => {
       state: false, 
 
     };
+
+    console.log(newDate)
     createNewDate("datesCalendar", newDate);
     Swal.fire({
       icon: 'success',
@@ -61,14 +63,12 @@ const CalendarGoogle = ({ isOpen, onRequestCloset }) => {
       text: 'Espera la confimación de la cita',
     })
     console.log('creado')
-    llevarHome()
-
   };
 
-  const llevarHome = () => {
-     navigate("/");
-    window.scrollTo(0, 0);
-  }
+  // const llevarHome = () => {
+  //    navigate("/");
+  //   window.scrollTo(0, 0);
+  // }
 
 
   return (

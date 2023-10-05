@@ -3,7 +3,6 @@ import { firestore } from "../firebase/firebaseConfig";
 import Swal from "sweetalert2";
 
 
-
 export const addNewDate = async (serviceId, newService) => {
  
   try {

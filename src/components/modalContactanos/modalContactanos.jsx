@@ -4,10 +4,12 @@ import Modal from "react-modal";
 import imgContactanos from "./contactanos.jpg"
 import './modalContactanos.scss'
 import Swal from "sweetalert2";
+import { useNavigate } from "react-router-dom";
 
 Modal.setAppElement("#root");
 
 const ModalContactanos = ({ isOpen, onRequestCloset }) => {
+  const navigate = useNavigate()
   const {
     register,
     handleSubmit,
@@ -21,6 +23,9 @@ const ModalContactanos = ({ isOpen, onRequestCloset }) => {
         title: 'Datos enviados correctamente',
         text: 'Gracias por comunicarte con nosotros, un asesor te contactará.',
       })
+
+    location.reload()
+      
   };
 
   return (

@@ -99,7 +99,7 @@ const Chat = ({headerImg}) => {
 
         }
     }
-    const defaultMessage = {text: 'Si tienes más dudas, recuerda: ', option1: '\n1. Duda de Evento', option2: '\n2. Duda de Servicio',  option3: '\n3. Duda de Ubicación',  option4: '\n4. Duda de Cotización', action: '/wedding'};
+    const defaultMessage = {text: 'Si tienes más dudas, recuerda: ', option1: '\n1. Duda de Evento Social', option2: '\n2. Duda de Evento Empresarial',  option3: '\n3. Duda de Aliados Empresariales',  option4: '\n4. Duda de Cotización', action: '/wedding'};
     const messagesContainerRef = useRef(null);
     const navigate = useNavigate();
     window.addEventListener('load', () => {
@@ -186,7 +186,7 @@ const Chat = ({headerImg}) => {
     const getAutoResponse = (userMessage) => {
         if (userMessage.trim() === '') {
  
-            return {text: 'Hola, estoy para resolver tus dudas. Elige una opción: ', option1: '\n1. Duda de Evento', option2: '\n2. Duda de Servicio',  option3: '\n3. Duda de Ubicación',  option4: '\n4. Duda de Cotización', action: '/wedding'};
+            return {text: 'Hola, estoy para resolver tus dudas. Elige una opción: ', option1: '\n1. Duda de Evento Social', option2: '\n2. Duda de Evento Empresarial',  option3: '\n3. Duda de Aliados Empresariales',  option4: '\n4. Duda de Cotización', action: '/quote'};
         }
 
         const choice = parseInt(userMessage);
@@ -194,13 +194,13 @@ const Chat = ({headerImg}) => {
         if (choice >= 1 && choice <= 4) {
             switch (choice) {
                 case 1:
-                    return {result1: 'Has seleccionado Duda de Evento.', result2: 'Ve a Eventos. ', result3: 'Click Aquí. ', action: '/wedding'};
+                    return {result1: 'Has seleccionado duda de eventos sociales.', result2: 'Ve a eventos sociales. ', result3: 'Click Aquí. ', action: '/sociales'};
                 case 2:
-                    return {result1: 'Has seleccionado Duda de Servicios.', result2: 'Ve a Servicios. ', result3: 'Click Aquí. ', action: '/wedding'};
+                    return {result1: 'Has seleccionado duda de eventos empresariales.', result2: 'Ve a eventos empresariales. ', result3: 'Click Aquí. ', action: '/empresariales'};
                 case 3:
-                    return {result1: 'Has seleccionado Duda de Ubicaciones.', result2: 'Ve a Ubicaciones. ', result3: 'Click Aquí. ', action: '/wedding'};
+                    return {result1: 'Has seleccionado duda de aliados empresariales.', result2: 'Ve a aliados empresariales. ', result3: 'Click Aquí. ', action: '/aliados'};
                 case 4:
-                    return {result1: 'Has seleccionado Duda de Cotización.', result2: 'Ve a Cotizar. ', result3: 'Click Aquí. ', action: '/quote'};
+                    return {result1: 'Has seleccionado duda de Cotización.', result2: 'Ve a Cotizar. ', result3: 'Click Aquí. ', action: '/quote'};
             }
         } else {
             return 'No entiendo tu elección. Por favor, elige una opción válida:';
@@ -275,12 +275,12 @@ const Chat = ({headerImg}) => {
                         </div>
                     ))}
 
-                    { chatBotMessages.map((message, index) => (message.text.result1 && <span key={index} className='message auto'>                                            
+                    {/* { chatBotMessages.map((message, index) => (message.text.result1 && <span key={index} className='message auto'>                                            
                                             <span>{defaultMessage.text}</span>
                                             <span>{defaultMessage.option1}</span>
                                             <span>{defaultMessage.option2}</span>
                                             <span>{defaultMessage.option3}</span>
-                                            <span>{defaultMessage.option4}</span></span>))}
+                                            <span>{defaultMessage.option4}</span></span>))} */}
 
 
             </div>

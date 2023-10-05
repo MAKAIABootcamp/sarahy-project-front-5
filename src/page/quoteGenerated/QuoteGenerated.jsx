@@ -70,9 +70,28 @@ const QuoteGenerated = () => {
     const bodyData = [];
   
     data.forEach((item) => {
+      let nombreService = "";
+      if( item.name == 'catering'){
+        nombreService = "Catering"; 
+      }
+      if( item.name == 'fotografia'){
+        nombreService= "Fotografía"; 
+      }
+      if( item.name == 'decoracion'){
+        nombreService = "Decoración"; 
+      }
+      if( item.name == 'animation'){
+        nombreService = "Animación"; 
+      }
+      if( item.name == 'iluminacion'){
+        nombreService = "Iluminación"; 
+      }
+      if( item.name == 'musica'){
+        nombreService = "Música y Djs"; 
+      }
       // Agregar una fila para el servicio principal
       bodyData.push([
-        item.name,
+        nombreService,
         item.services[0].nameService,
         item.services[0].description,
         `$${item.services[0].price}`,
@@ -100,10 +119,32 @@ const QuoteGenerated = () => {
   const serviceRows = [];
 
   data.forEach((item, index) => {
+    let nombreService = "";
+   
+      if( item.name == 'catering'){
+        nombreService = "Catering"; 
+      }
+      if( item.name == 'fotografia'){
+        nombreService= "Fotografía"; 
+      }
+      if( item.name == 'decoracion'){
+        nombreService = "Decoración"; 
+      }
+      if( item.name == 'animation'){
+        nombreService = "Animación"; 
+      }
+      if( item.name == 'iluminacion'){
+        nombreService = "Iluminación"; 
+      }
+      if( item.name == 'musica'){
+        nombreService = "Música y Djs"; 
+      }
+      
+
     // Agregar una fila para el servicio principal
     const serviceRow = (
       <tr key={index}>
-        <td rowSpan={item.services.length}>{item.name}</td>
+        <td rowSpan={item.services.length}>{nombreService}</td>
         <td>{item.services[0].nameService}</td>
         <td>{item.services[0].description}</td>
         <td>{item.services[0].price}</td>
@@ -120,7 +161,7 @@ const QuoteGenerated = () => {
           <td>{item.services[i].description}</td>
           <td className="price">
             <span className="money"></span>
-            {Number(item.services[i].price).toLocaleString('en-US', { minimumFractionDigits: 2, maximumFractionDigits: 2 })} {/* Formatea el precio con comas para unidades de mil */}
+            {Number(item.services[i].price)} {/* Formatea el precio con comas para unidades de mil */}
           </td>
         </tr>
       );
