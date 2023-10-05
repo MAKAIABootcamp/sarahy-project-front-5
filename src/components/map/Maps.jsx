@@ -44,7 +44,7 @@ function Maps({ elemento }) {
         if (elemento) {
             setdataLocation(elemento);
         } else {
-            setdataLocation({}); // Puedes establecerlo en un objeto vacío u otro valor predeterminado
+            setdataLocation({}); 
         }
     }, [elemento]);
 
@@ -105,8 +105,6 @@ function Maps({ elemento }) {
             onUnmount={onUnmount}
             onClick={mapClicked}
         >
-            { /* Child components, such as markers, info windows, etc. */}
-
             {markers.map((marker, index) => (
                 <Marker
                     key={index}
