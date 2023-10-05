@@ -218,7 +218,7 @@ const Header = () => {
       )}
 
       <div className={`mobile-menu ${isOpen && width < 600 ? 'show' : ''}`}>
-        <span className='menu__slogan'>Tu momento nuestra pasión</span>
+        <span className='menu__slogan'>Tu momento, nuestra pasión</span>
         <ul>
           <li onClick={() => { navigate('/'); closeMobileMenu(); }}>Inicio</li>
           <li onClick={() => { navigate('/ingresar'); closeMobileMenu(); }}>Ingresar</li>
@@ -243,8 +243,9 @@ const Header = () => {
             <img className="red__header" src="https://cdn-icons-png.flaticon.com/512/87/87390.png" alt="instagram" />
           </a>
           <a href="https://api.whatsapp.com/send?phone=3163048505&text=Hola%20bienvenido%20a%20Sarahy%20te%20asesoramos%20por%20whatsapp%20gestiona%20tu%20evento%20por%20este%20canal." target="_blank">
-            <img className="red__header" src="https://assets.stickpng.com/images/5a4e2ef62da5ad73df7efe6e.png" alt="whatsapp" />
+            <img className="red__header" src="https://cdn-icons-png.flaticon.com/512/1384/1384095.png" alt="whatsapp" />
           </a>
+          
         </article>
         <img src={logo2} alt="" className='logo2black' />
       </div>

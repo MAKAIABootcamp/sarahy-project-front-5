@@ -144,6 +144,15 @@
                         height:auto;
                         background-color: white;
                         border-radius: 10px;
+                        .swiper-pagination-bullet{
+                            display: none;
+                          }
+                          .swiper-button-next{
+                            display: block;
+                          }
+                          .swiper-button-prev{
+                            display: block;
+                          }
 
                         .swiper-button-next {
                             display: block;

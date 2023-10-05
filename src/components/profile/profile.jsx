@@ -626,7 +626,7 @@ const handleItemClick = async (name, element) => {
                     {sectionSeleccionada === "Comentarios" && (
                         <section className="show__comments">
                             <span className="title dark:text-neutral-100">Déjanos tus comentarios</span>
-                            <form action="" className="form__comments dark:!bg-neutral-600" onSubmit={handleSubmit(comentarios)}>
+                            <form action="" className="form__comments dark:!bg-neutral-500" onSubmit={handleSubmit(comentarios)}>
   <article className="article__form">
     <label htmlFor="" className="label__evento">Evento:</label>
     <input type="text" placeholder="Ingresa el tipo de evento" className="input" {...register("evento")} />

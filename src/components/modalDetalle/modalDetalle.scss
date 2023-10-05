@@ -5,12 +5,12 @@
     display: flex;
     flex-direction: column;
     max-width: 60%;
-    margin: 7% auto;
+    margin: 2% auto;
     height: auto;
     box-sizing: border-box;
     border-radius: 15px;
     border: 3px solid;
-    background-color: #ccc9c9;
+    background-color: #d6d6d6;
     transition: 1s ease-in-out;
     justify-content: center;
 
@@ -22,7 +22,7 @@
         font-family: cursive;
         font-weight: bold;
         cursor: pointer;
-        color: #e6dbe4;
+        color: #fdfdfd;
     }
 
     .sectionQuote {
@@ -30,6 +30,7 @@
         flex-direction: column;
         height: auto;
         width: 100%;
+        border-radius: 15px;
 
         .infoQuote {
             display: flex;
@@ -37,6 +38,7 @@
             gap: 50px;
             height: auto;
             justify-content: space-evenly;
+            margin-bottom: 1rem;
 
             .introductionQuoteDate {
                 display: flex;
@@ -54,7 +56,7 @@
         .containerQuote {
             display: flex;
             text-align: center;
-            height: 100%;
+            height: 80%;
             width: 100%;
             max-width: 1500px;
             min-width: 300px;
@@ -63,6 +65,7 @@
             padding: 0px 10px;
             justify-content: flex-end;
             padding: 30px;
+            border-radius: 15px;
             .textQuote {
                 text-align: start;
                 padding: 2rem;
@@ -70,6 +73,7 @@
                 height: auto;
                 margin: 25px 0;
                 text-align: center;
+                font-family:$Letter-body; 
             }
 
             .dateUserQuote {
@@ -151,17 +155,20 @@
             background-color: #e6dbe4;
             font-weight: bold;
             color: #000;
+            padding: 10px 15px;
+            font-family: $Letter-body;
+            border-radius: 15px;
         }
 
         .downloadQuote {
             position: absolute;
-            background: #efeaea;
+            background: #b8b5b5;
             color: black;
             font-weight: bold;
-            padding: 10px;
+            padding: 10px 15px;
             border-radius: 17px;
-            bottom: 20%;
-            right: 40%;
+            bottom: 27%;
+            right: 42%;
             cursor: pointer;
         }
 
@@ -233,6 +240,7 @@
 
                 .textQuote {
                     width: 80%;
+                    text-align: justify;
                 }
 
             }

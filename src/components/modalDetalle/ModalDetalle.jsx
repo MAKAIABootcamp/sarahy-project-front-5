@@ -36,7 +36,7 @@
                     <Page className="sectionQuote">
                         <View className="containerQuote">
                             <Text className="textQuote">
-                            Esta es una cotización de estimación de costos que se proporciona para un producto o servicio, pero su precio final puede cambiar debido a diversos factores, como cambios en las especificaciones, la cantidad requerida, los impuestos y otros costos variables
+                            Esta es una cotización de estimación de costos que se proporciona para un producto o servicio, pero su precio final puede cambiar debido a diversos factores, como cambios en las especificaciones, la cantidad requerida, los impuestos y otros costos variables. 
                             </Text>
 
                             <View className="data1Quote">
@@ -82,7 +82,7 @@
 
                                     <View className="table">
                                         <View className="totalmyQuote">
-                                            <Text>Total</Text>
+                                            <Text>Total </Text>
                                             <Text>${elementoSeleccionado?.total}</Text>
                                         </View>
                                     </View>

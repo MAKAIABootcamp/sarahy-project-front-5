@@ -50,7 +50,6 @@ const Router = () => {
         <Route path="/administrador" element={<PanelAdmi />} />
         <Route path="/citas" element={<ModalCalendar />} />
 
-        <Route path="/detalles" element={<WeddingPage />} />
         { userLogged &&   <Route path="/aliados" element={<Allies />} />}        
         { !isLogged && <Route path="/ingresar" element={<Login />} />}
         <Route path="/quote" element={<Quote />} />
