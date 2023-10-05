@@ -71,7 +71,7 @@ const CompaniesEvents = () => {
         </div>
       </section>
 
-      <section className="data__events dark:bg-neutral-800">
+      <section className="data__events dark:bg-neutral-700">
         <span className="title__data dark:text-neutral-200">
           ¿Cómo Celebraciones Sarahy hace especial y unico tu evento?
         </span>
@@ -119,8 +119,8 @@ const CompaniesEvents = () => {
               <figure className="fig">
                   <img src={logoNegro} alt="" className="img dark:bg-neutral-300" />
               </figure>
-              <span className="span dark:text-neutral-300">Galería</span>
-              <button className="button__companies" onClick={() => {navigate("/quote"); window.scrollTo(0, 400)}}>Haz tu cotización </button>
+              <span className="span dark:!text-neutral-300">Galería</span>
+              <button className="button__companies dark:!border-white dark:!text-neutral-300" onClick={() => {navigate("/quote"); window.scrollTo(0, 400)}}>Haz tu cotización </button>
             </div>
             <div className="event__collagePlus">
               <CollageEvents imagenes={typEvent} className="description__img" />
@@ -136,7 +136,7 @@ const CompaniesEvents = () => {
     </section>
 
 
-      <section className="others__companies dark:bg-neutral-800">
+      <section className="others__companies dark:bg-neutral-700">
         <span className="title__companies dark:text-neutral-200">Empresas que han vivido la experiencia Sarahy</span>
         <div className="img__companies">
         <figure className="fig">

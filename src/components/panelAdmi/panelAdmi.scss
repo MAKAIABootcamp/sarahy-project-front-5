@@ -59,9 +59,10 @@
             font-family: "Montserrat", sans-serif;
             border: none;
             border-radius: 10px;
-            background-color: rgb(154, 224, 154);
+            background-color: $color-cream;
             cursor: pointer;
             padding: 4px 9px;
+            font-weight: 600;
         }
     }
 
@@ -221,12 +222,13 @@
                 align-self: center;
                 border: none;
                 border-radius: 5px;
-                background-color: rgb(154, 224, 154);
+                background-color: $color-cream;
                 padding: 3%;
                 font-family: $Letter-body;
                 font-weight: bolder;
                 cursor: pointer;
                 margin-top: 1rem;
+                font-weight: 600;
             }
         }
 
@@ -296,12 +298,13 @@
                 align-self: center;
                 border: none;
                 border-radius: 5px;
-                background-color: rgb(154, 224, 154);
+                background-color: $color-cream;
                 padding: 3%;
                 font-family: $Letter-body;
                 font-weight: bolder;
                 cursor: pointer;
                 margin-top: 1rem;
+                font-weight: 600;
             }
         }
 
