@@ -30,7 +30,7 @@ const Register = () => {
   };
 
   return (
-    <main  className="login dark:bg-neutral-800">
+    <main  className="login myRegisterHeight dark:bg-neutral-800">
       <section className="login__container register">
         <div className="loginDown register dark:bg-neutral-800">
           <h1 className="loginDown__title">

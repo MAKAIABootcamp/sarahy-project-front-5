@@ -8,7 +8,7 @@
 .main__home {
   width: 100%;
   overflow: hidden;
-
+  
   .imagen__home--res {
     display: none;
   }
@@ -279,16 +279,23 @@
         width: auto;
         height: auto;
         border-radius: 10px;
-        background-color: #343434;
-        color: white;
         margin-top: 1.5rem;
         font-size: 18px;
-        padding: 3% 5%;
+        padding: 4% 6%;
+        font-family: $Letter-body;
+        background-color: transparent;
+        cursor: pointer;
+        color: black;
+        border: 2px solid black;
+        font-weight: 700;
       }
 
       .description__btn:hover {
-        background-color: $color-grey;
+        background-color: #343434;
+        color: white;
         cursor: pointer;
+        border: none;
+        font-weight: 500;
       }
     }
 
@@ -793,7 +800,7 @@
         font-family: $Letter-body;
         width: 70%;
         text-align: center;
-        text-align: justify;
+        text-align: center;
         line-height: 22px;
       }
     }
@@ -846,16 +853,10 @@
         width: 100%;
 
         .btn__event {
-          // width: 20%;
-          // height: 3rem;
-          // font-size: 16px;
-          // text-align: center;
-          // line-height: 1px;
-          // height: auto;
           height: 50px;
           border-radius: 12px;
           border: 1px solid $color-black;
-          padding: 1% 20px;
+          padding: 5px 10px;
           font-size: 18px;
           font-weight: 400;
           background-color: transparent;
@@ -970,11 +971,12 @@
     background-color: #f3f3f3 !important;
 
     .imagen__home--res {
-      background-image: url("https://images.unsplash.com/photo-1511795409834-ef04bbd61622?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxleHBsb3JlLWZlZWR8NXx8fGVufDB8fHx8fA%3D%3D&w=1000&q=80");
+      background-image: url("https://images.unsplash.com/photo-1511285560929-80b456fea0bc?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1469&q=80");
       height: 18rem;
       width: 100%;
       display: flex;
       object-fit: cover;
+      background-size: cover;
     }
 
     .slider__home {
@@ -1142,6 +1144,10 @@
 
       .card__services{
         height: auto;
+
+        .card__services--title{
+          margin-top: 3.2rem;
+        }
         .img__services{
           height: 95%;
         }
@@ -1150,7 +1156,7 @@
         width: 100%;
 
         .swiper-slide {
-          width: 20rem !important;
+          width: 12rem !important;
           height: auto;
         }
       }

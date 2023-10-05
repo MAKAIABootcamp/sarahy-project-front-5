@@ -11,7 +11,7 @@ export const editServiceField = async (serviceId, fieldPath, newValue) => {
         [fieldPath]: newValue,
       });
       console.log("Campo editado con éxito.");
-      location.reload()
+      // location.reload()
     } catch (error) {
       console.error("Error al editar el campo:", error);
     }

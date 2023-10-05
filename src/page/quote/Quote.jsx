@@ -22,7 +22,6 @@ import { data } from "autoprefixer";
 
 const Quote = () => {
   const dataUser = useSelector(state => state.aunthentication.userLogged);
-  console.log('USEEEER', dataUser);
   const [arregloGlobal, setArregloGlobal] = useState([]);
   const [newTotal, setNewTotal] = useState(0);
   const [ourServices, setOurServices] = useState({});
@@ -140,7 +139,7 @@ const Quote = () => {
             className="titleOptionService"
             for={subobjeto.key}
           >
-            {subobjeto.name} (${subobjeto.price})
+            <span className="nameProductQuote"> {subobjeto.name} </span> <span className="priceProductQuote"><b>${subobjeto.price}</b></span>
           </label>
         </span>
       ))
@@ -162,8 +161,7 @@ const Quote = () => {
             className="titleOptionService"
             for={subobjeto.key}
           >
-            {subobjeto.name} (${subobjeto.price})
-          </label>
+            <span className="nameProductQuote"> {subobjeto.name} </span> <span className="priceProductQuote"><b>${subobjeto.price}</b></span>          </label>
         </span>
       ))
     );
@@ -183,8 +181,7 @@ const Quote = () => {
             className="titleOptionService"
             for={subobjeto.key}
           >
-            {subobjeto.name} (${subobjeto.price})
-          </label>
+            <span className="nameProductQuote"> {subobjeto.name} </span> <span className="priceProductQuote"><b>${subobjeto.price}</b></span>          </label>
         </span>
       ))
     );
@@ -204,8 +201,7 @@ const Quote = () => {
             className="titleOptionService"
             for={subobjeto.key}
           >
-            {subobjeto.name} (${subobjeto.price})
-          </label>
+            <span className="nameProductQuote"> {subobjeto.name} </span> <span className="priceProductQuote"><b>${subobjeto.price}</b></span>          </label>
         </span>
       ))
     );
@@ -225,8 +221,7 @@ const Quote = () => {
             className="titleOptionService"
             for={subobjeto.key}
           >
-            {subobjeto.name} (${subobjeto.price})
-          </label>
+            <span className="nameProductQuote"> {subobjeto.name} </span> <span className="priceProductQuote"><b>${subobjeto.price}</b></span>          </label>
         </span>
       ))
     );
@@ -246,8 +241,7 @@ const Quote = () => {
             className="titleOptionService"
             for={subobjeto.key}
           >
-            {subobjeto.name} (${subobjeto.price})
-          </label>
+            <span className="nameProductQuote"> {subobjeto.name} </span> <span className="priceProductQuote"><b>${subobjeto.price}</b></span>          </label>
         </span>
       ))
     );
@@ -632,9 +626,7 @@ const Quote = () => {
 
               <form onSubmit={handleSubmit(onSubmit)} className="loginDown__form dark:!bg-neutral-400" >
 
-             { dataUser ? (dataUser.user?  <input type="text" id="empresa" value={dataUser.user.name} {...register("name", { required: true })} placeholder="Nombre/Empresa" className="loginDown__input" />:<input type="text" id="empresa" value={dataUser.name} {...register("name", { required: true })} placeholder="Nombre/Empresa" className="loginDown__input" /> ): <input type="text" id="empresa"  {...register("name", { required: true })} placeholder="Nombre/Empresa" className="loginDown__input"/> } 
-
-             
+              { dataUser ? (dataUser.user?  <input type="text" id="empresa" value={dataUser.user.name} {...register("name", { required: true })} placeholder="Nombre/Empresa" className="loginDown__input" />:<input type="text" id="empresa" value={dataUser.name} {...register("name", { required: true })} placeholder="Nombre/Empresa" className="loginDown__input" /> ): <input type="text" id="empresa"  {...register("name", { required: true })} placeholder="Nombre/Empresa" className="loginDown__input"/> } 
 
                 {errors.name && <span className="loginDown__error">Este campo es obligatorio</span>}
                 <input type="number" id="contacto" {...register("contacto", { required: true })} placeholder="Contacto" className="loginDown__input" />
@@ -649,8 +641,12 @@ const Quote = () => {
                 <input type="date" id="date" {...register("date", { required: true })} placeholder="Fecha del Evento" className="loginDown__input" />
                 {errors.date && <span className="loginDown__error">Este campo es obligatorio</span>}
 
+
+                <input type="text" id="type__Event" {...register("type__Event", { required: true })} placeholder="Indique el tipo de evento..." className="loginDown__input" />
+                {errors.type__Event && <span className="loginDown__error">Este campo es obligatorio</span>}
+
                 {/* <span className="loginLabel">Tipo de Evento</span> */}
-                <select id="type__Event" {...register("type__Event", { required: true })} className="loginDown__input"> <option value="">Seleccione el Tipo de Evento</option> <option value="birthDay">Cumpleaños</option> <option value="boda">Boda</option> <option value="graduation">Graduación</option> <option value="empresarial">Evento Empresarial</option> <option value="Evento Social">Evento Social</option> </select>
+                {/* <select id="type__Event" {...register("type__Event", { required: true })} className="loginDown__input"> <option value="">Seleccione el Tipo de Evento</option> <option value="birthDay">Cumpleaños</option> <option value="boda">Boda</option> <option value="graduation">Graduación</option> <option value="empresarial">Evento Empresarial</option> <option value="Evento Social">Evento Social</option> </select> */}
 
                 {/* <span className="loginLabel">Número Estimado de Asistentes al Evento</span> */}
                 <input type="number" onChange={(e) => {
@@ -679,15 +675,22 @@ const Quote = () => {
 
                 <Swiper
                   spaceBetween={30}
+                  // adaptiveHeight = 'true'
+                  // autoHeight = 'true'
+                  // watchSlidesVisibility = 'true'
+                  slidesPerView = 'auto'
                   centeredSlides={true}
-
                   pagination={{
-                    clickable: true,
+                    clickable : true,
                   }}
-                  navigation={true}
+                  navigation = {{
+                    nextEl: '.swiper-button-next',
+                    prevEl: '.swiper-button-prev',
+                  }}
+                
+                
                   modules={[Autoplay, Pagination, Navigation]}
                   className="mySwiper swiperQuote" >
-
 
                   <SwiperSlide className="sliderForm">
                     <img className='imageSliderForm' src="https://i.ibb.co/g9j4DKT/image-128.png" alt="imagen de bodas" />
@@ -699,12 +702,13 @@ const Quote = () => {
                         <div className="service__options">
                           {cateringHTML}
                         </div>
-
                       </div>
-
+                    
                     </section>
-
+                  
                   </SwiperSlide>
+                
+                  
 
                   <SwiperSlide className="sliderForm">
 
@@ -760,7 +764,7 @@ const Quote = () => {
                   </SwiperSlide>
 
                   <SwiperSlide className="sliderForm">
-                    <img className='imageSliderForm' src="https://plus.unsplash.com/premium_photo-1682391039360-01afb6ffc72f?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxzZWFyY2h8MXx8ZGp8ZW58MHx8MHx8fDA%3D&auto=format&fit=crop&w=500&q=60" alt="imagen de bodas" />
+                    <img className='imageSliderForm' src="https://i.ibb.co/MVVrMgz/f20ab1e4-6500-45cc-ab03-1c3536fd1d54.jpg" alt="imagen de bodas" />
 
                     <section className="optionsSliderForm">
                       <span className="loginLabel"> Música y Dj </span>

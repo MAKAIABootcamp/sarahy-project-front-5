@@ -99,7 +99,7 @@ const Login = () => {
           </form>
           <span className="red">
             <img
-              src="https://assets.stickpng.com/images/5847f9cbcef1014c0b5e48c8.png"
+              src="https://cdn-icons-png.flaticon.com/512/300/300221.png"
               alt="Google"
               onClick={intro}
             />

@@ -26,8 +26,10 @@ import { Autoplay, Pagination, Navigation, FreeMode } from 'swiper/modules';
 import { collection, getDocs } from "firebase/firestore";
 import { firestore } from '../../firebase/firebaseConfig';
 import Chat from '../../page/chat/Chat';
+import { useNavigate } from 'react-router';
 
 const SocialEvents = () => {
+  const navigate = useNavigate(); 
   const [comentarios, setComentarios] = useState([]);
 
   const traerComentarios = async () => {
@@ -51,6 +53,7 @@ useEffect(() => {
 }, []);
 
   return (
+    
     <main className="main__home dark:!bg-neutral-700" >
                               <Chat headerImg={'idEvents'}/>
 
@@ -106,7 +109,7 @@ useEffect(() => {
             <figure className="fig">
               <img src={logoNegro} alt="" className="img dark:bg-neutral-100" />
             </figure>
-            <span className="span dark:text-neutral-300">Esperiencia personalizada</span>
+            <span className="span dark:text-neutral-300">Experiencia</span>
           </article>
           <p className="paragraph dark:text-neutral-300">Celebraciones Sarahy personaliza cada evento social para que sea único y significativo.
           
@@ -118,10 +121,10 @@ useEffect(() => {
             <figure className="fig">
               <img src={logoNegro} alt="" className="img dark:bg-neutral-100" />
             </figure>
-            <span className="span dark:text-neutral-300">Profesionalismo y creatividad</span>
+            <span className="span dark:text-neutral-300">Profesionalismo</span>
           </article>
           <p className="paragraph dark:text-neutral-300">
-          El equipo combina profesionalismo con creatividad excepcional para ofrecer eventos memorables. 
+          El equipo Sarahy combina profesionalismo con creatividad excepcional para ofrecer eventos memorables. 
           </p>
         </div>
 
@@ -130,10 +133,10 @@ useEffect(() => {
             <figure className="fig">
               <img src={logoNegro} alt="" className="img dark:bg-neutral-100" />
             </figure>
-            <span className="span dark:text-neutral-300">Atención a los detalles</span>
+            <span className="span dark:text-neutral-300">Atención al detalle</span>
           </article>
           <p className="paragraph dark:text-neutral-300">
-          Celebraciones Sarahy cuida cada detalle para garantizar eventos sociales sin problemas y perfectamente ejecutados.
+          Cuidamos cada detalle para garantizar eventos sociales sin problemas y perfectamente ejecutados.
           </p>
         </div>
       </div>
@@ -145,7 +148,7 @@ useEffect(() => {
               <img src={logoNegro} alt="" className="img dark:bg-neutral-100  dark:rounded-lg " />
           </figure>
           <span className="span dark:!text-neutral-200">Galería</span>
-          <button className="button__companies dark:!bg-neutral-100 dark:!text-neutral-800">Haz tu cotización </button>
+          <button className="button__companies dark:!bg-neutral-100 dark:!text-neutral-800" onClick={() => {navigate("/quote"); window.scrollTo(0, 400)}}>Haz tu cotización </button>
           </div>
           <div className="event__collagePlus">
               <CollageEvents imagenes={typEvent} className="description__img" />
@@ -153,7 +156,7 @@ useEffect(() => {
     </section>
 
     <section className='btn__mobile'>
-    <button className="button__companiesMobile">Haz tu cotización </button>
+    <button className="button__companiesMobile" onClick={() => {navigate("/quote"); window.scrollTo(0, 400)}}>Haz tu cotización </button>
     </section>
     
 

@@ -119,7 +119,48 @@
     }
 }
 
-@media (max-width: 550px) {
+@media(max-width: 999px) and (min-width: 600px){
+    .row {
+        width: 100%;
+
+        .galeria {
+            display: flex;
+            flex-wrap: wrap;
+            width: 100%;
+            justify-content: center;
+
+            .galeria__ancora2 {
+                width: 33.3%;
+
+                .imagenes__iniciales {
+                    width: 98%;
+                    margin-left: 4px;
+                    cursor: pointer;
+                }
+            }
+
+            .galeria__ancora {
+                width: 15%;
+
+                .imagenes__iniciales {
+                    width: 98%;
+                    margin-left: 4px;
+                    cursor: pointer;
+                }
+
+                .imagenes__iniciales2 {
+                    width: 50%;
+                    margin-left: 4px;
+                    cursor: pointer;
+                }
+            }
+        }
+    }
+
+
+}
+
+@media (max-width: 600px) {
     .row {
         width: 100%;
 

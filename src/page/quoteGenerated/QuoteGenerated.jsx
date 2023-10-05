@@ -226,11 +226,19 @@ const QuoteGenerated = () => {
           <span className='containerUpDown'>
             
           </span>
-            <span className='downloadQuote' onClick={() => generatePDF()}>Descargar cotización </span>
+
+          <div className='container__btns'>
+            
+          <div className='container__btns__calendar'>
+            <button className='downloadQuote' onClick={() => generatePDF()}>Descargar cotización</button>
+          {/* <span className='downloadQuote' onClick={() => generatePDF()}>Descargar cotización </span> */}
+          </div>
             <div className='container__btns__calendar'>
               <button className='btn__scheduleDate' onClick={openModal}>Agendar cita</button>
               <CalendarGoogle isOpen={modal} onRequestCloset={closeModal} className="modal" />
             </div>
+          </div>
+         
           </div>
 
         </section>
