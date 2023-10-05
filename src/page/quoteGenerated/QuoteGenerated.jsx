@@ -119,7 +119,7 @@ const QuoteGenerated = () => {
           <td>{item.services[i].nameService}</td>
           <td>{item.services[i].description}</td>
           <td className="price">
-            <span className="money">$</span>
+            <span className="money"></span>
             {Number(item.services[i].price).toLocaleString('en-US', { minimumFractionDigits: 2, maximumFractionDigits: 2 })} {/* Formatea el precio con comas para unidades de mil */}
           </td>
         </tr>
@@ -140,8 +140,8 @@ const QuoteGenerated = () => {
     <section className="main__info dark:bg-neutral-800">
       <img src={logoIzquierda} alt="" className="logoIzquierda" />
       <div className="container__intro">
-        <h1 className="main__title__home dark:text-neutral-100">Cotización</h1>
-        <p className="main__parrafo dark:text-neutral-300">
+        <h1 id='styleGeneratedQuoteTytle' className="main__title__home dark:text-neutral-100">Cotización</h1>
+        <p id='idStyeleParrafoGenerated' className="main__parrafo dark:text-neutral-300">
         Le invitamos a revisar detenidamente la cotización y, si tiene alguna pregunta, no dude en ponerse en contacto con Celebraciones Sarahy. Estamos aquí para ayudarle.
         </p>
       </div>
