@@ -97,7 +97,8 @@ export const loginGoogle = () => {
     try {
       const provider = new GoogleAuthProvider();
       const { user } = await signInWithPopup(auth, provider);
-
+      const contizacionUser = await getUserFromCollection(user.uid)
+      console.log(user);
       const dataUser = {
         name: user.displayName,
         email: user.email,
@@ -105,7 +106,7 @@ export const loginGoogle = () => {
         photo: user.photoURL,
         number: user.phoneNumber,
         admi: false, 
-        quote: [], 
+        quote: contizacionUser.quote, 
         chat: [], 
       };
       const createdUser = await createAnUserInCollection(dataUser.uid, dataUser);

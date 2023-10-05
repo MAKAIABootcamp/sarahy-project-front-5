@@ -27,7 +27,7 @@ const Header = () => {
     setModal(false);
   };
 
-  
+
 
   const elementsSearch = [
     { name: 'Boda', ruta: '/detalles' },
@@ -36,7 +36,7 @@ const Header = () => {
     { name: 'San Valentín', ruta: '/sanvalentin' },
     { name: 'Graduación', ruta: '/graduacion' },
     { name: 'Comentarios', ruta: '/' },
-    {name: 'Eventos Sociales', ruta: '/sociales'}
+    { name: 'Eventos Sociales', ruta: '/sociales' }
   ];
   const [searchValue, setSearchValue] = useState('');
   const [theme, setTheme] = useState(() => {
@@ -63,8 +63,8 @@ const Header = () => {
   };
 
   const filteredResults = elementsSearch.filter((result) =>
-  result.name.toLowerCase().includes(searchValue.toLowerCase())
-);
+    result.name.toLowerCase().includes(searchValue.toLowerCase())
+  );
 
   const closeSearch = () => {
     setSearch(!search);
@@ -220,24 +220,31 @@ const Header = () => {
       <div className={`mobile-menu ${isOpen && width < 600 ? 'show' : ''}`}>
         <span className='menu__slogan'>Tu momento nuestra pasión</span>
         <ul>
-        <li onClick={() => { navigate('/'); closeMobileMenu(); }}>Inicio</li>
-          <li onClick={() => {navigate('/perfil'); closeMobileMenu(); }}>Perfil</li>
-          <li onClick={() => {navigate('/registro'); closeMobileMenu(); }}>Registro</li>
-          <li onClick={() => {navigate('/sociales'); closeMobileMenu(); }}>Eventos Sociales</li>
-          <li onClick={() => {navigate('/empresariales'); closeMobileMenu(); }}>Eventos Empresariales</li>
+          <li onClick={() => { navigate('/'); closeMobileMenu(); }}>Inicio</li>
+          <li onClick={() => { navigate('/ingresar'); closeMobileMenu(); }}>Ingresar</li>
+          <li onClick={() => { navigate('/perfil'); closeMobileMenu(); }}>Perfil</li>
+          <li onClick={() => { navigate('/registro'); closeMobileMenu(); }}>Registro</li>
+          <li onClick={() => { navigate('/sociales'); closeMobileMenu(); }}>Eventos Sociales</li>
+          <li onClick={() => { navigate('/empresariales'); closeMobileMenu(); }}>Eventos Empresariales</li>
           <div>
-                  <li className="navbar__items" onClick={()=> {openModal(); closeMobileMenu()}}>Contáctanos</li>
-                  <ModalContactanos isOpen={modal} onRequestCloset={closeModal} />
-                </div>
-          
+            <li className="navbar__items" onClick={() => { openModal(); closeMobileMenu() }}>Contáctanos</li>
+            <ModalContactanos isOpen={modal} onRequestCloset={closeModal} />
+          </div>
+
           {/* <li onClick={() => {navigate('/contactanos'); closeMobileMenu(); }}>Contactanos</li> */}
-          <li onClick={() => {navigate('/quote'); closeMobileMenu(); }}>Cotiza Aquí</li>
+          <li onClick={() => { navigate('/quote'); closeMobileMenu(); }}>Cotiza Aquí</li>
         </ul>
 
         <article className="redes__header">
-          <img className="red__header" src="https://www.pngplay.com/wp-content/uploads/9/Facebook-Logo-PNG-Background.png" alt="" />
-          <img className="red__header" src="https://cdn-icons-png.flaticon.com/512/87/87390.png" alt="" />
-          <img className="red__header" src="https://assets.stickpng.com/images/5a4e2ef62da5ad73df7efe6e.png" alt="" href="https://api.whatsapp.com/send?phone=33003003232&text=Hola%20bienvenido%20a%20Sarahy%20te%20asesoramos%20por%20whatsapp%20gestiona%20tu%20evento%20por%20este%20canal." />
+          <a href="https://www.facebook.com/banquetessarahy?mibextid=LQQJ4d" target="_blank">
+            <img className="red__header" src="https://www.pngplay.com/wp-content/uploads/9/Facebook-Logo-PNG-Background.png" alt="facebook" />
+          </a>
+          <a href="https://www.instagram.com/banquetessarahy/?igshid=MzRlODBiNWFlZA%3D%3D" target="_blank">
+            <img className="red__header" src="https://cdn-icons-png.flaticon.com/512/87/87390.png" alt="instagram" />
+          </a>
+          <a href="https://api.whatsapp.com/send?phone=33003003232&text=Hola%20bienvenido%20a%20Sarahy%20te%20asesoramos%20por%20whatsapp%20gestiona%20tu%20evento%20por%20este%20canal." target="_blank">
+            <img className="red__header" src="https://assets.stickpng.com/images/5a4e2ef62da5ad73df7efe6e.png" alt="whatsapp" />
+          </a>
         </article>
         <img src={logo2} alt="" className='logo2black' />
       </div>

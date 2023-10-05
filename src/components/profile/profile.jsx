@@ -327,7 +327,7 @@ const handleItemClick = async (name, element) => {
 
             </section>
 
-            <section className="main__profile ">
+            <section className="main__profile dark:!bg-neutral-700">
                 <section className="container__profile dark:bg-neutral-700  dark:rounded-none">
                     <section className="introduction__profile dark:bg-neutral-700">
                         <figure className="fig__profile dark:bg-neutral-700">
